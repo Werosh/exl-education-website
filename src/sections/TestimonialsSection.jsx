@@ -1,291 +1,160 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Star, CheckCircle, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Sarah Johnson",
       role: "Computer Science Graduate",
+      institution: "Stanford University",
       text: "EXL Education completely transformed my understanding of programming. The personalized approach and expert mentors helped me land my dream job at a top tech company.",
       rating: 5,
+      score: "98.5 ATAR",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b332c133?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Michael Chen",
       role: "Data Science Student",
+      institution: "MIT",
       text: "The practical projects and real-world applications made all the difference. I went from struggling with statistics to building machine learning models confidently.",
       rating: 5,
+      score: "99.2 ATAR",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
     {
       name: "Emily Rodriguez",
-      role: "Web Development Bootcamp",
+      role: "Web Development Graduate",
+      institution: "UC Berkeley",
       text: "Amazing experience! The curriculum is cutting-edge and the support system is incredible. I built 5 full-stack applications and got hired before graduation.",
       rating: 5,
+      score: "97.8 ATAR",
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      scale: 0.9,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const quoteVariants = {
-    hidden: { scale: 0, rotate: -180 },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.5,
-        delay: 0.8,
-        ease: "easeOut",
-      },
-    },
+  const prevTestimonial = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-      </div>
+    <section className="py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+            What our students are saying
+          </h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        </div>
 
-      <div className="max-w-6xl mx-auto relative">
-        <motion.div
-          className="text-center mb-20"
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div
-            className="inline-block mb-8"
-            variants={quoteVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+        {/* Main Testimonial Display */}
+        <div className="bg-slate-50 rounded-2xl p-12 md:p-16 relative mb-12">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevTestimonial}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-50 transition-colors duration-200 z-10"
           >
-            <Quote className="w-16 h-16 text-blue-500 mx-auto opacity-20" />
-          </motion.div>
+            <ChevronLeft className="w-6 h-6 text-blue-600" />
+          </button>
 
-          <motion.h2
-            className="text-5xl lg:text-6xl font-black text-gray-900 mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+          <button
+            onClick={nextTestimonial}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-50 transition-colors duration-200 z-10"
           >
-            Student{" "}
-            <motion.span
-              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-              initial={{ backgroundPosition: "0% 50%" }}
-              animate={{ backgroundPosition: "100% 50%" }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            >
-              Success Stories
-            </motion.span>
-          </motion.h2>
+            <ChevronRight className="w-6 h-6 text-blue-600" />
+          </button>
 
-          <motion.p
-            className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            See how EXL Education has transformed the academic journey of
-            thousands of students
-          </motion.p>
-        </motion.div>
+          {/* Testimonial Content */}
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Profile Image */}
+            <div className="mb-8">
+              <img
+                src={testimonials[currentIndex].image}
+                alt={testimonials[currentIndex].name}
+                className="w-24 h-24 rounded-full mx-auto border-4 border-white shadow-lg"
+              />
+            </div>
 
-        <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 relative overflow-hidden group cursor-pointer"
-              variants={cardVariants}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {/* Animated gradient border */}
-              <motion.div
-                className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              ></motion.div>
+            {/* Student Info */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                {testimonials[currentIndex].name}
+              </h3>
+              <p className="text-lg text-blue-600 font-medium mb-1">
+                {testimonials[currentIndex].institution}
+              </p>
+              <p className="text-slate-600">
+                {testimonials[currentIndex].role}
+              </p>
+              <div className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mt-3">
+                {testimonials[currentIndex].score}
+              </div>
+            </div>
 
-              {/* Floating elements background */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-20"
-                animate={{
-                  y: [-10, 10, -10],
-                  rotate: [0, 180, 360],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              ></motion.div>
-
-              <motion.div
-                className="flex items-center mb-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                viewport={{ once: true }}
-              >
-                <motion.img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full border-4 border-white shadow-lg mr-4"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
+            {/* Rating */}
+            <div className="flex justify-center mb-8">
+              {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-6 h-6 text-blue-500 fill-current mx-1"
                 />
-                <div>
-                  <motion.h4
-                    className="text-xl font-bold text-gray-900"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    {testimonial.name}
-                  </motion.h4>
-                  <motion.p
-                    className="text-gray-600"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    {testimonial.role}
-                  </motion.p>
-                </div>
-              </motion.div>
+              ))}
+            </div>
 
-              <motion.div
-                className="flex mb-6"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
-                viewport={{ once: true }}
-              >
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, rotate: -180, scale: 0 }}
-                    whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.1 + 0.7 + i * 0.1,
-                      ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.2, rotate: 15 }}
-                  >
-                    <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                  </motion.div>
-                ))}
-              </motion.div>
+            {/* Testimonial Text */}
+            <blockquote className="text-xl md:text-2xl text-slate-700 leading-relaxed font-light italic">
+              "{testimonials[currentIndex].text}"
+            </blockquote>
+          </div>
+        </div>
 
-              <motion.p
-                className="text-gray-700 text-lg leading-relaxed italic"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 + 0.8 }}
-                viewport={{ once: true }}
-              >
-                "{testimonial.text}"
-              </motion.p>
-
-              <motion.div
-                className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100"
-                initial={{ scale: 0, rotate: -90 }}
-                whileHover={{
-                  scale: 1.2,
-                  rotate: 0,
-                  transition: { duration: 0.3 },
-                }}
-                animate={{
-                  opacity: [0, 1, 0],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: index * 0.5 + 2,
-                }}
-              >
-                <CheckCircle className="w-6 h-6 text-green-500" />
-              </motion.div>
-
-              {/* Hover glow effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100"
-                transition={{ duration: 0.3 }}
-              ></motion.div>
-            </motion.div>
+        {/* Dots Indicator */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                index === currentIndex ? "bg-blue-600" : "bg-slate-300"
+              }`}
+            />
           ))}
-        </motion.div>
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="mt-16 bg-blue-50 rounded-2xl p-8">
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">
+                10,000+
+              </div>
+              <div className="text-slate-600">Students Taught</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">98.5%</div>
+              <div className="text-slate-600">Success Rate</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
+              <div className="text-slate-600">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">4.9/5</div>
+              <div className="text-slate-600">Average Rating</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

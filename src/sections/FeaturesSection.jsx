@@ -1,270 +1,229 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BookOpen,
-  Users,
-  Award,
-  Zap,
-  Globe,
-  Target,
-  Lightbulb,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, Zap } from "lucide-react";
 
 const Features = () => {
-  const features = [
+  const steps = [
     {
+      number: "1",
       icon: BookOpen,
       title: "Interactive Learning",
-      description:
-        "Engage with dynamic content, quizzes, and hands-on exercises that make learning memorable and fun.",
-      color: "from-blue-500 to-blue-600",
+      description: "Engage with dynamic content and hands-on exercises",
     },
     {
+      number: "2",
       icon: Users,
       title: "Expert Instructors",
-      description:
-        "Learn from industry professionals and certified educators with years of real-world experience.",
-      color: "from-purple-500 to-purple-600",
+      description: "Learn from industry professionals with real experience",
     },
     {
+      number: "3",
       icon: Award,
-      title: "Certified Programs",
-      description:
-        "Earn recognized certifications that boost your career prospects and validate your skills.",
-      color: "from-green-500 to-green-600",
+      title: "Get Certified",
+      description: "Earn recognized certifications that boost your career",
     },
     {
+      number: "4",
       icon: Zap,
-      title: "Fast-Track Learning",
-      description:
-        "Accelerated courses designed to get you job-ready in the shortest time possible.",
-      color: "from-yellow-500 to-orange-500",
-    },
-    {
-      icon: Globe,
-      title: "Global Community",
-      description:
-        "Connect with learners worldwide and build a network that supports your growth.",
-      color: "from-teal-500 to-cyan-500",
-    },
-    {
-      icon: Target,
-      title: "Personalized Path",
-      description:
-        "AI-powered recommendations create a learning journey tailored to your goals and pace.",
-      color: "from-red-500 to-pink-500",
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation Hub",
-      description:
-        "Access cutting-edge tools and technologies that prepare you for tomorrow's challenges.",
-      color: "from-indigo-500 to-purple-500",
-    },
-    {
-      icon: TrendingUp,
-      title: "Career Growth",
-      description:
-        "Track your progress and unlock opportunities with our comprehensive career development tools.",
-      color: "from-emerald-500 to-teal-500",
+      title: "Fast-Track Success",
+      description: "Accelerated learning designed to get you job-ready",
     },
   ];
 
-  // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
   };
 
-  // Individual card animation variants
-  const cardVariants = {
+  const stepVariants = {
     hidden: {
       opacity: 0,
-      y: 60,
-      scale: 0.9,
+      y: 40,
     },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
-    },
-  };
-
-  // Header animation variants
-  const headerVariants = {
-    hidden: { opacity: 0, y: 100 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut",
       },
     },
   };
 
-  // Floating animation for icons
-  const floatingVariants = {
-    animate: {
-      y: [-2, 2, -2],
+  const ctaVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
       transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
+        duration: 0.8,
+        delay: 0.6,
+        ease: "easeOut",
       },
     },
   };
 
   return (
-    <section
-      id="features"
-      className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <motion.div
-          className="text-center mb-20"
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+    <section className="bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden py-10">
+      {/* Decorative curved background */}
+      <div className="absolute inset-0">
+        <svg
+          className="absolute bottom-0 left-0 w-full h-96"
+          viewBox="0 0 1200 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.h2
-            className="text-5xl lg:text-6xl font-black mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <path
+            d="M0 400V200C300 50 600 150 1200 100V400H0Z"
+            fill="rgb(30, 58, 138)"
+            fillOpacity="0.05"
+          />
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 ">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Steps */}
+          <motion.div
+            className="space-y-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
-            Why Choose{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              EXL Education?
-            </span>
-          </motion.h2>
-
-          <motion.p
-            className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Experience the future of education with our cutting-edge platform
-            designed for modern learners
-          </motion.p>
-        </motion.div>
-
-        {/* Features Grid */}
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="group bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 relative overflow-hidden cursor-pointer"
-              variants={cardVariants}
-              whileHover={{
-                y: -15,
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {/* Background Gradient Overlay */}
+            {steps.map((step, index) => (
               <motion.div
-                className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-              />
-
-              {/* Animated Border */}
-              <motion.div
-                className="absolute inset-0 rounded-3xl"
-                initial={{ background: "transparent" }}
-                whileHover={{
-                  background: `linear-gradient(45deg, transparent 40%, rgba(59, 130, 246, 0.1) 50%, transparent 60%)`,
-                  backgroundSize: "200% 200%",
-                  backgroundPosition: ["0% 0%", "100% 100%"],
-                }}
-                transition={{ duration: 0.6 }}
-              />
-
-              {/* Icon Container */}
-              <motion.div
-                className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 relative z-10`}
-                variants={floatingVariants}
-                animate="animate"
-                whileHover={{
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.4 },
-                }}
+                key={index}
+                className="flex items-start gap-6 group"
+                variants={stepVariants}
               >
-                <feature.icon className="w-8 h-8 text-white" />
+                {/* Step Number */}
+                <motion.div
+                  className="flex-shrink-0 w-12 h-12 bg-white rounded-full border-2 border-blue-100 flex items-center justify-center shadow-sm"
+                  whileHover={{ scale: 1.1, borderColor: "rgb(59, 130, 246)" }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="text-blue-600 font-bold text-lg">
+                    {step.number}
+                  </span>
+                </motion.div>
+
+                {/* Content */}
+                <div className="flex-1 pt-2">
+                  <div className="flex items-center gap-4 mb-3">
+                    <motion.div
+                      className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <step.icon className="w-5 h-5 text-white" />
+                    </motion.div>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
               </motion.div>
+            ))}
+          </motion.div>
 
-              {/* Content */}
-              <motion.h3
-                className="text-2xl font-bold text-gray-900 mb-6 relative z-10"
-                initial={{ opacity: 0.8 }}
-                whileHover={{ opacity: 1 }}
+          {/* Right side - CTA */}
+          <motion.div
+            className="bg-white rounded-3xl p-10 shadow-xl border border-gray-100 relative overflow-hidden"
+            variants={ctaVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-10 transform translate-x-16 -translate-y-16"></div>
+
+            <div className="relative z-10">
+              <motion.h2
+                className="text-4xl lg:text-5xl font-bold mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
               >
-                {feature.title}
-              </motion.h3>
+                <span className="text-blue-500">
+                  Experience our difference.
+                </span>
+                <br />
+                <span className="text-gray-900">Try us for free!</span>
+              </motion.h2>
 
               <motion.p
-                className="text-gray-600 leading-relaxed text-lg relative z-10"
-                initial={{ opacity: 0.7 }}
-                whileHover={{ opacity: 1 }}
+                className="text-gray-600 text-lg mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
               >
-                {feature.description}
+                Start your learning journey with no commitment. Experience our
+                premium courses and decide if we're the right fit for you.
               </motion.p>
 
-              {/* Hover Arrow */}
               <motion.div
-                className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ x: -10 }}
-                whileHover={{
-                  x: 0,
-                  scale: 1.2,
-                  transition: { duration: 0.2 },
-                }}
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
               >
-                <ArrowRight className="w-6 h-6 text-blue-600" />
+                <motion.button
+                  className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgb(37, 99, 235)",
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+
+                <motion.button
+                  className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-blue-300 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2"
+                  whileHover={{
+                    scale: 1.05,
+                    borderColor: "rgb(147, 197, 253)",
+                    color: "rgb(37, 99, 235)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Contact Us
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
               </motion.div>
 
-              {/* Particle Effect on Hover */}
+              {/* Trust indicator */}
               <motion.div
-                className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100"
-                animate={{
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: index * 0.2,
-                }}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+                className="mt-8 pt-6 border-t border-gray-100"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                <p className="text-sm text-gray-500 text-center">
+                  ✨ No credit card required • Cancel anytime • Join 50,000+
+                  learners
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
