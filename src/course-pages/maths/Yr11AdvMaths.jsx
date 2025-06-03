@@ -1,0 +1,76 @@
+import React from "react";
+import { DraftingCompass } from "lucide-react";
+import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ComArea from "../../reuse-subject-comps/ComArea";
+import LittleDescription from "../../reuse-subject-comps/littleDescription";
+import TermsTable from "../../reuse-subject-comps/TermsTable";
+
+const mathTerms = [
+  {
+    name: "Functions and Statistics",
+    lessons: [
+      "Lesson 1: Algebraic Techniques I",
+      "Lesson 2: Algebraic Techniques II",
+      "Lesson 3: Numbers and Surds I",
+      "Lesson 4: Numbers and Surds II",
+      "Lesson 5: Introduction to Functions I",
+      "Lesson 6: Introduction to Functions II",
+      "Lesson 7: Transformations and Symmetry I",
+      "Lesson 8: Transformations and Symmetry II",
+      "Lesson 9: Probability and Venn Diagrams",
+      "Lesson 10: Term 1 Review",
+    ],
+  },
+  {
+    name: "Trigonometric Functions, Further Functions and Statistics",
+    lessons: [
+      "Lesson 1: Trigonometry I",
+      "Lesson 2: Trigonometry II",
+      "Lesson 3: Trigonometry III",
+      "Lesson 4: Trigonometry IV",
+      "Lesson 5: Radians",
+      "Lesson 6: The Coordinate Plane I",
+      "Lesson 7: The Coordinate Plane II",
+      "Lesson 8: Discrete Probability Distributions I",
+      "Lesson 9: Discrete Probability Distributions II",
+      "Lesson 10: Term 2 Review",
+    ],
+  },
+  {
+    name: "Calculus, Exponential and Logarithmic Functions",
+    lessons: [
+      "Lesson 1: Differentiation I",
+      "Lesson 2: Differentiation II",
+      "Lesson 3: Differentiation III",
+      "Lesson 4: Differentiation IV",
+      "Lesson 5: Exponential and Logarithmic Functions I",
+      "Lesson 6: Exponential and Logarithmic Functions II",
+      "Lesson 7: Exponential and Logarithmic Functions III",
+      "Lesson 8: Extending Calculus I",
+      "Lesson 9: Extending Calculus II",
+      "Lesson 10: Y11 Review",
+    ],
+  },
+];
+const Yr11AdvMaths = () => {
+  return (
+    <div>
+      <SubjectDetails
+        subject="Mathematics Advanced"
+        year="Year 11"
+        description="Build a strong foundation in Year 11 Maths Advanced where our structured learning materials and excellent teachers help you excel in calculus, algebra, trigonometry, and statistics."
+        gradientFrom="from-purple-400"
+        gradientTo="to-purple-600"
+        icon={DraftingCompass}
+      />
+
+      <ComArea />
+
+      <LittleDescription />
+
+      <TermsTable subjectName="Mathematics" termDetails={mathTerms} />
+    </div>
+  );
+};
+
+export default Yr11AdvMaths;

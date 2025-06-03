@@ -34,7 +34,7 @@ const Navbar = () => {
 
   const mathsSubjects = [
     { name: "Junior Maths (Years 7, 8, 10)", href: "/courses/junior-maths" },
-    { name: "Year 11 Advanced Maths", href: "/courses/year-11-adv-maths" },
+    { name: "Year 11 Advanced Maths", href: "Yr11AdvMaths" },
     { name: "Year 11 Extension Maths", href: "/courses/year-11-ext-maths" },
     { name: "Year 12 Advanced Maths", href: "/courses/year-12-adv-maths" },
     { name: "Year 12 Extension 1 Maths", href: "/courses/year-12-ext1-maths" },
