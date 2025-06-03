@@ -33,21 +33,21 @@ const Navbar = () => {
   }, []);
 
   const mathsSubjects = [
-    { name: "Junior Maths (Years 7, 8, 10)", href: "/courses/junior-maths" },
-    { name: "Year 11 Advanced Maths", href: "Yr11AdvMaths" },
-    { name: "Year 11 Extension Maths", href: "/courses/year-11-ext-maths" },
-    { name: "Year 12 Advanced Maths", href: "/courses/year-12-adv-maths" },
-    { name: "Year 12 Extension 1 Maths", href: "/courses/year-12-ext1-maths" },
+    { name: "Junior Maths (Years 7, 8, 10)", href: "/courses/junior-maths" }, //path done
+    { name: "Year 11 Advanced Maths", href: "/courses/year-11-adv-maths" }, //path done
+    { name: "Year 11 Extension Maths", href: "/courses/year-11-ext-maths" }, //path done
+    { name: "Year 12 Advanced Maths", href: "/courses/year-12-adv-maths" }, //done
+    { name: "Year 12 Extension 1 Maths", href: "/courses/year-12-ext1-maths" }, //Done
   ];
 
   const chemistrySubjects = [
-    { name: "Year 11 Chemistry", href: "/courses/year-11-chem" },
-    { name: "Year 12 Chemistry", href: "/courses/year-12-chem" },
+    { name: "Year 11 Chemistry", href: "/courses/year-11-chem" }, //done
+    { name: "Year 12 Chemistry", href: "/courses/year-12-chem" }, //done
   ];
 
   const physicsSubjects = [
-    { name: "Year 11 Physics", href: "/courses/year-11-physics" },
-    { name: "Year 12 Physics", href: "/courses/year-12-physics" },
+    { name: "Year 11 Physics", href: "/courses/year-11-physics" }, //done
+    { name: "Year 12 Physics", href: "/courses/year-12-physics" }, //done
   ];
 
   const handleDropdownEnter = (dropdown) => {

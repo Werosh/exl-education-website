@@ -86,20 +86,26 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: Phone, text: "+61 2 9999 8888", href: "tel:+61299998888" },
+    { icon: Phone, text: "0431498913", href: "tel:+0431498913" }, //+61 0 4 3149 8913
     {
       icon: Mail,
-      text: "info@exleducation.com.au",
-      href: "mailto:info@exleducation.com.au",
+      text: "admin@exleducation.com.au",
+      href: "mailto:admin@exleducation.com.au",
     },
     { icon: MapPin, text: "Sydney, NSW Australia", href: "#" },
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", color: "hover:text-blue-300" },
-    { icon: Instagram, href: "#", color: "hover:text-pink-300" },
-    { icon: Twitter, href: "#", color: "hover:text-blue-200" },
-    { icon: Linkedin, href: "#", color: "hover:text-blue-100" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/people/EXL-Education/61561158556489/",
+      color: "hover:text-blue-300",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/exl.education/",
+      color: "hover:text-pink-300",
+    },
   ];
 
   const stats = [
@@ -241,9 +247,9 @@ const Footer = () => {
               variants={itemVariants}
               className="text-blue-100 mb-6 leading-relaxed"
             >
-              Empowering students across Sydney with expert HSC tutoring in
-              Mathematics, Chemistry, and Physics. Join thousands of successful
-              students who achieved their ATAR goals with us.
+              EXL Education is a NSW-based Tuition Centre focused on High School
+              Education, providing a premier combination of resources and
+              teachers.
             </motion.p>
 
             {/* Contact Info */}
@@ -334,6 +340,7 @@ const Footer = () => {
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <motion.a
+                    target="_blank"
                     key={index}
                     href={social.href}
                     variants={socialVariants}

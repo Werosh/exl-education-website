@@ -68,7 +68,7 @@ const Yr11AdvMaths = () => {
 
       <LittleDescription />
 
-      <TermsTable subjectName="Mathematics" termDetails={mathTerms} />
+      <TermsTable subjectName="Mathematics Advanced" termDetails={mathTerms} />
     </div>
   );
 };
