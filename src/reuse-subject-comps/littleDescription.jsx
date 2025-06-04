@@ -146,21 +146,10 @@ const LittleDescription = () => {
           <motion.div className="relative" variants={imageVariants}>
             <div className="relative">
               {/* Main Image */}
-              <motion.div
-                className="relative z-10"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img
-                  src=""
-                  alt="Interactive Learning Dashboard"
-                  className="rounded-2xl shadow-2xl w-full h-auto border-4 border-white"
-                />
-              </motion.div>
 
               {/* Floating Cards */}
               <motion.div
-                className="absolute -top-5 -left-4 z-20"
+                className="absolute -top-35 -left-4 z-20"
                 animate={{
                   y: [0, -10, 0],
                   rotate: [0, 2, 0],

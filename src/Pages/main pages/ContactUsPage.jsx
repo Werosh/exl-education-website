@@ -290,9 +290,9 @@ const ContactUsPage = () => {
                       Address
                     </h3>
                     <p className="text-gray-600">
-                      123 Education Street
+                      Suite 29/10 Old Castle Hill Rd,
                       <br />
-                      Learning District, City 12345
+                      Castle Hill NSW 2154
                     </p>
                   </div>
                 </div>
@@ -302,7 +302,7 @@ const ContactUsPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">0431 498 913</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

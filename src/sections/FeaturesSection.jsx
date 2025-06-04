@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Users, Award, Zap } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 const Features = () => {
   const steps = [
     {
@@ -67,6 +69,12 @@ const Features = () => {
         ease: "easeOut",
       },
     },
+  };
+
+  const navigate = useNavigate();
+
+  const handleCourseNavigation = (link) => {
+    navigate(link);
   };
 
   return (
@@ -181,20 +189,7 @@ const Features = () => {
                 transition={{ delay: 0.4 }}
               >
                 <motion.button
-                  className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgb(37, 99, 235)",
-                    boxShadow:
-                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
-
-                <motion.button
+                  onClick={() => handleCourseNavigation("/contact")}
                   className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-blue-300 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2"
                   whileHover={{
                     scale: 1.05,

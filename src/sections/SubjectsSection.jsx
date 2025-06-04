@@ -144,7 +144,7 @@ const UnmatchedResources = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Each lesson, receive a printed booklet with colour-coded notes
+                Each lesson, receive a printed booklet with color-coded notes
                 written by our subject specialists that comprehensively cover
                 every dot point in the NESA syllabus. Our booklets are filled
                 with unique HSC-style practice questions, homework and detailed
@@ -346,44 +346,6 @@ const UnmatchedResources = () => {
               >
                 <Download className="w-8 h-8 text-white" />
               </motion.div>
-
-              {/* Connecting Lines */}
-              {/* <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                <defs>
-                  <linearGradient
-                    id="lineGradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style={{ stopColor: "#3B82F6", stopOpacity: 0.6 }}
-                    />
-                    <stop
-                      offset="100%"
-                      style={{ stopColor: "#1D4ED8", stopOpacity: 0.2 }}
-                    />
-                  </linearGradient>
-                </defs>
-                {floatingBooks.slice(0, 3).map((book, index) => (
-                  <motion.line
-                    key={index}
-                    x1="50%"
-                    y1="50%"
-                    x2={book.position.x}
-                    y2={book.position.y}
-                    stroke="url(#lineGradient)"
-                    strokeWidth="1"
-                    strokeDasharray="5,5"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.5, delay: index * 0.2 + 1.2 }}
-                  />
-                ))}
-              </svg> */}
             </div>
           </motion.div>
         </div>

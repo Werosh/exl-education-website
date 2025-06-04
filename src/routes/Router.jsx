@@ -21,6 +21,8 @@ import Yr12Chem from "../course-pages/chems/Yr12Chem";
 import Yr11Phys from "../course-pages/physics/Yr11Phys";
 import Yr12Phys from "../course-pages/physics/Yr12Phys";
 
+import NotFound from "../Pages/main pages/NotFound";
+
 const AppRouter = () => {
   return (
     <Routes>
@@ -46,8 +48,8 @@ const AppRouter = () => {
       <Route path="/courses/year-11-physics" element={<Yr11Phys />} />
       <Route path="/courses/year-12-physics" element={<Yr12Phys />} />
 
-      {/* Add more routes as needed */}
-      {/* <Route path="/courses/subject-name" element={<SubjectComponent />} /> */}
+      {/* Catch-All Route */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

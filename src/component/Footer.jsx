@@ -73,26 +73,28 @@ const Footer = () => {
   const quickLinks = [
     { name: "About Us", href: "/about" },
     { name: "Our Courses", href: "/courses" },
-    { name: "Success Stories", href: "/testimonials" },
     { name: "Free Resources", href: "/resources" },
-    { name: "Book a Trial", href: "/book-trial" },
+    { name: "Book a Trial", href: "/contact" },
   ];
 
   const subjects = [
-    { name: "Mathematics", href: "/courses/mathematics" },
-    { name: "Chemistry", href: "/courses/chemistry" },
-    { name: "Physics", href: "/courses/physics" },
-    { name: "HSC Preparation", href: "/courses/hsc-prep" },
+    { name: "Mathematics", href: "/courses" },
+    { name: "Chemistry", href: "/courses" },
+    { name: "Physics", href: "/courses" },
   ];
 
   const contactInfo = [
-    { icon: Phone, text: "0431498913", href: "tel:+0431498913" }, //+61 0 4 3149 8913
+    { icon: Phone, text: "0431 498 913", href: "tel:+0431498913" }, //+61 0 4 3149 8913
     {
       icon: Mail,
       text: "admin@exleducation.com.au",
       href: "mailto:admin@exleducation.com.au",
     },
-    { icon: MapPin, text: "Sydney, NSW Australia", href: "#" },
+    {
+      icon: MapPin,
+      text: "Suite 29/10 Old Castle Hill Rd, Castle Hill NSW 2154",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
