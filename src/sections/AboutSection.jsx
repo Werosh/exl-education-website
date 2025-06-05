@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, BookOpen, Target, Award } from "lucide-react";
-import WillTeach from "../images/others/willTeach.jpg";
+import WillTeach from "../images/others/willTeach.JPG";
 
 const AboutSection = () => {
   const containerVariants = {
