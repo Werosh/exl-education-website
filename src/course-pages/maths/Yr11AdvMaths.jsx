@@ -59,8 +59,8 @@ const Yr11AdvMaths = () => {
         subject="Mathematics Advanced"
         year="Year 11"
         description="Build a strong foundation in Year 11 Maths Advanced where our structured learning materials and excellent teachers help you excel in calculus, algebra, trigonometry, and statistics."
-        gradientFrom="from-purple-400"
-        gradientTo="to-purple-600"
+        gradientFrom="from-[#2A5C90]"
+        gradientTo="to-[#75A9D3]"
         icon={DraftingCompass}
       />
 

@@ -60,8 +60,8 @@ const Yr12Chem = () => {
           subject=" Chemistry"
           year="Year 12"
           description="Excel in Year 12 Chemistry with our booklets which are guided by NESA syllabus dot-points and inquiry questions. You'll master Equilibrium Principles, Acid-Base reactions, and Organic Chemistry."
-          gradientFrom="from-orange-400"
-          gradientTo="to-rose-400"
+          gradientFrom="from-[#6E4A6F]"
+          gradientTo="to-[#E683BB]"
           icon={Biohazard}
         />
 

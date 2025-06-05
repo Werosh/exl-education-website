@@ -65,8 +65,8 @@ Year 11 Chemistry
 
  Chemistry
 Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll develop your scientific skills and knowledge of chemical principles, reactions, and laboratory techniques."
-          gradientFrom="from-green-600"
-          gradientTo="to-teal-400"
+          gradientFrom="from-[#6E4A6F]"
+          gradientTo="to-[#E683BB]"
           icon={FlaskConical}
         />
 

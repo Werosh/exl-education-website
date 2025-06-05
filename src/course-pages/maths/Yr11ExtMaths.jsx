@@ -59,8 +59,8 @@ const Yr11ExtMaths = () => {
         subject="Mathematics Extension 1"
         year="Year 11"
         description="Prepare for your Mathematics Extension 1 HSC topics with EXL's Extension 1 Maths course. You'll the master the basics such as algebra and trigonometry with the help of our topic-by-topic booklets."
-        gradientFrom="from-emerald-500"
-        gradientTo="to-emerald-500"
+        gradientFrom="from-[#3A6F8F]"
+        gradientTo="to-[#83C8E6]"
         icon={SquarePi}
       />
 

@@ -61,8 +61,8 @@ const Yr11Phys = () => {
           subject="Physics"
           year="Year 11"
           description="Build your foundation for Physics in our Year 11 Physics course. You'll develop your scientific skills and understanding of fundamental physics concepts while learning techniques to approach marking schemes."
-          gradientFrom="from-gray-700"
-          gradientTo="to-indigo-900"
+          gradientFrom="from-[#0F3F60]"
+          gradientTo="to-[#B2DBD8]"
           icon={Omega}
         />
 
