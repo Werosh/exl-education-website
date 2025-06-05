@@ -140,7 +140,7 @@ const CalendarPage = () => {
     selectedCategory === "All" || item.type === selectedCategory;
 
   return (
-    <div className="p-6 max-w-7xl mx-auto p-20">
+    <div className=" max-w-7xl mx-auto p-20">
       <h1 className="text-3xl font-bold mb-6 text-center text-[#002F67]">
         Weekly Tutoring Schedule
       </h1>
