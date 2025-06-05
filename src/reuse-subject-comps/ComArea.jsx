@@ -53,7 +53,7 @@ const ComArea = () => {
   const currentSlide = slides[currentIndex];
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto p-8 overflow-hidden">
+    <div className="relative w-full  mx-auto p-8 overflow-hidden">
       <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden min-h-[500px]">
         {/* Animated Background Gradient */}
         <motion.div

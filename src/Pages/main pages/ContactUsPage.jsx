@@ -86,7 +86,7 @@ const ContactUsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 p-10">
       {/* Header */}
       <motion.div
         className="bg-white shadow-sm border-b border-blue-100"

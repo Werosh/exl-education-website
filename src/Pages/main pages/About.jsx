@@ -19,6 +19,8 @@ import {
   Quote,
 } from "lucide-react";
 
+import WillImg from "../../images/teachers/will.jpeg";
+
 const About = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [visibleStats, setVisibleStats] = useState(false);
@@ -103,7 +105,16 @@ const About = () => {
   ];
 
   const faculty = [
-    // Teachers converted to faculty format
+    {
+      name: "William Leong",
+      position: "Chemistry and English Teacher",
+      qualifications: "B Commerce/B Laws @ USYD",
+      experience: "96 in Chemistry, 90 in English Adv",
+      specialization: "Chemistry & English",
+      achievements: "ATAR: 99.70",
+      rating: null,
+      image: WillImg,
+    },
     {
       name: "Matthew Chen",
       position: "Chemistry Teacher",
@@ -136,39 +147,6 @@ const About = () => {
       rating: null,
       image:
         "https://static.wixstatic.com/media/16dc17_81793bbcabbb41b4b759fdce9fd76dea~mv2.jpg/v1/crop/x_55,y_0,w_1824,h_1824/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1675_JPG.jpg",
-    },
-    {
-      name: "William Leong",
-      position: "Chemistry and English Teacher",
-      qualifications: "B Commerce/B Laws @ USYD",
-      experience: "96 in Chemistry, 90 in English Adv",
-      specialization: "Chemistry & English",
-      achievements: "ATAR: 99.70",
-      rating: null,
-      image:
-        "https://static.wixstatic.com/media/16dc17_06519fc0f0504b6fa9972e019be19fdf~mv2.jpg/v1/crop/x_10,y_0,w_1786,h_1786/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1662_JPG.jpg",
-    },
-    {
-      name: "Charlotte Tan",
-      position: "English Teacher, Published Author",
-      qualifications: "B Psychology (Hons) @ UNSW",
-      experience: "47/50 in English E2, 45/50 in English E1",
-      specialization: "English",
-      achievements: "ATAR: Link",
-      rating: null,
-      image:
-        "https://static.wixstatic.com/media/16dc17_ccb702ac837545a5ae95998a0fd438b6~mv2.jpg/v1/crop/x_0,y_37,w_1576,h_1576/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1669_JPG.jpg",
-    },
-    {
-      name: "Xinxin Gao",
-      position: "Mathematics Teacher",
-      qualifications: "B Actuarial/B Computer Sci @ UNSW",
-      experience: "97 in Math Ext 1, 96 in Math Ext 2",
-      specialization: "Mathematics",
-      achievements: "ATAR: 99.25",
-      rating: null,
-      image:
-        "https://static.wixstatic.com/media/16dc17_6ca3ea8002e346c494c538ef918885cf~mv2.jpg/v1/crop/x_0,y_22,w_1620,h_1620/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1652_JPG.jpg",
     },
   ];
 
@@ -207,7 +185,6 @@ const About = () => {
     {
       name: "Priya Patel",
       school: "Knox Elite High School",
-      atar: "99.85",
       quote:
         "The personalized approach and expert guidance helped me achieve beyond my expectations. The structured curriculum and supportive environment made all the difference.",
       subjects: "Mathematics Extension 2, Physics, Chemistry",
@@ -215,7 +192,6 @@ const About = () => {
     {
       name: "James Liu",
       school: "Sydney Grammar School",
-      atar: "99.70",
       quote:
         "Exceptional teaching quality and comprehensive resources. The faculty's expertise and dedication to student success is truly remarkable.",
       subjects: "Economics, Business Studies, Legal Studies",
@@ -669,12 +645,6 @@ const About = () => {
                     <p className="text-gray-600 text-sm">
                       {testimonial.subjects}
                     </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-blue-600">
-                      {testimonial.atar}
-                    </div>
-                    <div className="text-sm text-gray-600">ATAR</div>
                   </div>
                 </div>
               </motion.div>

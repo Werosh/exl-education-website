@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 import {
   ChevronDown,
   Menu,
@@ -191,6 +193,11 @@ const Navbar = () => {
       },
     },
   };
+  const navigate = useNavigate();
+
+  const handleCourseNavigation = () => {
+    navigate("/courses");
+  };
 
   return (
     <motion.nav
@@ -248,6 +255,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ y: -2 }}
                 className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                onClick={handleCourseNavigation}
               >
                 Courses
                 <motion.div
