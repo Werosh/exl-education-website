@@ -1,12 +1,95 @@
-# React + Vite
+# 🎓 ExL Education
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**ExL Education** is a modern, fully responsive educational website built using **React**, **Tailwind CSS**, and **Framer Motion**. It offers a smooth, intuitive UI with clean animations — perfect for showcasing online learning services, courses, and educational content.
 
-Currently, two official plugins are available:
+🌐 **Live Site**: [https://exleducation.netlify.app](https://exleducation.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🖼️ Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Homepage Screenshot](./public/preview.png)
+> _Replace this with an actual screenshot or animation GIF of the homepage._
+
+---
+
+## 🚀 Tech Stack
+
+| Tech             | Purpose                          |
+|------------------|----------------------------------|
+| **React**         | Component-based UI              |
+| **Tailwind CSS**  | Utility-first responsive styling |
+| **Framer Motion** | Smooth animations and transitions |
+| **Netlify**       | CI/CD and production deployment |
+
+---
+
+## ✨ Features
+
+- 📱 **Fully Responsive Design**
+- 💡 **Component-Based Architecture**
+- 🎨 **Modern UI/UX**
+- 🎞️ **Framer Motion Animations**
+- ⚡ **Fast Performance (Netlify)**
+- 🧠 **Education-Focused Layout**
+
+---
+
+
+
+
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/exl-education.git
+cd exl-education
+npm install
+```
+
+🌍 Deployment
+This project is deployed via Netlify:
+
+Auto-deployment from the main branch
+
+CI/CD integrated with GitHub
+
+🔗 Visit Live Site
+
+🤝 Contributing
+Contributions are welcome!
+
+Fork the repository
+
+Create a feature branch (git checkout -b feature/your-feature)
+
+Commit your changes
+
+Push to your branch
+
+Open a Pull Request
+
+
+
+👤 Author
+Werosh Kriyanjala
+🎓 University of Moratuwa
+🌍 Nelliya Village, Kurunegala, Sri Lanka
+🔗 thealphawizards.netlify.app
+🧑‍💻 W3r05h Kr!y4nj414 online
+
+📄 License
+Licensed under the MIT License.
+
+
+---
+
