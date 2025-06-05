@@ -20,6 +20,9 @@ import {
 } from "lucide-react";
 
 import WillImg from "../../images/teachers/will.jpeg";
+import YutangImg from "../../images/teachers/yutang_lin.jpeg";
+import NicholasImg from "../../images/teachers/nicholas_ip.jpeg";
+import AnnaImg from "../../images/teachers/anna.jpeg";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -115,17 +118,7 @@ const About = () => {
       rating: null,
       image: WillImg,
     },
-    {
-      name: "Matthew Chen",
-      position: "Chemistry Teacher",
-      qualifications: "B DentHSc/M Dentistry @ Griffith",
-      experience: "97 in Chemistry, Rank 2 in NBHS",
-      specialization: "Chemistry",
-      achievements: "ATAR: 99.75",
-      rating: null,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    },
+
     {
       name: "Yu-Tang Lin",
       position: "Chemistry and Math Teacher",
@@ -134,8 +127,7 @@ const About = () => {
       specialization: "Chemistry & Math",
       achievements: "ATAR: 99.15",
       rating: null,
-      image:
-        "https://static.wixstatic.com/media/16dc17_b988e22837804df3b9bd916015def8c6~mv2.jpg/v1/crop/x_67,y_0,w_1823,h_1823/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1681_JPG.jpg",
+      image: YutangImg,
     },
     {
       name: "Nicholas Ip",
@@ -145,8 +137,29 @@ const About = () => {
       specialization: "Chemistry & Math",
       achievements: "ATAR: 99.45",
       rating: null,
+      image: NicholasImg,
+    },
+    {
+      name: "Anna Jin",
+      position: "Maths and Science Teacher",
+      qualifications: "B. Exercise Sci/ M. Physiotherapy @ UNSW",
+      experience:
+        "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
+      specialization: "Mathematics & Science",
+      achievements: "ATAR: 99.35",
+      rating: null,
+      image: AnnaImg,
+    },
+    {
+      name: "Matthew Chen",
+      position: "Chemistry Teacher",
+      qualifications: "B DentHSc/M Dentistry @ Griffith",
+      experience: "97 in Chemistry, Rank 2 in NBHS",
+      specialization: "Chemistry",
+      achievements: "ATAR: 99.75",
+      rating: null,
       image:
-        "https://static.wixstatic.com/media/16dc17_81793bbcabbb41b4b759fdce9fd76dea~mv2.jpg/v1/crop/x_55,y_0,w_1824,h_1824/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1675_JPG.jpg",
+        "https://www.kindpng.com/picc/m/33-338711_circle-user-icon-blue-hd-png-download.png",
     },
   ];
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import LogoImg from "../assets/logo.png";
 
 import {
   ChevronDown,
@@ -35,21 +36,21 @@ const Navbar = () => {
   }, []);
 
   const mathsSubjects = [
-    { name: "Junior Maths (Years 7, 8, 10)", href: "/courses/junior-maths" }, //path done
-    { name: "Year 11 Advanced Maths", href: "/courses/year-11-adv-maths" }, //path done
-    { name: "Year 11 Extension Maths", href: "/courses/year-11-ext-maths" }, //path done
-    { name: "Year 12 Advanced Maths", href: "/courses/year-12-adv-maths" }, //done
-    { name: "Year 12 Extension 1 Maths", href: "/courses/year-12-ext1-maths" }, //Done
+    { name: "Junior Maths (Years 7, 8, 10)", href: "/courses/junior-maths" },
+    { name: "Year 11 Advanced Maths", href: "/courses/year-11-adv-maths" },
+    { name: "Year 11 Extension Maths", href: "/courses/year-11-ext-maths" },
+    { name: "Year 12 Advanced Maths", href: "/courses/year-12-adv-maths" },
+    { name: "Year 12 Extension 1 Maths", href: "/courses/year-12-ext1-maths" },
   ];
 
   const chemistrySubjects = [
-    { name: "Year 11 Chemistry", href: "/courses/year-11-chem" }, //done
-    { name: "Year 12 Chemistry", href: "/courses/year-12-chem" }, //done
+    { name: "Year 11 Chemistry", href: "/courses/year-11-chem" },
+    { name: "Year 12 Chemistry", href: "/courses/year-12-chem" },
   ];
 
   const physicsSubjects = [
-    { name: "Year 11 Physics", href: "/courses/year-11-physics" }, //done
-    { name: "Year 12 Physics", href: "/courses/year-12-physics" }, //done
+    { name: "Year 11 Physics", href: "/courses/year-11-physics" },
+    { name: "Year 12 Physics", href: "/courses/year-12-physics" },
   ];
 
   const handleDropdownEnter = (dropdown) => {
@@ -210,23 +211,21 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo - Fixed */}
           <motion.div variants={navItemVariants} className="flex-shrink-0">
-            <a href="/" className="flex items-center space-x-2 group">
+            <a href="/" className="flex items-center group">
               <motion.div
                 variants={logoVariants}
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center"
+                className="h-12 w-auto max-w-[120px] rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-sm"
               >
-                <BookOpen className="w-6 h-6 text-white" />
+                <img
+                  src={LogoImg}
+                  alt="EXL Education Logo"
+                  className="h-full w-auto max-w-full object-contain"
+                />
               </motion.div>
-              <motion.span
-                variants={navItemVariants}
-                className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
-              >
-                EXL Education
-              </motion.span>
             </a>
           </motion.div>
 

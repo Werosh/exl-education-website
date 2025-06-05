@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Video, Users, ChevronRight } from "lucide-react";
 
-import img1 from "../images/learning_online_digital_analyt.jpeg";
+import SmartBoard from "../images/others/smartBoard.jpeg";
+import HandsUpImg from "../images/others/HandsUp.jpeg";
 
 const ComArea = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,8 +16,7 @@ const ComArea = () => {
       description:
         "Access topic-by-topic lesson booklets crafted based on advanced curriculum standards with engaging visual content.",
       icon: <BookOpen className="w-8 h-8" />,
-      image:
-        "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201908/learning_online_digital_analyt.jpeg?VersionId=HZF3HNOIxGPjQFb6t1ummfSpWlcvcHrk&size=690:388",
+      image: SmartBoard,
       color: "from-blue-500 to-purple-600",
     },
     {
@@ -26,8 +26,7 @@ const ComArea = () => {
       description:
         "Watch detailed video explanations paired with homework booklets for comprehensive understanding at your own pace.",
       icon: <Video className="w-8 h-8" />,
-      image:
-        "https://www.beijerelectronics.com/-/media/beijerelectronics,-d-,com/Images/Support/Tutorial___videos/tutorials-illustration-1600x900.ashx",
+      image: HandsUpImg,
       color: "from-purple-500 to-pink-600",
     },
     {
@@ -146,7 +145,7 @@ const ComArea = () => {
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className="rounded-xl w-full h-48 object-cover"
+                className="rounded-xl w-full h-58 object-cover"
               />
 
               {/* 💡 Simulated Content */}

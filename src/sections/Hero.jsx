@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import WillImg from "../images/teachers/will.jpeg";
+import LearningImg from "../images/others/learning.jpeg";
+import BoysShockImg from "../images/others/BoysShock.jpg";
 
 // Animation Variants
 const fadeInUp = {
@@ -18,7 +20,7 @@ const pageLoad = {
   visible: { opacity: 1, transition: { delay: 0.1, duration: 1 } },
 };
 
-// Slides with image and card content
+// Slides
 const slides = [
   {
     image: WillImg,
@@ -32,8 +34,7 @@ const slides = [
     },
   },
   {
-    image:
-      "https://news.ua.edu/wp-content/uploads/2022/09/Small-Class-Story.jpg",
+    image: LearningImg,
     cardTopRight: {
       title: "Small Classes",
       content: "Max 12 students per class for better focus.",
@@ -43,9 +44,9 @@ const slides = [
       content: "Over 99.05 median ATAR score.",
     },
   },
+
   {
-    image:
-      "https://www.graydi.us/wp-content/uploads/2024/08/BLOG-BANNERS-16.png",
+    image: BoysShockImg,
     cardTopRight: {
       title: "Trusted by 2500+",
       content: "Join a growing community of high achievers.",
@@ -78,9 +79,8 @@ const HeroSection = () => {
       animate="visible"
       className="bg-white min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden relative"
     >
-      {/* Decorative Background Shapes */}
+      {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Top Left Light Blue Background Curve */}
         <svg
           className="absolute top-0 left-0 w-1/3 -z-10"
           viewBox="0 0 400 300"
@@ -88,22 +88,15 @@ const HeroSection = () => {
         >
           <path d="M0,100 C100,0 300,0 400,100 L400,0 L0,0 Z" fill="#DBEAFE" />
         </svg>
-
-        {/* Bottom Right Solid Circle */}
         <div className="absolute bottom-[-60px] right-[-60px] w-80 h-80 bg-blue-700 rounded-full opacity-90 z-[-1]" />
-
-        {/* Mid Right Striped Circle */}
         <div className="absolute top-1/4 right-0 w-48 h-48 rounded-full bg-blue-300 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(45deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
-
-        {/* Bottom Left Striped Circle */}
         <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-blue-900 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(135deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
       </div>
-      {/* Background shapes omitted for brevity */}
 
       <div className="flex-1 flex items-center justify-center w-full z-10">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Side */}
+            {/* Left */}
             <div className="flex flex-col justify-center space-y-8">
               <motion.span
                 className="text-sm text-blue-600 font-medium"
@@ -136,7 +129,6 @@ const HeroSection = () => {
                 Maths.
               </motion.p>
 
-              {/* Stats */}
               <motion.div
                 className="flex space-x-12"
                 variants={fadeInUp}
@@ -154,7 +146,6 @@ const HeroSection = () => {
                 </div>
               </motion.div>
 
-              {/* Buttons */}
               <motion.div
                 className="flex space-x-4 pt-4"
                 variants={fadeInUp}
@@ -172,11 +163,11 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Right Side - Slideshow with dynamic cards */}
+            {/* Right - Image slideshow */}
             <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={current}
+                  key={slides[current].image}
                   src={slides[current].image}
                   alt={`Slide ${current + 1}`}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -187,7 +178,6 @@ const HeroSection = () => {
                 />
               </AnimatePresence>
 
-              {/* Top-right card */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`top-${current}`}
@@ -206,7 +196,6 @@ const HeroSection = () => {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Bottom-left card */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`bottom-${current}`}
@@ -223,7 +212,6 @@ const HeroSection = () => {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Dots */}
               <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
                 {slides.map((_, index) => (
                   <button
@@ -242,7 +230,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Down Arrow */}
+      {/* Scroll Arrow */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

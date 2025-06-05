@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, BookOpen, Target, Award } from "lucide-react";
+import WillTeach from "../images/others/willTeach.jpg";
 
 const AboutSection = () => {
   const containerVariants = {
@@ -84,7 +85,7 @@ const AboutSection = () => {
                   variants={iconVariants}
                 >
                   <motion.img
-                    src="https://www.snu.edu/hubfs/Imported_Blog_Media/Teaching%20a%20good%20career-1.jpg" // Replace with your image path or URL
+                    src={WillTeach}
                     alt="Learning Illustration"
                     className="w-98 h-68 object-cover rounded-2xl shadow-lg"
                     initial={{ scale: 0.8, opacity: 0 }}

@@ -9,6 +9,11 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+import WillImg from "../images/teachers/willStand.jpeg";
+import YutangImg from "../images/teachers/yutang_lin.jpeg";
+import NicholasImg from "../images/teachers/nicholas_ip.jpeg";
+import AnnaImg from "../images/teachers/anna.jpeg";
+
 const TeacherSection = () => {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -16,18 +21,49 @@ const TeacherSection = () => {
 
   const teachers = [
     {
-      id: 4,
+      id: 1,
       name: "William Leong",
       subject: "Chemistry & English",
       score: "99.70",
       degree: "B Commerce/B Laws @ USYD",
       experience: "96 in Chemistry, 90 in English Adv",
       specialization: "Chemistry and English Teacher",
-      image:
-        "https://static.wixstatic.com/media/16dc17_06519fc0f0504b6fa9972e019be19fdf~mv2.jpg/v1/crop/x_10,y_0,w_1786,h_1786/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1662_JPG.jpg",
+      image: WillImg,
+    },
+
+    {
+      id: 3,
+      name: "Yu-Tang Lin",
+      subject: "Chemistry & Math",
+      score: "99.15",
+      degree: "B Actuarial/B Computer Sci @ UNSW",
+      experience: "93 in Chemistry, 94 in Math Ext 1",
+      specialization: "Chemistry and Math Teacher",
+      image: YutangImg,
     },
     {
-      id: 1,
+      id: 4,
+      name: "Nicholas Ip",
+      subject: "Chemistry & Math",
+      score: "99.45",
+      degree: "B Physiotherapy @ USYD",
+      experience: "94 in Chemistry, 97 in Math Ext 1",
+      specialization: "Chemistry and Math Teacher",
+      image: NicholasImg,
+    },
+    {
+      id: 5,
+      name: "Anna Jin",
+      subject: "Mathematics",
+      score: "99.35",
+      degree: "B. Exercise Sci/ M. Physiotherapy @ UNSW",
+      experience:
+        "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
+      specialization: "Maths & Science Tutor",
+      image: AnnaImg,
+    },
+    {
+      id: 2,
       name: "Matthew Chen",
       subject: "Chemistry",
       score: "99.75",
@@ -35,29 +71,7 @@ const TeacherSection = () => {
       experience: "97 in Chemistry, Rank 2 in NBHS",
       specialization: "Chemistry Teacher",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    },
-    {
-      id: 2,
-      name: "Yu-Tang Lin",
-      subject: "Chemistry & Math",
-      score: "99.15",
-      degree: "B Actuarial/B Computer Sci @ UNSW",
-      experience: "93 in Chemistry, 94 in Math Ext 1",
-      specialization: "Chemistry and Math Teacher",
-      image:
-        "https://static.wixstatic.com/media/16dc17_b988e22837804df3b9bd916015def8c6~mv2.jpg/v1/crop/x_67,y_0,w_1823,h_1823/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1681_JPG.jpg",
-    },
-    {
-      id: 3,
-      name: "Nicholas Ip",
-      subject: "Chemistry & Math",
-      score: "99.45",
-      degree: "B Physiotherapy @ USYD",
-      experience: "94 in Chemistry, 97 in Math Ext 1",
-      specialization: "Chemistry and Math Teacher",
-      image:
-        "https://static.wixstatic.com/media/16dc17_81793bbcabbb41b4b759fdce9fd76dea~mv2.jpg/v1/crop/x_55,y_0,w_1824,h_1824/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1675_JPG.jpg",
+        "https://www.kindpng.com/picc/m/33-338711_circle-user-icon-blue-hd-png-download.png",
     },
   ];
 
