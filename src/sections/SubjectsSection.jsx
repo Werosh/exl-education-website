@@ -66,8 +66,8 @@ const UnmatchedResources = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-white relative overflow-hidden">
-      {/* Background Pattern */}
+    <section className=" pb-24 bg-gradient-to-br from-slate-50 via-blue-50 to-white relative overflow-hidden">
+      {/* Background Grid */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%">
           <defs>
@@ -89,54 +89,39 @@ const UnmatchedResources = () => {
         </svg>
       </div>
 
-      {/* Floating Geometric Shapes */}
+      {/* Animated Shapes */}
       <motion.div
         className="absolute top-20 left-10 w-12 h-12 border-2 border-blue-200 rounded-full"
-        animate={{
-          y: [-10, 10, -10],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        animate={{ y: [-10, 10, -10], rotate: [0, 180, 360] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-
       <motion.div
         className="absolute bottom-32 right-16 w-8 h-8 bg-blue-300 rotate-45"
-        animate={{
-          rotate: [45, 135, 225, 315, 45],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        animate={{ rotate: [45, 135, 225, 315, 45], scale: [1, 1.2, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start mt-10">
+          {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-10"
           >
+            {/* Headline & Text */}
             <div className="space-y-6">
               <motion.h2
-                className="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight"
+                className="text-5xl lg:text-6xl font-bold text-slate-500 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Unmatched <span className="text-blue-600">Resources</span>
+                Unmatched <span className="text-[#002F67]">Resources</span>
               </motion.h2>
-
               <motion.p
                 className="text-xl text-slate-600 leading-relaxed max-w-xl"
                 initial={{ opacity: 0, y: 30 }}
@@ -156,33 +141,6 @@ const UnmatchedResources = () => {
               </motion.p>
             </div>
 
-            {/* Stats Grid */}
-            <motion.div
-              className="grid grid-cols-2 gap-6 py-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center space-x-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-xl font-bold text-slate-800">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-slate-600">{stat.label}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -201,17 +159,16 @@ const UnmatchedResources = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Visual Area with Floating Books */}
+          {/* Right Column (Floating Books) */}
           <motion.div
-            className="relative h-[600px] lg:h-[700px]"
+            className="relative h-[500px] lg:h-[500px]"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            {/* Main Container */}
             <div className="relative w-full h-full">
-              {/* Background Glow */}
+              {/* Glow Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-3xl blur-3xl"></div>
 
               {/* Floating Books */}
@@ -219,10 +176,7 @@ const UnmatchedResources = () => {
                 <motion.div
                   key={book.id}
                   className="absolute"
-                  style={{
-                    left: book.position.x,
-                    top: book.position.y,
-                  }}
+                  style={{ left: book.position.x, top: book.position.y }}
                   initial={{
                     opacity: 0,
                     scale: 0.8,
@@ -263,67 +217,59 @@ const UnmatchedResources = () => {
                 >
                   <div
                     className={`
-                    ${
-                      book.size === "large"
-                        ? "w-32 h-40"
-                        : book.size === "medium"
-                        ? "w-24 h-32"
-                        : "w-20 h-28"
-                    }
-                    bg-gradient-to-br ${
-                      book.color
-                    } rounded-lg shadow-xl border border-white/20
-                    backdrop-blur-sm cursor-pointer transform-gpu
-                    hover:shadow-2xl transition-all duration-300
-                  `}
+                      ${
+                        book.size === "large"
+                          ? "w-32 h-40"
+                          : book.size === "medium"
+                          ? "w-24 h-32"
+                          : "w-20 h-28"
+                      }
+                      bg-gradient-to-br ${
+                        book.color
+                      } rounded-lg shadow-xl border border-white/20
+                      backdrop-blur-sm cursor-pointer transform-gpu
+                      hover:shadow-2xl transition-all duration-300
+                    `}
                   >
-                    {/* Book Cover Design */}
                     <div className="p-3 h-full flex flex-col justify-between">
                       <div className="space-y-1">
                         <div className="w-8 h-1 bg-white/60 rounded"></div>
                         <div className="w-12 h-1 bg-white/40 rounded"></div>
                       </div>
-
                       <div className="text-center space-y-1">
                         <div
                           className={`
-                          text-white font-bold 
-                          ${book.size === "large" ? "text-xs" : "text-[10px]"}
-                        `}
+                            text-white font-bold 
+                            ${book.size === "large" ? "text-xs" : "text-[10px]"}
+                          `}
                         >
                           {book.title}
                         </div>
                         <div
                           className={`
-                          text-white/80 
-                          ${
-                            book.size === "large" ? "text-[10px]" : "text-[8px]"
-                          }
-                        `}
+                            text-white/80 
+                            ${
+                              book.size === "large"
+                                ? "text-[10px]"
+                                : "text-[8px]"
+                            }
+                          `}
                         >
                           {book.subject}
                         </div>
                       </div>
-
                       <div className="flex justify-center">
                         <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
                           <BookOpen className="w-3 h-3 text-white" />
                         </div>
                       </div>
                     </div>
-
-                    {/* Book Spine Effect */}
-                    <div
-                      className={`
-                      absolute right-0 top-1 bottom-1 w-2 
-                      bg-gradient-to-b from-black/20 to-black/40 rounded-r-lg
-                    `}
-                    ></div>
+                    <div className="absolute right-0 top-1 bottom-1 w-2 bg-gradient-to-b from-black/20 to-black/40 rounded-r-lg"></div>
                   </div>
                 </motion.div>
               ))}
 
-              {/* Central Highlight Circle */}
+              {/* Central Download Icon */}
               <motion.div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl"
                 initial={{ opacity: 0, scale: 0 }}

@@ -16,6 +16,17 @@ const TeacherSection = () => {
 
   const teachers = [
     {
+      id: 4,
+      name: "William Leong",
+      subject: "Chemistry & English",
+      score: "99.70",
+      degree: "B Commerce/B Laws @ USYD",
+      experience: "96 in Chemistry, 90 in English Adv",
+      specialization: "Chemistry and English Teacher",
+      image:
+        "https://static.wixstatic.com/media/16dc17_06519fc0f0504b6fa9972e019be19fdf~mv2.jpg/v1/crop/x_10,y_0,w_1786,h_1786/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1662_JPG.jpg",
+    },
+    {
       id: 1,
       name: "Matthew Chen",
       subject: "Chemistry",
@@ -48,39 +59,6 @@ const TeacherSection = () => {
       image:
         "https://static.wixstatic.com/media/16dc17_81793bbcabbb41b4b759fdce9fd76dea~mv2.jpg/v1/crop/x_55,y_0,w_1824,h_1824/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1675_JPG.jpg",
     },
-    {
-      id: 4,
-      name: "William Leong",
-      subject: "Chemistry & English",
-      score: "99.70",
-      degree: "B Commerce/B Laws @ USYD",
-      experience: "96 in Chemistry, 90 in English Adv",
-      specialization: "Chemistry and English Teacher",
-      image:
-        "https://static.wixstatic.com/media/16dc17_06519fc0f0504b6fa9972e019be19fdf~mv2.jpg/v1/crop/x_10,y_0,w_1786,h_1786/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1662_JPG.jpg",
-    },
-    {
-      id: 5,
-      name: "Charlotte Tan",
-      subject: "English",
-      score: "Link", // Placeholder, since score isn't numeric
-      degree: "B Psychology (Hons) @ UNSW",
-      experience: "47/50 in English E2, 45/50 in English E1",
-      specialization: "English Teacher, Published Author",
-      image:
-        "https://static.wixstatic.com/media/16dc17_ccb702ac837545a5ae95998a0fd438b6~mv2.jpg/v1/crop/x_0,y_37,w_1576,h_1576/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1669_JPG.jpg",
-    },
-    {
-      id: 6,
-      name: "Xinxin Gao",
-      subject: "Mathematics",
-      score: "99.25",
-      degree: "B Actuarial/B Computer Sci @ UNSW",
-      experience: "97 in Math Ext 1, 96 in Math Ext 2",
-      specialization: "Mathematics Teacher",
-      image:
-        "https://static.wixstatic.com/media/16dc17_6ca3ea8002e346c494c538ef918885cf~mv2.jpg/v1/crop/x_0,y_22,w_1620,h_1620/fill/w_187,h_187,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1652_JPG.jpg",
-    },
   ];
 
   const checkScrollButtons = () => {
@@ -93,7 +71,7 @@ const TeacherSection = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const cardWidth = 320; // Card width + gap
+      const cardWidth = 320;
       const scrollAmount = cardWidth * 2;
       const newScrollLeft =
         direction === "left"
@@ -112,10 +90,7 @@ const TeacherSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -125,18 +100,12 @@ const TeacherSection = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
     hover: {
       y: -10,
       scale: 1.02,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
+      transition: { duration: 0.3, ease: "easeInOut" },
     },
   };
 
@@ -145,17 +114,25 @@ const TeacherSection = () => {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: {
-        delay: 0.3,
-        duration: 0.5,
-        ease: "backOut",
-      },
+      transition: { delay: 0.3, duration: 0.5, ease: "backOut" },
     },
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen overflow-hidden">
+      {/* Decorative Background - Calm & Curved Only */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* Bottom right soft blob */}
+        <div className="absolute bottom-[-60px] right-[-60px] w-72 h-72 bg-green-300 rounded-[50%] z-[-1]" />
+
+        {/* Top right rounded shape */}
+        <div className="absolute top-[25%] right-[-40px] w-48 h-48 bg-yellow-200 rounded-[50%] z-[-1]" />
+
+        {/* Bottom left soft rounded shape */}
+        <div className="absolute bottom-[-40px] left-[-40px] w-40 h-40 bg-sky-900 rounded-[50%] z-[-1]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 z-10">
         {/* Header Section */}
         <motion.div
           className="text-center mb-16"
@@ -165,7 +142,7 @@ const TeacherSection = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
@@ -174,7 +151,7 @@ const TeacherSection = () => {
           </motion.div>
 
           <motion.h2
-            className="text-5xl font-bold text-gray-900 mb-6"
+            className="text-5xl font-bold text-gray-600 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -201,9 +178,8 @@ const TeacherSection = () => {
           </motion.p>
         </motion.div>
 
-        {/* Navigation Container */}
+        {/* Scrollable Cards + Arrows */}
         <div className="relative">
-          {/* Left Arrow */}
           <motion.button
             className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center transition-all duration-300 ${
               canScrollLeft
@@ -218,7 +194,6 @@ const TeacherSection = () => {
             <ChevronLeft className="w-6 h-6" />
           </motion.button>
 
-          {/* Right Arrow */}
           <motion.button
             className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center transition-all duration-300 ${
               canScrollRight
@@ -233,7 +208,6 @@ const TeacherSection = () => {
             <ChevronRight className="w-6 h-6" />
           </motion.button>
 
-          {/* Scrollable Teachers Container */}
           <div
             ref={scrollRef}
             className="overflow-x-auto scrollbar-hide pb-4 mx-12"
@@ -256,7 +230,6 @@ const TeacherSection = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  {/* Image Section */}
                   <div className="relative overflow-hidden">
                     <motion.img
                       src={teacher.image}
@@ -264,8 +237,6 @@ const TeacherSection = () => {
                       className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                    {/* Score Badge */}
                     <motion.div
                       className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg"
                       variants={scoreVariants}
@@ -279,7 +250,6 @@ const TeacherSection = () => {
                     </motion.div>
                   </div>
 
-                  {/* Content Section */}
                   <div className="p-6">
                     <motion.h3
                       className="text-xl font-bold text-gray-900 mb-2"
@@ -334,12 +304,6 @@ const TeacherSection = () => {
                         {teacher.specialization}
                       </p>
                     </motion.div>
-
-                    {/* Hover Effect Overlay */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                      initial={false}
-                    />
                   </div>
                 </motion.div>
               ))}

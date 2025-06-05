@@ -117,7 +117,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-blue-900 via-[#002F67] to-blue-900 relative overflow-hidden">
       {/* Curved Line Decorations at Top */}
       <div className="absolute top-0 left-0 w-full h-20 overflow-hidden">
         {/* Primary Curve */}

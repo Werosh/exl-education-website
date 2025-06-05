@@ -1,6 +1,6 @@
-import React from "react";
-import { ArrowRight, Users, Award, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Animation Variants
 const fadeInUp = {
@@ -16,19 +16,6 @@ const fadeInUp = {
   }),
 };
 
-const floatIn = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: 1,
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
 const pageLoad = {
   hidden: { opacity: 0 },
   visible: {
@@ -41,7 +28,24 @@ const pageLoad = {
   },
 };
 
+// Image list (use local assets or external URLs)
+const images = [
+  "https://imgv3.fotor.com/images/blog-cover-image/a-shadow-of-a-boy-carrying-the-camera-with-red-sky-behind.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxBDJsAGcLFpaQQyX1fsKAvonmT-QkvVL7oA&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSabrBZxuW139T0wCclOEZlj8-uf_pZX2gjw&s",
+];
+
 const HeroSection = () => {
+  const [current, setCurrent] = useState(0);
+
+  // Auto switch images
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToNextSection = () => {
     window.scrollBy({
       top: window.innerHeight,
@@ -56,7 +60,28 @@ const HeroSection = () => {
       animate="visible"
       className="bg-white min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden relative"
     >
-      <div className="flex-1 flex items-center justify-center w-full">
+      {/* Decorative Background Shapes */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* Top Left Light Blue Background Curve */}
+        <svg
+          className="absolute top-0 left-0 w-1/3 -z-10"
+          viewBox="0 0 400 300"
+          fill="none"
+        >
+          <path d="M0,100 C100,0 300,0 400,100 L400,0 L0,0 Z" fill="#DBEAFE" />
+        </svg>
+
+        {/* Bottom Right Solid Circle */}
+        <div className="absolute bottom-[-60px] right-[-60px] w-80 h-80 bg-blue-700 rounded-full opacity-90 z-[-1]" />
+
+        {/* Mid Right Striped Circle */}
+        <div className="absolute top-1/4 right-0 w-48 h-48 rounded-full bg-blue-300 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(45deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
+
+        {/* Bottom Left Striped Circle */}
+        <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-blue-900 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(135deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
+      </div>
+
+      <div className="flex-1 flex items-center justify-center w-full z-10">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
@@ -78,15 +103,15 @@ const HeroSection = () => {
                 animate="visible"
                 custom={2}
               >
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-600 leading-tight">
                   Year 11 & 12 HSC{" "}
-                  <span className="text-blue-500">Tutoring Specialist</span> in
+                  <span className="text-[#002F67]">Tutoring Specialist</span> in
                   Sydney
                 </h1>
               </motion.div>
 
               <motion.p
-                className="text-lg text-gray-600 leading-relaxed max-w-lg"
+                className="text-lg text-gray-600 leading-relaxed max-w-lg italic"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -133,69 +158,43 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Right Content */}
-            <motion.div
-              className="flex items-center justify-center"
-              variants={floatIn}
-              initial="hidden"
-              animate="visible"
-            >
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden bg-gray-50 aspect-[4/3] w-full max-w-xl">
-                  <img
-                    src="https://www.gettingsmart.com/wp-content/uploads/2017/01/College-Students-Using-Laptops-Feature-Image.jpg"
-                    alt="Students learning together"
-                    className="w-full h-full object-cover"
+            {/* Right Content: Image Slideshow */}
+            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-xl group">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={current}
+                  src={images[current]}
+                  alt={`Slide ${current + 1}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 1 }}
+                  className="w-full h-full object-cover"
+                />
+              </AnimatePresence>
+
+              {/* Dots */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrent(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      current === index
+                        ? "bg-blue-600 scale-110 shadow-md"
+                        : "bg-white/60 hover:bg-white"
+                    }`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent"></div>
-                </div>
-
-                {/* Floating Cards */}
-                <motion.div
-                  className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100"
-                  variants={floatIn}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Users className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-gray-900">
-                        25K+
-                      </div>
-                      <div className="text-xs text-gray-600">Students</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100"
-                  variants={floatIn}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 1.2 }}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Award className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold text-gray-900">98%</div>
-                      <div className="text-xs text-gray-600">Success Rate</div>
-                    </div>
-                  </div>
-                </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Scroll Down Arrow */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}
         transition={{
           duration: 2,

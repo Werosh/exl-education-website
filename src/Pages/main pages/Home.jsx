@@ -16,7 +16,7 @@ const AnimatedLandingPage = () => {
       <HeroSection />
 
       {/* Stats Section */}
-      <StatsSection />
+      {/* <StatsSection /> */}
 
       {/* About Section */}
       <AboutSection />

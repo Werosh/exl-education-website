@@ -126,13 +126,13 @@ const Features = () => {
                 <div className="flex-1 pt-2">
                   <div className="flex items-center gap-4 mb-3">
                     <motion.div
-                      className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center"
+                      className="w-10 h-10 bg-[#002F67] rounded-lg flex items-center justify-center"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.2 }}
                     >
                       <step.icon className="w-5 h-5 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-gray-600">
                       {step.title}
                     </h3>
                   </div>
@@ -163,11 +163,11 @@ const Features = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="text-blue-500">
+                <span className="text-[#002F67]">
                   Experience our difference.
                 </span>
                 <br />
-                <span className="text-gray-900">Try us for free!</span>
+                <span className="text-gray-700">Try us for free!</span>
               </motion.h2>
 
               <motion.p
