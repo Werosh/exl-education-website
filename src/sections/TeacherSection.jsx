@@ -9,7 +9,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import WillImg from "../images/teachers/willStand.jpeg";
+import WillImg from "../images/teachers/WillStand.jpeg";
 import YutangImg from "../images/teachers/yutang_lin.jpeg";
 import NicholasImg from "../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../images/teachers/anna.jpeg";
