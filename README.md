@@ -35,20 +35,7 @@
 
 ---
 
-## 📁 Project Structure
 
-exl-education/
-├── public/ # Static files (images, favicon, etc.)
-├── src/
-│ ├── assets/ # Images, icons, illustrations
-│ ├── components/ # Reusable components (Navbar, Footer, etc.)
-│ ├── pages/ # Main sections/pages (Home, About, etc.)
-│ ├── App.jsx # App root with routing/layout
-│ ├── main.jsx # React DOM entry point
-│ └── index.css # Tailwind base + custom styles
-├── tailwind.config.js # Tailwind configuration
-├── package.json # Project metadata & dependencies
-└── README.md # Project documentation
 
 
 
@@ -67,7 +54,7 @@ exl-education/
 git clone https://github.com/your-username/exl-education.git
 cd exl-education
 npm install
-
+```
 
 🌍 Deployment
 This project is deployed via Netlify:
