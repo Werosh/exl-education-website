@@ -3,7 +3,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import WillImg from "../images/teachers/will.jpeg";
 import LearningImg from "../images/others/learning.jpeg";
-import BoysShockImg from "../images/others/BoysShock.jpg";
+import BoysShockImg from "../images/others/BoyShock.JPG";
 
 // Animation Variants
 const fadeInUp = {
