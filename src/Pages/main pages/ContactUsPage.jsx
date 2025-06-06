@@ -164,20 +164,17 @@ const ContactUsPage = () => {
                     <Calendar className="inline w-4 h-4 mr-1" />
                     Age *
                   </label>
-                  <select
+                  <input
+                    type="number"
                     name="age"
                     value={formData.age}
                     onChange={handleInputChange}
                     required
+                    min="7"
+                    max="100"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select your age</option>
-                    {ages.map((age) => (
-                      <option key={age} value={age}>
-                        {age} years old
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="Enter your age"
+                  />
                 </motion.div>
               </div>
 
@@ -311,7 +308,7 @@ const ContactUsPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@educationhub.com</p>
+                    <p className="text-gray-600">admin@exleducation.com.au</p>
                   </div>
                 </div>
               </div>

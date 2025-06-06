@@ -8,7 +8,7 @@ import WillTeachImg from "../images/others/willTeach.JPG";
 
 // Animation Variants
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 5 },
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
@@ -117,9 +117,11 @@ const HeroSection = () => {
                 </div>
 
                 <div className="pt-4">
-                  <button className="bg-blue-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors">
-                    Enrol Now
-                  </button>
+                  <a href="tel:+0431498913">
+                    <button className="bg-blue-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+                      Enrol Now
+                    </button>
+                  </a>
                 </div>
               </motion.div>
 
@@ -180,27 +182,12 @@ const HeroSection = () => {
       </div>
 
       {/* Wave Background */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          className="relative block w-full h-32"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1200,160,1248,128,1296,112L1344,96L1344,200L1296,200C1248,200,1200,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"
-            fill="rgba(59, 130, 246, 0.1)"
-          />
-          <path
-            d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,80C672,64,768,64,864,80C960,96,1056,128,1152,128C1200,128,1248,96,1296,80L1344,64L1344,200L1296,200C1248,200,1200,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"
-            fill="rgba(147, 51, 234, 0.1)"
-          />
-          <path
-            d="M0,32L48,48C96,64,192,96,288,96C384,96,480,64,576,48C672,32,768,32,864,48C960,64,1056,96,1152,96C1200,96,1248,64,1296,48L1344,32L1344,200L1296,200C1248,200,1200,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"
-            fill="rgba(59, 130, 246, 0.05)"
-          />
-        </svg>
+      <div className="absolute bottom-0 left-0 w-full xl:h-[590]  sm:h-24 md:h-32 overflow-hidden">
+        <img
+          src="https://png.pngtree.com/background/20250130/original/pngtree-abstract-flowing-water-wave-background-picture-image_15488135.jpg"
+          alt="Wave"
+          className="w-full h-full opacity-50 "
+        />
       </div>
 
       {/* Scroll Arrow */}

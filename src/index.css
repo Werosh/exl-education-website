@@ -22,3 +22,7 @@ h1 {
   font-family: "Open Sauce One Black", sans-serif;
   font-weight: normal;
 }
+
+button {
+  cursor: pointer;
+}

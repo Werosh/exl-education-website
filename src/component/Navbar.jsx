@@ -216,7 +216,7 @@ const Navbar = () => {
             <a href="/" className="flex items-center group">
               <motion.div
                 variants={logoVariants}
-                className="h-25 w-auto max-w-[190px] rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-sm mt-10"
+                className="h-25 w-auto max-w-[190px] rounded-lg overflow-hidden flex items-center justify-center  mt-10"
               >
                 <img
                   src={LogoImg}
@@ -251,7 +251,7 @@ const Navbar = () => {
             >
               <motion.button
                 whileHover={{ y: -2 }}
-                className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                className="flex items-center text-gray-700  hover:text-blue-600 font-medium transition-colors duration-200 relative group"
                 onClick={handleCourseNavigation}
               >
                 Courses
@@ -406,7 +406,7 @@ const Navbar = () => {
               variants={navItemVariants}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="/contact"
+              href="tel:+0431498913"
               className="bg-gradient-to-r from-[#002F67] to-[#002F67] text-white px-6 py-2.5 rounded-full font-medium hover:from-[#011f42] hover:to-[#011f42] transition-all duration-200 shadow-lg hover:shadow-xl flex items-center"
             >
               <Phone className="w-4 h-4 mr-2" />
