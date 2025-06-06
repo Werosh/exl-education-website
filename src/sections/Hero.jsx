@@ -186,7 +186,7 @@ const HeroSection = () => {
         <img
           src="https://png.pngtree.com/background/20250130/original/pngtree-abstract-flowing-water-wave-background-picture-image_15488135.jpg"
           alt="Wave"
-          className="w-full h-full opacity-50 "
+          className="w-full h-full opacity-40 "
         />
       </div>
 
