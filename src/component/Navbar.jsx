@@ -607,7 +607,7 @@ const Navbar = () => {
                   <motion.a
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    href="/book-trial"
+                    href="tel:+0431498913"
                     className="flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg"
                   >
                     <Phone className="w-4 h-4 mr-2" />
