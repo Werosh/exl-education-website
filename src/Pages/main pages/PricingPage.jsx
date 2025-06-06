@@ -383,13 +383,15 @@ const PricingSection = () => {
           animate="visible"
           transition={{ delay: 1.5 }}
         >
-          <motion.button
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Enrol Now for {selectedYear}
-          </motion.button>
+          <a href="tel:+0431498913">
+            <motion.button
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Enrol Now for {selectedYear}
+            </motion.button>
+          </a>
           <p className="text-gray-600 mt-4 text-sm">
             Start your academic excellence journey today with EXL Tutoring
           </p>

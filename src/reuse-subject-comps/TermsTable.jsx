@@ -83,12 +83,7 @@ const TermsTable = ({ subjectName, termDetails }) => {
             transition={{ delay: 1.2, duration: 0.6 }}
             viewport={{ once: true }}
             className="mt-12 text-center"
-          >
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
-              <span className="font-light tracking-wide">Ready to Begin</span>
-              <div className="ml-2 w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            </div>
-          </motion.div>
+          ></motion.div>
         </motion.div>
       </div>
     </>
