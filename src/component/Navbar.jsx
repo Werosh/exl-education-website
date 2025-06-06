@@ -420,7 +420,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleMobile}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 p-2"
+              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 p-2 "
             >
               <AnimatePresence mode="wait">
                 {isOpen ? (
@@ -457,7 +457,7 @@ const Navbar = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white rounded-lg shadow-lg mt-2"
             >
               <div className="px-2 pt-4 pb-3 space-y-2">
                 <motion.a
