@@ -145,74 +145,8 @@ const ComArea = () => {
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className="rounded-xl w-full h-58 object-cover"
+                className="rounded-xl w-full h-68 object-cover"
               />
-
-              {/* 💡 Simulated Content */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white rounded-xl p-6 shadow-lg"
-              >
-                {currentSlide.id === 1 && (
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div
-                        className={`w-3 h-3 rounded-full bg-gradient-to-r ${currentSlide.color}`}
-                      />
-                      <div className="h-2 bg-gray-200 rounded flex-1" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-3 bg-gray-200 rounded w-full" />
-                      <div className="h-3 bg-gray-200 rounded w-4/5" />
-                      <div className="h-3 bg-gray-200 rounded w-3/5" />
-                    </div>
-                    <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-                      <div className="h-2 bg-gray-300 rounded w-full mb-2" />
-                      <div className="h-2 bg-gray-300 rounded w-2/3" />
-                    </div>
-                  </div>
-                )}
-
-                {currentSlide.id === 2 && (
-                  <div className="space-y-4">
-                    <div
-                      className={`w-full h-24 bg-gradient-to-br ${currentSlide.color} rounded-lg flex items-center justify-center opacity-80`}
-                    >
-                      <Video className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-2 bg-gray-300 rounded" />
-                      <div className="flex-1 h-1 bg-gray-200 rounded" />
-                    </div>
-                  </div>
-                )}
-
-                {currentSlide.id === 3 && (
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`w-10 h-10 rounded-full bg-gradient-to-br ${currentSlide.color}`}
-                      />
-                      <div className="space-y-1">
-                        <div className="h-2 bg-gray-300 rounded w-20" />
-                        <div className="h-1 bg-gray-200 rounded w-16" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-2 bg-gray-200 rounded w-full" />
-                      <div className="h-2 bg-gray-200 rounded w-3/4" />
-                    </div>
-                    <div className="flex gap-2">
-                      <div
-                        className={`flex-1 h-6 bg-gradient-to-r ${currentSlide.color} rounded opacity-20`}
-                      />
-                      <div className="w-12 h-6 bg-gray-200 rounded" />
-                    </div>
-                  </div>
-                )}
-              </motion.div>
             </div>
           </motion.div>
         </div>
