@@ -163,11 +163,11 @@ const Features = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="text-[#002F67]">
+                <span className="text-[#002F67]" style={{ fontWeight: 900 }}>
                   Experience our difference.
                 </span>
                 <br />
-                <span className="text-gray-700">Try us for free!</span>
+                <span className="text-gray-600">Try us for free!</span>
               </motion.h2>
 
               <motion.p

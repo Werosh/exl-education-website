@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, BookOpen, Target, Award } from "lucide-react";
-import WillTeach from "../images/others/willTeach.JPG";
+import GirlTeach from "../images/others/GirlTeach.JPG";
 
 const AboutSection = () => {
   const containerVariants = {
@@ -85,7 +85,7 @@ const AboutSection = () => {
                   variants={iconVariants}
                 >
                   <motion.img
-                    src={WillTeach}
+                    src={GirlTeach}
                     alt="Learning Illustration"
                     className="w-98 h-68 object-cover rounded-2xl shadow-lg"
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -147,10 +147,13 @@ const AboutSection = () => {
               <motion.h2
                 className="text-5xl lg:text-6xl font-bold text-blue-900 leading-tight"
                 variants={itemVariants}
+                style={{ fontWeight: 900 }}
               >
                 Small class.
                 <br />
-                <span className="text-blue-600">Same excellence.</span>
+                <span className="text-blue-600 " style={{ fontWeight: 900 }}>
+                  Same excellence.
+                </span>
               </motion.h2>
             </motion.div>
 

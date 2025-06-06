@@ -239,7 +239,7 @@ const About = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.section
-        className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-24"
+        className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-24 mt-15"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

@@ -9,7 +9,7 @@ const scheduleData = [
     classes: [
       {
         subject: "Standard Chemistry Year 11 ONLINE",
-        time: "5:30",
+        time: "5:30 PM",
         type: "Chemistry",
         teacher: "Yu-Tang",
         color: "bg-rose-50 border-l-4 border-rose-400 text-rose-800",
@@ -21,28 +21,28 @@ const scheduleData = [
     classes: [
       {
         subject: "Accelerated Chemistry Year 11",
-        time: "6:30",
+        time: "6:30 PM",
         type: "Chemistry",
         teacher: "Yu-Tang",
         color: "bg-rose-50 border-l-4 border-rose-400 text-rose-800",
       },
       {
         subject: "Standard Mathematics Advanced Year 11",
-        time: "4:30",
+        time: "4:30 PM",
         type: "Maths",
         teacher: "Anna",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
       },
       {
         subject: "Standard Mathematics Extension 1 Year 11",
-        time: "4:30",
+        time: "4:30 PM",
         type: "Maths",
         teacher: "Anna",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
       },
       {
         subject: "Mathematics Year 10",
-        time: "4:30",
+        time: "4:30 PM",
         type: "Maths",
         teacher: "Yu-Tang",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
@@ -54,14 +54,14 @@ const scheduleData = [
     classes: [
       {
         subject: "Standard Physics Year 11",
-        time: "4:00",
+        time: "4:00 PM",
         type: "Physics",
         teacher: "William",
         color: "bg-blue-50 border-l-4 border-blue-400 text-blue-800",
       },
       {
         subject: "Standard Chemistry Year 12 (Oakhill)",
-        time: "6:00",
+        time: "6:00 PM",
         type: "Chemistry",
         teacher: "William",
         color: "bg-rose-50 border-l-4 border-rose-400 text-rose-800",
@@ -73,21 +73,21 @@ const scheduleData = [
     classes: [
       {
         subject: "Accelerated Physics Year 11",
-        time: "4:30",
+        time: "4:30 PM",
         type: "Physics",
         teacher: "William",
         color: "bg-blue-50 border-l-4 border-blue-400 text-blue-800",
       },
       {
         subject: "Mathematics Extension 1 Year 12 (PHHS + NBHS)",
-        time: "6:00",
+        time: "6:00 PM",
         type: "Maths",
         teacher: "Yu-Tang",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
       },
       {
         subject: "Physics Year 11 ONLINE GOSFORD",
-        time: "6:30",
+        time: "6:30 PM",
         type: "Physics",
         teacher: "William",
         color: "bg-blue-50 border-l-4 border-blue-400 text-blue-800",
@@ -105,14 +105,14 @@ const scheduleData = [
     classes: [
       {
         subject: "Accelerated Chemistry Year 11",
-        time: "10:30",
+        time: "10:30 AM",
         type: "Chemistry",
         teacher: "Nic",
         color: "bg-rose-50 border-l-4 border-rose-400 text-rose-800",
       },
       {
         subject: "Mathematics Year 8",
-        time: "1:30",
+        time: "1:30 PM",
         type: "Maths",
         teacher: "Anna",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
@@ -124,7 +124,7 @@ const scheduleData = [
     classes: [
       {
         subject: "Accelerated Mathematics Extension 1 Year 11",
-        time: "1:00",
+        time: "1:00 PM",
         type: "Maths",
         teacher: "Nic",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
@@ -140,7 +140,7 @@ const CalendarPage = () => {
     selectedCategory === "All" || item.type === selectedCategory;
 
   return (
-    <div className=" max-w-7xl mx-auto p-20">
+    <div className=" max-w-7xl mx-auto p-20 mt-15">
       <h1 className="text-3xl font-bold mb-6 text-center text-[#002F67]">
         Weekly Tutoring Schedule
       </h1>

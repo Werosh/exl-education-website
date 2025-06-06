@@ -119,6 +119,7 @@ const UnmatchedResources = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
+                style={{ fontWeight: 900 }}
               >
                 Unmatched <span className="text-[#002F67]">Resources</span>
               </motion.h2>
