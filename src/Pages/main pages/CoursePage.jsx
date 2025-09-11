@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import {
-  ChevronRight,
-  BookOpen,
   Calculator,
   Atom,
   Zap,
   Clock,
   Users,
-  Award,
   ExternalLink,
   ArrowRight,
   Star,
   TrendingUp,
-  CheckCircle,
-  Play,
-  BarChart3,
-  Target,
   Sparkles,
 } from "lucide-react";
-import { Navigate } from "react-router-dom";
 
-// Framer Motion alternative using CSS animations and transitions
 const MotionDiv = ({ children, delay = 0, className = "", ...props }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -43,6 +35,23 @@ const MotionDiv = ({ children, delay = 0, className = "", ...props }) => {
       {children}
     </div>
   );
+};
+
+// Container animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const CoursePage = () => {
@@ -245,147 +254,135 @@ const CoursePage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-
-      {/* Decorative Background Shapes */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Top Right Curved Wave */}
-        <svg
-          className="absolute top-0 right-0 w-2/5 h-1/3 -z-10"
-          viewBox="0 0 500 300"
-          fill="none"
-        >
-          <path
-            d="M500,0 C400,50 300,100 200,150 C150,175 100,200 50,225 L500,225 L500,0 Z"
-            fill="#1b7ee0"
-            opacity="0.8"
-          />
-          <path
-            d="M500,0 C420,30 340,60 260,90 C200,110 140,130 80,150 L500,150 L500,0 Z"
-            fill="#F3F4F6"
-            opacity="0.6"
-          />
-        </svg>
-
-        {/* Mid Right Floating Circle */}
-        <div className="absolute top-1/3 right-12 w-32 h-32 rounded-full bg-gradient-to-br from-[#09549e] to-gray-600 opacity-40 z-[-1] blur-sm" />
-
-        {/* Top Left Small Curved Element */}
-        <svg
-          className="absolute top-20 left-8 w-24 h-24 -z-10"
-          viewBox="0 0 100 100"
-          fill="none"
-        >
-          <path
-            d="M0,0 Q50,25 100,0 Q75,50 100,100 Q50,75 0,100 Q25,50 0,0 Z"
-            fill="#002F67"
-            opacity="0.08"
-          />
-        </svg>
-
-        {/* Bottom Center Curved Arc */}
-        <svg
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-96 h-24 -z-10"
-          viewBox="0 0 400 100"
-          fill="none"
-        >
-          <path
-            d="M0,100 Q200,50 400,100 L400,100 L0,100 Z"
-            fill="#F8FAFC"
-            opacity="0.9"
-          />
-        </svg>
-
-        {/* Floating Gradient Orb - Mid Left */}
-        <div className="absolute top-2/3 left-16 w-20 h-20 rounded-full bg-gradient-to-br from-gray-900 to-gray-900 opacity-50 z-[-1] blur-[2px]" />
-
-        {/* Top Right Corner Accent */}
-        <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full bg-gradient-to-bl from-gray-500 to-transparent opacity-60 z-[-1]" />
-
-        {/* Subtle Curved Line Elements */}
-        <svg
-          className="absolute top-1/2 right-1/4 w-16 h-48 -z-10"
-          viewBox="0 0 50 200"
-          fill="none"
-        >
-          <path
-            d="M25,0 Q40,50 25,100 Q10,150 25,200"
-            stroke="#002F67"
-            strokeWidth="1"
-            opacity="0.1"
+      <motion.div
+        className="relative bg-white overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        {/* Geometric Background */}
+        <div className="absolute inset-0">
+          <svg
+            className="absolute top-0 left-0 w-full h-full"
+            viewBox="0 0 1200 800"
             fill="none"
+          >
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "#002F67", stopOpacity: 0.1 }}
+                />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: "#1e40af", stopOpacity: 0.05 }}
+                />
+              </linearGradient>
+            </defs>
+            <polygon points="0,0 600,0 400,400" fill="url(#grad1)" />
+            <polygon points="1200,0 1200,300 800,200" fill="url(#grad1)" />
+            <polygon points="1200,800 600,800 900,400" fill="url(#grad1)" />
+          </svg>
+
+          {/* Floating Elements */}
+          <motion.div
+            className="absolute top-1/4 right-1/4 w-4 h-4 bg-blue-500 rounded-full"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.1 }}
           />
-        </svg>
-      </div>
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 to-gray-100/50"></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(0, 47, 103, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 75% 75%, rgba(0, 47, 103, 0.05) 0%, transparent 50%)`,
-          }}
-        ></div>
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
-          <MotionDiv delay={200} className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-gray-600 px-4 py-2 rounded-full text-sm font-medium mb-8 border border-gray-200">
-              <Sparkles className="w-4 h-4" />
-              <span>Premium Academic Excellence Program</span>
-            </div>
-
-            <h1 className="text-6xl font-bold text-gray-600 mb-8 leading-tight">
-              Unlock Your
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #002F67, #002F67)",
-                }}
-              >
-                {" "}
-                Academic{" "}
-              </span>
-              Potential
-            </h1>
-
-            <p className="text-xl text-gray-700 mb-12 leading-relaxed">
-              Join the elite ranks of academic achievers with our comprehensive,
-              research-backed curriculum. Experience world-class education
-              designed for tomorrow's leaders.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <MotionDiv delay={400} className="text-center">
-                <div className="text-3xl font-bold text-[#002F67] mb-2">
-                  6,424
-                </div>
-                <div className="text-sm text-gray-600 flex items-center justify-center gap-2">
-                  <Users className="w-4 h-4" />
-                  Elite Students
-                </div>
-              </MotionDiv>
-              <MotionDiv delay={500} className="text-center">
-                <div className="text-3xl font-bold text-[#002F67] mb-2">
-                  98.7%
-                </div>
-                <div className="text-sm text-gray-600 flex items-center justify-center gap-2">
-                  <TrendingUp className="w-4 h-4" />
-                  Success Rate
-                </div>
-              </MotionDiv>
-              <MotionDiv delay={600} className="text-center">
-                <div className="text-3xl font-bold text-[#002F67] mb-2">
-                  4.9
-                </div>
-                <div className="text-sm text-gray-600 flex items-center justify-center gap-2">
-                  <Star className="w-4 h-4 fill-current" />
-                  Student Rating
-                </div>
-              </MotionDiv>
-            </div>
-          </MotionDiv>
+          <motion.div
+            className="absolute top-1/3 left-1/4 w-3 h-3 bg-cyan-500 rounded-full"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+          />
+          <motion.div
+            className="absolute bottom-1/3 right-1/3 w-5 h-5 bg-blue-400 rounded-full"
+            animate={{ y: [0, -25, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+          />
         </div>
-      </div>
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+            {/* Left Side - Content */}
+            <motion.div className="space-y-8" variants={itemVariants}>
+              <div className="inline-flex items-center gap-2 text-blue-600 px-4 py-2 rounded-full text-sm font-medium bg-blue-50 border border-blue-200">
+                <Sparkles className="w-4 h-4" />
+                <span>Premium Academic Excellence Program</span>
+              </div>
+
+              <h1 className="text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
+                Unlock Your
+                <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Academic
+                </span>
+                Potential
+              </h1>
+
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Join the elite ranks of academic achievers with our
+                comprehensive, research-backed curriculum designed for
+                tomorrow's leaders.
+              </p>
+            </motion.div>
+
+            {/* Right Side - Stats Card */}
+            <motion.div className="relative" variants={itemVariants}>
+              <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Join Elite Students
+                  </h3>
+                  <p className="text-gray-600">
+                    Achieving excellence worldwide
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-2xl">
+                    <div className="flex items-center gap-3">
+                      <Users className="w-8 h-8 text-blue-600" />
+                      <div>
+                        <div className="font-bold text-gray-900">6,424</div>
+                        <div className="text-sm text-gray-600">
+                          Active Students
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-2xl">🎓</div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-4 bg-green-50 rounded-2xl">
+                    <div className="flex items-center gap-3">
+                      <TrendingUp className="w-8 h-8 text-green-600" />
+                      <div>
+                        <div className="font-bold text-gray-900">98.7%</div>
+                        <div className="text-sm text-gray-600">
+                          Success Rate
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-2xl">📈</div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-4 bg-amber-50 rounded-2xl">
+                    <div className="flex items-center gap-3">
+                      <Star className="w-8 h-8 text-amber-600 fill-current" />
+                      <div>
+                        <div className="font-bold text-gray-900">4.9/5</div>
+                        <div className="text-sm text-gray-600">
+                          Student Rating
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-2xl">⭐</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Subjects Section */}
       <div className="max-w-7xl mx-auto px-6 py-20">

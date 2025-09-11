@@ -74,10 +74,6 @@ const PricingSection = () => {
       text: "Join classes tailored to your skill level",
     },
     {
-      icon: <BookOpen className="w-4 h-4" />,
-      text: "Revise through weekly lesson recordings",
-    },
-    {
       icon: <FileText className="w-4 h-4" />,
       text: "Quality Resource Booklets for each topic",
     },
@@ -162,20 +158,23 @@ const PricingSection = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Header */}
-        <motion.div className="text-center mb-12" variants={itemVariants}>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            EXL Tutoring <span className="text-blue-600">Pricing</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose the perfect program for your academic journey with expert
-            tutoring and comprehensive support
-          </p>
+        {/* Header with gradient background */}
+        <motion.div className="relative mb-16" variants={itemVariants}>
+          {/* Gradient wrapper */}
+          <div className="bg-gradient-to-b from-blue-200/40 via-blue-50/30 to-white rounded-2xl py-12 px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              EXL Tutoring <span className="text-blue-600">Pricing</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Choose the perfect program for your academic journey with expert
+              tutoring and comprehensive support
+            </p>
+          </div>
         </motion.div>
 
         {/* Year Selector */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-16 mt-8"
           variants={itemVariants}
         >
           {years.map((year) => (
@@ -184,7 +183,7 @@ const PricingSection = () => {
               onClick={() => setSelectedYear(year)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 selectedYear === year
-                  ? "bg-blue-600 text-white shadow-lg"
+                  ? "bg-blue-500 text-white shadow-lg"
                   : "bg-white text-gray-700 border border-gray-200 hover:border-blue-300 hover:text-blue-600"
               }`}
               whileHover={{ scale: 1.05 }}
@@ -211,11 +210,12 @@ const PricingSection = () => {
               variants={cardVariants}
               whileHover="hover"
             >
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-8 text-white">
+              {/* Card Header with gradient */}
+              <div className="bg-gradient-to-b from-blue-100/100 via-blue-100/100 to-white p-8 text-gray-900">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold">{selectedYear} EXL</h2>
                   <motion.div
-                    className="bg-white/20 px-3 py-1 rounded-full text-sm"
+                    className="bg-blue-500/10 px-3 py-1 rounded-full text-xl  text-blue-900 font-700"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3 }}
@@ -224,10 +224,10 @@ const PricingSection = () => {
                   </motion.div>
                 </div>
                 <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-bold">
+                  <span className="text-4xl md:text-5xl font-bold text-blue-700">
                     ${currentData.price}
                   </span>
-                  <span className="text-blue-100 ml-2">
+                  <span className="text-gray-600 ml-2">
                     per 10-lesson {selectedYear} EXL term
                   </span>
                 </div>
@@ -319,7 +319,7 @@ const PricingSection = () => {
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                <h3 className="text-xl course-time text-gray-700 mb-6">
                   Course Features
                 </h3>
                 <div className="space-y-4">
@@ -329,19 +329,21 @@ const PricingSection = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 }}
                   >
-                    <Clock className="w-5 h-5 text-blue-600 mr-3" />
-                    <span>{currentData.weeklyHours} weekly lesson</span>
+                    <Clock className="w-5 h-5 text-blue-600 mr-3 " />
+                    <span className="course-time">
+                      {currentData.weeklyHours} weekly lesson
+                    </span>
                   </motion.div>
                   {courseFeatures.slice(1).map((feature, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center text-gray-700"
+                      className="flex items-center text-blue-600"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.7 + index * 0.1 }}
                     >
                       {feature.icon}
-                      <span className="ml-3">{feature.text}</span>
+                      <span className="ml-3 text-gray-700">{feature.text}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -353,20 +355,20 @@ const PricingSection = () => {
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                <h3 className="text-xl  course-time text-gray-700 mb-6">
                   Additional Services
                 </h3>
                 <div className="space-y-4">
                   {additionalServices.map((service, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center text-gray-700"
+                      className="flex items-center text-blue-600"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 1.1 + index * 0.1 }}
                     >
                       {service.icon}
-                      <span className="ml-3">{service.text}</span>
+                      <span className="ml-3 text-gray-700">{service.text}</span>
                     </motion.div>
                   ))}
                 </div>

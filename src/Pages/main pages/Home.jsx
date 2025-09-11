@@ -1,6 +1,5 @@
 import React from "react";
 import HeroSection from "../../sections/Hero";
-import StatsSection from "../../sections/StatsSection";
 import Features from "../../sections/FeaturesSection";
 import Subjects from "../../sections/SubjectsSection";
 import Testimonials from "../../sections/TestimonialsSection";

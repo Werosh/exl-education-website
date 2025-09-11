@@ -167,16 +167,17 @@ const TestimonialsSection = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-16">
+        {/* <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-600 mb-4 md:mb-6 px-4">
             What our students are saying
           </h2>
           <div className="w-16 md:w-24 h-1 bg-blue-600 mx-auto"></div>
-        </div>
+        </div> */}
 
         {/* Mobile: Card Carousel */}
+
         <div className="block md:hidden mb-8">
-          <div className="relative">
+          {/* <div className="relative">
             <button
               onClick={prevTestimonial}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full hover:bg-blue-50 z-10"
@@ -204,10 +205,10 @@ const TestimonialsSection = () => {
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile Dots Indicator */}
-          <div className="flex justify-center mt-6 space-x-2">
+          {/* <div className="flex justify-center mt-6 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -217,11 +218,10 @@ const TestimonialsSection = () => {
                 }`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
 
-        {/* Desktop: Multi-Card Carousel */}
-        <div className="hidden md:block relative mb-16">
+        {/* <div className="hidden md:block relative mb-16">
           <button
             onClick={prevTestimonial}
             className="absolute -left-6 top-1/2 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full hover:bg-blue-50 z-10"
@@ -247,17 +247,17 @@ const TestimonialsSection = () => {
               ))}
             </div>
           </div>
-        </div>
-
+        </div> */}
+        {/* Desktop: Multi-Card Carousel upper code snippet  */}
         {/* Bottom Stats */}
         <div className="mt-8 md:mt-16 bg-blue-50 rounded-2xl p-6 md:p-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
             <div>
               <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">
-                10,000+
+                10{" "}
               </div>
               <div className="text-slate-600 text-sm md:text-base">
-                Students Taught
+                Average Class Size
               </div>
             </div>
             <div>
@@ -265,7 +265,7 @@ const TestimonialsSection = () => {
                 98.5%
               </div>
               <div className="text-slate-600 text-sm md:text-base">
-                Success Rate
+                Average Success Rate
               </div>
             </div>
             <div>
@@ -273,7 +273,7 @@ const TestimonialsSection = () => {
                 15+
               </div>
               <div className="text-slate-600 text-sm md:text-base">
-                Years Experience
+                Average class size
               </div>
             </div>
             <div>

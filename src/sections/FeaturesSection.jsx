@@ -9,26 +9,29 @@ const Features = () => {
     {
       number: "1",
       icon: BookOpen,
-      title: "Interactive Learning",
-      description: "Engage with dynamic content and hands-on exercises",
+      title: "Personalised Assessment",
+      description:
+        "We start with a clear understanding of your child’s strengths and learning gaps.",
     },
     {
       number: "2",
       icon: Users,
-      title: "Expert Instructors",
-      description: "Learn from industry professionals with real experience",
+      title: "Structured Lessons",
+      description: "Step-by-step explanations aligned with school curriculum.",
     },
     {
       number: "3",
       icon: Award,
-      title: "Get Certified",
-      description: "Earn recognized certifications that boost your career",
+      title: "Practice & Feedback",
+      description:
+        "Regular exercises with feedback to build confidence and mastery. ",
     },
     {
       number: "4",
       icon: Zap,
-      title: "Fast-Track Success",
-      description: "Accelerated learning designed to get you job-ready",
+      title: "Progress Tracking",
+      description:
+        "Parents and students see measurable improvement every term.",
     },
   ];
 
@@ -212,8 +215,8 @@ const Features = () => {
                 transition={{ delay: 0.5 }}
               >
                 <p className="text-sm text-gray-500 text-center">
-                  ✨ No credit card required • Cancel anytime • Join 50,000+
-                  learners
+                  ✨ No credit card required • Cancel anytime • Trusted by local
+                  families
                 </p>
               </motion.div>
             </div>

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import WillImg from "../images/teachers/will.jpeg";
+import { motion } from "framer-motion";
+
 import LearningImg from "../images/others/learning.jpeg";
-import BoysShockImg from "../images/others/BoyShock.JPG";
 
 // Animation Variants
 const fadeInUp = {
@@ -20,54 +18,7 @@ const pageLoad = {
   visible: { opacity: 1, transition: { delay: 0.1, duration: 1 } },
 };
 
-// Slides
-const slides = [
-  {
-    image: WillImg,
-    cardTopRight: {
-      title: "Expert Tutors",
-      content: "Specialists in HSC Chemistry, Physics & Maths.",
-    },
-    cardBottomLeft: {
-      title: "Top Result",
-      content: "Highest ATAR: 99.95 by EXL student.",
-    },
-  },
-  {
-    image: LearningImg,
-    cardTopRight: {
-      title: "Small Classes",
-      content: "Max 12 students per class for better focus.",
-    },
-    cardBottomLeft: {
-      title: "Median ATAR",
-      content: "Over 99.05 median ATAR score.",
-    },
-  },
-
-  {
-    image: BoysShockImg,
-    cardTopRight: {
-      title: "Trusted by 2500+",
-      content: "Join a growing community of high achievers.",
-    },
-    cardBottomLeft: {
-      title: "Mentorship",
-      content: "1-on-1 support throughout your HSC journey.",
-    },
-  },
-];
-
 const HeroSection = () => {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
   const scrollToNextSection = () => {
     window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
   };
@@ -163,68 +114,37 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Right - Image slideshow */}
             <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-xl">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={slides[current].image}
-                  src={slides[current].image}
-                  alt={`Slide ${current + 1}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.05 }}
-                  transition={{ duration: 1 }}
-                  className="w-full h-full object-cover"
-                />
-              </AnimatePresence>
+              <motion.img
+                src={LearningImg}
+                alt="learning image"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+                className="w-full h-full object-cover"
+              />
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`top-${current}`}
-                  initial={{ opacity: 0, x: 30, y: -30 }}
-                  animate={{ opacity: 1, x: 0, y: 0 }}
-                  exit={{ opacity: 0, x: 20, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute top-2 right-2 z-10 bg-white/90 backdrop-blur-sm rounded-md p-3 text-xs w-44 shadow-md"
-                >
-                  <div className="font-semibold text-blue-600">
-                    {slides[current].cardTopRight.title}
-                  </div>
-                  <p className="text-gray-700">
-                    {slides[current].cardTopRight.content}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
+              {/* Top-right card */}
+              <motion.div
+                initial={{ opacity: 0, x: 30, y: -30 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-2 right-2 z-10 bg-white/90 backdrop-blur-sm rounded-md p-3 text-xs w-44 shadow-md"
+              >
+                <div className="font-semibold text-blue-600">Title</div>
+                <p className="text-gray-700">This is some description text.</p>
+              </motion.div>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`bottom-${current}`}
-                  initial={{ opacity: 0, x: -30, y: 30 }}
-                  animate={{ opacity: 1, x: 0, y: 0 }}
-                  exit={{ opacity: 0, x: -20, y: 20 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute bottom-2 left-2 z-10 bg-blue-600 text-white rounded-md p-3 text-xs w-44 shadow-md"
-                >
-                  <div className="font-semibold">
-                    {slides[current].cardBottomLeft.title}
-                  </div>
-                  <p>{slides[current].cardBottomLeft.content}</p>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrent(index)}
-                    className={`w-2.5 h-2.5 rounded-full transition ${
-                      current === index
-                        ? "bg-blue-600"
-                        : "bg-white/50 hover:bg-white"
-                    }`}
-                  />
-                ))}
-              </div>
+              {/* Bottom-left card */}
+              <motion.div
+                initial={{ opacity: 0, x: -30, y: 30 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute bottom-2 left-2 z-10 bg-blue-600 text-white rounded-md p-3 text-xs w-44 shadow-md"
+              >
+                <div className="font-semibold">Small Classes</div>
+                <p>Learn in a focused, personalized environment.</p>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -1,13 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BookOpen,
-  Download,
-  Star,
-  Award,
-  Users,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Download } from "lucide-react";
+import SamplePDF from "../assets/pdf/test.pdf";
 
 const UnmatchedResources = () => {
   const floatingBooks = [
@@ -56,13 +50,6 @@ const UnmatchedResources = () => {
       position: { x: "80%", y: "40%" },
       size: "medium",
     },
-  ];
-
-  const stats = [
-    { icon: BookOpen, value: "500+", label: "Study Materials" },
-    { icon: Users, value: "3,000+", label: "Students Helped" },
-    { icon: Award, value: "95%", label: "Success Rate" },
-    { icon: Star, value: "4.9/5", label: "Student Rating" },
   ];
 
   return (
@@ -130,15 +117,12 @@ const UnmatchedResources = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Each lesson, receive a printed booklet with color-coded notes
-                written by our subject specialists that comprehensively cover
-                every dot point in the NESA syllabus. Our booklets are filled
-                with unique HSC-style practice questions, homework and detailed
-                solutions. We are proud to offer our students the{" "}
-                <span className="font-semibold text-blue-700">
-                  best HSC notes in the industry
-                </span>
-                .
+                In every lesson, you’ll receive a printed booklet created by our
+                subject specialists, designed to comprehensively cover every dot
+                point in the NESA syllabus. Each booklet is structured to
+                complement your teacher’s guidance, combining clear explanations
+                with HSC-style practice questions and homework that is checked
+                to give you valuable feedback .
               </motion.p>
             </div>
 
@@ -149,14 +133,17 @@ const UnmatchedResources = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <motion.button
-                className="group flex items-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>View Sample Notes</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              <a href={SamplePDF} download="SampleNotes.pdf">
+                <motion.button
+                  className="group flex items-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 "
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {" "}
+                  <span className="text-[15px]"> View Sample Notes</span>{" "}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />{" "}
+                </motion.button>
+              </a>
             </motion.div>
           </motion.div>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Video, Users, ChevronRight } from "lucide-react";
+import { BookOpen, Video, Users } from "lucide-react";
 
 import SmartBoard from "../images/others/smartBoard.jpeg";
 import HandsUpImg from "../images/others/HandsUp.jpeg";
@@ -17,6 +17,7 @@ const ComArea = () => {
         "Access topic-by-topic lesson booklets crafted based on advanced curriculum standards with engaging visual content.",
       icon: <BookOpen className="w-8 h-8" />,
       image: SmartBoard,
+      caption: "A smart board used in interactive lessons",
       color: "from-blue-500 to-purple-600",
     },
     {
@@ -27,6 +28,7 @@ const ComArea = () => {
         "Watch detailed video explanations paired with homework booklets for comprehensive understanding at your own pace.",
       icon: <Video className="w-8 h-8" />,
       image: HandsUpImg,
+      caption: "Students learning via video tutorials",
       color: "from-purple-500 to-pink-600",
     },
     {
@@ -37,6 +39,7 @@ const ComArea = () => {
         "Join a vibrant community of learners, share knowledge, and grow together in a supportive environment.",
       icon: <Users className="w-8 h-8" />,
       image: "https://divisionsbc.ca/sites/default/files/51189/collab.jpg",
+      caption: "Students collaborating in a group",
       color: "from-pink-500 to-orange-500",
     },
   ];
@@ -52,7 +55,7 @@ const ComArea = () => {
   const currentSlide = slides[currentIndex];
 
   return (
-    <div className="relative w-full  mx-auto p-8 overflow-hidden">
+    <div className="relative w-full mx-auto p-8 overflow-hidden">
       <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden min-h-[500px]">
         {/* Animated Background Gradient */}
         <motion.div
@@ -65,7 +68,7 @@ const ComArea = () => {
         />
 
         {/* Content Grid */}
-        <div className="relative z-10 grid md:grid-cols-2 gap-8 p-8 md:p-12 items-center min-h-[500px]">
+        <div className="relative z-10 grid md:grid-cols-2 gap-8 p-8 md:p-12 items-start min-h-[500px]">
           {/* Left Content */}
           <motion.div
             key={`content-${currentSlide.id}`}
@@ -119,34 +122,18 @@ const ComArea = () => {
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             exit={{ opacity: 0, scale: 0.8, rotateY: -90 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            className="relative flex flex-col items-center"
           >
-            {/* Floating geometric shapes */}
-            <motion.div
-              animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className={`absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br ${currentSlide.color} rounded-2xl opacity-20`}
-            />
-
-            <motion.div
-              animate={{ x: [-5, 5, -5], rotate: [0, -5, 0] }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-              className={`absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-br ${currentSlide.color} rounded-full opacity-30`}
-            />
-
-            {/* Main Image and Simulation Container */}
-            <div className="relative bg-gray-100 rounded-2xl p-6 shadow-xl space-y-4">
-              {/*  Image display */}
+            {/* Main Image moved to bottom */}
+            <div className="relative bg-gray-100 rounded-2xl p-6 shadow-xl mt-8 w-full">
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
                 className="rounded-xl w-full h-68 object-cover"
               />
+              <p className="mt-2 text-center text-gray-500 italic">
+                {currentSlide.caption}
+              </p>
             </div>
           </motion.div>
         </div>

@@ -27,24 +27,17 @@ const scheduleData = [
         color: "bg-rose-50 border-l-4 border-rose-400 text-rose-800",
       },
       {
-        subject: "Standard Mathematics Advanced Year 11",
-        time: "4:30 PM",
-        type: "Maths",
-        teacher: "Anna",
-        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
-      },
-      {
-        subject: "Standard Mathematics Extension 1 Year 11",
-        time: "4:30 PM",
-        type: "Maths",
-        teacher: "Anna",
-        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
-      },
-      {
         subject: "Mathematics Year 10",
         time: "4:30 PM",
         type: "Maths",
         teacher: "Yu-Tang",
+        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
+      },
+      {
+        subject: "Standard Mathematics Extension 1 Year 11",
+        time: "6:30 PM",
+        type: "Maths",
+        teacher: "Anna",
         color: "bg-green-50 border-l-4 border-green-400 text-green-800",
       },
     ],
@@ -141,12 +134,13 @@ const CalendarPage = () => {
 
   return (
     <div className=" max-w-7xl mx-auto p-20 mt-15">
-      <h1 className="text-3xl font-bold mb-6 text-center text-[#002F67]">
+      {/* Main Title */}
+      <h1 className="text-3xl font-bold mb-5 text-center text-[#002F67]">
         Weekly Tutoring Schedule
       </h1>
 
       {/* Filter Buttons */}
-      <div className="flex justify-center gap-3 mb-8 flex-wrap">
+      <div className="flex justify-center gap-3 mb-10 flex-wrap">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -169,7 +163,7 @@ const CalendarPage = () => {
             key={index}
             className="bg-white rounded-xl shadow-lg p-4 flex flex-col min-h-[200px]"
           >
-            <div className="text-lg font-semibold mb-3 text-center text-gray-800 border-b pb-2">
+            <div className="text-lg font-semibold mb-3 text-center text-gray-800 border-b pb-2 bg-gradient-to-b from-blue-300 to-transparent rounded-t-xl">
               {day.day}
             </div>
             <div className="flex-1 space-y-2">
@@ -200,6 +194,20 @@ const CalendarPage = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Descriptive Box */}
+      <div className="mt-10 bg-blue-50  border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
+        <p className="mb-3">
+          Our timetable is here to give you a sense of what we currently run,
+          but it’s not set in stone. One of the advantages of being a small,
+          boutique tutoring service is flexibility: if your child needs support
+          in a subject or time slot that isn’t listed, we’re open to starting
+          new classes.
+        </p>
+        <p>
+          We often create classes around our students, not the other way around.
+        </p>
       </div>
 
       {/* Summary Statistics */}

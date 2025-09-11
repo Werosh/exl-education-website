@@ -7,7 +7,6 @@ import {
   ChevronDown,
   Menu,
   X,
-  BookOpen,
   Calendar,
   DollarSign,
   Phone,
@@ -211,7 +210,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl  h-28 mx-auto px-10 sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Fixed */}
+          {/* Logo */}
           <motion.div variants={navItemVariants} className="flex-shrink-0">
             <a href="/" className="flex items-center group">
               <motion.div
@@ -375,7 +374,7 @@ const Navbar = () => {
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group flex items-center"
             >
               <Calendar className="w-4 h-4 mr-1" />
-              Calendar
+              Time Table
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </motion.a>
 

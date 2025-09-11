@@ -10,14 +10,13 @@ import {
   TrendingUp,
   Target,
   CheckCircle,
-  PlayCircle,
   BarChart3,
   Medal,
   Globe,
-  Briefcase,
   ArrowRight,
   Quote,
 } from "lucide-react";
+import AboutImg from "../../images/others/Teaching.JPG";
 
 import WillImg from "../../images/teachers/will.jpeg";
 import YutangImg from "../../images/teachers/yutang_lin.jpeg";
@@ -25,7 +24,6 @@ import NicholasImg from "../../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../../images/teachers/anna.jpeg";
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const [visibleStats, setVisibleStats] = useState(false);
 
   useEffect(() => {
@@ -113,7 +111,7 @@ const About = () => {
       position: "Chemistry and English Teacher",
       qualifications: "B Commerce/B Laws @ USYD",
       experience: "96 in Chemistry, 90 in English Adv",
-      specialization: "Chemistry & English",
+      specialisation: "Chemistry & English",
       achievements: "ATAR: 99.70",
       rating: null,
       image: WillImg,
@@ -124,7 +122,7 @@ const About = () => {
       position: "Chemistry and Math Teacher",
       qualifications: "B Actuarial/B Computer Sci @ UNSW",
       experience: "93 in Chemistry, 94 in Math Ext 1",
-      specialization: "Chemistry & Math",
+      specialisation: "Chemistry & Math",
       achievements: "ATAR: 99.15",
       rating: null,
       image: YutangImg,
@@ -134,7 +132,7 @@ const About = () => {
       position: "Chemistry and Math Teacher",
       qualifications: "B Physiotherapy @ USYD",
       experience: "94 in Chemistry, 97 in Math Ext 1",
-      specialization: "Chemistry & Math",
+      specialisation: "Chemistry & Math",
       achievements: "ATAR: 99.45",
       rating: null,
       image: NicholasImg,
@@ -145,7 +143,7 @@ const About = () => {
       qualifications: "B. Exercise Sci/ M. Physiotherapy @ UNSW",
       experience:
         "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
-      specialization: "Mathematics & Science",
+      specialisation: "Mathematics & Science",
       achievements: "ATAR: 99.35",
       rating: null,
       image: AnnaImg,
@@ -155,7 +153,7 @@ const About = () => {
       position: "Chemistry Teacher",
       qualifications: "B DentHSc/M Dentistry @ Griffith",
       experience: "97 in Chemistry, Rank 2 in NBHS",
-      specialization: "Chemistry",
+      specialisation: "Chemistry",
       achievements: "ATAR: 99.75",
       rating: null,
       image:
@@ -239,12 +237,23 @@ const About = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.section
-        className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-24 mt-15"
+        className="relative text-white py-24 mt-15"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-transparent"></div>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://steelcase-res.cloudinary.com/image/upload/c_fill,dpr_auto,q_70,h_656,w_1166/v1480989492/www.steelcase.com/2016/12/06/16-0015660.jpg" // replace with your image path
+            alt="Hero background"
+            className="w-full h-full object-cover"
+          />
+          {/* Blue + white gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-transparent"></div>
+        </div>
+
+        {/* Content */}
         <div className="relative container mx-auto px-6">
           <motion.div
             className="max-w-4xl"
@@ -256,15 +265,15 @@ const About = () => {
               className="text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               variants={itemVariants}
             >
-              Transforming Academic Excellence
+              Helping HSC Students Unlock Their Full Potential
             </motion.h1>
             <motion.p
-              className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed"
+              className="text-xl lg:text-xl mb-8 text-blue-100 leading-relaxed"
               variants={itemVariants}
             >
-              Empowering HSC students to achieve exceptional results through
-              expert instruction, comprehensive resources, and personalized
-              support.
+              We believe every student can achieve excellence with the right
+              guidance. That’s why we provide personalised lessons, patient
+              explanations, and ongoing support to build confidence and results.
             </motion.p>
             <motion.div
               className="flex flex-wrap gap-6 text-sm text-blue-200"
@@ -304,7 +313,7 @@ const About = () => {
               <div className="w-20 h-1 bg-blue-600 mb-8"></div>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  E&L Education was founded by a group of high-achieving
+                  EXL Education was founded by a group of high-achieving
                   graduates who understood the difference that could be made in
                   the academic success of students through expert guidance and
                   quality education with targeted support for HSC excellence.
@@ -326,34 +335,59 @@ const About = () => {
               </div>
             </motion.div>
 
-            <motion.div className="relative" variants={itemVariants}>
+            <motion.div
+              className="relative"
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="bg-blue-50 rounded-2xl p-8">
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Our Courses
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    We offer comprehensive HSC programs designed to provide
-                    students with the knowledge and skills needed for success.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-gray-700">
-                        All HSC Subjects Covered
-                      </span>
+                <div className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center gap-6">
+                  {/* Image Section */}
+                  <motion.img
+                    src={AboutImg}
+                    alt="Our Courses"
+                    className="w-full h-64 object-cover rounded-xl shadow-md"
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  />
+
+                  {/* Text Section */}
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      Our Courses
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      We offer comprehensive HSC programs designed to provide
+                      students with the knowledge and skills needed for success.
+                    </p>
+
+                    <div className="space-y-3">
+                      {[
+                        "All HSC Subjects Covered",
+                        "Small Class Sizes",
+                        "Individual Attention",
+                      ].map((point, i) => (
+                        <motion.div
+                          key={i}
+                          className="flex items-center justify-center gap-3"
+                          initial={{ opacity: 0, y: 15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: i * 0.2 }}
+                        >
+                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                          <span className="text-gray-700">{point}</span>
+                        </motion.div>
+                      ))}
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-gray-700">Small Class Sizes</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-gray-700">
-                        Individual Attention
-                      </span>
-                    </div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -361,8 +395,69 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Core Values */}
+      {/* Map Section */}
       <motion.section
+        className="mt-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        {/* Subtitle */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-4">
+          We are located 4 minutes away from Castle Hill Metro Station
+        </h2>
+
+        {/* Google Map */}
+        <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44588.051435741894!2d150.95647298128782!3d-33.730146525310225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a3ef6f0260a9%3A0x5017d681632b030!2sCastle%20Hill%20NSW%202154%2C%20Australia!5eo!3m2!1sen!2slk!4v1757613796227!5m2!1sen!2slk"
+            width="100%"
+            height="100%"
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        {/* Directions Button */}
+        <div className="flex justify-center mb-10">
+          <a
+            href="https://maps.app.goo.gl/g56cCZZ2bLE68cMU7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white font-medium px-6 py-3 rounded-xl shadow-md hover:bg-blue-700 transition"
+          >
+            Get Directions
+          </a>
+        </div>
+
+        {/* Clinic Pictures */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceE92HXubuPIDyr61ND8hJ0Ly7UJTu3Ur6w&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNjoiGi2XTLaM8UDs_5ZrjjZWVXjfhTqNQg&s",
+            "https://www.hcde-texas.org/cms/lib/TX50000649/Centricity//Domain/110/20230627_AE-building-front.jpg",
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              className="rounded-xl overflow-hidden shadow-lg"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+            >
+              <img
+                src={img}
+                alt={`Clinic view ${i + 1}`}
+                className="w-full h-64 object-cover"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Core Values */}
+      {/* <motion.section
         className="py-20 px-6 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
@@ -408,7 +503,7 @@ const About = () => {
             })}
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Course Structure */}
       <motion.section
@@ -591,7 +686,7 @@ const About = () => {
 
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-2">
-                        Specialization
+                        specialisation
                       </h4>
                       <p className="text-gray-600 text-sm">
                         {teacher.specialization}
