@@ -110,12 +110,6 @@ const Footer = () => {
     },
   ];
 
-  const stats = [
-    { icon: Users, number: "2,500+", label: "Students Helped" },
-    { icon: Award, number: "99.05", label: "Median ATAR" },
-    { icon: Clock, number: "10+", label: "Years Experience" },
-  ];
-
   return (
     <footer className="bg-gradient-to-br from-blue-900 via-[#002F67] to-blue-900 relative overflow-hidden">
       {/* Curved Line Decorations at Top */}
@@ -235,7 +229,7 @@ const Footer = () => {
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 className="w-12 h-12 bg-gradient-to-br from-blue-300 to-blue-500 rounded-xl flex items-center justify-center shadow-lg"
               >
-                <BookOpen className="w-7 h-7 text-white" />
+                <img src="/logo.png" alt="" />
               </motion.div>
               <div>
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
@@ -253,33 +247,13 @@ const Footer = () => {
               Education, providing a premier combination of resources and
               teachers.
             </motion.p>
-
-            {/* Contact Info */}
-            <motion.div variants={itemVariants} className="space-y-3">
-              {contactInfo.map((contact, index) => (
-                <motion.a
-                  key={index}
-                  href={contact.href}
-                  whileHover={{ x: 5, scale: 1.02 }}
-                  className="flex items-center space-x-3 text-blue-200 hover:text-white transition-all duration-200 group"
-                >
-                  <motion.div
-                    whileHover={{ rotate: 5 }}
-                    className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-200"
-                  >
-                    <contact.icon className="w-4 h-4" />
-                  </motion.div>
-                  <span className="text-sm">{contact.text}</span>
-                </motion.a>
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-6 flex items-center">
               <div className="w-2 h-2 bg-blue-300 rounded-full mr-3"></div>
-              Quick Links
+              Why us?
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
@@ -331,7 +305,7 @@ const Footer = () => {
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold text-white mb-6 flex items-center">
               <div className="w-2 h-2 bg-blue-300 rounded-full mr-3"></div>
-              Stay Connected
+              Contact
             </h4>
 
             {/* Social Links */}
@@ -354,6 +328,26 @@ const Footer = () => {
                   </motion.a>
                 ))}
               </div>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div variants={itemVariants} className="space-y-3 mt-5">
+              {contactInfo.map((contact, index) => (
+                <motion.a
+                  key={index}
+                  href={contact.href}
+                  whileHover={{ x: 5, scale: 1.02 }}
+                  className="flex items-center space-x-3 text-blue-200 hover:text-white transition-all duration-200 group"
+                >
+                  <motion.div
+                    whileHover={{ rotate: 5 }}
+                    className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-200"
+                  >
+                    <contact.icon className="w-4 h-4" />
+                  </motion.div>
+                  <span className="text-sm">{contact.text}</span>
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
         </div>

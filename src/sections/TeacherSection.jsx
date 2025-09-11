@@ -28,7 +28,7 @@ const TeacherSection = () => {
       score: "99.70",
       degree: "B Commerce/B Laws @ USYD",
       experience: "96 in Chemistry, 90 in English Adv",
-      specialization: "Chemistry and English Teacher",
+      specialisation: "Chemistry and English Teacher",
       image: WillImg,
     },
     {
@@ -38,7 +38,7 @@ const TeacherSection = () => {
       score: "99.15",
       degree: "B Actuarial/B Computer Sci @ UNSW",
       experience: "93 in Chemistry, 94 in Math Ext 1",
-      specialization: "Chemistry and Math Teacher",
+      specialisation: "Chemistry and Math Teacher",
       image: YutangImg,
     },
     {
@@ -48,7 +48,7 @@ const TeacherSection = () => {
       score: "99.45",
       degree: "B Physiotherapy @ USYD",
       experience: "94 in Chemistry, 97 in Math Ext 1",
-      specialization: "Chemistry and Math Teacher",
+      specialisation: "Chemistry and Math Teacher",
       image: NicholasImg,
     },
     {
@@ -59,7 +59,7 @@ const TeacherSection = () => {
       degree: "B. Exercise Sci/ M. Physiotherapy @ UNSW",
       experience:
         "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
-      specialization: "Maths & Science Tutor",
+      specialisation: "Maths & Science Tutor",
       image: AnnaImg,
     },
     {
@@ -69,7 +69,7 @@ const TeacherSection = () => {
       score: "99.75",
       degree: "B DentHSc/M Dentistry @ Griffith",
       experience: "97 in Chemistry, Rank 2 in NBHS",
-      specialization: "Chemistry Teacher",
+      specialisation: "Chemistry Teacher",
       image:
         "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=400&h=400&fit=crop&crop=face",
     },

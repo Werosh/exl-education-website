@@ -48,11 +48,6 @@ const TermsTable = ({ subjectName, termDetails }) => {
               >
                 <div className="bg-gradient-to-br from-blue-400 to-blue-500 p-[1px] rounded-2xl">
                   <div className="bg-white rounded-2xl p-6 h-full">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mb-4 mx-auto shadow-lg">
-                      <span className="text-white font-semibold text-lg">
-                        {index + 1}
-                      </span>
-                    </div>
                     <h3 className="text-2xl font-medium text-slate-800 mb-6 text-center tracking-wide">
                       {term.name}
                     </h3>
