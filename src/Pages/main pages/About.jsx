@@ -85,7 +85,7 @@ const About = () => {
       icon: BarChart3,
       title: "Performance Analytics",
       description:
-        "Track your progress with detailed analytics and personalized feedback to optimize learning outcomes.",
+        "Track your progress with detailed analytics and personalised feedback to optimise learning outcomes.",
       features: [
         "Regular assessment reports",
         "Progress tracking dashboard",
@@ -197,7 +197,7 @@ const About = () => {
       name: "Priya Patel",
       school: "Knox Elite High School",
       quote:
-        "The personalized approach and expert guidance helped me achieve beyond my expectations. The structured curriculum and supportive environment made all the difference.",
+        "The personalised approach and expert guidance helped me achieve beyond my expectations. The structured curriculum and supportive environment made all the difference.",
       subjects: "Mathematics Extension 2, Physics, Chemistry",
     },
     {
@@ -411,7 +411,7 @@ const About = () => {
         {/* Google Map */}
         <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44588.051435741894!2d150.95647298128782!3d-33.730146525310225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a3ef6f0260a9%3A0x5017d681632b030!2sCastle%20Hill%20NSW%202154%2C%20Australia!5eo!3m2!1sen!2slk!4v1757613796227!5m2!1sen!2slk"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4134.692852475424!2d151.0073179!3d-33.731624599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10dd3e88bd5%3A0xde32952464e84d60!2sCastle%20Hill!5e1!3m2!1sen!2slk!4v1757647661772!5m2!1sen!2slk"
             width="100%"
             height="100%"
             allowFullScreen={true}
@@ -520,7 +520,7 @@ const About = () => {
             </h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive programs designed to maximize student potential and
+              Comprehensive programs designed to maximise student potential and
               academic achievement
             </p>
           </motion.div>

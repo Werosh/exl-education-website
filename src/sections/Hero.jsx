@@ -2,6 +2,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 import LearningImg from "../images/others/learning.jpeg";
+import { useNavigate } from "react-router-dom";
 
 // Animation Variants
 const fadeInUp = {
@@ -19,6 +20,19 @@ const pageLoad = {
 };
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const NavigateAbout = () => {
+    navigate("/about");
+  };
+
+  const NavigateNext = () => {
+    const element = document.getElementById("feature");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const scrollToNextSection = () => {
     window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
   };
@@ -76,11 +90,12 @@ const HeroSection = () => {
                 animate="visible"
                 custom={3}
               >
-                Learn why students love EXL education for Chemistry, Physics &
-                Maths.
+                Here at EXL Education, we make Chemistry, Physics and
+                Mathematics easier to grasp while providing an enjoyable
+                experience that builds their passion for these subjects!
               </motion.p>
 
-              <motion.div
+              {/* <motion.div
                 className="flex space-x-12"
                 variants={fadeInUp}
                 initial="hidden"
@@ -95,7 +110,7 @@ const HeroSection = () => {
                   <div className="text-3xl font-bold text-gray-900">99.05</div>
                   <div className="text-sm text-gray-600">median ATAR</div>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               <motion.div
                 className="flex space-x-4 pt-4"
@@ -104,10 +119,16 @@ const HeroSection = () => {
                 animate="visible"
                 custom={5}
               >
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:scale-105 active:scale-95 transition">
-                  Trial now
+                <button
+                  onClick={NavigateAbout}
+                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:scale-105 active:scale-95 transition"
+                >
+                  Learn more about us
                 </button>
-                <button className="text-blue-600 flex items-center space-x-2 hover:translate-x-1 transition">
+                <button
+                  onClick={NavigateNext}
+                  className="text-blue-600 flex items-center space-x-2 hover:translate-x-1 transition"
+                >
                   <span>Our difference</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -125,7 +146,7 @@ const HeroSection = () => {
               />
 
               {/* Top-right card */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: 30, y: -30 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -133,7 +154,7 @@ const HeroSection = () => {
               >
                 <div className="font-semibold text-blue-600">Title</div>
                 <p className="text-gray-700">This is some description text.</p>
-              </motion.div>
+              </motion.div> */}
 
               {/* Bottom-left card */}
               <motion.div
@@ -143,7 +164,7 @@ const HeroSection = () => {
                 className="absolute bottom-2 left-2 z-10 bg-blue-600 text-white rounded-md p-3 text-xs w-44 shadow-md"
               >
                 <div className="font-semibold">Small Classes</div>
-                <p>Learn in a focused, personalized environment.</p>
+                <p>Learn in a focused, personalised environment.</p>
               </motion.div>
             </div>
           </div>

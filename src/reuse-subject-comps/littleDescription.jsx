@@ -100,7 +100,7 @@ const LittleDescription = () => {
                 />
                 <p className="text-gray-700">
                   If you miss a session or need extra support, our intelligent
-                  system automatically provides personalized catch-up materials
+                  system automatically provides personalised catch-up materials
                   and one-on-one tutoring sessions.
                 </p>
               </motion.div>

@@ -374,7 +374,7 @@ const Navbar = () => {
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group flex items-center"
             >
               <Calendar className="w-4 h-4 mr-1" />
-              Time Table
+              Timetable
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </motion.a>
 
@@ -579,7 +579,7 @@ const Navbar = () => {
                   className="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
                 >
                   <Calendar className="w-4 h-4 mr-2" />
-                  Calendar
+                  Timetable
                 </motion.a>
 
                 <motion.a
