@@ -199,7 +199,7 @@ const LittleDescription = () => {
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
           variants={itemVariants}
         >
@@ -221,7 +221,7 @@ const LittleDescription = () => {
               <div className="text-gray-600 text-sm">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );
