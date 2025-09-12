@@ -70,7 +70,7 @@ const HeroSection = () => {
                 animate="visible"
                 custom={1}
               >
-                Small classes, big results
+                Small Classes, Big Results
               </motion.span>
               <motion.h1
                 className="text-5xl lg:text-6xl font-bold text-gray-600 leading-tight"

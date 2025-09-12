@@ -62,17 +62,6 @@ const TeacherSection = () => {
       specialisation: "Maths & Science Tutor",
       image: AnnaImg,
     },
-    {
-      id: 2,
-      name: "Matthew Chen",
-      subject: "Chemistry",
-      score: "99.75",
-      degree: "B DentHSc/M Dentistry @ Griffith",
-      experience: "97 in Chemistry, Rank 2 in NBHS",
-      specialisation: "Chemistry Teacher",
-      image:
-        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=400&h=400&fit=crop&crop=face",
-    },
   ];
 
   useEffect(() => {

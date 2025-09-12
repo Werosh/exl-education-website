@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "../../sections/Hero";
 import Features from "../../sections/FeaturesSection";
 import Subjects from "../../sections/SubjectsSection";
-import Testimonials from "../../sections/TestimonialsSection";
+// import Testimonials from "../../sections/TestimonialsSection";
 import AboutSection from "../../sections/AboutSection";
 import TeacherSection from "../../sections/TeacherSection";
 
@@ -30,7 +30,7 @@ const AnimatedLandingPage = () => {
       <Subjects />
 
       {/* Testimonials Section */}
-      <Testimonials />
+      {/* <Testimonials /> */}
     </div>
   );
 };

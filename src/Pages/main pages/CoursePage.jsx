@@ -391,7 +391,7 @@ const CoursePage = () => {
                     </p>
 
                     {/* Advanced Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
+                    {/* <div className="grid grid-cols-3 gap-4 mb-6">
                       <div className="text-center p-3 bg-gray-50 rounded-lg">
                         <div className="text-lg font-bold text-gray-900">
                           {subject.totalStudents}
@@ -411,7 +411,7 @@ const CoursePage = () => {
                         </div>
                         <div className="text-xs text-gray-600">Complete</div>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Course List - Always Visible */}
                     <div className="space-y-4 pt-6 border-t border-gray-100">

@@ -161,36 +161,36 @@ const About = () => {
     },
   ];
 
-  const achievements = [
-    {
-      icon: Award,
-      value: "99.45",
-      label: "Average ATAR",
-      subtitle: "Top 1% state ranking",
-      color: "text-blue-600",
-    },
-    {
-      icon: Medal,
-      value: "State Ranking",
-      label: "Marks Achieved",
-      subtitle: "Multiple subjects",
-      color: "text-blue-700",
-    },
-    {
-      icon: GraduationCap,
-      value: "100+",
-      label: "University Placements",
-      subtitle: "Top-tier institutions",
-      color: "text-blue-800",
-    },
-    {
-      icon: TrendingUp,
-      value: "500+",
-      label: "Successful Graduates",
-      subtitle: "Over 8 years",
-      color: "text-blue-900",
-    },
-  ];
+  // const achievements = [
+  //   {
+  //     icon: Award,
+  //     value: "99.45",
+  //     label: "Average ATAR",
+  //     subtitle: "Top 1% state ranking",
+  //     color: "text-blue-600",
+  //   },
+  //   {
+  //     icon: Medal,
+  //     value: "State Ranking",
+  //     label: "Marks Achieved",
+  //     subtitle: "Multiple subjects",
+  //     color: "text-blue-700",
+  //   },
+  //   {
+  //     icon: GraduationCap,
+  //     value: "100+",
+  //     label: "University Placements",
+  //     subtitle: "Top-tier institutions",
+  //     color: "text-blue-800",
+  //   },
+  //   {
+  //     icon: TrendingUp,
+  //     value: "500+",
+  //     label: "Successful Graduates",
+  //     subtitle: "Over 8 years",
+  //     color: "text-blue-900",
+  //   },
+  // ];
 
   const testimonials = [
     {
@@ -567,7 +567,7 @@ const About = () => {
       </motion.section>
 
       {/* Achievements */}
-      <motion.section
+      {/* <motion.section
         className="py-20 px-6 bg-blue-50"
         variants={containerVariants}
         initial="hidden"
@@ -617,7 +617,7 @@ const About = () => {
             })}
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Faculty Section */}
       <motion.section

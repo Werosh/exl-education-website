@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Download } from "lucide-react";
-import SamplePDF from "../assets/pdf/test.pdf";
+import SamplePDF from "../assets/pdf/FILE_7572.pdf";
 
 const UnmatchedResources = () => {
   const floatingBooks = [
