@@ -317,9 +317,13 @@ const ContactUsPage = () => {
                   Office Hours
                 </h3>
                 <div className="text-gray-600 space-y-1">
-                  <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                  <p>Saturday: 10:00 AM - 6:00 PM</p>
-                  <p>Sunday: 12:00 PM - 5:00 PM</p>
+                  <p>Friday: 3:30 PM – 9:00 PM</p>
+                  <p>Saturday: 10:30 AM – 5:30 PM</p>
+                  <p>Sunday: 10:30 AM – 6:00 PM</p>
+                  <p>Monday: 3:30 PM – 9:00 PM</p>
+                  <p>Tuesday: 3:30 PM – 9:00 PM</p>
+                  <p>Wednesday: 3:30 PM – 9:00 PM</p>
+                  <p>Thursday: 3:30 PM – 9:00 PM</p>
                 </div>
               </div>
             </div>
@@ -328,7 +332,7 @@ const ContactUsPage = () => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-blue-100">
               <div className="h-80">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18..."
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4134.692852475424!2d151.0073179!3d-33.731624599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10dd3e88bd5%3A0xde32952464e84d60!2sCastle%20Hill!5e1!3m2!1sen!2slk!4v1757647661772!5m2!1sen!2slk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

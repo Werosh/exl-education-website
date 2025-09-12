@@ -197,7 +197,7 @@ const TeacherSection = () => {
             viewport={{ once: true }}
           >
             Our distinguished faculty combines academic excellence with
-            practical expertise, delivering personalized education that
+            practical expertise, delivering personalised education that
             transforms learning experiences and unlocks student potential.
           </motion.p>
         </motion.div>
@@ -349,7 +349,7 @@ const TeacherSection = () => {
                       </div>
                     </motion.div>
 
-                    <motion.div
+                    {/* <motion.div
                       className="border-t pt-3 md:pt-4"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -362,7 +362,7 @@ const TeacherSection = () => {
                       <p className="text-xs md:text-sm text-gray-700 leading-tight">
                         {teacher.specialization}
                       </p>
-                    </motion.div>
+                    </motion.div> */}
                   </div>
                 </motion.div>
               ))}

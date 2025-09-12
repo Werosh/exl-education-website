@@ -329,55 +329,10 @@ const CoursePage = () => {
             {/* Right Side - Stats Card */}
             <motion.div className="relative" variants={itemVariants}>
               <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Join Elite Students
-                  </h3>
-                  <p className="text-gray-600">
-                    Achieving excellence worldwide
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 gap-6">
-                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-2xl">
-                    <div className="flex items-center gap-3">
-                      <Users className="w-8 h-8 text-blue-600" />
-                      <div>
-                        <div className="font-bold text-gray-900">6,424</div>
-                        <div className="text-sm text-gray-600">
-                          Active Students
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-2xl">🎓</div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-4 bg-green-50 rounded-2xl">
-                    <div className="flex items-center gap-3">
-                      <TrendingUp className="w-8 h-8 text-green-600" />
-                      <div>
-                        <div className="font-bold text-gray-900">98.7%</div>
-                        <div className="text-sm text-gray-600">
-                          Success Rate
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-2xl">📈</div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-4 bg-amber-50 rounded-2xl">
-                    <div className="flex items-center gap-3">
-                      <Star className="w-8 h-8 text-amber-600 fill-current" />
-                      <div>
-                        <div className="font-bold text-gray-900">4.9/5</div>
-                        <div className="text-sm text-gray-600">
-                          Student Rating
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-2xl">⭐</div>
-                  </div>
-                </div>
+                <img
+                  src="https://img.freepik.com/free-vector/online-courses-tutorials_52683-37860.jpg"
+                  alt="Courses image"
+                />
               </div>
             </motion.div>
           </div>

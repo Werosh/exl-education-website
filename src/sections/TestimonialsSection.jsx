@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
       name: "Sarah Johnson",
       role: "Computer Science Graduate",
       institution: "Stanford University",
-      text: "EXL Education completely transformed my understanding of programming. The personalized approach and expert mentors helped me land my dream job at a top tech company.",
+      text: "EXL Education completely transformed my understanding of programming. The personalised approach and expert mentors helped me land my dream job at a top tech company.",
       rating: 5,
       score: "A+",
       image:
