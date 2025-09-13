@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   Mail,
   Phone,
-  MapPin,
+  MapPinHouse,
   Send,
   User,
   MessageSquare,
@@ -280,7 +280,7 @@ const ContactUsPage = () => {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <MapPin className="w-6 h-6 text-blue-600" />
+                    <MapPinHouse className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">

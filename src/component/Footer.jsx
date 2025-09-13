@@ -1,19 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  BookOpen,
   Mail,
   Phone,
-  MapPin,
+  MapPinHouse,
   Facebook,
-  Twitter,
   Instagram,
-  Linkedin,
   ArrowUp,
-  Calendar,
-  Award,
-  Users,
-  Clock,
 } from "lucide-react";
 
 // Animation Variants
@@ -91,7 +84,7 @@ const Footer = () => {
       href: "mailto:admin@exleducation.com.au",
     },
     {
-      icon: MapPin,
+      icon: MapPinHouse,
       text: "Suite 29/10 Old Castle Hill Rd, Castle Hill NSW 2154",
       href: "#",
     },
@@ -341,7 +334,7 @@ const Footer = () => {
                 >
                   <motion.div
                     whileHover={{ rotate: 5 }}
-                    className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-200"
+                    className="w-8 h-8  rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-200"
                   >
                     <contact.icon className="w-4 h-4" />
                   </motion.div>
