@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Download } from "lucide-react";
+import { ArrowRight, BookOpen, Download, FerrisWheel } from "lucide-react";
 import SamplePDF from "../assets/pdf/FILE_7572.pdf";
 
 const UnmatchedResources = () => {
@@ -127,24 +127,47 @@ const UnmatchedResources = () => {
             </div>
 
             {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <a href={SamplePDF} download="SampleNotes.pdf">
-                <motion.button
-                  className="group flex items-center space-x-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 "
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {" "}
-                  <span className="text-[15px]"> View Sample Notes</span>{" "}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />{" "}
-                </motion.button>
-              </a>
-            </motion.div>
+            <div className="flex space-x-6">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <a href={SamplePDF} target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    className="group flex items-center space-x-3 bg-[#002F67] hover:bg-white hover:border-2 hover:border-black hover:text-gray-700  text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 "
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {" "}
+                    <span className="text-[15px]"> View Sample Notes</span>{" "}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />{" "}
+                  </motion.button>
+                </a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <a href="/contact" rel="noopener noreferrer">
+                  <motion.button
+                    className="group flex items-center space-x-3 border-2 text-gray-800 hover:bg-[#002F67] hover:text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 "
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {" "}
+                    <span className="text-[15px]">
+                      {" "}
+                      Start Your Journey
+                    </span>{" "}
+                    <FerrisWheel className="w-5 h-5 group-hover:translate-x-1 transition-transform " />{" "}
+                  </motion.button>
+                </a>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Right Column (Floating Books) */}
