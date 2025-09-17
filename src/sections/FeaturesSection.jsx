@@ -9,29 +9,30 @@ const Features = () => {
     {
       number: "1",
       icon: BookOpen,
-      title: "Personalised Assessment",
+      title: "Simple Onboarding",
       description:
-        "We start with a clear understanding of your child’s strengths and learning gaps.",
+        "Get started quickly with an easy signup and personalized setup experience.",
     },
     {
       number: "2",
       icon: Users,
-      title: "Structured Lessons",
-      description: "Step-by-step explanations aligned with school curriculum.",
+      title: "Community Support",
+      description:
+        "Engage with peers, mentors, and experts who are ready to help at every step.",
     },
     {
       number: "3",
       icon: Award,
-      title: "Practice & Feedback",
+      title: "Recognition & Rewards",
       description:
-        "Regular exercises with feedback to build confidence and mastery. ",
+        "Celebrate milestones and achievements with badges, certificates, and more.",
     },
     {
       number: "4",
       icon: Zap,
-      title: "Progress Tracking",
+      title: "Seamless Progress",
       description:
-        "Parents and students see measurable improvement every term.",
+        "Track growth effortlessly with real-time updates and transparent reporting.",
     },
   ];
 

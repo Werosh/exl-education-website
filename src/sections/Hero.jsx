@@ -62,26 +62,30 @@ const HeroSection = () => {
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left */}
-            <div className="flex flex-col justify-center space-y-8">
+            <div className="flex flex-col justify-center space-y-8 Montserrat-font ">
               <motion.span
-                className="text-sm text-blue-600 font-medium"
+                className="text-sm text-gray-600 font-medium"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
                 custom={1}
               >
-                Small Classes, Big Results
+                Find your success in{" "}
+                <span className="text-blue-600 font-bold">STEM</span>
               </motion.span>
               <motion.h1
-                className="text-5xl lg:text-6xl font-bold text-gray-600 leading-tight"
+                className="text-5xl lg:text-6xl  text-gray-600 leading-tight Montserrat-font "
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
                 custom={2}
               >
-                Year 11 & 12 HSC{" "}
-                <span className="text-[#002F67]">Tutoring Specialist</span> in
-                Sydney
+                Years 7-12 <br />
+                <span className="text-[#002F67] Montserrat-font">
+                  Science and Maths Specialists
+                  <br />
+                </span>{" "}
+                in Castle Hill
               </motion.h1>
               <motion.p
                 className="text-lg text-gray-600 italic max-w-lg"
@@ -121,7 +125,7 @@ const HeroSection = () => {
               >
                 <button
                   onClick={NavigateAbout}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:scale-105 active:scale-95 transition"
+                  className="bg-[#002F67] text-white px-8 py-3 rounded-lg hover:scale-105 active:scale-95 transition"
                 >
                   Learn more about us
                 </button>
@@ -157,7 +161,7 @@ const HeroSection = () => {
               </motion.div> */}
 
               {/* Bottom-left card */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: -30, y: 30 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -165,7 +169,7 @@ const HeroSection = () => {
               >
                 <div className="font-semibold">Small Classes</div>
                 <p>Learn in a focused, personalised environment.</p>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>

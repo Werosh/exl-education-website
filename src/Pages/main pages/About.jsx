@@ -265,15 +265,16 @@ const About = () => {
               className="text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               variants={itemVariants}
             >
-              Helping HSC Students Unlock Their Full Potential
+              Helping all students unlock their full potential
             </motion.h1>
             <motion.p
               className="text-xl lg:text-xl mb-8 text-blue-100 leading-relaxed"
               variants={itemVariants}
             >
               We believe every student can achieve excellence with the right
-              guidance. That’s why we provide personalised lessons, patient
-              explanations, and ongoing support to build confidence and results.
+              guidance. That's why we help students and parents understand NSW's
+              high school journey as a whole from <br /> year 7 foundations to
+              year 12 final exams.
             </motion.p>
             <motion.div
               className="flex flex-wrap gap-6 text-sm text-blue-200"
@@ -779,14 +780,16 @@ const About = () => {
               difference that expert guidance and comprehensive support can make
               in your academic journey.
             </p>
-            <motion.button
-              className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Start Your Journey
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            <a href="/contact">
+              <motion.button
+                className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Start Your Journey
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </a>
           </motion.div>
         </div>
       </motion.section>

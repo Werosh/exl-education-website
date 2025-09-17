@@ -24,7 +24,7 @@ const TeacherSection = () => {
     {
       id: 1,
       name: "William Leong",
-      subject: "Chemistry & English",
+      subject: "Chemistry",
       score: "99.70",
       degree: "B Commerce/B Laws @ USYD",
       experience: "96 in Chemistry, 90 in English Adv",
