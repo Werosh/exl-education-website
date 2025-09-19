@@ -53,7 +53,7 @@ const HeroSection = () => {
         >
           <path d="M0,100 C100,0 300,0 400,100 L400,0 L0,0 Z" fill="#DBEAFE" />
         </svg>
-        <div className="absolute bottom-[-60px] right-[-60px] w-80 h-80 bg-blue-700 rounded-full opacity-90 z-[-1]" />
+        <div className="absolute bottom-0 right-0 w-50 h-50 bg-blue-700/65 rounded-full opacity-90 z-[-1]" />
         <div className="absolute top-1/4 right-0 w-48 h-48 rounded-full bg-blue-300 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(45deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
         <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-blue-900 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(135deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
       </div>
@@ -99,25 +99,8 @@ const HeroSection = () => {
                 experience that builds their passion for these subjects!
               </motion.p>
 
-              {/* <motion.div
-                className="flex space-x-12"
-                variants={fadeInUp}
-                initial="hidden"
-                animate="visible"
-                custom={4}
-              >
-                <div>
-                  <div className="text-3xl font-bold text-gray-900">2,500+</div>
-                  <div className="text-sm text-gray-600">students helped</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-gray-900">99.05</div>
-                  <div className="text-sm text-gray-600">median ATAR</div>
-                </div>
-              </motion.div> */}
-
               <motion.div
-                className="flex space-x-4 pt-4"
+                className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -131,7 +114,7 @@ const HeroSection = () => {
                 </button>
                 <button
                   onClick={NavigateNext}
-                  className="text-blue-600 flex items-center space-x-2 hover:translate-x-1 transition"
+                  className="text-blue-600 flex items-center justify-center space-x-2 hover:translate-x-1 transition"
                 >
                   <span>Our difference</span>
                   <ArrowRight className="w-4 h-4" />

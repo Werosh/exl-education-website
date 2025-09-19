@@ -127,7 +127,7 @@ const UnmatchedResources = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="flex space-x-6">
+            <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -136,16 +136,16 @@ const UnmatchedResources = () => {
               >
                 <a href={SamplePDF} target="_blank" rel="noopener noreferrer">
                   <motion.button
-                    className="group flex items-center space-x-3 bg-[#002F67] hover:bg-white hover:border-2 hover:border-black hover:text-gray-700  text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 "
+                    className="group flex items-center justify-center sm:justify-between space-x-3 bg-[#002F67] hover:bg-white hover:border-2 hover:border-black hover:text-gray-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {" "}
-                    <span className="text-[15px]"> View Sample Notes</span>{" "}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />{" "}
+                    <span className="text-[15px]">View Sample Notes</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </a>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -154,16 +154,12 @@ const UnmatchedResources = () => {
               >
                 <a href="/contact" rel="noopener noreferrer">
                   <motion.button
-                    className="group flex items-center space-x-3 border-2 text-gray-800 hover:bg-[#002F67] hover:text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 "
+                    className="group flex items-center justify-center sm:justify-between space-x-3 border-2 text-gray-800 hover:bg-[#002F67] hover:text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {" "}
-                    <span className="text-[15px]">
-                      {" "}
-                      Start Your Journey
-                    </span>{" "}
-                    <FerrisWheel className="w-5 h-5 group-hover:translate-x-1 transition-transform " />{" "}
+                    <span className="text-[15px]">Start Your Journey</span>
+                    <FerrisWheel className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </a>
               </motion.div>
