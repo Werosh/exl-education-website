@@ -31,79 +31,79 @@ const About = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const coreValues = [
-    {
-      icon: Target,
-      title: "Excellence in Education",
-      description:
-        "Committed to delivering the highest standard of academic instruction and support for HSC success.",
-    },
-    {
-      icon: Users,
-      title: "Personalized Learning",
-      description:
-        "Tailored teaching approaches that adapt to each student's unique learning style and academic needs.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Proven Results",
-      description:
-        "Consistent track record of helping students achieve top marks and secure university placements.",
-    },
-    {
-      icon: Globe,
-      title: "Comprehensive Support",
-      description:
-        "Complete academic ecosystem including study materials, mock exams, and career guidance.",
-    },
-  ];
+  // const coreValues = [
+  //   {
+  //     icon: Target,
+  //     title: "Excellence in Education",
+  //     description:
+  //       "Committed to delivering the highest standard of academic instruction and support for HSC success.",
+  //   },
+  //   {
+  //     icon: Users,
+  //     title: "Personalized Learning",
+  //     description:
+  //       "Tailored teaching approaches that adapt to each student's unique learning style and academic needs.",
+  //   },
+  //   {
+  //     icon: TrendingUp,
+  //     title: "Proven Results",
+  //     description:
+  //       "Consistent track record of helping students achieve top marks and secure university placements.",
+  //   },
+  //   {
+  //     icon: Globe,
+  //     title: "Comprehensive Support",
+  //     description:
+  //       "Complete academic ecosystem including study materials, mock exams, and career guidance.",
+  //   },
+  // ];
 
-  const courseStructure = [
-    {
-      icon: Users,
-      title: "Expert Faculty",
-      description:
-        "Learn from high-achieving HSC graduates and experienced educators with proven teaching methodologies.",
-      features: [
-        "University-qualified instructors",
-        "Subject matter experts",
-        "Continuous professional development",
-      ],
-    },
-    {
-      icon: BookOpen,
-      title: "Comprehensive Curriculum",
-      description:
-        "Structured learning pathway covering all HSC subjects with detailed study materials and resources.",
-      features: [
-        "Complete syllabus coverage",
-        "Practice papers & mock exams",
-        "Digital learning resources",
-      ],
-    },
-    {
-      icon: BarChart3,
-      title: "Performance Analytics",
-      description:
-        "Track your progress with detailed analytics and personalised feedback to optimise learning outcomes.",
-      features: [
-        "Regular assessment reports",
-        "Progress tracking dashboard",
-        "Personalized improvement plans",
-      ],
-    },
-    {
-      icon: Clock,
-      title: "Flexible Learning",
-      description:
-        "Convenient scheduling options with both live classes and recorded sessions for maximum flexibility.",
-      features: [
-        "Live interactive sessions",
-        "On-demand video content",
-        "Flexible study schedules",
-      ],
-    },
-  ];
+  // const courseStructure = [
+  //   {
+  //     icon: Users,
+  //     title: "Expert Faculty",
+  //     description:
+  //       "Learn from high-achieving HSC graduates and experienced educators with proven teaching methodologies.",
+  //     features: [
+  //       "University-qualified instructors",
+  //       "Subject matter experts",
+  //       "Continuous professional development",
+  //     ],
+  //   },
+  //   {
+  //     icon: BookOpen,
+  //     title: "Comprehensive Curriculum",
+  //     description:
+  //       "Structured learning pathway covering all HSC subjects with detailed study materials and resources.",
+  //     features: [
+  //       "Complete syllabus coverage",
+  //       "Practice papers & mock exams",
+  //       "Digital learning resources",
+  //     ],
+  //   },
+  //   {
+  //     icon: BarChart3,
+  //     title: "Performance Analytics",
+  //     description:
+  //       "Track your progress with detailed analytics and personalised feedback to optimise learning outcomes.",
+  //     features: [
+  //       "Regular assessment reports",
+  //       "Progress tracking dashboard",
+  //       "Personalized improvement plans",
+  //     ],
+  //   },
+  //   {
+  //     icon: Clock,
+  //     title: "Flexible Learning",
+  //     description:
+  //       "Convenient scheduling options with both live classes and recorded sessions for maximum flexibility.",
+  //     features: [
+  //       "Live interactive sessions",
+  //       "On-demand video content",
+  //       "Flexible study schedules",
+  //     ],
+  //   },
+  // ];
 
   const faculty = [
     {
@@ -147,17 +147,6 @@ const About = () => {
       achievements: "ATAR: 99.35",
       rating: null,
       image: AnnaImg,
-    },
-    {
-      name: "Matthew Chen",
-      position: "Chemistry Teacher",
-      qualifications: "B DentHSc/M Dentistry @ Griffith",
-      experience: "97 in Chemistry, Rank 2 in NBHS",
-      specialisation: "Chemistry",
-      achievements: "ATAR: 99.75",
-      rating: null,
-      image:
-        "https://www.kindpng.com/picc/m/33-338711_circle-user-icon-blue-hd-png-download.png",
     },
   ];
 
@@ -297,329 +286,6 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* About Section */}
-      <motion.section
-        className="py-20 px-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div variants={itemVariants}>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
-              <div className="w-20 h-1 bg-blue-600 mb-8"></div>
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  EXL Education was founded by a group of high-achieving
-                  graduates who understood the difference that could be made in
-                  the academic success of students through expert guidance and
-                  quality education with targeted support for HSC excellence.
-                </p>
-                <p>
-                  Starting out as graduates and small class tutors, we realized
-                  the value that students gained from having excellent learning
-                  experiences and teacher support systems. Our classroom and
-                  Individual support approach has helped thousands of students
-                  achieve their academic goals and secure placements at top
-                  universities.
-                </p>
-                <p>
-                  We have maintained our commitment to excellence, developing
-                  comprehensive curricula, advanced teaching methodologies, and
-                  a supportive learning environment that enables every student
-                  to reach their potential.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-blue-50 rounded-2xl p-8">
-                <div className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center gap-6">
-                  {/* Image Section */}
-                  <motion.img
-                    src={AboutImg}
-                    alt="Our Courses"
-                    className="w-full h-64 object-cover rounded-xl shadow-md"
-                    initial={{ opacity: 0, y: -30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                  />
-
-                  {/* Text Section */}
-                  <motion.div
-                    className="text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                  >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Our Courses
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      We offer comprehensive HSC programs designed to provide
-                      students with the knowledge and skills needed for success.
-                    </p>
-
-                    <div className="space-y-3">
-                      {[
-                        "All HSC Subjects Covered",
-                        "Small Class Sizes",
-                        "Individual Attention",
-                      ].map((point, i) => (
-                        <motion.div
-                          key={i}
-                          className="flex items-center justify-center gap-3"
-                          initial={{ opacity: 0, y: 15 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.4, delay: i * 0.2 }}
-                        >
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                          <span className="text-gray-700">{point}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Map Section */}
-      <motion.section
-        className="mt-10"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        {/* Subtitle */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-4">
-          We are located 4 minutes away from Castle Hill Metro Station
-        </h2>
-
-        {/* Google Map */}
-        <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4134.692852475424!2d151.0073179!3d-33.731624599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10dd3e88bd5%3A0xde32952464e84d60!2sCastle%20Hill!5e1!3m2!1sen!2slk!4v1757647661772!5m2!1sen!2slk"
-            width="100%"
-            height="100%"
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-
-        {/* Directions Button */}
-        <div className="flex justify-center mb-10">
-          <a
-            href="https://maps.app.goo.gl/g56cCZZ2bLE68cMU7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 text-white font-medium px-6 py-3 rounded-xl shadow-md hover:bg-blue-700 transition"
-          >
-            Get Directions
-          </a>
-        </div>
-
-        {/* Clinic Pictures */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceE92HXubuPIDyr61ND8hJ0Ly7UJTu3Ur6w&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNjoiGi2XTLaM8UDs_5ZrjjZWVXjfhTqNQg&s",
-            "https://www.hcde-texas.org/cms/lib/TX50000649/Centricity//Domain/110/20230627_AE-building-front.jpg",
-          ].map((img, i) => (
-            <motion.div
-              key={i}
-              className="rounded-xl overflow-hidden shadow-lg"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-            >
-              <img
-                src={img}
-                alt={`Clinic view ${i + 1}`}
-                className="w-full h-64 object-cover"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
-
-      {/* Core Values */}
-      {/* <motion.section
-        className="py-20 px-6 bg-gray-50"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <motion.div className="text-center mb-16" variants={itemVariants}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              What Drives Us
-            </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our commitment to educational excellence is built on these
-              fundamental principles
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={containerVariants}
-          >
-            {coreValues.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <IconComponent className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {value.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </motion.section> */}
-
-      {/* Course Structure */}
-      <motion.section
-        className="py-20 px-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <motion.div className="text-center mb-16" variants={itemVariants}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Our Course Structure
-            </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive programs designed to maximise student potential and
-              academic achievement
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            {courseStructure.map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        {item.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {item.features.map((feature, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center gap-3 text-gray-700"
-                          >
-                            <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Achievements */}
-      {/* <motion.section
-        className="py-20 px-6 bg-blue-50"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto">
-          <motion.div className="text-center mb-16" variants={itemVariants}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Our Teachers' Results
-            </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600">
-              Outstanding outcomes that speak to our commitment to excellence
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={containerVariants}
-          >
-            {achievements.map((achievement, index) => {
-              const IconComponent = achievement.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl p-8 text-center shadow-lg"
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className={`w-8 h-8 ${achievement.color}`} />
-                  </div>
-                  <div
-                    className={`text-3xl font-bold ${achievement.color} mb-2`}
-                  >
-                    {achievement.value}
-                  </div>
-                  <div className="text-lg font-semibold text-gray-900 mb-1">
-                    {achievement.label}
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    {achievement.subtitle}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </motion.section> */}
-
       {/* Faculty Section */}
       <motion.section
         className="py-20 px-6"
@@ -641,7 +307,7 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={containerVariants}
           >
             {faculty.map((teacher, index) => (
@@ -762,9 +428,332 @@ const About = () => {
         </div>
       </motion.section>
 
+      {/* Map Section */}
+      <motion.section
+        className="mt-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        {/* Subtitle */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-4">
+          We are located 4 minutes away from Castle Hill Metro Station
+        </h2>
+
+        {/* Google Map */}
+        <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4134.692852475424!2d151.0073179!3d-33.731624599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10dd3e88bd5%3A0xde32952464e84d60!2sCastle%20Hill!5e1!3m2!1sen!2slk!4v1757647661772!5m2!1sen!2slk"
+            width="100%"
+            height="100%"
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        {/* Directions Button */}
+        <div className="flex justify-center mb-10">
+          <a
+            href="https://maps.app.goo.gl/g56cCZZ2bLE68cMU7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#002F67] text-white font-medium px-6 py-3 rounded-xl shadow-md hover:bg-blue-700 transition"
+          >
+            Get Directions
+          </a>
+        </div>
+
+        {/* Clinic Pictures */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceE92HXubuPIDyr61ND8hJ0Ly7UJTu3Ur6w&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNjoiGi2XTLaM8UDs_5ZrjjZWVXjfhTqNQg&s",
+            "https://www.hcde-texas.org/cms/lib/TX50000649/Centricity//Domain/110/20230627_AE-building-front.jpg",
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              className="rounded-xl overflow-hidden shadow-lg"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+            >
+              <img
+                src={img}
+                alt={`Clinic view ${i + 1}`}
+                className="w-full h-64 object-cover"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* About Section */}
+      <motion.section
+        className="py-20 px-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div variants={itemVariants}>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Our Story
+              </h2>
+              <div className="w-20 h-1 bg-blue-600 mb-8"></div>
+              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  EXL Education was founded by a group of high-achieving
+                  graduates who understood the difference that could be made in
+                  the academic success of students through expert guidance and
+                  quality education with targeted support for HSC excellence.
+                </p>
+                <p>
+                  Starting out as graduates and small class tutors, we realized
+                  the value that students gained from having excellent learning
+                  experiences and teacher support systems. Our classroom and
+                  Individual support approach has helped thousands of students
+                  achieve their academic goals and secure placements at top
+                  universities.
+                </p>
+                <p>
+                  We have maintained our commitment to excellence, developing
+                  comprehensive curricula, advanced teaching methodologies, and
+                  a supportive learning environment that enables every student
+                  to reach their potential.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative"
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <div className="bg-blue-50 rounded-2xl p-8">
+                <div className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center gap-6">
+                  {/* Image Section */}
+                  <motion.img
+                    src={AboutImg}
+                    alt="Our Courses"
+                    className="w-full h-64 object-cover rounded-xl shadow-md"
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  />
+
+                  {/* Text Section */}
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      Our Courses
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      We offer comprehensive HSC programs designed to provide
+                      students with the knowledge and skills needed for success.
+                    </p>
+
+                    <div className="space-y-3">
+                      {[
+                        "All HSC Subjects Covered",
+                        "Small Class Sizes",
+                        "Individual Attention",
+                      ].map((point, i) => (
+                        <motion.div
+                          key={i}
+                          className="flex items-center justify-center gap-3"
+                          initial={{ opacity: 0, y: 15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: i * 0.2 }}
+                        >
+                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                          <span className="text-gray-700">{point}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Core Values */}
+      {/* <motion.section
+        className="py-20 px-6 bg-gray-50"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="container mx-auto">
+          <motion.div className="text-center mb-16" variants={itemVariants}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              What Drives Us
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our commitment to educational excellence is built on these
+              fundamental principles
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+          >
+            {coreValues.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
+                  variants={itemVariants}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </motion.section> */}
+
+      {/* Course Structure */}
+      {/* <motion.section
+        className="py-20 px-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="container mx-auto">
+          <motion.div className="text-center mb-16" variants={itemVariants}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Our Course Structure
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive programs designed to maximise student potential and
+              academic achievement
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {courseStructure.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        {item.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {item.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center gap-3 text-gray-700"
+                          >
+                            <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.section> */}
+
+      {/* Achievements */}
+      {/* <motion.section
+        className="py-20 px-6 bg-blue-50"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="container mx-auto">
+          <motion.div className="text-center mb-16" variants={itemVariants}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Our Teachers' Results
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600">
+              Outstanding outcomes that speak to our commitment to excellence
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+          >
+            {achievements.map((achievement, index) => {
+              const IconComponent = achievement.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-2xl p-8 text-center shadow-lg"
+                  variants={itemVariants}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <IconComponent className={`w-8 h-8 ${achievement.color}`} />
+                  </div>
+                  <div
+                    className={`text-3xl font-bold ${achievement.color} mb-2`}
+                  >
+                    {achievement.value}
+                  </div>
+                  <div className="text-lg font-semibold text-gray-900 mb-1">
+                    {achievement.label}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    {achievement.subtitle}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </motion.section> */}
+
       {/* CTA Section */}
       <motion.section
-        className="py-20 px-6 bg-blue-900 text-white"
+        className="py-20 px-6 bg-[#002F67] text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

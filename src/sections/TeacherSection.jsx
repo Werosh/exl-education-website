@@ -168,10 +168,7 @@ const TeacherSection = () => {
             style={{ fontWeight: 900 }}
           >
             Meet Our
-            <span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"
-              style={{ fontWeight: 900 }}
-            >
+            <span className="text-[#002F67] " style={{ fontWeight: 900 }}>
               {" "}
               Expert{" "}
             </span>
@@ -314,8 +311,8 @@ const TeacherSection = () => {
                       transition={{ delay: index * 0.1 + 0.4 }}
                       viewport={{ once: true }}
                     >
-                      <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
-                      <span className="text-sm md:text-base text-blue-600 font-semibold">
+                      <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-[#002F67]" />
+                      <span className="text-sm md:text-base text-blue-900 font-semibold">
                         {teacher.subject}
                       </span>
                     </motion.div>

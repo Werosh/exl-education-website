@@ -163,7 +163,7 @@ const CalendarPage = () => {
             key={index}
             className="bg-white rounded-xl shadow-lg p-4 flex flex-col min-h-[200px]"
           >
-            <div className="text-lg font-semibold mb-3 text-center text-gray-800 border-b pb-2 bg-gradient-to-b from-blue-300 to-transparent rounded-t-xl">
+            <div className="text-lg font-semibold mb-3 text-center text-gray-100 border-b pb-2 bg-[#002F67] ">
               {day.day}
             </div>
             <div className="flex-1 space-y-2">
@@ -198,16 +198,8 @@ const CalendarPage = () => {
 
       {/* Descriptive Box */}
       <div className="mt-10 bg-blue-50  border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
-        <p className="mb-3">
-          Our timetable is here to give you a sense of what we currently run,
-          but it’s not set in stone. One of the advantages of being a small,
-          boutique tutoring service is flexibility: if your child needs support
-          in a subject or time slot that isn’t listed, we’re open to starting
-          new classes.
-        </p>
-        <p>
-          We often create classes around our students, not the other way around.
-        </p>
+        <p className="mb-3">CHANGE TO CLIENT TO DECIDE</p>
+        <p>CHANGE TO CLIENT TO DECIDE</p>
       </div>
 
       {/* Summary Statistics */}
