@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { Search, ChevronDown } from "lucide-react";
 import {
   Calculator,
   Atom,
@@ -53,18 +54,25 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
+const courseRoutes = {
+  "7-maths": "/courses/junior-maths",
+  "8-maths": "/courses/junior-maths",
+  "9-maths": "/courses/junior-maths",
+  "10-maths": "/courses/junior-maths",
+  "11-maths": "/courses/year-11-adv-maths",
+  "11-ext-maths": "/courses/year-11-ext-maths",
+  "12-adv-maths": "/courses/year-12-adv-maths",
+  "12-ext-maths": "/courses/year-12-ext1-maths",
+  "11-chem": "/courses/year-11-chem",
+  "12-chem": "/courses/year-12-chem",
+  "11-physics": "/courses/year-11-physics",
+  "12-physics": "/courses/year-12-physics",
+};
 
 const CoursePage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedSubject, setSelectedSubject] = useState("");
 
   const subjects = [
     {
@@ -251,88 +259,159 @@ const CoursePage = () => {
     }
   };
 
+  const handleFindCourse = () => {
+    const key = `${selectedYear}-${selectedSubject}`;
+    const path = courseRoutes[key];
+
+    if (path) {
+      navigate(path);
+    } else {
+      alert("Course not available");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.div
-        className="relative bg-white overflow-hidden"
+        className="relative overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #004080 0%, #003366 50%, #002F67 100%)",
+        }}
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        {/* Geometric Background */}
-        <div className="absolute inset-0">
-          <svg
-            className="absolute top-0 left-0 w-full h-full"
-            viewBox="0 0 1200 800"
-            fill="none"
-          >
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop
-                  offset="0%"
-                  style={{ stopColor: "#002F67", stopOpacity: 0.1 }}
-                />
-                <stop
-                  offset="100%"
-                  style={{ stopColor: "#1e40af", stopOpacity: 0.05 }}
-                />
-              </linearGradient>
-            </defs>
-            <polygon points="0,0 600,0 400,400" fill="url(#grad1)" />
-            <polygon points="1200,0 1200,300 800,200" fill="url(#grad1)" />
-            <polygon points="1200,800 600,800 900,400" fill="url(#grad1)" />
-          </svg>
-
-          {/* Floating Elements */}
-          <motion.div
-            className="absolute top-1/4 right-1/4 w-4 h-4 bg-blue-500 rounded-full"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.1 }}
-          />
-          <motion.div
-            className="absolute top-1/3 left-1/4 w-3 h-3 bg-cyan-500 rounded-full"
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-          />
-          <motion.div
-            className="absolute bottom-1/3 right-1/3 w-5 h-5 bg-blue-400 rounded-full"
-            animate={{ y: [0, -25, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+        <div className="relative  mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center p-20">
             {/* Left Side - Content */}
             <motion.div className="space-y-8" variants={itemVariants}>
-              <div className="inline-flex items-center gap-2 text-blue-600 px-4 py-2 rounded-full text-sm font-medium bg-blue-50 border border-blue-200">
-                <Sparkles className="w-4 h-4" />
-                <span>Premium Academic Excellence Program</span>
-              </div>
-
-              <h1 className="text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
-                Unlock Your
-                <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                  Academic
-                </span>
-                Potential
+              <h1 className="text-5xl lg:text-5xl mt-10 font-bold text-white leading-tight">
+                Sydney's best tutoring programs
               </h1>
 
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Join the elite ranks of academic achievers with our
-                comprehensive, research-backed curriculum designed for
-                tomorrow's leaders.
+              <p className="text-lg text-white/90 leading-relaxed max-w-lg">
+                Boost marks. Build confidence. Get ahead at school with expert
+                tutoring for Year 3-12 English, Maths, Science and UCAT.
               </p>
+
+              <div className="flex gap-4 mb-8">
+                <button className="bg-[#064491] border hover:bg-white text-white hover:text-[#002F67] hover:border-black hover:border-2 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                  Enrol now
+                </button>
+                <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:border-black hover:border-2 hover:bg-white hover:text-[#002F67] transition-all duration-300">
+                  Book your free trial
+                </button>
+              </div>
+
+              {/* Course Finder */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="text-white font-semibold">
+                    Find a course
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="relative">
+                    <span className="absolute -top-2 left-4 bg-[#002F67] text-white text-xs px-2 py-1 rounded">
+                      1
+                    </span>
+                    <select
+                      className="w-full bg-white rounded-lg px-4 py-3 pr-10 appearance-none cursor-pointer border border-gray-200"
+                      value={selectedYear}
+                      onChange={(e) => setSelectedYear(e.target.value)}
+                    >
+                      <option value="">Year</option>
+                      <option value="7">Year 7</option>
+                      <option value="8">Year 8</option>
+                      <option value="9">Year 9</option>
+                      <option value="10">Year 10</option>
+                      <option value="11">Year 11</option>
+                      <option value="12">Year 12</option>
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                  </div>
+
+                  <div className="relative">
+                    <span className="absolute -top-2 left-4 bg-[#002F67] text-white text-xs px-2 py-1 rounded">
+                      2
+                    </span>
+                    <select
+                      className="w-full bg-white rounded-lg px-4 py-3 pr-10 appearance-none cursor-pointer border border-gray-200"
+                      value={selectedSubject}
+                      onChange={(e) => setSelectedSubject(e.target.value)}
+                    >
+                      <option value="">Subject</option>
+                      <option value="maths">Mathematics</option>
+                      <option value="adv-maths">Adv: Mathematics</option>
+                      <option value="ext-maths">Ext: Mathematics</option>
+                      <option value="chem">Chemistry</option>
+                      <option value="physics">Physics</option>
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                  </div>
+
+                  <button
+                    onClick={handleFindCourse}
+                    className="bg-white text-[#002F67] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
+                  >
+                    <Search />
+                  </button>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Right Side - Stats Card */}
+            {/* Right Side - Student Images */}
             <motion.div className="relative" variants={itemVariants}>
-              <div className="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                <img
-                  src="https://img.freepik.com/free-vector/online-courses-tutorials_52683-37860.jpg"
-                  alt="Courses image"
-                />
+              <div className="relative">
+                {/* Chemistry Student */}
+                <div className="absolute bottom-[-60px] right-0 w-94 h-58 rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop"
+                    alt="Chemistry student"
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute top-4 right-4 bg-white/90 rounded-lg px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span className="text-xs font-medium">
+                        Comprehensive resources
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Online Student */}
+                <div className="absolute top-10 right-52 w-94 h-58 rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=350&fit=crop"
+                    alt="Online learning student"
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M8 2V5M16 2V5M3.5 9.5H20.5M4 5.5H20C20.8 5.5 21.5 6.2 21.5 7V19C21.5 19.8 20.8 20.5 20 20.5H4C3.2 20.5 2.5 19.8 2.5 19V7C2.5 6.2 3.2 5.5 4 5.5Z"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                        />
+                      </svg>
+                      <span className="text-xs font-medium">
+                        Study anytime with Matrix+ online
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -389,29 +468,6 @@ const CoursePage = () => {
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       {subject.description}
                     </p>
-
-                    {/* Advanced Stats */}
-                    {/* <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-lg font-bold text-gray-900">
-                          {subject.totalStudents}
-                        </div>
-                        <div className="text-xs text-gray-600">Enrolled</div>
-                      </div>
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-lg font-bold text-gray-900 flex items-center justify-center gap-1">
-                          {subject.averageRating}
-                          <Star className="w-3 h-3 fill-gray-400 text-gray-400" />
-                        </div>
-                        <div className="text-xs text-gray-600">Rating</div>
-                      </div>
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-lg font-bold text-gray-900">
-                          {subject.completion}
-                        </div>
-                        <div className="text-xs text-gray-600">Complete</div>
-                      </div>
-                    </div> */}
 
                     {/* Course List - Always Visible */}
                     <div className="space-y-4 pt-6 border-t border-gray-100">

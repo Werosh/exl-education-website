@@ -154,7 +154,7 @@ const ContactUsPage = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002F67] focus:border-transparent"
                     placeholder="Enter your full name"
                   />
                 </motion.div>
@@ -172,7 +172,7 @@ const ContactUsPage = () => {
                     required
                     min="7"
                     max="100"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002F67] focus:border-transparent"
                     placeholder="Enter your age"
                   />
                 </motion.div>
@@ -189,7 +189,7 @@ const ContactUsPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002F67] focus:border-transparent"
                   placeholder="Enter your email address"
                 />
               </motion.div>
@@ -204,7 +204,7 @@ const ContactUsPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002F67] focus:border-transparent"
                   placeholder="Enter your phone number"
                 />
               </motion.div>
@@ -219,7 +219,7 @@ const ContactUsPage = () => {
                   value={formData.course}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002F67] focus:border-transparent"
                 >
                   <option value="">Select a course</option>
                   {courses.map((category) => (
@@ -244,7 +244,7 @@ const ContactUsPage = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002F67] focus:border-transparent resize-none"
                   placeholder="Tell us about your learning goals or any specific questions you have..."
                 />
               </motion.div>
@@ -252,7 +252,7 @@ const ContactUsPage = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center space-x-2 transition duration-200"
+                className="w-full bg-[#002F67] hover:bg-[#022857] disabled:bg-blue-400 text-white font-semibold py-4 px-6 rounded-lg flex items-center justify-center space-x-2 transition duration-200"
                 variants={fadeInUp}
               >
                 {isSubmitting ? (
@@ -280,7 +280,7 @@ const ContactUsPage = () => {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <MapPinHouse className="w-6 h-6 text-blue-600" />
+                    <MapPinHouse className="w-6 h-6 text-[#002F67]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">
@@ -295,7 +295,7 @@ const ContactUsPage = () => {
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <Phone className="w-6 h-6 text-blue-600" />
+                    <Phone className="w-6 h-6 text-[#002F67]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
@@ -304,7 +304,7 @@ const ContactUsPage = () => {
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="bg-blue-100 p-3 rounded-lg">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                    <Mail className="w-6 h-6 text-[#002F67]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>

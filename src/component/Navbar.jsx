@@ -204,18 +204,18 @@ const Navbar = () => {
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
       variants={navbarVariants}
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300  ${
         scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl  h-28 mx-auto px-10 sm:px-6 lg:px-8 ">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl  mx-auto h-25  sm:px-6 lg:px-8 items-center justify-center ">
+        <div className="flex justify-between items-center h-16 ">
           {/* Logo */}
           <motion.div variants={navItemVariants} className="flex-shrink-0">
             <a href="/" className="flex items-center group">
               <motion.div
                 variants={logoVariants}
-                className="h-25 w-auto max-w-[190px] rounded-lg overflow-hidden flex items-center justify-center  mt-10"
+                className=" w-auto max-w-[200px]  rounded-lg overflow-hidden flex items-center justify-center mt-5  "
               >
                 <img
                   src={LogoImg}
@@ -229,7 +229,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <motion.div
             variants={navItemVariants}
-            className="hidden md:flex items-center space-x-8"
+            className="hidden md:flex items-center mt-6 space-x-8 justify-center"
           >
             <motion.a
               variants={navItemVariants}
@@ -386,6 +386,17 @@ const Navbar = () => {
             >
               <DollarSign className="w-4 h-4 mr-1" />
               Pricing
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </motion.a>
+
+            <motion.a
+              variants={navItemVariants}
+              whileHover={{ y: -2 }}
+              href="/free-trail"
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group flex items-center"
+            >
+              <Mail className="w-4 h-4 mr-1" />
+              Free Trail
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </motion.a>
 

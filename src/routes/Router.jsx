@@ -22,6 +22,7 @@ import Yr11Phys from "../course-pages/physics/Yr11Phys";
 import Yr12Phys from "../course-pages/physics/Yr12Phys";
 
 import NotFound from "../Pages/main pages/NotFound";
+import BookFreeTrialPage from "../Pages/main pages/FreeTrail";
 
 const AppRouter = () => {
   return (
@@ -32,22 +33,20 @@ const AppRouter = () => {
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/contact" element={<ContactUsPage />} />
       <Route path="/courses" element={<CoursePage />} />
-
+      <Route path="/free-trail" element={<BookFreeTrialPage />} />
       {/*Math Subject pages */}
-      <Route path="/courses/junior-maths" element={<JuniorMaths />} />
+      <Route path="/courses/junior-maths" element={<JuniorMaths />} /> //for 7 8
+      9 10 maths
       <Route path="/courses/year-11-adv-maths" element={<Yr11AdvMaths />} />
       <Route path="/courses/year-11-ext-maths" element={<Yr11ExtMaths />} />
       <Route path="/courses/year-12-adv-maths" element={<Yr12AdvMaths />} />
       <Route path="/courses/year-12-ext1-maths" element={<Yr12ExtMaths />} />
-
       {/* Chem subject pages */}
       <Route path="/courses/year-11-chem" element={<Yr11Chem />} />
       <Route path="/courses/year-12-chem" element={<Yr12Chem />} />
-
       {/* P6 subject pages */}
       <Route path="/courses/year-11-physics" element={<Yr11Phys />} />
       <Route path="/courses/year-12-physics" element={<Yr12Phys />} />
-
       {/* Catch-All Route */}
       <Route path="*" element={<NotFound />} />
     </Routes>

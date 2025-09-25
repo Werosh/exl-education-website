@@ -18,7 +18,7 @@ const PricingSection = () => {
 
   const pricingData = {
     "Year 7": {
-      price: 660,
+      price: 61,
       subjects: ["English", "Math"],
       terms: "4 EXL Terms in Year 7",
       weeklyHours: "1.5 hour",
@@ -26,7 +26,7 @@ const PricingSection = () => {
       multiSubjectDiscount: false,
     },
     "Year 8": {
-      price: 660,
+      price: 61,
       subjects: ["English", "Math"],
       terms: "4 EXL Terms in Year 8",
       weeklyHours: "1.5 hour",
@@ -34,7 +34,7 @@ const PricingSection = () => {
       multiSubjectDiscount: false,
     },
     "Year 9": {
-      price: 660,
+      price: 61,
       subjects: ["English", "Math"],
       terms: "4 EXL Terms in Year 9",
       weeklyHours: "1.5 hour",
@@ -42,7 +42,7 @@ const PricingSection = () => {
       multiSubjectDiscount: false,
     },
     "Year 10": {
-      price: 980,
+      price: 93,
       subjects: ["Mathematics"],
       terms: "4 EXL Terms in Year 10",
       weeklyHours: "2 hour",
@@ -50,7 +50,7 @@ const PricingSection = () => {
       multiSubjectDiscount: false,
     },
     "Year 11": {
-      price: 1100,
+      price: 105,
       subjects: ["Chemistry", "English", "Math Adv", "Math Ext 1"],
       terms: "3 EXL Terms in Year 11",
       weeklyHours: "2 hour",
@@ -58,7 +58,7 @@ const PricingSection = () => {
       multiSubjectDiscount: true,
     },
     "Year 12": {
-      price: 1375,
+      price: 130,
       subjects: ["Chemistry", "English", "Math Adv", "Math Ext 1"],
       terms: "3 EXL Terms in Year 12",
       weeklyHours: "2.5 hour",
@@ -151,7 +151,7 @@ const PricingSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 px-4 mt-10">
+    <div className="min-h-screen  py-16 px-4 mt-10">
       <motion.div
         className="max-w-6xl mx-auto"
         variants={containerVariants}
@@ -161,11 +161,11 @@ const PricingSection = () => {
         {/* Header with gradient background */}
         <motion.div className="relative mb-16" variants={itemVariants}>
           {/* Gradient wrapper */}
-          <div className="bg-gradient-to-b from-blue-200/40 via-blue-50/30 to-white rounded-2xl py-12 px-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              EXL Tutoring <span className="text-blue-600">Pricing</span>
+          <div className="rounded-2xl py-12 px-4">
+            <h1 className="text-3xl font-bold mb-5 text-center text-[#002F67]">
+              EXL Tutoring Pricing
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed items-center text-center">
               Choose the perfect program for your academic journey with expert
               tutoring and comprehensive support
             </p>
@@ -183,8 +183,8 @@ const PricingSection = () => {
               onClick={() => setSelectedYear(year)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 selectedYear === year
-                  ? "bg-blue-500 text-white shadow-lg"
-                  : "bg-white text-gray-700 border border-gray-200 hover:border-blue-300 hover:text-blue-600"
+                  ? "bg-[#002F67] text-white shadow-lg"
+                  : "bg-white text-gray-700 border border-gray-200 hover:border-[#002F67] hover:text-[#002F67]"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -211,25 +211,25 @@ const PricingSection = () => {
               whileHover="hover"
             >
               {/* Card Header with gradient */}
-              <div className="bg-gradient-to-b from-blue-100/100 via-blue-100/100 to-white p-8 text-gray-900">
+              <div className="bg-white p-8 text-gray-900">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-bold">{selectedYear} EXL</h2>
+                  <h2 className="text-2xl font-bold underline">
+                    {selectedYear} EXL
+                  </h2>
                   <motion.div
-                    className="bg-blue-500/10 px-3 py-1 rounded-full text-xl  text-blue-900 font-700"
+                    className="bg-blue-500/20 px-3 py-1 rounded-full text-xl  text-blue-900 font-700"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3 }}
                   >
-                    Popular Choice
+                    EARLY BIRD PRICE
                   </motion.div>
                 </div>
                 <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-bold text-blue-700">
+                  <span className="text-4xl md:text-5xl font-bold text-[#002F67]">
                     ${currentData.price}
                   </span>
-                  <span className="text-gray-600 ml-2">
-                    per 10-lesson {selectedYear} EXL term
-                  </span>
+                  <span className="text-gray-600 ml-2">per lesson</span>
                 </div>
               </div>
 
@@ -240,32 +240,32 @@ const PricingSection = () => {
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center text-gray-700">
-                      <BookOpen className="w-5 h-5 text-blue-600 mr-3" />
+                      <BookOpen className="w-5 h-5 text-[#002F67] mr-3" />
                       <span>{currentData.subjects.join(", ")}</span>
                     </div>
                     <div className="flex items-center text-gray-700">
-                      <Award className="w-5 h-5 text-blue-600 mr-3" />
+                      <Award className="w-5 h-5 text-[#002F67] mr-3" />
                       <span>{currentData.terms}</span>
                     </div>
                     <div className="flex items-center text-gray-700">
-                      <Check className="w-5 h-5 text-blue-600 mr-3" />
+                      <Check className="w-5 h-5 text-[#002F67] mr-3" />
                       <span>
                         Half-Termly Payment and Alternative Payments Available
                       </span>
                     </div>
                     <div className="flex items-center text-gray-700">
-                      <Check className="w-5 h-5 text-blue-600 mr-3" />
+                      <Check className="w-5 h-5 text-[#002F67] mr-3" />
                       <span>
-                        Enrolments in the middle of the term are Pro-Rated
+                        Enrollments in the middle of the term are Pro-Rated
                       </span>
                     </div>
                     <div className="flex items-center text-gray-700">
-                      <Users className="w-5 h-5 text-blue-600 mr-3" />
+                      <Users className="w-5 h-5 text-[#002F67] mr-3" />
                       <span>Small Class sizes</span>
                     </div>
                     {currentData.specialFeature && (
                       <div className="flex items-start text-gray-700">
-                        <Check className="w-5 h-5 text-blue-600 mr-3 mt-0.5" />
+                        <Check className="w-5 h-5 text-[#002F67] mr-3 mt-0.5" />
                         <span>{currentData.specialFeature}</span>
                       </div>
                     )}
@@ -283,7 +283,7 @@ const PricingSection = () => {
                     <h4 className="font-semibold text-blue-900 mb-2">
                       Multiple Subject Discount
                     </h4>
-                    <p className="text-blue-700 text-sm">
+                    <p className="text-blue-900 text-sm">
                       EXL's Multiple Subject Discount applies when sitting
                       multiple subjects at the same time. A discount of{" "}
                       <span className="font-bold">5%</span> is applied to all
@@ -329,7 +329,7 @@ const PricingSection = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 }}
                   >
-                    <Clock className="w-5 h-5 text-blue-600 mr-3 " />
+                    <Clock className="w-5 h-5 text-[#002F67] mr-3 " />
                     <span className="course-time">
                       {currentData.weeklyHours} weekly lesson
                     </span>
@@ -337,7 +337,7 @@ const PricingSection = () => {
                   {courseFeatures.slice(1).map((feature, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center text-blue-600"
+                      className="flex items-center text-[#002F67]"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.7 + index * 0.1 }}
@@ -362,7 +362,7 @@ const PricingSection = () => {
                   {additionalServices.map((service, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center text-blue-600"
+                      className="flex items-center text-[#002F67]"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 1.1 + index * 0.1 }}
@@ -387,7 +387,7 @@ const PricingSection = () => {
         >
           <a href="tel:+0431498913">
             <motion.button
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-[#002F67] text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

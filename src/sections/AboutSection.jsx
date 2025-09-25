@@ -64,7 +64,7 @@ const AboutSection = () => {
               >
                 Small class.
                 <br />
-                <span className="text-blue-600 " style={{ fontWeight: 900 }}>
+                <span className="text-[#002F67] " style={{ fontWeight: 900 }}>
                   Same excellence.
                 </span>
               </motion.h2>
@@ -77,7 +77,7 @@ const AboutSection = () => {
               >
                 Students thrive in environments where they feel valued and
                 heard. That's why we maintain our commitment to{" "}
-                <span className="font-semibold text-blue-800">
+                <span className="font-bold text-[#002F67]">
                   intimate class sizes
                 </span>{" "}
                 that foster genuine connections and personalised learning
