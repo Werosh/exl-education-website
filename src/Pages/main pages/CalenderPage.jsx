@@ -126,6 +126,17 @@ const scheduleData = [
   },
 ];
 
+// Color mapping for each day
+const dayColors = [
+  "#003466", // Monday
+  "#e2c1d5", // Tuesday
+  "#724574", // Wednesday
+  "#0a4a99", // Thursday (same as Wednesday as specified)
+  "#e199a5", // Friday
+  "#003466", // Saturday (cycling back)
+  "#e2c1d5", // Sunday (cycling back)
+];
+
 const CalendarPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -135,7 +146,7 @@ const CalendarPage = () => {
   return (
     <div className=" max-w-7xl mx-auto p-20 mt-15">
       {/* Main Title */}
-      <h1 className="text-3xl font-bold mb-5 text-center text-[#002F67]">
+      <h1 className="text-3xl font-bold mb-5 text-center text-[#002f67]">
         Weekly Tutoring Schedule
       </h1>
 
@@ -157,16 +168,19 @@ const CalendarPage = () => {
       </div>
 
       {/* Schedule Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7  ">
         {scheduleData.map((day, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-lg p-4 flex flex-col min-h-[200px]"
+            className="bg-white border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden"
           >
-            <div className="text-lg font-semibold mb-3 text-center text-gray-100 border-b pb-2 bg-[#002F67] ">
+            <div
+              className="text-lg font-semibold py-3 text-center text-white border-b-2 border-gray-500 "
+              style={{ backgroundColor: dayColors[index] }}
+            >
               {day.day}
             </div>
-            <div className="flex-1 space-y-2">
+            <div className="flex-1 space-y-2 p-4">
               {day.classes.filter(filterByCategory).map((cls, i) => (
                 <motion.div
                   key={i}
@@ -198,8 +212,8 @@ const CalendarPage = () => {
 
       {/* Descriptive Box */}
       <div className="mt-10 bg-blue-50  border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
-        <p className="mb-3">CHANGE TO CLIENT TO DECIDE</p>
-        <p>CHANGE TO CLIENT TO DECIDE</p>
+        <p className="mb-3">DECIDE LATER</p>
+        <p>DECIDE LATER</p>
       </div>
 
       {/* Summary Statistics */}

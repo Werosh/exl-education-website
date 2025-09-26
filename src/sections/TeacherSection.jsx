@@ -136,8 +136,8 @@ const TeacherSection = () => {
       {/* Decorative Background - Responsive */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Mobile: Smaller, repositioned shapes */}
-        <div className="absolute bottom-0 md:bottom-0 right-[-30px] md:right-[-80px] w-32 h-32 md:w-72 md:h-72 bg-green-300 rounded-[50%] z-[-1]" />
-        <div className="absolute top-[20%] md:top-[25%] right-[-20px] md:right-[-40px] w-24 h-24 md:w-48 md:h-48 bg-yellow-200 rounded-[50%] z-[-1]" />
+        <div className="absolute bottom-0 md:bottom-0 right-[-30px] md:right-[-80px] w-32 h-32 md:w-72 md:h-72 bg-[#f6b3c4]/60 rounded-[50%] z-[-1]" />
+        <div className="absolute top-[20%] md:top-[25%] right-[-20px] md:right-[-40px] w-24 h-24 md:w-48 md:h-48 bg-[#c8e3ff] rounded-[50%] z-[-1]" />
         <div className="absolute bottom-0 md:bottom-0 left-[-20px] md:left-[-40px] w-20 h-20 md:w-40 md:h-40 bg-sky-900 rounded-[50%] z-[-1]" />
       </div>
 
