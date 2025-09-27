@@ -172,7 +172,7 @@ const CalendarPage = () => {
         {scheduleData.map((day, index) => (
           <div
             key={index}
-            className="bg-white rounded-b-xl  border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden"
+            className="bg-white rounded-b-3xl  border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden"
           >
             <div
               className="text-lg  font-semibold py-3 text-center text-white border-b-2 border-gray-500 "
