@@ -129,12 +129,12 @@ const scheduleData = [
 // Color mapping for each day
 const dayColors = [
   "#003466", // Monday
-  "#e2c1d5", // Tuesday
-  "#724574", // Wednesday
-  "#0a4a99", // Thursday (same as Wednesday as specified)
-  "#e199a5", // Friday
+  "#003466", // Tuesday
+  "#003466", // Wednesday
+  "#003466", // Thursday (same as Wednesday as specified)
+  "#003466", // Friday
   "#003466", // Saturday (cycling back)
-  "#e2c1d5", // Sunday (cycling back)
+  "#003466", // Sunday (cycling back)
 ];
 
 const CalendarPage = () => {
@@ -172,10 +172,10 @@ const CalendarPage = () => {
         {scheduleData.map((day, index) => (
           <div
             key={index}
-            className="bg-white border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden"
+            className="bg-white rounded-b-xl  border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden"
           >
             <div
-              className="text-lg font-semibold py-3 text-center text-white border-b-2 border-gray-500 "
+              className="text-lg  font-semibold py-3 text-center text-white border-b-2 border-gray-500 "
               style={{ backgroundColor: dayColors[index] }}
             >
               {day.day}
