@@ -143,6 +143,26 @@ const CalendarPage = () => {
   const filterByCategory = (item) =>
     selectedCategory === "All" || item.type === selectedCategory;
 
+  const getCardRoundedClass = (dayName) => {
+    if (dayName === "Monday") {
+      return "rounded-l-3xl"; // Left side rounded
+    } else if (dayName === "Sunday") {
+      return "rounded-r-3xl"; // Right side rounded
+    } else {
+      return ""; // No rounded corners for middle days
+    }
+  };
+
+  const getHeaderRoundedClass = (dayName) => {
+    if (dayName === "Monday") {
+      return "rounded-tl-3xl"; // Top-left corner rounded
+    } else if (dayName === "Sunday") {
+      return "rounded-tr-3xl"; // Top-right corner rounded
+    } else {
+      return ""; // No rounded corners for middle days
+    }
+  };
+
   return (
     <div className=" max-w-7xl mx-auto p-20 mt-15">
       {/* Main Title */}
@@ -172,10 +192,14 @@ const CalendarPage = () => {
         {scheduleData.map((day, index) => (
           <div
             key={index}
-            className="bg-white rounded-b-3xl  border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden"
+            className={`bg-white border-2 border-gray-500 shadow-lg p-0 flex flex-col min-h-[200px] overflow-hidden ${getCardRoundedClass(
+              day.day
+            )}`}
           >
             <div
-              className="text-lg  font-semibold py-3 text-center text-white border-b-2 border-gray-500 "
+              className={`text-lg font-semibold py-3 text-center text-white border-b-2 border-gray-500 ${getHeaderRoundedClass(
+                day.day
+              )}`}
               style={{ backgroundColor: dayColors[index] }}
             >
               {day.day}
