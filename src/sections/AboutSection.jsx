@@ -28,7 +28,7 @@ const AboutSection = () => {
   };
 
   return (
-    <div className="py-25 mt-25 mb-20 bg-gradient-to-br from-blue-50 to-white pt-12 px-4 overflow-hidden">
+    <div className="py-25  pt-12 px-4 overflow-hidden">
       <motion.div
         className="max-w-7xl mx-auto"
         variants={containerVariants}

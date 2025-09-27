@@ -132,7 +132,7 @@ const TeacherSection = () => {
   };
 
   return (
-    <section className="relative py-12 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen overflow-hidden">
+    <section className="relative py-12 md:py-20 min-h-screen overflow-hidden">
       {/* Decorative Background - Responsive */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Mobile: Smaller, repositioned shapes */}

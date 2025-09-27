@@ -53,7 +53,7 @@ const UnmatchedResources = () => {
   ];
 
   return (
-    <section className=" pb-24 bg-gradient-to-br from-slate-50 via-blue-50 to-white relative overflow-hidden">
+    <section className=" pb-24  relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%">
@@ -176,7 +176,7 @@ const UnmatchedResources = () => {
           >
             <div className="relative w-full h-full">
               {/* Glow Background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-3xl blur-3xl"></div>
+              <div className="absolute inset-0  rounded-3xl blur-3xl"></div>
 
               {/* Floating Books */}
               {floatingBooks.map((book, index) => (

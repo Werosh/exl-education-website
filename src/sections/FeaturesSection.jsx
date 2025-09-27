@@ -82,10 +82,7 @@ const Features = () => {
   };
 
   return (
-    <section
-      id="feature"
-      className="bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden py-10"
-    >
+    <section id="feature" className="relative overflow-hidden py-10">
       {/* Decorative curved background */}
       <div className="absolute inset-0">
         <svg
