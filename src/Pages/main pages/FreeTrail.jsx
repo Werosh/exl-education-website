@@ -162,10 +162,8 @@ const BookFreeTrialPage = () => {
       <div className="bg-white shadow-sm border-b border-green-100 rounded-t-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+            <h1 className="text-5xl font-bold text-[#002F67] mb-4 flex items-center justify-center gap-5">
               <BookOpen className="w-10 h-10 text-[#002F67]" />
-            </div>
-            <h1 className="text-5xl font-bold text-[#002F67] mb-4">
               Book Your FREE TRIAL
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

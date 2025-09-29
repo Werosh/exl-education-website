@@ -58,13 +58,16 @@ const AboutSection = () => {
           <motion.div className="space-y-8" variants={itemVariants}>
             <motion.div variants={itemVariants} className="space-y-4">
               <motion.h2
-                className="text-5xl lg:text-6xl font-bold text-blue-900 leading-tight"
+                className="text-5xl lg:text-6xl font-bold text-blue-900 leading-tight underline"
                 variants={itemVariants}
                 style={{ fontWeight: 900 }}
               >
                 Small class.
                 <br />
-                <span className="text-[#002F67] " style={{ fontWeight: 900 }}>
+                <span
+                  className="text-[#002F67] underline "
+                  style={{ fontWeight: 900 }}
+                >
                   Same excellence.
                 </span>
               </motion.h2>

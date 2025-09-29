@@ -46,7 +46,7 @@ const scheduleData = [
     day: "Wednesday",
     classes: [
       {
-        subject: "Standard Physics Year 11",
+        subject: "Year 11 (enter) standard physics",
         time: "4:00 PM",
         type: "Physics",
         teacher: "William",
@@ -90,7 +90,7 @@ const scheduleData = [
   {
     day: "Friday",
     classes: [
-      // No classes on Friday based on the image
+      // No classes on Friday
     ],
   },
   {
@@ -131,11 +131,16 @@ const dayColors = [
   "#003466", // Monday
   "#003466", // Tuesday
   "#003466", // Wednesday
-  "#003466", // Thursday (same as Wednesday as specified)
+  "#003466", // Thursday
   "#003466", // Friday
-  "#003466", // Saturday (cycling back)
-  "#003466", // Sunday (cycling back)
+  "#003466", // Saturday
+  "#003466", // Sunday
 ];
+
+// helper function to bold "Year X"
+const highlightYear = (text) => {
+  return text.replace(/(Year\s\d+)/gi, "<span class='font-bold'>$1</span>");
+};
 
 const CalendarPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -145,26 +150,26 @@ const CalendarPage = () => {
 
   const getCardRoundedClass = (dayName) => {
     if (dayName === "Monday") {
-      return "rounded-l-3xl"; // Left side rounded
+      return "rounded-l-3xl";
     } else if (dayName === "Sunday") {
-      return "rounded-r-3xl"; // Right side rounded
+      return "rounded-r-3xl";
     } else {
-      return ""; // No rounded corners for middle days
+      return "";
     }
   };
 
   const getHeaderRoundedClass = (dayName) => {
     if (dayName === "Monday") {
-      return "rounded-tl-3xl"; // Top-left corner rounded
+      return "rounded-tl-3xl";
     } else if (dayName === "Sunday") {
-      return "rounded-tr-3xl"; // Top-right corner rounded
+      return "rounded-tr-3xl";
     } else {
-      return ""; // No rounded corners for middle days
+      return "";
     }
   };
 
   return (
-    <div className=" max-w-7xl mx-auto p-20 mt-15">
+    <div className="max-w-7xl mx-auto p-20 mt-15">
       {/* Main Title */}
       <h1 className="text-3xl font-bold mb-5 text-center text-[#002f67]">
         Weekly Tutoring Schedule
@@ -188,7 +193,7 @@ const CalendarPage = () => {
       </div>
 
       {/* Schedule Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7  ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
         {scheduleData.map((day, index) => (
           <div
             key={index}
@@ -213,9 +218,12 @@ const CalendarPage = () => {
                   transition={{ duration: 0.3, delay: i * 0.1 }}
                   className={`p-3 rounded-lg ${cls.color} hover:shadow-md transition-shadow duration-200`}
                 >
-                  <div className="text-sm font-medium leading-tight mb-1">
-                    {cls.subject}
-                  </div>
+                  <div
+                    className="text-sm font-bold leading-tight mb-1"
+                    dangerouslySetInnerHTML={{
+                      __html: highlightYear(cls.subject),
+                    }}
+                  ></div>
                   <div className="text-xs opacity-80 font-medium">
                     {cls.time}
                   </div>
@@ -235,7 +243,7 @@ const CalendarPage = () => {
       </div>
 
       {/* Descriptive Box */}
-      <div className="mt-10 bg-blue-50  border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
+      <div className="mt-10 bg-blue-50 border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
         <p className="mb-3">DECIDE LATER</p>
         <p>DECIDE LATER</p>
       </div>

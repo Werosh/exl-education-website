@@ -5,6 +5,7 @@ import Subjects from "../../sections/SubjectsSection";
 // import Testimonials from "../../sections/TestimonialsSection";
 import AboutSection from "../../sections/AboutSection";
 import TeacherSection from "../../sections/TeacherSection";
+import CTA from "../../sections/CTA";
 
 // Mock Framer Motion components for animation
 
@@ -31,6 +32,8 @@ const AnimatedLandingPage = () => {
 
       {/* Testimonials Section */}
       {/* <Testimonials /> */}
+
+      <CTA />
     </div>
   );
 };

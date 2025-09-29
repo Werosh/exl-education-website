@@ -215,7 +215,7 @@ const Navbar = () => {
             <a href="/" className="flex items-center group">
               <motion.div
                 variants={logoVariants}
-                className=" w-auto max-w-[200px]  rounded-lg overflow-hidden flex items-center justify-center mt-5  "
+                className=" w-auto max-w-[150px]  rounded-lg overflow-hidden flex items-center justify-center mt-8  "
               >
                 <img
                   src={LogoImg}
@@ -416,7 +416,7 @@ const Navbar = () => {
               variants={navItemVariants}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="tel:+0431498913"
+              href="/free-trail"
               className="bg-gradient-to-r from-[#002F67] to-[#002F67] text-white px-6 py-2.5 rounded-full font-medium hover:from-[#011f42] hover:to-[#011f42] transition-all duration-200 shadow-lg hover:shadow-xl flex items-center"
             >
               <Phone className="w-4 h-4 mr-2" />
@@ -617,7 +617,7 @@ const Navbar = () => {
                   <motion.a
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    href="tel:+0431498913"
+                    href="/free-trail"
                     className="flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg"
                   >
                     <Phone className="w-4 h-4 mr-2" />

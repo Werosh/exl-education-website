@@ -11,6 +11,8 @@ import {
   FileText,
 } from "lucide-react";
 
+import MoneyBack from "../../images/others/money-back.png";
+
 const PricingSection = () => {
   const [selectedYear, setSelectedYear] = useState("Year 7");
 
@@ -165,9 +167,10 @@ const PricingSection = () => {
             <h1 className="text-3xl font-bold mb-5 text-center text-[#002F67]">
               EXL Tutoring Pricing
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed items-center text-center">
-              Choose the perfect program for your academic journey with expert
-              tutoring and comprehensive support
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed items-center text-center">
+              At EXL, we keep pricing simple. Our course fees are calculated
+              based on your course and the discounts you qualify for your
+              academic journey with expert tutoring and comprehensive support
             </p>
           </div>
         </motion.div>
@@ -198,7 +201,7 @@ const PricingSection = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedYear}
-            className="grid lg:grid-cols-2 gap-8"
+            className="grid lg:grid-cols-2 gap-8 "
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -211,25 +214,25 @@ const PricingSection = () => {
               whileHover="hover"
             >
               {/* Card Header with gradient */}
-              <div className="bg-white p-8 text-gray-900">
+              <div className="bg-[#002f67] p-8 text-gray-100">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold underline">
                     {selectedYear} EXL
                   </h2>
                   <motion.div
-                    className="bg-blue-500/20 px-3 py-1 rounded-full text-xl  text-blue-900 font-700"
+                    className="bg-blue-500/20 px-3 py-1 rounded-full text-xl  text-blue-100 font-700"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3 }}
                   >
-                    EARLY BIRD PRICE
+                    Early Bird Pricing
                   </motion.div>
                 </div>
                 <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-bold text-[#002F67]">
+                  <span className="text-4xl md:text-5xl font-bold text-[#ffffff]">
                     ${currentData.price}
                   </span>
-                  <span className="text-gray-600 ml-2">per lesson</span>
+                  <span className="text-gray-400 ml-2">per lesson</span>
                 </div>
               </div>
 
@@ -397,6 +400,89 @@ const PricingSection = () => {
           <p className="text-gray-600 mt-4 text-sm">
             Start your academic excellence journey today with EXL Tutoring
           </p>
+        </motion.div>
+        {/* Bottom section - Money Back Guarantee */}
+        <motion.div
+          className="mt-20  rounded-3xl p-12"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.7 }}
+        >
+          <div className="max-w-7xl mx-auto ">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Badge Section */}
+              <motion.div
+                className="flex justify-center"
+                whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="w-64 h-64 rounded-3xl  flex items-center justify-center bg-white">
+                  <div className=" rounded-full overflow-hidden border-4 border-white">
+                    <img
+                      src={MoneyBack}
+                      alt="Guarantee"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Content Section */}
+              <div className="text-left">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  Experience EXL with a free trial on us
+                </h2>
+                <p className="text-gray-600 mb-6">and gain access to:</p>
+
+                <div className="space-y-4 mb-8">
+                  <motion.div
+                    className="flex items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.8 }}
+                  >
+                    <BookOpen className="w-6 h-6 text-[#002F67] mr-4" />
+                    <span className="text-lg text-gray-700 font-medium">
+                      Quality Resources
+                    </span>
+                  </motion.div>
+
+                  <motion.div
+                    className="flex items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.9 }}
+                  >
+                    <Users className="w-6 h-6 text-[#002F67] mr-4" />
+                    <span className="text-lg text-gray-700 font-medium">
+                      Teachers that fit the way you learn
+                    </span>
+                  </motion.div>
+                </div>
+
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Our{" "}
+                  <span className="font-semibold text-[#002F67]">
+                    First Lesson Money Back Guarantee
+                  </span>{" "}
+                  is designed to help you decide if EXL is right for you. If you
+                  decide that we aren't, walk away free of charge. Book a Free
+                  Trial!
+                </p>
+
+                <motion.a
+                  href="/free-trail"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <button className="bg-[#002f67] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg">
+                    Book a Free Trial on us
+                  </button>
+                </motion.a>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </div>
