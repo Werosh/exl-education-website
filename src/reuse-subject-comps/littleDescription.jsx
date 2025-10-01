@@ -1,229 +1,218 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Users, Calendar, CheckCircle } from "lucide-react";
+import {
+  BookOpen,
+  Users,
+  Calendar,
+  Target,
+  Award,
+  TrendingUp,
+} from "lucide-react";
 
 const LittleDescription = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2,
-      },
+  const features = [
+    {
+      icon: Target,
+      title: "Adaptive Learning",
+      description:
+        "Curriculum adjusts to your pace and learning style for optimal understanding",
     },
-  };
+    {
+      icon: Award,
+      title: "Expert Guidance",
+      description:
+        "One-on-one tutoring and personalized catch-up materials when needed",
+    },
+    {
+      icon: TrendingUp,
+      title: "Track Progress",
+      description:
+        "Monitor your improvement with detailed analytics and performance insights",
+    },
+  ];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    },
-  };
+  const cohorts = [
+    { year: "2024", status: "Now Available", icon: BookOpen },
+    { year: "2025", status: "Opening Soon", icon: Users },
+    { year: "2026", status: "Early Access", icon: Calendar },
+  ];
 
   return (
-    <motion.div
-      className="bg-gradient-to-br from-blue-50 to-white py-16 px-6"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content Section */}
-          <motion.div className="space-y-8" variants={itemVariants}>
-            <div className="space-y-6">
-              <motion.div
-                className="flex items-center space-x-3"
-                variants={itemVariants}
-              >
-                <motion.div
-                  className="p-2 bg-blue-600 rounded-lg text-white"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <BookOpen size={24} />
-                </motion.div>
-                <h2 className="text-4xl font-bold text-gray-900">
-                  Personalized Learning
-                  <span className="block text-blue-600">Experience</span>
-                </h2>
-              </motion.div>
-
-              <motion.p
-                className="text-lg text-gray-600 leading-relaxed"
-                variants={itemVariants}
-              >
-                Every student learns differently — and we understand that. Our
-                adaptive curriculum adjusts to each student's pace and learning
-                style, ensuring optimal comprehension and engagement throughout
-                their educational journey.
-              </motion.p>
-
-              <motion.div
-                className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm border border-blue-100"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-              >
-                <CheckCircle
-                  className="text-blue-600 mt-1 flex-shrink-0"
-                  size={20}
-                />
-                <p className="text-gray-700">
-                  If you miss a session or need extra support, our intelligent
-                  system automatically provides personalised catch-up materials
-                  and one-on-one tutoring sessions.
-                </p>
-              </motion.div>
+    <div className="bg-white py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
+          >
+            {/* Header */}
+            <div className="space-y-4">
+              <div className="inline-block px-4 py-2 bg-black text-white text-xs font-bold tracking-widest">
+                PERSONALIZED APPROACH
+              </div>
+              <h2 className="text-5xl font-bold text-black leading-tight">
+                Learning That
+                <span className="block" style={{ color: "#002f67" }}>
+                  Adapts to You
+                </span>
+              </h2>
             </div>
 
-            {/* Feature Badges */}
-            <motion.div
-              className="flex flex-wrap gap-3"
-              variants={itemVariants}
-            >
-              {[
-                {
-                  icon: Calendar,
-                  text: "2024 Cohort Available",
-                  gradient: "from-blue-500 to-blue-600",
-                },
-                {
-                  icon: Users,
-                  text: "2025 Cohort Opening",
-                  gradient: "from-indigo-500 to-indigo-600",
-                },
-                {
-                  icon: BookOpen,
-                  text: "2026 Early Access",
-                  gradient: "from-cyan-500 to-cyan-600",
-                },
-              ].map((badge, index) => (
+            <p className="text-lg text-gray-600 leading-relaxed border-l-4 border-black pl-6">
+              Every student learns differently - and we understand that. Our
+              adaptive curriculum adjusts to each student's pace and learning
+              style, ensuring optimal comprehension and engagement throughout
+              their educational journey.
+            </p>
+
+            {/* Feature Cards */}
+            <div className="space-y-4 pt-4">
+              {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className={`flex items-center space-x-2 px-4 py-2 bg-gradient-to-r ${badge.gradient} text-white rounded-full text-sm font-medium shadow-lg`}
-                  variants={badgeVariants}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ x: 10 }}
+                  className="flex items-start gap-4 p-4 border-2 border-gray-200 hover:border-black transition-all group"
                 >
-                  <badge.icon size={16} />
-                  <span>{badge.text}</span>
+                  <div
+                    className="w-12 h-12 flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform"
+                    style={{ backgroundColor: "#002f67" }}
+                  >
+                    <feature.icon
+                      className="w-6 h-6 text-white"
+                      strokeWidth={2}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-black mb-1">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {feature.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Image Section */}
-          <motion.div className="relative" variants={imageVariants}>
-            <div className="relative">
-              {/* Main Image */}
-
-              {/* Floating Cards */}
-              <motion.div
-                className="absolute -top-35 -left-4 z-20"
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 2, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <img
-                  src="https://pmstudycircle.com/wp-content/uploads/2022/09/Project-Progress-Report.jpg"
-                  alt="Progress Report"
-                  className="rounded-lg shadow-lg border-2 border-white"
-                />
-              </motion.div>
-
-              {/* Background Decoration */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl -z-10"
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
+          {/* Right Content - Cohorts & Stats */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
+          >
+            {/* Cohort Cards */}
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold tracking-wider text-gray-500 mb-4">
+                AVAILABLE COHORTS
+              </h3>
+              {cohorts.map((cohort, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className="relative overflow-hidden"
+                >
+                  <div className="flex items-center justify-between p-6 bg-white border-2 border-black">
+                    <div className="flex items-center gap-4">
+                      <div
+                        className="w-14 h-14 flex items-center justify-center"
+                        style={{ backgroundColor: "#002f67" }}
+                      >
+                        <cohort.icon
+                          className="w-7 h-7 text-white"
+                          strokeWidth={2}
+                        />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-black">
+                          {cohort.year}
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          {cohort.status}
+                        </div>
+                      </div>
+                    </div>
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                      className="text-black font-bold"
+                    >
+                      →
+                    </motion.div>
+                  </div>
+                  {index === 0 && (
+                    <div
+                      className="absolute top-0 right-0 px-3 py-1 text-xs font-bold text-white"
+                      style={{ backgroundColor: "#002f67" }}
+                    >
+                      ACTIVE
+                    </div>
+                  )}
+                </motion.div>
+              ))}
             </div>
 
-            {/* Decorative Elements */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-200 rounded-full opacity-10 -z-20"
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 180, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              {[
+                { value: "95%", label: "Success Rate" },
+                { value: "24/7", label: "Support" },
+                { value: "3K+", label: "Students" },
+                { value: "9+", label: "Subjects" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  whileHover={{ y: -5 }}
+                  className="p-6 bg-gray-50 border-2 border-gray-200 text-center hover:border-black transition-all"
+                >
+                  <div className="text-3xl font-bold text-black mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-600 font-semibold">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Call to Action */}
+            <a href="/pricing">
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-4 bg-black text-white font-bold text-lg hover:bg-gray-800 transition-colors"
+                style={{ backgroundColor: "#002f67" }}
+              >
+                START YOUR JOURNEY TODAY
+              </motion.button>
+            </a>
           </motion.div>
         </div>
-
-        {/* Stats Section */}
-        {/* <motion.div
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
-          variants={itemVariants}
-        >
-          {[
-            { number: "10K+", label: "Active Students" },
-            { number: "95%", label: "Success Rate" },
-            { number: "24/7", label: "Support" },
-            { number: "50+", label: "Subjects" },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center p-6 bg-white rounded-xl shadow-sm border border-blue-50"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="text-3xl font-bold text-blue-600 mb-2">
-                {stat.number}
-              </div>
-              <div className="text-gray-600 text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div> */}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

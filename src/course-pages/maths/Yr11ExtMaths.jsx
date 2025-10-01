@@ -66,12 +66,12 @@ const Yr11ExtMaths = () => {
 
       <ComArea />
 
-      <LittleDescription />
-
       <TermsTable
         subjectName="Mathematics Extension 1"
         termDetails={mathTerms}
       />
+
+      <LittleDescription />
     </div>
   );
 };

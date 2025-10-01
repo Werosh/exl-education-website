@@ -67,9 +67,8 @@ const Yr12Chem = () => {
 
         <ComArea />
 
-        <LittleDescription />
-
         <TermsTable subjectName=" Chemistry" termDetails={chemTerms} />
+        <LittleDescription />
       </div>
     </div>
   );

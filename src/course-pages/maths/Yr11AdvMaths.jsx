@@ -66,9 +66,8 @@ const Yr11AdvMaths = () => {
 
       <ComArea />
 
-      <LittleDescription />
-
       <TermsTable subjectName="Mathematics Advanced" termDetails={mathTerms} />
+      <LittleDescription />
     </div>
   );
 };

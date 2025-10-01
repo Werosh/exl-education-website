@@ -72,9 +72,8 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
 
         <ComArea />
 
-        <LittleDescription />
-
         <TermsTable subjectName=" Chemistry" termDetails={chemTerms} />
+        <LittleDescription />
       </div>
     </div>
   );

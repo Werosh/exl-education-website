@@ -67,9 +67,9 @@ const Yr12Phys = () => {
 
         <ComArea />
 
-        <LittleDescription />
-
         <TermsTable subjectName="Physics" termDetails={PhysTerms} />
+
+        <LittleDescription />
       </div>
     </div>
   );

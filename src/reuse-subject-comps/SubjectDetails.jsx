@@ -114,7 +114,7 @@ const SubjectDetails = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 }}
               >
-                <a href="tel:+0431498913">
+                <a href="/free-trail">
                   <button className="mt-4 px-6 py-3 bg-white text-blue-600 font-semibold rounded-full shadow-md hover:bg-purple-100 transition-all duration-300">
                     Book Free Trial
                   </button>
