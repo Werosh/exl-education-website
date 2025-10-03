@@ -392,17 +392,6 @@ const Navbar = () => {
             <motion.a
               variants={navItemVariants}
               whileHover={{ y: -2 }}
-              href="/free-trail"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group flex items-center"
-            >
-              <Mail className="w-4 h-4 mr-1" />
-              Free Trail
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-            </motion.a>
-
-            <motion.a
-              variants={navItemVariants}
-              whileHover={{ y: -2 }}
               href="/contact"
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group flex items-center"
             >

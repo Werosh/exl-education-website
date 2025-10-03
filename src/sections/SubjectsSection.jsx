@@ -1,59 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Download, FerrisWheel } from "lucide-react";
-import SamplePDF from "../assets/pdf/FILE_7572.pdf";
+import { ArrowRight, Download, FerrisWheel } from "lucide-react";
+
+import Img1 from "../images/subjects/1.png";
+import Img2 from "../images/subjects/2.png";
+import Img4 from "../images/subjects/4.png";
+import Img5 from "../images/subjects/5.png";
+import Img7 from "../images/subjects/7.png";
 
 const UnmatchedResources = () => {
-  const floatingBooks = [
-    {
-      id: 1,
-      title: "HSC Mathematics",
-      subject: "Advanced Calculus & Statistics",
-      color: "from-blue-500 to-blue-600",
-      rotation: -15,
-      position: { x: "15%", y: "20%" },
-      size: "large",
-    },
-    {
-      id: 2,
-      title: "Chemistry Notes",
-      subject: "Organic & Inorganic",
-      color: "from-blue-400 to-blue-500",
-      rotation: 12,
-      position: { x: "70%", y: "15%" },
-      size: "medium",
-    },
-    {
-      id: 3,
-      title: "Physics Guide",
-      subject: "Mechanics & Waves",
-      color: "from-blue-600 to-blue-700",
-      rotation: -8,
-      position: { x: "60%", y: "60%" },
-      size: "large",
-    },
-    {
-      id: 4,
-      title: "Study Planner",
-      subject: "Time Management",
-      color: "from-blue-300 to-blue-400",
-      rotation: 20,
-      position: { x: "25%", y: "70%" },
-      size: "small",
-    },
-    {
-      id: 5,
-      title: "Practice Tests",
-      subject: "Mock Examinations",
-      color: "from-blue-500 to-blue-600",
-      rotation: -25,
-      position: { x: "80%", y: "40%" },
-      size: "medium",
-    },
+  // Your 7 image paths
+  const bookImages = [Img1, Img2, Img4, Img5, Img7];
+
+  const positions = [
+    { rotation: -15, position: { x: "15%", y: "20%" }, size: "large" },
+    { rotation: 12, position: { x: "70%", y: "15%" }, size: "medium" },
+    { rotation: -8, position: { x: "60%", y: "60%" }, size: "large" },
+    { rotation: 20, position: { x: "25%", y: "70%" }, size: "small" },
+    { rotation: -25, position: { x: "80%", y: "40%" }, size: "medium" },
+    { rotation: 18, position: { x: "10%", y: "50%" }, size: "medium" },
+    { rotation: -12, position: { x: "45%", y: "35%" }, size: "small" },
   ];
 
+  const [shuffledImages, setShuffledImages] = useState([]);
+
+  useEffect(() => {
+    // Shuffle images randomly
+    const shuffled = [...bookImages].sort(() => Math.random() - 0.5);
+    setShuffledImages(shuffled);
+  }, []);
+
+  const floatingBooks = positions.map((pos, index) => ({
+    id: index + 1,
+    imageSrc: shuffledImages[index],
+    ...pos,
+  }));
+
   return (
-    <section className=" pb-24  relative overflow-hidden">
+    <section className="pb-24 relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%">
@@ -117,12 +101,12 @@ const UnmatchedResources = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                In every lesson, you’ll receive a printed booklet created by our
+                In every lesson, you'll receive a printed booklet created by our
                 subject specialists, designed to comprehensively cover every dot
                 point in the NESA syllabus. Each booklet is structured to
-                complement your teacher’s guidance, combining clear explanations
+                complement your teacher's guidance, combining clear explanations
                 with HSC-style practice questions and homework that is checked
-                to give you valuable feedback .
+                to give you valuable feedback.
               </motion.p>
             </div>
 
@@ -134,7 +118,7 @@ const UnmatchedResources = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <a href={SamplePDF} target="_blank" rel="noopener noreferrer">
+                <a href="/sample.pdf" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     className="group flex items-center justify-center sm:justify-between space-x-3 bg-[#002F67] hover:bg-white hover:border-2 hover:border-black hover:text-gray-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     whileHover={{ scale: 1.05 }}
@@ -166,7 +150,7 @@ const UnmatchedResources = () => {
             </div>
           </motion.div>
 
-          {/* Right Column (Floating Books) */}
+          {/* Right Column (Floating Book Images) */}
           <motion.div
             className="relative h-[500px] lg:h-[500px]"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -175,55 +159,53 @@ const UnmatchedResources = () => {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <div className="relative w-full h-full">
-              {/* Glow Background */}
-              <div className="absolute inset-0  rounded-3xl blur-3xl"></div>
-
-              {/* Floating Books */}
-              {floatingBooks.map((book, index) => (
-                <motion.div
-                  key={book.id}
-                  className="absolute"
-                  style={{ left: book.position.x, top: book.position.y }}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.8,
-                    rotate: book.rotation - 20,
-                    y: 50,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    scale: 1,
-                    rotate: book.rotation,
-                    y: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.15,
-                    ease: "easeOut",
-                  }}
-                  animate={{
-                    y: [-5, 5, -5],
-                    rotate: [
-                      book.rotation - 2,
-                      book.rotation + 2,
-                      book.rotation - 2,
-                    ],
-                  }}
-                  transition={{
-                    duration: 4 + index,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: book.rotation + 5,
-                    z: 50,
-                    transition: { duration: 0.3 },
-                  }}
-                >
-                  <div
-                    className={`
+              {/* Floating Book Images */}
+              {shuffledImages.length > 0 &&
+                floatingBooks.map((book, index) => (
+                  <motion.div
+                    key={book.id}
+                    className="absolute"
+                    style={{ left: book.position.x, top: book.position.y }}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.8,
+                      rotate: book.rotation - 20,
+                      y: 50,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      scale: 1,
+                      rotate: book.rotation,
+                      y: 0,
+                    }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.8,
+                      delay: index * 0.15,
+                      ease: "easeOut",
+                    }}
+                    animate={{
+                      y: [-5, 5, -5],
+                      rotate: [
+                        book.rotation - 2,
+                        book.rotation + 2,
+                        book.rotation - 2,
+                      ],
+                    }}
+                    transition={{
+                      duration: 4 + index,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: book.rotation + 5,
+                      z: 50,
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    <div
+                      className={`
                       ${
                         book.size === "large"
                           ? "w-32 h-40"
@@ -231,50 +213,21 @@ const UnmatchedResources = () => {
                           ? "w-24 h-32"
                           : "w-20 h-28"
                       }
-                      bg-gradient-to-br ${
-                        book.color
-                      } rounded-lg shadow-xl border border-white/20
+                      rounded-lg shadow-xl border-2 border-white/30
                       backdrop-blur-sm cursor-pointer transform-gpu
                       hover:shadow-2xl transition-all duration-300
+                      overflow-hidden bg-white
                     `}
-                  >
-                    <div className="p-3 h-full flex flex-col justify-between">
-                      <div className="space-y-1">
-                        <div className="w-8 h-1 bg-white/60 rounded"></div>
-                        <div className="w-12 h-1 bg-white/40 rounded"></div>
-                      </div>
-                      <div className="text-center space-y-1">
-                        <div
-                          className={`
-                            text-white font-bold 
-                            ${book.size === "large" ? "text-xs" : "text-[10px]"}
-                          `}
-                        >
-                          {book.title}
-                        </div>
-                        <div
-                          className={`
-                            text-white/80 
-                            ${
-                              book.size === "large"
-                                ? "text-[10px]"
-                                : "text-[8px]"
-                            }
-                          `}
-                        >
-                          {book.subject}
-                        </div>
-                      </div>
-                      <div className="flex justify-center">
-                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                          <BookOpen className="w-3 h-3 text-white" />
-                        </div>
-                      </div>
+                    >
+                      <img
+                        src={book.imageSrc}
+                        alt={`Book ${book.id}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="absolute right-0 top-1 bottom-1 w-2 bg-gradient-to-b from-black/20 to-black/40 rounded-r-lg"></div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
 
               {/* Central Download Icon */}
               <motion.div
