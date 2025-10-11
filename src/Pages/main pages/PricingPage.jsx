@@ -216,8 +216,8 @@ const PricingSection = () => {
               {/* Card Header with gradient */}
               <div className="bg-[#002f67] p-8 text-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-bold underline">
-                    {selectedYear} EXL
+                  <h2 className="text-2xl font-extrabold underline">
+                    {selectedYear} EXL Lesson
                   </h2>
                   <motion.div
                     className="bg-blue-500/20 px-3 py-1 rounded-full text-xl  text-blue-100 font-700"
