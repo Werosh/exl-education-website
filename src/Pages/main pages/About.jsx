@@ -23,6 +23,8 @@ import YutangImg from "../../images/teachers/yutang_lin.jpeg";
 import NicholasImg from "../../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../../images/teachers/anna.jpeg";
 
+import TeacherSection from "../../sections/TeacherSection";
+
 const About = () => {
   const [visibleStats, setVisibleStats] = useState(false);
 
@@ -287,7 +289,7 @@ const About = () => {
       </motion.section>
 
       {/* Faculty Section */}
-      <motion.section
+      {/* <motion.section
         className="py-20 px-6"
         variants={containerVariants}
         initial="hidden"
@@ -374,7 +376,8 @@ const About = () => {
             ))}
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
+      <TeacherSection />
 
       {/* Testimonials */}
       <motion.section
