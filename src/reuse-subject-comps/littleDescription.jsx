@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   BookOpen,
   Users,
@@ -8,6 +9,7 @@ import {
   Award,
   TrendingUp,
 } from "lucide-react";
+import smartBoardImage from "../images/others/smartBoard.jpeg";
 
 const LittleDescription = () => {
   const features = [
@@ -118,81 +120,74 @@ const LittleDescription = () => {
                 AVAILABLE COHORTS
               </h3>
               {cohorts.map((cohort, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  className="relative overflow-hidden"
-                >
-                  <div className="flex items-center justify-between p-6 bg-white border-2 border-black">
-                    <div className="flex items-center gap-4">
+                <Link key={index} to="/free-trail">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.4 }}
+                    whileHover={{ scale: 1.02, y: -4 }}
+                    className="relative overflow-hidden cursor-pointer"
+                  >
+                    <div className="flex items-center justify-between p-6 bg-white border-2 border-black hover:bg-gray-50 transition-colors">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className="w-14 h-14 flex items-center justify-center"
+                          style={{ backgroundColor: "#002f67" }}
+                        >
+                          <cohort.icon
+                            className="w-7 h-7 text-white"
+                            strokeWidth={2}
+                          />
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-black">
+                            {cohort.year}
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            {cohort.status}
+                          </div>
+                        </div>
+                      </div>
+                      <motion.div
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="text-black font-bold"
+                      >
+                        →
+                      </motion.div>
+                    </div>
+                    {index === 0 && (
                       <div
-                        className="w-14 h-14 flex items-center justify-center"
+                        className="absolute top-0 right-0 px-3 py-1 text-xs font-bold text-white"
                         style={{ backgroundColor: "#002f67" }}
                       >
-                        <cohort.icon
-                          className="w-7 h-7 text-white"
-                          strokeWidth={2}
-                        />
+                        ACTIVE
                       </div>
-                      <div>
-                        <div className="text-2xl font-bold text-black">
-                          {cohort.year}
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          {cohort.status}
-                        </div>
-                      </div>
-                    </div>
-                    <motion.div
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                      className="text-black font-bold"
-                    >
-                      →
-                    </motion.div>
-                  </div>
-                  {index === 0 && (
-                    <div
-                      className="absolute top-0 right-0 px-3 py-1 text-xs font-bold text-white"
-                      style={{ backgroundColor: "#002f67" }}
-                    >
-                      ACTIVE
-                    </div>
-                  )}
-                </motion.div>
+                    )}
+                  </motion.div>
+                </Link>
               ))}
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {[
-                { value: "95%", label: "Success Rate" },
-                { value: "24/7", label: "Support" },
-                { value: "3K+", label: "Students" },
-                { value: "9+", label: "Subjects" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  whileHover={{ y: -5 }}
-                  className="p-6 bg-gray-50 border-2 border-gray-200 text-center hover:border-black transition-all"
-                >
-                  <div className="text-3xl font-bold text-black mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600 font-semibold">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* Smart Board Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+              className="pt-4"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <div className="col-span-2">
+                  <img
+                    src={smartBoardImage}
+                    alt="Smart Board Teaching Session"
+                    className="w-full h-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  />
+                </div>
+              </div>
+            </motion.div>
 
             {/* Call to Action */}
             <a href="/pricing">
