@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -49,43 +50,7 @@ const BookFreeTrialPage = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showCustomClass, setShowCustomClass] = useState(false);
 
-  const subjects = [
-    {
-      category: "Mathematics",
-      items: [
-        "Junior Maths Year 7 - Friday 4:00-5:30 PM",
-        "Junior Maths Year 7 - Saturday 11:00-12:30 PM",
-        "Junior Maths Year 8 - Friday 6:00-7:30 PM",
-        "Junior Maths Year 8 - Sunday 2:00-3:30 PM",
-        "Junior Maths Year 10 - Saturday 1:00-2:30 PM",
-        "Junior Maths Year 10 - Monday 4:00-5:30 PM",
-        "Year 11 Advanced Maths - Tuesday 6:00-7:30 PM",
-        "Year 11 Advanced Maths - Sunday 11:00-12:30 PM",
-        "Year 11 Extension Maths - Wednesday 4:00-5:30 PM",
-        "Year 12 Advanced Maths - Thursday 6:00-7:30 PM",
-        "Year 12 Advanced Maths - Saturday 3:00-4:30 PM",
-        "Year 12 Extension 1 Maths - Friday 7:00-8:30 PM",
-      ],
-    },
-    {
-      category: "Chemistry",
-      items: [
-        "Year 11 Chemistry - Monday 6:00-7:30 PM",
-        "Year 11 Chemistry - Sunday 3:30-5:00 PM",
-        "Year 12 Chemistry - Tuesday 4:00-5:30 PM",
-        "Year 12 Chemistry - Saturday 9:00-10:30 AM",
-      ],
-    },
-    {
-      category: "Physics",
-      items: [
-        "Year 11 Physics - Wednesday 6:00-7:30 PM",
-        "Year 11 Physics - Sunday 9:30-11:00 AM",
-        "Year 12 Physics - Thursday 4:00-5:30 PM",
-        "Year 12 Physics - Saturday 4:30-6:00 PM",
-      ],
-    },
-  ];
+  const subjects = ["Mathematics", "Chemistry", "Physics"];
 
   const years = Array.from({ length: 6 }, (_, i) => ({
     value: i + 7,
@@ -134,26 +99,64 @@ const BookFreeTrialPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // EmailJS Configuration - Replace with your actual credentials
+    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-    setIsSubmitting(false);
-    setShowSuccess(true);
-    setFormData({
-      studentFirstName: "",
-      studentLastName: "",
-      parentFirstName: "",
-      parentLastName: "",
-      school: "",
-      studentEmail: "",
-      parentEmail: "",
-      studentMobile: "",
-      parentMobile: "",
-      year2025: "",
-      subjectsInterested: [],
-      customClass: "",
-    });
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      form_type: formType === "student" ? "Student" : "Parent",
+      student_first_name: formData.studentFirstName,
+      student_last_name: formData.studentLastName,
+      parent_first_name: formData.parentFirstName || "N/A",
+      parent_last_name: formData.parentLastName || "N/A",
+      school: formData.school,
+      student_email: formData.studentEmail || "N/A",
+      parent_email: formData.parentEmail || "N/A",
+      student_mobile: formData.studentMobile || "N/A",
+      parent_mobile: formData.parentMobile || "N/A",
+      year_2025: formData.year2025,
+      subjects_interested: formData.subjectsInterested.join(", "),
+      submission_date: new Date().toLocaleString(),
+    };
 
-    setTimeout(() => setShowSuccess(false), 5000);
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setIsSubmitting(false);
+      setShowSuccess(true);
+
+      // Reset form
+      setFormData({
+        studentFirstName: "",
+        studentLastName: "",
+        parentFirstName: "",
+        parentLastName: "",
+        school: "",
+        studentEmail: "",
+        parentEmail: "",
+        studentMobile: "",
+        parentMobile: "",
+        year2025: "",
+        subjectsInterested: [],
+        customClass: "",
+      });
+
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setIsSubmitting(false);
+      alert(
+        "Failed to submit the form. Please try again or contact us directly."
+      );
+    }
   };
 
   return (
@@ -436,33 +439,24 @@ const BookFreeTrialPage = () => {
                   )}
 
                   {/* Subject Categories */}
-                  <div className="space-y-4">
-                    {subjects.map((category) => (
-                      <div
-                        key={category.category}
-                        className="border border-gray-200 rounded-lg p-4"
+                  <div className="space-y-3">
+                    {subjects.map((subject) => (
+                      <label
+                        key={subject}
+                        className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
                       >
-                        <h4 className="font-semibold text-gray-900 mb-3">
-                          {category.category}
-                        </h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          {category.items.map((subject) => (
-                            <label key={subject} className="flex items-center">
-                              <input
-                                type="checkbox"
-                                checked={formData.subjectsInterested.includes(
-                                  subject
-                                )}
-                                onChange={() => handleSubjectChange(subject)}
-                                className="h-4 w-4 text-[#002F67] focus:ring-[#002F67] border-gray-300 rounded"
-                              />
-                              <span className="ml-3 text-sm text-gray-700">
-                                {subject}
-                              </span>
-                            </label>
-                          ))}
-                        </div>
-                      </div>
+                        <input
+                          type="checkbox"
+                          checked={formData.subjectsInterested.includes(
+                            subject
+                          )}
+                          onChange={() => handleSubjectChange(subject)}
+                          className="h-5 w-5 text-[#002F67] focus:ring-[#002F67] border-gray-300 rounded"
+                        />
+                        <span className="ml-3 text-base font-medium text-gray-900">
+                          {subject}
+                        </span>
+                      </label>
                     ))}
                   </div>
 
