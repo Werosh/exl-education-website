@@ -142,6 +142,14 @@ const highlightYear = (text) => {
   return text.replace(/(Year\s\d+)/gi, "<span class='font-bold'>$1</span>");
 };
 
+// helper function to extract year and subject separately
+const extractYearAndSubject = (text) => {
+  const yearMatch = text.match(/Year\s\d+/gi);
+  const year = yearMatch ? yearMatch[0] : null;
+  const subject = year ? text.replace(year, "").trim() : text;
+  return { year, subject };
+};
+
 const CalendarPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -210,28 +218,33 @@ const CalendarPage = () => {
               {day.day}
             </div>
             <div className="flex-1 space-y-2 p-4">
-              {day.classes.filter(filterByCategory).map((cls, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
-                  className={`p-3 rounded-lg ${cls.color} hover:shadow-md transition-shadow duration-200`}
-                >
-                  <div
-                    className="text-sm font-bold leading-tight mb-1"
-                    dangerouslySetInnerHTML={{
-                      __html: highlightYear(cls.subject),
-                    }}
-                  ></div>
-                  <div className="text-xs opacity-80 font-medium">
-                    {cls.time}
-                  </div>
-                  <div className="text-xs opacity-70 mt-1">
-                    by {cls.teacher}
-                  </div>
-                </motion.div>
-              ))}
+              {day.classes.filter(filterByCategory).map((cls, i) => {
+                const { year, subject } = extractYearAndSubject(cls.subject);
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                    className={`p-3 rounded-lg ${cls.color} hover:shadow-md transition-shadow duration-200`}
+                  >
+                    {year && (
+                      <div className="text-sm font-bold leading-tight mb-1">
+                        {year}
+                      </div>
+                    )}
+                    <div className="text-sm font-bold leading-tight mb-1">
+                      {subject}
+                    </div>
+                    <div className="text-xs opacity-80 font-medium">
+                      {cls.time}
+                    </div>
+                    <div className="text-xs opacity-70 mt-1">
+                      by {cls.teacher}
+                    </div>
+                  </motion.div>
+                );
+              })}
               {day.classes.filter(filterByCategory).length === 0 && (
                 <div className="text-center text-gray-400 text-sm py-8">
                   No classes scheduled
@@ -244,8 +257,10 @@ const CalendarPage = () => {
 
       {/* Descriptive Box */}
       <div className="mt-10 bg-blue-50 border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
-        <p className="mb-3">DECIDE LATER</p>
-        <p>DECIDE LATER</p>
+        <p>
+          Can't find a class for you or your friend? Contact us and we'll create
+          a class for you!
+        </p>
       </div>
 
       {/* Summary Statistics */}
