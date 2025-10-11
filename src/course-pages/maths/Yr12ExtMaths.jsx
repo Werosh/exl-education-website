@@ -70,6 +70,7 @@ const Yr12ExtMaths = () => {
         <TermsTable
           subjectName="Mathematics Extension 1"
           termDetails={mathTerms}
+          subjectType="mathematics"
         />
       </div>
 

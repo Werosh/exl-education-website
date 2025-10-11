@@ -69,6 +69,7 @@ const Yr11ExtMaths = () => {
       <TermsTable
         subjectName="Mathematics Extension 1"
         termDetails={mathTerms}
+        subjectType="mathematics"
       />
 
       <LittleDescription />

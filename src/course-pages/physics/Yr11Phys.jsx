@@ -8,47 +8,86 @@ import TermsTable from "../../reuse-subject-comps/TermsTable";
 const PhysTerms = [
   {
     name: "Module 1, Module 2 (2.1)",
+    startDate: "15/1/25",
     lessons: [
-      "Lesson 1: Module 1 - Introduction to Motion",
-      "Lesson 2: Module 1 - Further Work with Velocity",
-      "Lesson 3: Module 1 - Kinematics Equations",
-      "Lesson 4: Module 1 - Two-Dimensional Motion",
-      "Lesson 5: Module 1 - Further Two-Dimensional Motion",
-      "Lesson 6: Module 1 - Relative Vectors",
-      "Lesson 7: Working Scientifically and Scientific Skills",
-      "Lesson 8: Module 1 - Mini-Exam and Review",
-      "Lesson 9: Module 2 - Introduction to Forces",
-      "Lesson 10: Module 2 - Further Work With Forces",
+      { name: "Lesson 1: Module 1 - Introduction to Motion", date: "15/1/25" },
+      {
+        name: "Lesson 2: Module 1 - Further Work with Velocity",
+        date: "22/1/25",
+      },
+      { name: "Lesson 3: Module 1 - Kinematics Equations", date: "29/1/25" },
+      { name: "Lesson 4: Module 1 - Two-Dimensional Motion", date: "5/2/25" },
+      {
+        name: "Lesson 5: Module 1 - Further Two-Dimensional Motion",
+        date: "12/2/25",
+      },
+      { name: "Lesson 6: Module 1 - Relative Vectors", date: "19/2/25" },
+      {
+        name: "Lesson 7: Working Scientifically and Scientific Skills",
+        date: "26/2/25",
+      },
+      { name: "Lesson 8: Module 1 - Mini-Exam and Review", date: "5/3/25" },
+      { name: "Lesson 9: Module 2 - Introduction to Forces", date: "12/3/25" },
+      {
+        name: "Lesson 10: Module 2 - Further Work With Forces",
+        date: "19/3/25",
+      },
     ],
   },
   {
     name: "Module 2 (2.2 - 2.4), Module 3",
+    startDate: "26/3/25",
     lessons: [
-      "Lesson 1: Module 2 - Friction and Multiple Body Systems",
-      "Lesson 2: Module 2 - Work, Energy and Power",
-      "Lesson 3: Module 2 - Momentum and Collisions",
-      "Lesson 4: Module 2 - Impulse and Further Work With Collisions",
-      "Lesson 5: Module 2 - Mini Exam and Review",
-      "Lesson 6: Module 3 - Introduction to Waves",
-      "Lesson 7: Module 3 - Behaviour of Waves",
-      "Lesson 8: Module 3 - Sound Waves",
-      "Lesson 9: Module 3 - Ray Model of Light",
-      "Lesson 10: Module 3 - Introduction to Thermodynamics",
+      {
+        name: "Lesson 1: Module 2 - Friction and Multiple Body Systems",
+        date: "26/3/25",
+      },
+      { name: "Lesson 2: Module 2 - Work, Energy and Power", date: "2/4/25" },
+      { name: "Lesson 3: Module 2 - Momentum and Collisions", date: "9/4/25" },
+      {
+        name: "Lesson 4: Module 2 - Impulse and Further Work With Collisions",
+        date: "16/4/25",
+      },
+      { name: "Lesson 5: Module 2 - Mini Exam and Review", date: "23/4/25" },
+      { name: "Lesson 6: Module 3 - Introduction to Waves", date: "30/4/25" },
+      { name: "Lesson 7: Module 3 - Behaviour of Waves", date: "7/5/25" },
+      { name: "Lesson 8: Module 3 - Sound Waves", date: "14/5/25" },
+      { name: "Lesson 9: Module 3 - Ray Model of Light", date: "21/5/25" },
+      {
+        name: "Lesson 10: Module 3 - Introduction to Thermodynamics",
+        date: "28/5/25",
+      },
     ],
   },
   {
     name: "Module 4, Foundations for Year 12",
+    startDate: "4/6/25",
     lessons: [
-      "Lesson 1: Module 3 - Further Work with Thermodynamics",
-      "Lesson 2: Module 4 - Introduction to Electrostatics",
-      "Lesson 3: Module 4 - Further Work with Electrostatics",
-      "Lesson 4: Module 4 - Introduction to Circuits",
-      "Lesson 5: Module 4 - Introduction to Magnetism",
-      "Lesson 6: Module 4 - Mini Exam and Review",
-      "Lesson 7: Year 11 Review",
-      "Lesson 8: Foundations for Year 12 I",
-      "Lesson 9: Foundations for Year 12 II",
-      "Lesson 10: Foundations for Year 12 III",
+      {
+        name: "Lesson 1: Module 3 - Further Work with Thermodynamics",
+        date: "4/6/25",
+      },
+      {
+        name: "Lesson 2: Module 4 - Introduction to Electrostatics",
+        date: "11/6/25",
+      },
+      {
+        name: "Lesson 3: Module 4 - Further Work with Electrostatics",
+        date: "18/6/25",
+      },
+      {
+        name: "Lesson 4: Module 4 - Introduction to Circuits",
+        date: "25/6/25",
+      },
+      {
+        name: "Lesson 5: Module 4 - Introduction to Magnetism",
+        date: "2/7/25",
+      },
+      { name: "Lesson 6: Module 4 - Mini Exam and Review", date: "9/7/25" },
+      { name: "Lesson 7: Year 11 Review", date: "16/7/25" },
+      { name: "Lesson 8: Foundations for Year 12 I", date: "23/7/25" },
+      { name: "Lesson 9: Foundations for Year 12 II", date: "30/7/25" },
+      { name: "Lesson 10: Foundations for Year 12 III", date: "6/8/25" },
     ],
   },
 ];
@@ -68,7 +107,11 @@ const Yr11Phys = () => {
 
         <ComArea />
 
-        <TermsTable subjectName="Physics" termDetails={PhysTerms} />
+        <TermsTable
+          subjectName="Physics"
+          termDetails={PhysTerms}
+          subjectType="physics"
+        />
 
         <LittleDescription />
       </div>

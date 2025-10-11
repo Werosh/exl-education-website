@@ -8,47 +8,77 @@ import TermsTable from "../../reuse-subject-comps/TermsTable";
 const chemTerms = [
   {
     name: "Module 5, Module 6 (6.1)",
+    startDate: "15/1/25",
     lessons: [
-      "Lesson 1: Module 5 - Static and Dynamic Equilibrium",
-      "Lesson 2: Module 5 - Le Chatelier's principle",
-      "Lesson 3: Module 5 - Collision Theory",
-      "Lesson 4: Module 5 - The Equilibrium Constant I",
-      "Lesson 5: Module 5 - The Equilibrium Constant II",
-      "Lesson 6: Module 5 - Solubility Product I",
-      "Lesson 7: Module 5 - Solubility Product II",
-      "Lesson 8: Module 5 Review",
-      "Lesson 9: Module 6 - Introduction to Acids and Bases",
-      "Lesson 10: Module 6 - Acid Base Theory",
+      {
+        name: "Lesson 1: Module 5 - Static and Dynamic Equilibrium",
+        date: "15/1/25",
+      },
+      {
+        name: "Lesson 2: Module 5 - Le Chatelier's principle",
+        date: "22/1/25",
+      },
+      { name: "Lesson 3: Module 5 - Collision Theory", date: "29/1/25" },
+      {
+        name: "Lesson 4: Module 5 - The Equilibrium Constant I",
+        date: "5/2/25",
+      },
+      {
+        name: "Lesson 5: Module 5 - The Equilibrium Constant II",
+        date: "12/2/25",
+      },
+      { name: "Lesson 6: Module 5 - Solubility Product I", date: "19/2/25" },
+      { name: "Lesson 7: Module 5 - Solubility Product II", date: "26/2/25" },
+      { name: "Lesson 8: Module 5 Review", date: "5/3/25" },
+      {
+        name: "Lesson 9: Module 6 - Introduction to Acids and Bases",
+        date: "12/3/25",
+      },
+      { name: "Lesson 10: Module 6 - Acid Base Theory", date: "19/3/25" },
     ],
   },
   {
     name: "Module 6 (6.2-6.3), Module 7 (7.1-7.5)",
+    startDate: "26/3/25",
     lessons: [
-      "Lesson 1: Module 6 - pH and pOH Calculations",
-      "Lesson 2: Module 6 - Further Acid Base Calculations",
-      "Lesson 3: Module 6 - Standard Titrations",
-      "Lesson 4: Module 6 - Further Titration",
-      "Lesson 5: Module 6 Review",
-      "Lesson 6: Module 7 - Organic Nomenclature",
-      "Lesson 7: Module 7 - Properties of Hydrocarbons",
-      "Lesson 8: Module 7 - Hydrocarbon Reactions",
-      "Lesson 9: Module 7 - Alcohols",
-      "Lesson 10: Module 7 - Organic Acids and Bases",
+      { name: "Lesson 1: Module 6 - pH and pOH Calculations", date: "26/3/25" },
+      {
+        name: "Lesson 2: Module 6 - Further Acid Base Calculations",
+        date: "2/4/25",
+      },
+      { name: "Lesson 3: Module 6 - Standard Titrations", date: "9/4/25" },
+      { name: "Lesson 4: Module 6 - Further Titration", date: "16/4/25" },
+      { name: "Lesson 5: Module 6 Review", date: "23/4/25" },
+      { name: "Lesson 6: Module 7 - Organic Nomenclature", date: "30/4/25" },
+      {
+        name: "Lesson 7: Module 7 - Properties of Hydrocarbons",
+        date: "7/5/25",
+      },
+      { name: "Lesson 8: Module 7 - Hydrocarbon Reactions", date: "14/5/25" },
+      { name: "Lesson 9: Module 7 - Alcohols", date: "21/5/25" },
+      {
+        name: "Lesson 10: Module 7 - Organic Acids and Bases",
+        date: "28/5/25",
+      },
     ],
   },
   {
     name: "Module 7 (7.6), Module 8",
+    startDate: "4/6/25",
     lessons: [
-      "Lesson 1: Module 7 - Polymers",
-      "Lesson 2: Module 7 Review",
-      "Lesson 3: Module 8 - Ion Testing",
-      "Lesson 4: Module 8 - Inorganic Spectroscopy",
-      "Lesson 5: Module 8 - Organic Testing",
-      "Lesson 6: Module 8 - Infrared and Mass Spectroscopy",
-      "Lesson 7: Module 8 - C and H NMR",
-      "Lesson 8: Module 8 - Spectra",
-      "Lesson 9: Module 8 - Industrial Application",
-      "Lesson 10: Module 8 Review",
+      { name: "Lesson 1: Module 7 - Polymers", date: "4/6/25" },
+      { name: "Lesson 2: Module 7 Review", date: "11/6/25" },
+      { name: "Lesson 3: Module 8 - Ion Testing", date: "18/6/25" },
+      { name: "Lesson 4: Module 8 - Inorganic Spectroscopy", date: "25/6/25" },
+      { name: "Lesson 5: Module 8 - Organic Testing", date: "2/7/25" },
+      {
+        name: "Lesson 6: Module 8 - Infrared and Mass Spectroscopy",
+        date: "9/7/25",
+      },
+      { name: "Lesson 7: Module 8 - C and H NMR", date: "16/7/25" },
+      { name: "Lesson 8: Module 8 - Spectra", date: "23/7/25" },
+      { name: "Lesson 9: Module 8 - Industrial Application", date: "30/7/25" },
+      { name: "Lesson 10: Module 8 Review", date: "6/8/25" },
     ],
   },
 ];
@@ -67,7 +97,11 @@ const Yr12Chem = () => {
 
         <ComArea />
 
-        <TermsTable subjectName=" Chemistry" termDetails={chemTerms} />
+        <TermsTable
+          subjectName="Chemistry"
+          termDetails={chemTerms}
+          subjectType="chemistry"
+        />
         <LittleDescription />
       </div>
     </div>

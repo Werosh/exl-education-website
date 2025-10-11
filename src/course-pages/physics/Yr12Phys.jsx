@@ -8,47 +8,92 @@ import TermsTable from "../../reuse-subject-comps/TermsTable";
 const PhysTerms = [
   {
     name: "Module 5, Module 6 (6.1)",
+    startDate: "15/1/25",
     lessons: [
-      "Lesson 1: Module 5 - Introduction to Projectile Motion",
-      "Lesson 2: Module 5 - Further Work with Projectile Motion",
-      "Lesson 3: Module 5 - Circular Motion",
-      "Lesson 4: Module 5 - Further Work with Circular Motion",
-      "Lesson 5: Module 5 - Introduction to Gravity",
-      "Lesson 6: Module 5 - Further work with Gravity",
-      "Lesson 7: Module 5 - Module 5 Exam and Review",
-      "Lesson 8: Module 6 - Charges in Fields",
-      "Lesson 9: Module 6 - The Motor Effect",
-      "Lesson 10: Module 6 - Relationship Between Electricity and Magnetism",
+      {
+        name: "Lesson 1: Module 5 - Introduction to Projectile Motion",
+        date: "15/1/25",
+      },
+      {
+        name: "Lesson 2: Module 5 - Further Work with Projectile Motion",
+        date: "22/1/25",
+      },
+      { name: "Lesson 3: Module 5 - Circular Motion", date: "29/1/25" },
+      {
+        name: "Lesson 4: Module 5 - Further Work with Circular Motion",
+        date: "5/2/25",
+      },
+      { name: "Lesson 5: Module 5 - Introduction to Gravity", date: "12/2/25" },
+      {
+        name: "Lesson 6: Module 5 - Further work with Gravity",
+        date: "19/2/25",
+      },
+      {
+        name: "Lesson 7: Module 5 - Module 5 Exam and Review",
+        date: "26/2/25",
+      },
+      { name: "Lesson 8: Module 6 - Charges in Fields", date: "5/3/25" },
+      { name: "Lesson 9: Module 6 - The Motor Effect", date: "12/3/25" },
+      {
+        name: "Lesson 10: Module 6 - Relationship Between Electricity and Magnetism",
+        date: "19/3/25",
+      },
     ],
   },
   {
     name: "Module 6 (6.2-6.3), Module 7 (7.1-7.5)",
+    startDate: "26/3/25",
     lessons: [
-      "Lesson 1: Module 6 - Transformers",
-      "Lesson 2: Module 6 - Applications of the Motor Effect",
-      "Lesson 3: Module 6 - Further Work with Electromagnetism",
-      "Lesson 4: Module 6 - Mini Exam and Review",
-      "Lesson 5: Module 7 - Introduction to Electromagnetic Waves",
-      "Lesson 6: Module 7 - The Light Spectrum",
-      "Lesson 7: Module 7 - Early Models of Light",
-      "Lesson 8: Module 7 - Diffraction and Polarisation",
-      "Lesson 9: Module 7 - The Quantum Model of Light",
-      "Lesson 10: Module 7 - Introduction to Special Relativity",
+      { name: "Lesson 1: Module 6 - Transformers", date: "26/3/25" },
+      {
+        name: "Lesson 2: Module 6 - Applications of the Motor Effect",
+        date: "2/4/25",
+      },
+      {
+        name: "Lesson 3: Module 6 - Further Work with Electromagnetism",
+        date: "9/4/25",
+      },
+      { name: "Lesson 4: Module 6 - Mini Exam and Review", date: "16/4/25" },
+      {
+        name: "Lesson 5: Module 7 - Introduction to Electromagnetic Waves",
+        date: "23/4/25",
+      },
+      { name: "Lesson 6: Module 7 - The Light Spectrum", date: "30/4/25" },
+      { name: "Lesson 7: Module 7 - Early Models of Light", date: "7/5/25" },
+      {
+        name: "Lesson 8: Module 7 - Diffraction and Polarisation",
+        date: "14/5/25",
+      },
+      {
+        name: "Lesson 9: Module 7 - The Quantum Model of Light",
+        date: "21/5/25",
+      },
+      {
+        name: "Lesson 10: Module 7 - Introduction to Special Relativity",
+        date: "28/5/25",
+      },
     ],
   },
   {
     name: "Module 7 (7.6), Module 8",
+    startDate: "4/6/25",
     lessons: [
-      "Lesson 1: Module 7 - Further Special Relativity",
-      "Lesson 2: Module 7 - Mini Exam and Review",
-      "Lesson 3: Module 8 - The Big Bang",
-      "Lesson 4: Module 8 - Stars",
-      "Lesson 5: Module 8 - Subatomic Particles",
-      "Lesson 6: Module 8 - Later Models of the Atom",
-      "Lesson 7: Module 8 - Nuclear Decay",
-      "Lesson 8: Module 8 - Energy in Nuclear Reactions",
-      "Lesson 9: Module 8 - The Standard Model",
-      "Lesson 10: Module 8 - Mini Exam and Review",
+      {
+        name: "Lesson 1: Module 7 - Further Special Relativity",
+        date: "4/6/25",
+      },
+      { name: "Lesson 2: Module 7 - Mini Exam and Review", date: "11/6/25" },
+      { name: "Lesson 3: Module 8 - The Big Bang", date: "18/6/25" },
+      { name: "Lesson 4: Module 8 - Stars", date: "25/6/25" },
+      { name: "Lesson 5: Module 8 - Subatomic Particles", date: "2/7/25" },
+      { name: "Lesson 6: Module 8 - Later Models of the Atom", date: "9/7/25" },
+      { name: "Lesson 7: Module 8 - Nuclear Decay", date: "16/7/25" },
+      {
+        name: "Lesson 8: Module 8 - Energy in Nuclear Reactions",
+        date: "23/7/25",
+      },
+      { name: "Lesson 9: Module 8 - The Standard Model", date: "30/7/25" },
+      { name: "Lesson 10: Module 8 - Mini Exam and Review", date: "6/8/25" },
     ],
   },
 ];
@@ -67,7 +112,11 @@ const Yr12Phys = () => {
 
         <ComArea />
 
-        <TermsTable subjectName="Physics" termDetails={PhysTerms} />
+        <TermsTable
+          subjectName="Physics"
+          termDetails={PhysTerms}
+          subjectType="physics"
+        />
 
         <LittleDescription />
       </div>
