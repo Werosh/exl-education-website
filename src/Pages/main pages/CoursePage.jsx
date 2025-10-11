@@ -73,6 +73,7 @@ const CoursePage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSubject, setSelectedSubject] = useState("");
+  const [expandedSubjects, setExpandedSubjects] = useState({});
 
   const subjects = [
     {
@@ -324,6 +325,25 @@ const CoursePage = () => {
     navigate(link);
   };
 
+  const toggleSubjectExpansion = (subjectId) => {
+    setExpandedSubjects((prev) => ({
+      ...prev,
+      [subjectId]: !prev[subjectId],
+    }));
+  };
+
+  const getDisplayedCourses = (subject) => {
+    const INITIAL_COURSES_TO_SHOW = 2;
+    const isExpanded = expandedSubjects[subject.id];
+    const hasMoreCourses = subject.courses.length > INITIAL_COURSES_TO_SHOW;
+
+    if (!hasMoreCourses || isExpanded) {
+      return subject.courses;
+    }
+
+    return subject.courses.slice(0, INITIAL_COURSES_TO_SHOW);
+  };
+
   const getLevelColor = (level) => {
     switch (level) {
       case "Foundation":
@@ -551,85 +571,108 @@ const CoursePage = () => {
 
                     {/* Course List - Always Visible */}
                     <div className="space-y-4 pt-6 border-t border-gray-100">
-                      {subject.courses.map((course, courseIndex) => (
-                        <div
-                          key={courseIndex}
-                          className="group/course p-5 rounded-xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 hover:shadow-sm transition-all duration-300"
-                        >
-                          <div className="flex items-start justify-between mb-4">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-3 mb-2">
-                                <h4 className="font-semibold text-[#002F67] text-lg">
-                                  {course.name}
-                                </h4>
-                                <span
-                                  className={`px-3 py-1 rounded-full text-xs font-medium border ${getLevelColor(
-                                    course.level
-                                  )}`}
-                                >
-                                  {course.level}
-                                </span>
-                              </div>
-                              <p className="text-sm text-gray-600 mb-2">
-                                {course.subtitle}
-                              </p>
-                              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-                                {course.description}
-                              </p>
-
-                              {/* Course Meta */}
-                              <div className="flex items-center gap-6 text-xs text-gray-600 mb-4">
-                                <div className="flex items-center gap-1">
-                                  <Clock className="w-3 h-3" />
-                                  <span>{course.duration}</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                  <Users className="w-3 h-3" />
-                                  <span>{course.students} students</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                  <Star className="w-3 h-3 fill-gray-400 text-gray-400" />
-                                  <span>{course.rating}</span>
-                                </div>
-                              </div>
-
-                              {/* Topics */}
-                              <div className="flex flex-wrap gap-2 mb-4">
-                                {course.topics.map((topic, topicIndex) => (
+                      {getDisplayedCourses(subject).map(
+                        (course, courseIndex) => (
+                          <div
+                            key={courseIndex}
+                            className="group/course p-5 rounded-xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 hover:shadow-sm transition-all duration-300"
+                          >
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-2">
+                                  <h4 className="font-semibold text-[#002F67] text-lg">
+                                    {course.name}
+                                  </h4>
                                   <span
-                                    key={topicIndex}
-                                    className="px-3 py-1 bg-white text-xs text-gray-700 rounded-lg border border-gray-200"
+                                    className={`px-3 py-1 rounded-full text-xs font-medium border ${getLevelColor(
+                                      course.level
+                                    )}`}
                                   >
-                                    {topic}
+                                    {course.level}
                                   </span>
-                                ))}
+                                </div>
+                                <p className="text-sm text-gray-600 mb-2">
+                                  {course.subtitle}
+                                </p>
+                                <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                                  {course.description}
+                                </p>
+
+                                {/* Course Meta */}
+                                <div className="flex items-center gap-6 text-xs text-gray-600 mb-4">
+                                  <div className="flex items-center gap-1">
+                                    <Clock className="w-3 h-3" />
+                                    <span>{course.duration}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1">
+                                    <Users className="w-3 h-3" />
+                                    <span>{course.students} students</span>
+                                  </div>
+                                  <div className="flex items-center gap-1">
+                                    <Star className="w-3 h-3 fill-gray-400 text-gray-400" />
+                                    <span>{course.rating}</span>
+                                  </div>
+                                </div>
+
+                                {/* Topics */}
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                  {course.topics.map((topic, topicIndex) => (
+                                    <span
+                                      key={topicIndex}
+                                      className="px-3 py-1 bg-white text-xs text-gray-700 rounded-lg border border-gray-200"
+                                    >
+                                      {topic}
+                                    </span>
+                                  ))}
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleCourseNavigation(course.link);
-                            }}
-                            className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:text-white hover:border-gray-600 transition-all duration-300 group-hover/course:shadow-sm"
-                            style={{
-                              "&:hover": {
-                                backgroundColor: "#002F67",
-                              },
-                            }}
-                            onMouseEnter={(e) => {
-                              e.target.style.backgroundColor = "#002F67";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.target.style.backgroundColor = "";
-                            }}
-                          >
-                            <span>Explore Course</span>
-                            <ExternalLink className="w-4 h-4" />
-                          </button>
-                        </div>
-                      ))}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleCourseNavigation(course.link);
+                              }}
+                              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:text-white hover:border-gray-600 transition-all duration-300 group-hover/course:shadow-sm"
+                              style={{
+                                "&:hover": {
+                                  backgroundColor: "#002F67",
+                                },
+                              }}
+                              onMouseEnter={(e) => {
+                                e.target.style.backgroundColor = "#002F67";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.target.style.backgroundColor = "";
+                              }}
+                            >
+                              <span>Explore Course</span>
+                              <ExternalLink className="w-4 h-4" />
+                            </button>
+                          </div>
+                        )
+                      )}
+
+                      {/* See More / Show Less Button */}
+                      {subject.courses.length > 2 && (
+                        <button
+                          onClick={() => toggleSubjectExpansion(subject.id)}
+                          className="w-full mt-4 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:from-[#002F67] hover:to-[#001840] hover:text-white hover:border-gray-600 transition-all duration-300 group/button shadow-sm hover:shadow-md"
+                        >
+                          <span>
+                            {expandedSubjects[subject.id]
+                              ? `Show Less`
+                              : `See More Courses (${
+                                  subject.courses.length - 2
+                                } more)`}
+                          </span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-300 ${
+                              expandedSubjects[subject.id] ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
