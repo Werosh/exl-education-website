@@ -13,6 +13,7 @@ import WillImg from "../images/teachers/WillStand.jpeg";
 import YutangImg from "../images/teachers/yutang_lin.jpeg";
 import NicholasImg from "../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../images/teachers/anna.jpeg";
+import TishaanImg from "../images/teachers/tishan.png";
 
 const TeacherSection = () => {
   const scrollRef = useRef(null);
@@ -21,16 +22,6 @@ const TeacherSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const teachers = [
-    {
-      id: 1,
-      name: "William Leong",
-      subject: "Chemistry",
-      score: "99.70",
-      degree: "B Commerce/B Laws @ USYD",
-      experience: "96 in Chemistry, 90 in English Adv",
-      specialisation: "Chemistry and English Teacher",
-      image: WillImg,
-    },
     {
       id: 3,
       name: "Yu-Tang Lin",
@@ -42,16 +33,6 @@ const TeacherSection = () => {
       image: YutangImg,
     },
     {
-      id: 4,
-      name: "Nicholas Ip",
-      subject: "Chemistry & Math",
-      score: "99.45",
-      degree: "B Physiotherapy @ USYD",
-      experience: "94 in Chemistry, 97 in Math Ext 1",
-      specialisation: "Chemistry and Math Teacher",
-      image: NicholasImg,
-    },
-    {
       id: 5,
       name: "Anna Jin",
       subject: "Mathematics",
@@ -61,6 +42,36 @@ const TeacherSection = () => {
         "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
       specialisation: "Maths & Science Tutor",
       image: AnnaImg,
+    },
+    {
+      id: 6,
+      name: "Tishaan Siriwardana",
+      subject: "Chemistry & Physics",
+      score: "99.60",
+      degree: "UoNewcastle Medicine",
+      experience: "97 in Chemistry, 94 in Physics, 94 in 4U, 94 in 3U",
+      specialisation: "Biology and Chemistry",
+      image: TishaanImg,
+    },
+    {
+      id: 1,
+      name: "William Leong",
+      subject: "Chemistry",
+      score: "99.70",
+      degree: "B Commerce/B Laws @ USYD",
+      experience: "96 in Chemistry, 90 in English Adv",
+      specialisation: "Chemistry and English Teacher",
+      image: WillImg,
+    },
+    {
+      id: 4,
+      name: "Nicholas Ip",
+      subject: "Chemistry & Math",
+      score: "99.45",
+      degree: "B Physiotherapy @ USYD",
+      experience: "94 in Chemistry, 97 in Math Ext 1",
+      specialisation: "Chemistry and Math Teacher",
+      image: NicholasImg,
     },
   ];
 

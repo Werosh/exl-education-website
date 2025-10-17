@@ -52,6 +52,13 @@ const scheduleData = [
     day: "Thursday",
     classes: [
       {
+        subject: "Year 11 Physics Accelerated",
+        time: "4:30 PM",
+        type: "Physics",
+        teacher: "Tishaan",
+        color: "bg-blue-50 border-l-4 border-blue-400 text-blue-800",
+      },
+      {
         subject: "Year 12 Physics",
         time: "4:30 PM",
         type: "Physics",
@@ -63,12 +70,46 @@ const scheduleData = [
   {
     day: "Friday",
     classes: [
-      // No classes on Friday
+      {
+        subject: "Year 11 Chemistry Accelerated",
+        time: "4:30 PM",
+        type: "Chemistry",
+        teacher: "Tishaan",
+        color: "bg-rose-50 border-l-4 border-rose-400 text-rose-800",
+      },
     ],
   },
   {
     day: "Saturday",
     classes: [
+      {
+        subject: "Year 7 Mathematics",
+        time: "9:00 AM",
+        type: "Maths",
+        teacher: "Anna",
+        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
+      },
+      {
+        subject: "Year 9 Mathematics",
+        time: "9:00 AM",
+        type: "Maths",
+        teacher: "Anna",
+        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
+      },
+      {
+        subject: "Year 11 Math Advanced Accelerated",
+        time: "10:30 AM",
+        type: "Maths",
+        teacher: "Anna",
+        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
+      },
+      {
+        subject: "Year 11 Math Extension 1 Accelerated",
+        time: "10:30 AM",
+        type: "Maths",
+        teacher: "Anna",
+        color: "bg-green-50 border-l-4 border-green-400 text-green-800",
+      },
       {
         subject: "Year 12 Chemistry",
         time: "10:30 AM",
@@ -110,10 +151,6 @@ const dayColors = [
   "#003466", // Sunday
 ];
 
-// helper function to bold "Year X"
-const highlightYear = (text) => {
-  return text.replace(/(Year\s\d+)/gi, "<span class='font-bold'>$1</span>");
-};
 
 // helper function to extract year and subject separately
 const extractYearAndSubject = (text) => {
