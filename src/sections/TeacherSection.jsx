@@ -200,7 +200,7 @@ const TeacherSection = () => {
         </motion.div>
 
         {/* Scrollable Cards + Arrows - Mobile Responsive */}
-        <div className="relative">
+        <div className="relative ">
           {/* Desktop arrows - hidden on mobile */}
           <motion.button
             className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 items-center justify-center transition-all duration-300 ${
@@ -261,7 +261,7 @@ const TeacherSection = () => {
 
           <div
             ref={scrollRef}
-            className="overflow-x-auto scrollbar-hide pb-4 md:mx-12"
+            className="overflow-x-auto scrollbar-hide pb-4 md:mx-12  py-6 "
             onScroll={checkScrollButtons}
             style={{
               scrollbarWidth: "none",
@@ -275,7 +275,7 @@ const TeacherSection = () => {
               {teachers.map((teacher, index) => (
                 <motion.div
                   key={teacher.id}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex-shrink-0"
+                  className="bg-white rounded-2xl hover:rounded-2xl  shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex-shrink-0"
                   style={{ width: isMobile ? "280px" : "300px" }}
                   variants={cardVariants}
                   initial="hidden"
