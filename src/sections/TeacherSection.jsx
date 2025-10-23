@@ -25,52 +25,61 @@ const TeacherSection = () => {
     {
       id: 3,
       name: "Yu-Tang Lin",
-      subject: "Chemistry & Math",
+      subjects: ["Chemistry", "Mathematics"],
       score: "99.15",
       degree: "B Actuarial/B Computer Sci @ UNSW",
-      experience: "93 in Chemistry, 94 in Math Ext 1",
-      specialisation: "Chemistry and Math Teacher",
+      results: [
+        "93 in Chemistry, 94 in Physics",
+        "94 in Math Ext 1, 95 in Math Ext 2"
+      ],
       image: YutangImg,
     },
     {
       id: 5,
       name: "Anna Jin",
-      subject: "Mathematics",
+      subjects: ["Mathematics", "Biology"],
       score: "99.35",
       degree: "B. Exercise Sci/ M. Physiotherapy @ UNSW",
-      experience:
+      results: [
         "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
-      specialisation: "Maths & Science Tutor",
+        "96 in Biology, 95 in Chemistry"
+      ],
       image: AnnaImg,
     },
     {
       id: 6,
       name: "Tishaan Siriwardana",
-      subject: "Chemistry & Physics",
+      subjects: ["Chemistry", "Physics"],
       score: "99.60",
       degree: "UoNewcastle Medicine",
-      experience: "97 in Chemistry, 94 in Physics, 94 in 4U, 94 in 3U",
-      specialisation: "Biology and Chemistry",
+      results: [
+        "97 in Chemistry, 94 in Physics",
+        "94 in Math Ext 1, 94 in Math Ext 2"
+      ],
       image: TishaanImg,
     },
     {
       id: 1,
       name: "William Leong",
-      subject: "Chemistry",
+      subjects: ["Chemistry", "Mathematics"],
       score: "99.70",
       degree: "B Commerce/B Laws @ USYD",
-      experience: "96 in Chemistry, 90 in English Adv",
-      specialisation: "Chemistry and English Teacher",
+      results: [
+        "96 in Chemistry, 90 in Physics",
+        "92 in Math Ext 1, 88 in Math Ext 2"
+      ],
       image: WillImg,
     },
     {
       id: 4,
       name: "Nicholas Ip",
-      subject: "Chemistry & Math",
+      subjects: ["Chemistry", "Mathematics"],
       score: "99.45",
       degree: "B Physiotherapy @ USYD",
-      experience: "94 in Chemistry, 97 in Math Ext 1",
-      specialisation: "Chemistry and Math Teacher",
+      results: [
+        "94 in Chemistry, 91 in Physics",
+        "97 in Math Ext 1, 95 in Math Ext 2"
+      ],
       image: NicholasImg,
     },
   ];
@@ -161,14 +170,7 @@ const TeacherSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 text-blue-700 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium mb-4 md:mb-6"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Award className="w-3 h-3 md:w-4 md:h-4" />
-            Excellence in Education
-          </motion.div>
+          
 
           <motion.h2
             className="text-3xl md:text-5xl font-bold text-gray-600 mb-4 md:mb-6 px-4"
@@ -181,9 +183,9 @@ const TeacherSection = () => {
             Meet Our
             <span className="text-[#002F67] " style={{ fontWeight: 900 }}>
               {" "}
-              Expert{" "}
+              Teachers{" "}
             </span>
-            Educators
+            
           </motion.h2>
 
           <motion.p
@@ -193,9 +195,8 @@ const TeacherSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Our distinguished faculty combines academic excellence with
-            practical expertise, delivering personalised education that
-            transforms learning experiences and unlocks student potential.
+            We’re high achievers AND passionate educators. Our tutors know what it takes to succeed. They don’t just teach Chemistry, Physics, and Maths - they mentor, motivate, and guide students towards their own academic and personal goals.
+
           </motion.p>
         </motion.div>
 
@@ -315,21 +316,32 @@ const TeacherSection = () => {
                       {teacher.name}
                     </motion.h3>
 
+                    {/* Subjects */}
                     <motion.div
-                      className="flex items-center gap-2 mb-3"
+                      className="mb-3"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + 0.4 }}
                       viewport={{ once: true }}
                     >
-                      <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-[#002F67]" />
-                      <span className="text-sm md:text-base text-blue-900 font-semibold">
-                        {teacher.subject}
-                      </span>
+                      <div className="flex items-center gap-2 mb-1">
+                        <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-[#002F67]" />
+                        <span className="text-sm md:text-base text-blue-900 font-semibold">
+                          Subjects
+                        </span>
+                      </div>
+                      <div className="ml-6 space-y-1">
+                        {teacher.subjects.map((subject, subIndex) => (
+                          <p key={subIndex} className="text-xs md:text-sm text-gray-700 font-medium">
+                            {subject}
+                          </p>
+                        ))}
+                      </div>
                     </motion.div>
 
+                    {/* Degree */}
                     <motion.div
-                      className="space-y-2 mb-4"
+                      className="mb-3"
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 + 0.5 }}
@@ -338,28 +350,31 @@ const TeacherSection = () => {
                       <p className="text-xs md:text-sm text-gray-600 font-medium leading-tight">
                         {teacher.degree}
                       </p>
-                      <div className="flex items-start gap-2 text-xs md:text-sm text-gray-500">
-                        <Users className="w-3 h-3 mt-0.5 flex-shrink-0" />
-                        <span className="leading-tight">
-                          {teacher.experience}
-                        </span>
-                      </div>
                     </motion.div>
 
-                    {/* <motion.div
-                      className="border-t pt-3 md:pt-4"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
+                    {/* Results */}
+                    <motion.div
+                      className="mb-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 + 0.6 }}
                       viewport={{ once: true }}
                     >
-                      <p className="text-xs text-gray-500 font-medium mb-2">
-                        SPECIALIZATION
-                      </p>
-                      <p className="text-xs md:text-sm text-gray-700 leading-tight">
-                        {teacher.specialization}
-                      </p>
-                    </motion.div> */}
+                      <div className="flex items-center gap-2 mb-2">
+                        <Award className="w-3 h-3 md:w-4 md:h-4 text-[#002F67]" />
+                        <span className="text-xs md:text-sm text-blue-900 font-semibold">
+                          Results
+                        </span>
+                      </div>
+                      <div className="ml-6 space-y-1">
+                        {teacher.results.map((result, resultIndex) => (
+                          <p key={resultIndex} className="text-xs md:text-sm text-gray-600 leading-tight">
+                            {result}
+                          </p>
+                        ))}
+                      </div>
+                    </motion.div>
+
                   </div>
                 </motion.div>
               ))}

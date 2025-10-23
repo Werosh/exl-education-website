@@ -23,6 +23,8 @@ import YutangImg from "../../images/teachers/yutang_lin.jpeg";
 import NicholasImg from "../../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../../images/teachers/anna.jpeg";
 
+import AboutBannerImg from "../../images/Others/about_banner.webp";
+
 import TeacherSection from "../../sections/TeacherSection";
 
 const About = () => {
@@ -236,12 +238,12 @@ const About = () => {
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://steelcase-res.cloudinary.com/image/upload/c_fill,dpr_auto,q_70,h_656,w_1166/v1480989492/www.steelcase.com/2016/12/06/16-0015660.jpg" // replace with your image path
+          src={AboutBannerImg} // replace with your image path
             alt="Hero background"
             className="w-full h-full object-cover"
           />
           {/* Blue + white gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#002f67] via-[#002f67]/70 to-transparent"></div>
         </div>
 
         {/* Content */}
@@ -273,15 +275,15 @@ const About = () => {
             >
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Expert Faculty</span>
+                <span>Small Class Sizes</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Proven Results</span>
+                <span>Expert Teachers</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Comprehensive Support</span>
+                <span>Custom Learning Materials</span>
               </div>
             </motion.div>
           </motion.div>

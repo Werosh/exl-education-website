@@ -35,11 +35,11 @@ const Navbar = () => {
   }, []);
 
   const mathsSubjects = [
-    { name: "Junior Maths (All years)", href: "/courses/junior-maths" },
-    { name: "Year 11 Advanced Maths", href: "/courses/year-11-adv-maths" },
-    { name: "Year 11 Extension Maths", href: "/courses/year-11-ext-maths" },
-    { name: "Year 12 Advanced Maths", href: "/courses/year-12-adv-maths" },
-    { name: "Year 12 Extension 1 Maths", href: "/courses/year-12-ext1-maths" },
+    { name: "Junior Maths (Years 7 to 10)", href: "/courses/junior-maths" },
+    { name: "Year 11 Maths Adv.", href: "/courses/year-11-adv-maths" },
+    { name: "Year 11 Maths Ext", href: "/courses/year-11-ext-maths" },
+    { name: "Year 12 Maths Adv.", href: "/courses/year-12-adv-maths" },
+    { name: "Year 12 Maths Ext 1", href: "/courses/year-12-ext1-maths" },
   ];
 
   const chemistrySubjects = [
@@ -278,8 +278,8 @@ const Navbar = () => {
                       <div className="grid grid-cols-3 gap-6">
                         {/* Mathematics */}
                         <motion.div variants={dropdownItemVariants}>
-                          <h3 className="font-semibold text-blue-700 mb-3 flex items-center">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                          <h3 className="font-semibold text-[#002f67] mb-3 flex items-center">
+                            <div className="w-2 h-2 bg-[#002f67] rounded-full mr-2"></div>
                             Mathematics
                           </h3>
                           <ul className="space-y-2">
@@ -302,8 +302,8 @@ const Navbar = () => {
 
                         {/* Chemistry */}
                         <motion.div variants={dropdownItemVariants}>
-                          <h3 className="font-semibold text-blue-700 mb-3 flex items-center">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                          <h3 className="font-semibold text-[#002f67] mb-3 flex items-center">
+                            <div className="w-2 h-2 bg-[#002f67] rounded-full mr-2"></div>
                             Chemistry
                           </h3>
                           <ul className="space-y-2">
@@ -326,8 +326,8 @@ const Navbar = () => {
 
                         {/* Physics */}
                         <motion.div variants={dropdownItemVariants}>
-                          <h3 className="font-semibold text-blue-700 mb-3 flex items-center">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                          <h3 className="font-semibold text-[#002f67] mb-3 flex items-center">
+                            <div className="w-2 h-2 bg-[#002f67] rounded-full mr-2"></div>
                             Physics
                           </h3>
                           <ul className="space-y-2">
@@ -355,7 +355,7 @@ const Navbar = () => {
                       >
                         <a
                           href="/courses"
-                          className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                          className="inline-flex items-center text-[#002f67] hover:text-blue-700 font-medium"
                         >
                           View All Courses
                           <ChevronDown className="ml-1 w-4 h-4 rotate-[-90deg]" />
