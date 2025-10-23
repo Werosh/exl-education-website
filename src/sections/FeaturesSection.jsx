@@ -9,14 +9,14 @@ const Features = () => {
     {
       number: "1",
       icon: BookOpen,
-      title: "Simple Onboarding",
+      title: "Tailored Booklets",
       description:
         "Get started quickly with an easy signup and personalized setup experience.",
     },
     {
       number: "2",
       icon: Users,
-      title: "Community Support",
+      title: "Small Class Sizes",
       description:
         "Engage with peers, mentors, and experts who are ready to help at every step.",
     },
@@ -83,20 +83,18 @@ const Features = () => {
 
   return (
     <section id="feature" className="relative overflow-hidden py-10">
-      {/* Decorative curved background */}
-      <div className="absolute inset-0">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <svg
-          className="absolute bottom-0 left-0 w-full h-96"
-          viewBox="0 0 1200 400"
+          className="absolute top-0 left-0 w-1/3 -z-10"
+          viewBox="0 0 400 300"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M0 400V200C300 50 600 150 1200 100V400H0Z"
-            fill="rgb(30, 58, 138)"
-            fillOpacity="0.05"
-          />
+          <path d="M0,100 C100,0 300,0 400,100 L400,0 L0,0 Z" fill="#DBEAFE" />
         </svg>
+        <div className="absolute bottom-0 right-0 w-50 h-50 bg-[#704471]/60 rounded-full opacity-90 z-[-1]" />
+        <div className="absolute top-1/4 right-0 w-28 h-28 rounded-full bg-blue-300 opacity-60 z-[-1] [mask-image:repeating-linear-gradient(45deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
+        <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-[#d89fbf] opacity-60 z-[-1] [mask-image:repeating-linear-gradient(135deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 ">

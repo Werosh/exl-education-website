@@ -58,7 +58,7 @@ const AboutSection = () => {
           <motion.div className="space-y-8" variants={itemVariants}>
             <motion.div variants={itemVariants} className="space-y-4">
               <motion.h2
-                className="text-5xl lg:text-6xl font-bold text-blue-900 leading-tight underline"
+                className="text-5xl lg:text-5xl font-bold text-blue-900 leading-tight underline"
                 variants={itemVariants}
                 style={{ fontWeight: 900 }}
               >
@@ -68,7 +68,8 @@ const AboutSection = () => {
                   className="text-[#002F67] underline "
                   style={{ fontWeight: 900 }}
                 >
-                  Same excellence.
+               School based support.
+
                 </span>
               </motion.h2>
             </motion.div>
@@ -78,23 +79,14 @@ const AboutSection = () => {
                 className="text-lg text-gray-600 leading-relaxed"
                 variants={itemVariants}
               >
-                Students thrive in environments where they feel valued and
-                heard. That's why we maintain our commitment to{" "}
-                <span className="font-bold text-[#002F67]">
-                  intimate class sizes
-                </span>{" "}
-                that foster genuine connections and personalised learning
-                experiences.
+                We design classes that are tailored to each school, aligning our teaching with the school’s marking expectations, scope, and sequence. By grouping students from the same school, we create a learning environment that promotes collaboration, healthy competition, and lasting friendships. This approach ensures students receive targeted support that directly complements their school learning and boosts their confidence in assessments.
               </motion.p>
 
               <motion.p
                 className="text-lg text-gray-600 leading-relaxed"
                 variants={itemVariants}
               >
-                Our classes facilitate a maximum of 6 students per class in
-                order to create the perfect balance between collaborative
-                learning and individual attention, ensuring that every student
-                has a voice and receives the support they need to excel.
+                Our small class sizes allow tutors to give each student the focused attention they deserve. With a strong emphasis on personalised feedback and consistent guidance, no student is ever left behind. This structure preserves the essence of tutoring ensuring every learner receives tailored support that builds understanding, confidence, and measurable progress.
               </motion.p>
             </motion.div>
           </motion.div>
