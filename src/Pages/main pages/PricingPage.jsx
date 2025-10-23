@@ -21,7 +21,7 @@ const PricingSection = () => {
   const pricingData = {
     "Year 7": {
       price: 61,
-      subjects: ["English", "Math"],
+      subjects: [ "Math"],
       terms: "4 EXL Terms in Year 7",
       weeklyHours: "1.5 hour",
       specialFeature: null,
@@ -29,7 +29,7 @@ const PricingSection = () => {
     },
     "Year 8": {
       price: 61,
-      subjects: ["English", "Math"],
+      subjects: [ "Math"],
       terms: "4 EXL Terms in Year 8",
       weeklyHours: "1.5 hour",
       specialFeature: null,
@@ -37,7 +37,7 @@ const PricingSection = () => {
     },
     "Year 9": {
       price: 61,
-      subjects: ["English", "Math"],
+      subjects: [ "Math"],
       terms: "4 EXL Terms in Year 9",
       weeklyHours: "1.5 hour",
       specialFeature: null,
@@ -53,7 +53,7 @@ const PricingSection = () => {
     },
     "Year 11": {
       price: 105,
-      subjects: ["Chemistry", "English", "Math Adv", "Math Ext 1"],
+      subjects: ["Chemistry", "Physics", "Math Adv", "Math Ext 1"],
       terms: "3 EXL Terms in Year 11",
       weeklyHours: "2 hour",
       specialFeature: "Join or set up classes tailored to your school schedule",
@@ -61,7 +61,7 @@ const PricingSection = () => {
     },
     "Year 12": {
       price: 130,
-      subjects: ["Chemistry", "English", "Math Adv", "Math Ext 1"],
+      subjects: ["Chemistry", "Physics", "Math Adv", "Math Ext 1"],
       terms: "3 EXL Terms in Year 12",
       weeklyHours: "2.5 hour",
       specialFeature: "Separate Exam Program for HSC/Trial Preparation",
@@ -71,6 +71,7 @@ const PricingSection = () => {
 
   const courseFeatures = [
     { icon: <Clock className="w-4 h-4" />, text: "weekly lesson" },
+    { icon: <BookOpen className="w-4 h-4" />, text: "10 lessons per term" },
     {
       icon: <Users className="w-4 h-4" />,
       text: "Join classes tailored to your skill level",
@@ -172,6 +173,85 @@ const PricingSection = () => {
               based on your course and the discounts you qualify for your
               academic journey with expert tutoring and comprehensive support
             </p>
+          </div>
+        </motion.div>
+
+        {/* Money Back Guarantee Section - New Design */}
+        <motion.div
+          className="mb-16 bg-white rounded-2xl p-8 shadow-lg"
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.3 }}
+        >
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Content Section */}
+              <div className="text-left">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  <span className="text-gray-900">Love us</span>{" "}
+                  <span className="text-gray-700">or</span>{" "}
+                  <span className="text-gray-900">walk away</span>
+                </h2>
+                <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                  All EXL courses come with our{" "}
+                  <span className="font-semibold text-gray-900">
+                    First Lesson Money Back Guarantee
+                  </span>
+                  . Not sure if EXL is right for you? You can try EXL for{" "}
+                  <span className="font-bold text-gray-900">FREE</span> with our
+                  free trial!
+                </p>
+
+                <motion.a
+                  href="/free-trail"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <button className="bg-[#002f67] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-all duration-300 shadow-lg">
+                    Try EXL free
+                  </button>
+                </motion.a>
+              </div>
+
+              {/* Badge Section */}
+              <motion.div
+                className="flex justify-center"
+                whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="w-80 h-80 rounded-full bg-gray-200 flex items-center justify-center relative">
+                  <div className="w-72 h-72 rounded-full bg-gray-100 flex flex-col items-center justify-center relative">
+                    {/* First lesson text */}
+                    <div className="text-gray-700 text-lg font-medium mb-2">
+                      First lesson
+                    </div>
+                    {/* Money back text */}
+                    <div className="text-gray-700 text-lg font-medium mb-4">
+                      money back
+                    </div>
+                    {/* Guarantee bar */}
+                    <div className="w-48 h-8 bg-gray-300 rounded-full flex items-center justify-center mb-4">
+                      <span className="text-gray-900 font-bold text-sm">
+                        GUARANTEE
+                      </span>
+                    </div>
+                    {/* Stars */}
+                    <div className="flex space-x-2">
+                      <div className="w-5 h-5 bg-white  rounded-full flex items-center justify-center">
+                        <span className="text-[#002f67] text-xl">★</span>
+                      </div>
+                      <div className="w-7 h-7 bg-white  rounded-full flex items-center justify-center">
+                        <span className="text-[#002f67] text-3xl">★</span>
+                      </div>
+                      <div className="w-5 h-5 bg-white  rounded-full flex items-center justify-center">
+                        <span className="text-[#002f67] text-xl">★</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
 
@@ -400,89 +480,6 @@ const PricingSection = () => {
           <p className="text-gray-600 mt-4 text-sm">
             Start your academic excellence journey today with EXL Tutoring
           </p>
-        </motion.div>
-        {/* Bottom section - Money Back Guarantee */}
-        <motion.div
-          className="mt-20  rounded-3xl p-12"
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1.7 }}
-        >
-          <div className="max-w-7xl mx-auto ">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Badge Section */}
-              <motion.div
-                className="flex justify-center"
-                whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="w-64 h-64 rounded-3xl  flex items-center justify-center bg-white">
-                  <div className=" rounded-full overflow-hidden border-4 border-white">
-                    <img
-                      src={MoneyBack}
-                      alt="Guarantee"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Content Section */}
-              <div className="text-left">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Experience EXL with a free trial on us
-                </h2>
-                <p className="text-gray-600 mb-6">and gain access to:</p>
-
-                <div className="space-y-4 mb-8">
-                  <motion.div
-                    className="flex items-center"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.8 }}
-                  >
-                    <BookOpen className="w-6 h-6 text-[#002F67] mr-4" />
-                    <span className="text-lg text-gray-700 font-medium">
-                      Quality Resources
-                    </span>
-                  </motion.div>
-
-                  <motion.div
-                    className="flex items-center"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.9 }}
-                  >
-                    <Users className="w-6 h-6 text-[#002F67] mr-4" />
-                    <span className="text-lg text-gray-700 font-medium">
-                      Teachers that fit the way you learn
-                    </span>
-                  </motion.div>
-                </div>
-
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  Our{" "}
-                  <span className="font-semibold text-[#002F67]">
-                    First Lesson Money Back Guarantee
-                  </span>{" "}
-                  is designed to help you decide if EXL is right for you. If you
-                  decide that we aren't, walk away free of charge. Book a Free
-                  Trial!
-                </p>
-
-                <motion.a
-                  href="/free-trail"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <button className="bg-[#002f67] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg">
-                    Book a Free Trial on us
-                  </button>
-                </motion.a>
-              </div>
-            </div>
-          </div>
         </motion.div>
       </motion.div>
     </div>
