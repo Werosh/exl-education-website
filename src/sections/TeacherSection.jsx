@@ -293,12 +293,12 @@ const TeacherSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <motion.div
-                      className="absolute top-3 md:top-4 right-3 md:right-4 bg-white/95 backdrop-blur-sm rounded-full px-2 md:px-3 py-1 shadow-lg"
+                      className="absolute top-3 md:top-4 right-3 md:right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 shadow-lg"
                       variants={scoreVariants}
                     >
                       <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 md:w-4 md:h-4 text-yellow-500 fill-current" />
-                        <span className="text-xs md:text-sm font-bold text-gray-900">
+                        <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-current" />
+                        <span className="text-sm md:text-base font-bold text-gray-900">
                           {teacher.score}
                         </span>
                       </div>
