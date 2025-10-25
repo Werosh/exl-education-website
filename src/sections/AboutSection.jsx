@@ -62,7 +62,7 @@ const AboutSection = () => {
                 variants={itemVariants}
                 style={{ fontWeight: 900 }}
               >
-                Small class.
+                Small classes.
                 <br />
                 <span
                   className="text-[#002F67] underline "
