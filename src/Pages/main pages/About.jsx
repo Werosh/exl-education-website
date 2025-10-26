@@ -23,7 +23,7 @@ import YutangImg from "../../images/teachers/yutang_lin.jpeg";
 import NicholasImg from "../../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../../images/teachers/anna.jpeg";
 
-import AboutBannerImg from "../../images/Others/about_banner.webp";
+import AboutBannerImg from "../../images/Others/aboutBanner.webp";
 
 import TeacherSection from "../../sections/TeacherSection";
 
