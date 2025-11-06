@@ -58,14 +58,14 @@ const AboutSection = () => {
           <motion.div className="space-y-8" variants={itemVariants}>
             <motion.div variants={itemVariants} className="space-y-4">
               <motion.h2
-                className="text-5xl lg:text-5xl font-bold text-blue-900 leading-tight underline"
+                className="text-5xl lg:text-5xl font-bold text-blue-900 leading-tight "
                 variants={itemVariants}
                 style={{ fontWeight: 900 }}
               >
                 Small classes.
                 <br />
                 <span
-                  className="text-[#002F67] underline "
+                  className="text-[#002F67]  "
                   style={{ fontWeight: 900 }}
                 >
                School based support.
@@ -79,14 +79,14 @@ const AboutSection = () => {
                 className="text-lg text-gray-600 leading-relaxed"
                 variants={itemVariants}
               >
-                We design classes that are tailored to each school, aligning our teaching with the school’s marking expectations, scope, and sequence. By grouping students from the same school, we create a learning environment that promotes collaboration, healthy competition, and lasting friendships. This approach ensures students receive targeted support that directly complements their school learning and boosts their confidence in assessments.
+                We design classes tailored to each school, aligning with marking expectations and syllabuses. Grouping students from the same school fosters collaboration, healthy competition, and friendships, while ensuring targeted support that complements school learning and boosts assessment confidence
               </motion.p>
 
               <motion.p
                 className="text-lg text-gray-600 leading-relaxed"
                 variants={itemVariants}
               >
-                Our small class sizes allow tutors to give each student the focused attention they deserve. With a strong emphasis on personalised feedback and consistent guidance, no student is ever left behind. This structure preserves the essence of tutoring ensuring every learner receives tailored support that builds understanding, confidence, and measurable progress.
+                Our small classes let tutors give each student focused attention. With personalised feedback and consistent guidance, every learner receives the support needed to build understanding, confidence, and measurable progress
               </motion.p>
             </motion.div>
           </motion.div>
