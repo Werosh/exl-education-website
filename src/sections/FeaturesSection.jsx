@@ -23,14 +23,14 @@ const Features = () => {
     {
       number: "3",
       icon: Award,
-      title: "Recognition & Rewards",
+      title: "Adadiand",
       description:
         "Celebrate milestones and achievements with badges, certificates, and more.",
     },
     {
       number: "4",
       icon: Zap,
-      title: "Seamless Progress",
+      title: "Homework and Support",
       description:
         "Track growth effortlessly with real-time updates and transparent reporting.",
     },
