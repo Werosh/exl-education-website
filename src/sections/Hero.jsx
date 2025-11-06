@@ -64,7 +64,7 @@ const HeroSection = () => {
             {/* Left */}
             <div className="flex flex-col justify-center  Montserrat-font ">
               <motion.span
-                className="text-sm text-gray-600 font-medium mb-5"
+                className="text-sm text-gray-600 font-medium mb-10"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -74,14 +74,14 @@ const HeroSection = () => {
                 <span className="text-blue-600 font-bold ">STEM</span>
               </motion.span>
               <motion.h1
-                className="text-5xl text-gray-600 leading-12 Montserrat-font whitespace-nowrap"
+                className="text-5xl text-gray-600 leading-12 Montserrat-font whitespace-nowrap mb-10"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
                 custom={2}
               >
                 Years 7-12{" "} <br />
-                <span className="text-[#002F67] Montserrat-font text-3xl">
+                <span className="text-[#002F67] Montserrat-font text-3xl mb-5">
                   Science and Maths Specialists
                 </span>{" "}
                 <span style={{ fontWeight: 900 }} className="text-3xl">
@@ -89,7 +89,7 @@ const HeroSection = () => {
                 </span>
               </motion.h1>
               <motion.p
-                className="text-lg text-gray-600 italic max-w-lg leading-9 mt-5"
+                className="text-lg text-gray-600 italic max-w-lg leading-9 mt-5 mb-10"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
