@@ -39,7 +39,7 @@ const TeacherSection = () => {
       name: "Anna Jin",
       subjects: ["Mathematics", "Biology"],
       score: "99.35",
-      degree: "B. Exercise Sci/ M. Physiotherapy @ UNSW",
+      degree: "B. Exercise Sci/ M. Physio @ UNSW",
       results: [
         "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
         "96 in Biology, 95 in Chemistry"
@@ -51,7 +51,7 @@ const TeacherSection = () => {
       name: "Tishaan Siriwardana",
       subjects: ["Chemistry", "Physics"],
       score: "99.60",
-      degree: "UoNewcastle Medicine",
+      degree: "Medicine @ UoNewcastle",
       results: [
         "97 in Chemistry, 94 in Physics",
         "94 in Math Ext 1, 94 in Math Ext 2"
@@ -316,40 +316,33 @@ const TeacherSection = () => {
                       {teacher.name}
                     </motion.h3>
 
-                    {/* Subjects */}
-                    <motion.div
-                      className="mb-3"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 + 0.4 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-[#002F67]" />
-                        <span className="text-sm md:text-base text-blue-900 font-semibold">
-                          Subjects
-                        </span>
-                      </div>
-                      <div className="ml-6 space-y-1">
-                        {teacher.subjects.map((subject, subIndex) => (
-                          <p key={subIndex} className="text-xs md:text-sm text-gray-700 font-medium">
-                            {subject}
-                          </p>
-                        ))}
-                      </div>
-                    </motion.div>
-
                     {/* Degree */}
                     <motion.div
                       className="mb-3"
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 + 0.5 }}
+                      transition={{ delay: index * 0.1 + 0.4 }}
                       viewport={{ once: true }}
                     >
                       <p className="text-xs md:text-sm text-gray-600 font-medium leading-tight">
                         {teacher.degree}
                       </p>
+                    </motion.div>
+
+                    {/* Subjects */}
+                    <motion.div
+                      className="mb-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 + 0.5 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="w-3 h-3 md:w-4 md:h-4 text-[#002F67]" />
+                        <span className="text-xs md:text-sm text-gray-700 font-medium">
+                          {teacher.subjects.join(" & ")}
+                        </span>
+                      </div>
                     </motion.div>
 
                     {/* Results */}
