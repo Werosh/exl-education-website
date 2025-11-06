@@ -195,7 +195,7 @@ const TeacherSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            We’re high achievers AND passionate educators. Our tutors know what it takes to succeed. They don’t just teach Chemistry, Physics, and Maths - they mentor, motivate, and guide students towards their own academic and personal goals.
+           We’re <span   className="text-[#b19ab2] font-extrabold span-text">high achievers</span> AND <span   className="text-[#b19ab2] font-extrabold span-text">passionate educators</span>. Our tutors know what it takes to succeed. They don’t just teach - they mentor, motivate, and guide students towards their own academic and personal goals.
 
           </motion.p>
         </motion.div>
