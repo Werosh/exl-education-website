@@ -4,13 +4,15 @@ import { ArrowRight, Download, FerrisWheel } from "lucide-react";
 
 import Img1 from "../images/subjects/1.png";
 import Img2 from "../images/subjects/2.png";
-import Img4 from "../images/subjects/4.png";
-import Img5 from "../images/subjects/5.png";
+import Img3 from "../images/subjects/4.png";
+import Img4 from "../images/subjects/5.png";
+import Img5 from "../images/subjects/7.png";
+import Img6 from "../images/subjects/5.png";
 import Img7 from "../images/subjects/7.png";
 
 const UnmatchedResources = () => {
   // Your 7 image paths
-  const bookImages = [Img1, Img2, Img4, Img5, Img7];
+  const bookImages = [Img1, Img2, Img3, Img4, Img5, Img6, Img7];
 
   const positions = [
     { rotation: -15, position: { x: "15%", y: "20%" }, size: "large" },
@@ -18,8 +20,6 @@ const UnmatchedResources = () => {
     { rotation: -8, position: { x: "60%", y: "60%" }, size: "large" },
     { rotation: 20, position: { x: "25%", y: "70%" }, size: "small" },
     { rotation: -25, position: { x: "80%", y: "40%" }, size: "medium" },
-    { rotation: 18, position: { x: "10%", y: "50%" }, size: "medium" },
-    { rotation: -12, position: { x: "45%", y: "35%" }, size: "small" },
   ];
 
   const [shuffledImages, setShuffledImages] = useState([]);
@@ -230,6 +230,9 @@ const UnmatchedResources = () => {
                 ))}
 
               {/* Central Download Icon */}
+              <a href="/sample.pdf" target="_blank" rel="noopener noreferrer">
+              <button>
+
               <motion.div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl"
                 initial={{ opacity: 0, scale: 0 }}
@@ -252,6 +255,8 @@ const UnmatchedResources = () => {
               >
                 <Download className="w-8 h-8 text-white" />
               </motion.div>
+              </button>
+              </a>
             </div>
           </motion.div>
         </div>
