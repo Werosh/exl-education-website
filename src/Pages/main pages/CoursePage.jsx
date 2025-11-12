@@ -3,19 +3,10 @@ import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-import { Search, ChevronDown } from "lucide-react";
-import {
-  Calculator,
-  Atom,
-  Zap,
-  Clock,
-  Users,
-  ExternalLink,
-  ArrowRight,
-  Star,
-} from "lucide-react";
+import { Search, ChevronDown, ExternalLink, ArrowRight } from "lucide-react";
 
 import CourseImg1 from "../../images/course/cimg1.jpg";
+import CourseImg2 from "../../images/course/cimg2.jpg";
 
 const MotionDiv = ({ children, delay = 0, className = "", ...props }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -71,294 +62,14 @@ const courseRoutes = {
 };
 
 const CoursePage = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSubject, setSelectedSubject] = useState("");
-  const [expandedSubjects, setExpandedSubjects] = useState({});
-
-  const subjects = [
-    {
-      id: "mathematics",
-      title: "Mathematics",
-      icon: Calculator,
-      color: "from-gray-600 to-gray-500",
-      accent: "text-gray-600",
-      description:
-        "Advanced mathematical concepts from foundational principles to cutting-edge applications in modern industries.",
-      totalStudents: "2,847",
-      averageRating: "4.9",
-      completion: "94%",
-      courses: [
-        {
-          name: "Advanced Mathematical Foundations",
-          subtitle: "Years 7-10 Comprehensive Program",
-          level: "Foundation",
-          duration: "36 Months",
-          description:
-            "Establish robust mathematical foundations with emphasis on analytical thinking and problem-solving methodologies.",
-          topics: [
-            "Advanced Algebra",
-            "Computational Geometry",
-            "Statistical Modeling",
-            "Mathematical Reasoning",
-          ],
-          link: "/courses/junior-maths",
-          students: "1,247",
-          rating: "4.8",
-        },
-        {
-          name: "Mathematics Standard (2 units)",
-          subtitle: "Year 11 Preliminary Track",
-          level: "Foundation",
-          duration: "12 Months",
-          description:
-            "Essential mathematical skills for everyday life and further study with practical applications.",
-          topics: [
-            "Algebra and Modeling",
-            "Measurement and Geometry",
-            "Statistics and Probability",
-            "Financial Mathematics",
-          ],
-          link: "/courses/year-11-adv-maths",
-          students: "1,247",
-          rating: "4.8",
-        },
-        {
-          name: "Mathematics Advanced (2 units)",
-          subtitle: "Year 11 Preliminary Track",
-          level: "Advanced",
-          duration: "12 Months",
-          description:
-            "Comprehensive exploration of functions, calculus foundations, and advanced mathematical concepts.",
-          topics: [
-            "Functions and Graphs",
-            "Trigonometric Functions",
-            "Exponential and Logarithmic Functions",
-            "Differential Calculus",
-          ],
-          link: "/courses/year-11-adv-maths",
-          students: "847",
-          rating: "4.9",
-        },
-        {
-          name: "Mathematics Extension 1 (1 unit)",
-          subtitle: "Year 11 Elite Program (must be taken with Advanced)",
-          level: "Expert",
-          duration: "12 Months",
-          description:
-            "Elite-level mathematical reasoning extending Advanced Mathematics with additional depth and complexity.",
-          topics: [
-            "Further Work with Functions",
-            "Combinatorics",
-            "Proof by Mathematical Induction",
-            "Vectors",
-          ],
-          link: "/courses/year-11-ext-maths",
-          students: "324",
-          rating: "4.9",
-        },
-        {
-          name: "Mathematics Standard 2 (2 units)",
-          subtitle: "Year 12 HSC Track",
-          level: "Foundation",
-          duration: "12 Months",
-          description:
-            "Practical mathematics for real-world applications and career pathways requiring mathematical literacy.",
-          topics: [
-            "Statistics and Probability",
-            "Financial Mathematics",
-            "Measurement and Geometry",
-            "Networks and Decision Mathematics",
-          ],
-          link: "/courses/year-12-adv-maths",
-          students: "1,023",
-          rating: "4.8",
-        },
-        {
-          name: "Mathematics Advanced (2 units)",
-          subtitle: "Year 12 HSC Track",
-          level: "Advanced",
-          duration: "12 Months",
-          description:
-            "Advanced calculus, probability distributions, and mathematical modeling for university preparation.",
-          topics: [
-            "Functions and Graphs",
-            "Calculus",
-            "Financial Mathematics",
-            "Statistical Analysis",
-          ],
-          link: "/courses/year-12-adv-maths",
-          students: "756",
-          rating: "4.9",
-        },
-        {
-          name: "Mathematics Extension 1 (1 unit)",
-          subtitle: "Year 12 HSC (must be taken with Advanced)",
-          level: "Expert",
-          duration: "12 Months",
-          description:
-            "Further extension of Advanced Mathematics with additional depth in calculus and mathematical reasoning.",
-          topics: ["Proof", "Vectors", "Statistical Analysis", "Mechanics"],
-          link: "/courses/year-12-ext1-maths",
-          students: "445",
-          rating: "4.9",
-        },
-        {
-          name: "Mathematics Extension 2 (2 units)",
-          subtitle: "Year 12 HSC (must be taken with Extension 1)",
-          level: "Expert",
-          duration: "12 Months",
-          description:
-            "The most challenging mathematics course covering advanced topics for mathematically gifted students.",
-          topics: [
-            "Proof by Mathematical Induction",
-            "Vectors",
-            "Complex Numbers",
-            "Integration",
-          ],
-          link: "/courses/year-12-ext2-maths",
-          students: "178",
-          rating: "4.9",
-        },
-      ],
-    },
-    {
-      id: "chemistry",
-      title: "Chemistry",
-      icon: Atom,
-      color: "from-gray-600 to-gray-500",
-      accent: "text-gray-600",
-      description:
-        "Molecular science through advanced laboratory techniques and theoretical understanding.",
-      totalStudents: "1,923",
-      averageRating: "4.8",
-      completion: "92%",
-      courses: [
-        {
-          name: "Chemistry (2 units)",
-          subtitle: "Year 11 Preliminary Course",
-          level: "Intermediate",
-          duration: "12 Months",
-          description:
-            "Foundation course covering fundamental principles of atomic structure, bonding, and chemical reactions.",
-          topics: [
-            "Properties and Structure of Matter",
-            "Introduction to Quantitative Chemistry",
-            "Reactive Chemistry",
-            "Drivers of Reactions",
-          ],
-          link: "/courses/year-11-chem",
-          students: "1,123",
-          rating: "4.8",
-        },
-        {
-          name: "Chemistry (2 units)",
-          subtitle: "Year 12 HSC Course",
-          level: "Advanced",
-          duration: "12 Months",
-          description:
-            "Advanced study of chemical equilibrium, organic chemistry, and real-world applications of chemical principles.",
-          topics: [
-            "Equilibrium and Acid Reactions",
-            "Acid/Base Reactions",
-            "Organic Chemistry",
-            "Applying Chemical Ideas",
-          ],
-          link: "/courses/year-12-chem",
-          students: "800",
-          rating: "4.9",
-        },
-      ],
-    },
-    {
-      id: "physics",
-      title: "Physics",
-      icon: Zap,
-      color: "from-gray-600 to-gray-500",
-      accent: "text-gray-600",
-      description:
-        "Fundamental laws of nature from quantum mechanics to astrophysics applications.",
-      totalStudents: "1,654",
-      averageRating: "4.9",
-      completion: "96%",
-      courses: [
-        {
-          name: "Physics (2 units)",
-          subtitle: "Year 11 Preliminary Course",
-          level: "Intermediate",
-          duration: "12 Months",
-          description:
-            "Foundation course exploring motion, forces, waves, and the fundamental principles of electricity and magnetism.",
-          topics: [
-            "Kinematics",
-            "Dynamics",
-            "Waves and Thermodynamics",
-            "Electricity and Magnetism",
-          ],
-          link: "/courses/year-11-physics",
-          students: "954",
-          rating: "4.9",
-        },
-        {
-          name: "Physics (2 units)",
-          subtitle: "Year 12 HSC Course",
-          level: "Advanced",
-          duration: "12 Months",
-          description:
-            "Advanced study of mechanics, electromagnetic theory, quantum physics, and cosmology.",
-          topics: [
-            "Advanced Mechanics",
-            "Electromagnetism",
-            "The Nature of Light",
-            "From the Universe to the Atom",
-          ],
-          link: "/courses/year-12-physics",
-          students: "700",
-          rating: "4.9",
-        },
-      ],
-    },
-  ];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
 
   const navigate = useNavigate();
-
-  const handleCourseNavigation = (link) => {
-    navigate(link);
-  };
-
-  const toggleSubjectExpansion = (subjectId) => {
-    setExpandedSubjects((prev) => ({
-      ...prev,
-      [subjectId]: !prev[subjectId],
-    }));
-  };
-
-  const getDisplayedCourses = (subject) => {
-    const INITIAL_COURSES_TO_SHOW = 2;
-    const isExpanded = expandedSubjects[subject.id];
-    const hasMoreCourses = subject.courses.length > INITIAL_COURSES_TO_SHOW;
-
-    if (!hasMoreCourses || isExpanded) {
-      return subject.courses;
-    }
-
-    return subject.courses.slice(0, INITIAL_COURSES_TO_SHOW);
-  };
-
-  const getLevelColor = (level) => {
-    switch (level) {
-      case "Foundation":
-        return "bg-gray-50 text-gray-700 border-gray-200";
-      case "Intermediate":
-        return "bg-gray-50 text-gray-700 border-gray-200";
-      case "Advanced":
-        return "bg-gray-100 text-gray-800 border-gray-300";
-      case "Expert":
-        return "bg-gray-200 text-gray-900 border-gray-400";
-      default:
-        return "bg-gray-50 text-gray-700 border-gray-200";
-    }
-  };
 
   const handleFindCourse = () => {
     const key = `${selectedYear}-${selectedSubject}`;
@@ -369,6 +80,21 @@ const CoursePage = () => {
     } else {
       alert("Course not available");
     }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Form submitted:", formData);
+    // You can add your form submission logic here
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
@@ -510,216 +236,101 @@ const CoursePage = () => {
         </div>
       </motion.div>
 
-      {/* Subjects Section */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <MotionDiv delay={300} className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-600 mb-6">
-            Master Core Disciplines
-          </h2>
-          <p className="text-xl text-sky-900 max-w-2xl mx-auto">
-            Comprehensive programs designed by leading academics and industry
-            experts
-          </p>
-        </MotionDiv>
+      {/* Coming Soon Section */}
+      <div className="max-w-7xl mx-auto px-6 ">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Content and Form */}
+          <MotionDiv delay={300} className="space-y-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+              Our Year 11 Biology Course is coming soon
+            </h2>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {subjects.map((subject, index) => {
-            const IconComponent = subject.icon;
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Our subject expert Tishaan is bringing EXL biology to life.
+              Lessons will be 2 hours with detailed booklets with theory,
+              practice questions and homework. Leave us your name and email and
+              we'll let you know when classes begin!
+            </p>
 
-            return (
-              <MotionDiv
-                key={subject.id}
-                delay={500 + index * 200}
-                className="group relative"
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#002F67] focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Enter your email address"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#002F67] focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center gap-2 bg-[#002F67] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#001840] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                <div
-                  className={`relative overflow-hidden rounded-2xl bg-white shadow-lg border border-gray-200 transition-all duration-500
-                    ${
-                      hoveredCard === subject.id
-                        ? "shadow-2xl border-gray-300 scale-[1.02]"
-                        : "hover:shadow-xl hover:border-gray-300"
-                    }
-                  `}
-                  onMouseEnter={() => setHoveredCard(subject.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  {/* Card Header */}
-                  <div className="p-8 pb-6">
-                    <div className="flex items-center justify-between mb-6">
-                      <div
-                        className={`p-4 rounded-xl bg-gradient-to-br ${subject.color} shadow-lg`}
-                      >
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
+                <span>Submit</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </form>
+          </MotionDiv>
 
-                    <h3 className="text-2xl font-bold text-[#002F67] mb-3">
-                      {subject.title}
-                    </h3>
-
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {subject.description}
-                    </p>
-
-                    {/* Course List - Always Visible */}
-                    <div className="space-y-4 pt-6 border-t border-gray-100">
-                      {getDisplayedCourses(subject).map(
-                        (course, courseIndex) => (
-                          <div
-                            key={courseIndex}
-                            className="group/course p-5 rounded-xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 hover:shadow-sm transition-all duration-300"
-                          >
-                            <div className="flex items-start justify-between mb-4">
-                              <div className="flex-1">
-                                <div className="flex items-center gap-3 mb-2">
-                                  <h4 className="font-semibold text-[#002F67] text-lg">
-                                    {course.name}
-                                  </h4>
-                                  <span
-                                    className={`px-3 py-1 rounded-full text-xs font-medium border ${getLevelColor(
-                                      course.level
-                                    )}`}
-                                  >
-                                    {course.level}
-                                  </span>
-                                </div>
-                                <p className="text-sm text-gray-600 mb-2">
-                                  {course.subtitle}
-                                </p>
-                                <p className="text-sm text-gray-700 mb-4 leading-relaxed">
-                                  {course.description}
-                                </p>
-
-                                {/* Course Meta */}
-                                <div className="flex items-center gap-6 text-xs text-gray-600 mb-4">
-                                  <div className="flex items-center gap-1">
-                                    <Clock className="w-3 h-3" />
-                                    <span>{course.duration}</span>
-                                  </div>
-                                  <div className="flex items-center gap-1">
-                                    <Users className="w-3 h-3" />
-                                    <span>{course.students} students</span>
-                                  </div>
-                                  <div className="flex items-center gap-1">
-                                    <Star className="w-3 h-3 fill-gray-400 text-gray-400" />
-                                    <span>{course.rating}</span>
-                                  </div>
-                                </div>
-
-                                {/* Topics */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                  {course.topics.map((topic, topicIndex) => (
-                                    <span
-                                      key={topicIndex}
-                                      className="px-3 py-1 bg-white text-xs text-gray-700 rounded-lg border border-gray-200"
-                                    >
-                                      {topic}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleCourseNavigation(course.link);
-                              }}
-                              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:text-white hover:border-gray-600 transition-all duration-300 group-hover/course:shadow-sm"
-                              style={{
-                                "&:hover": {
-                                  backgroundColor: "#002F67",
-                                },
-                              }}
-                              onMouseEnter={(e) => {
-                                e.target.style.backgroundColor = "#002F67";
-                              }}
-                              onMouseLeave={(e) => {
-                                e.target.style.backgroundColor = "";
-                              }}
-                            >
-                              <span>Explore Course</span>
-                              <ExternalLink className="w-4 h-4" />
-                            </button>
-                          </div>
-                        )
-                      )}
-
-                      {/* See More / Show Less Button */}
-                      {subject.courses.length > 2 && (
-                        <button
-                          onClick={() => toggleSubjectExpansion(subject.id)}
-                          className="w-full mt-4 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:from-[#002F67] hover:to-[#001840] hover:text-white hover:border-gray-600 transition-all duration-300 group/button shadow-sm hover:shadow-md"
-                        >
-                          <span>
-                            {expandedSubjects[subject.id]
-                              ? `Show Less`
-                              : `See More Courses (${
-                                  subject.courses.length - 2
-                                } more)`}
-                          </span>
-                          <ChevronDown
-                            className={`w-4 h-4 transition-transform duration-300 ${
-                              expandedSubjects[subject.id] ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </MotionDiv>
-            );
-          })}
+          {/* Right Side - Image */}
+          <MotionDiv delay={500} className="relative">
+            <div className="relative w-[320px] h-auto ml-[100px] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={CourseImg2}
+                alt="Year 11 Biology Course"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </MotionDiv>
         </div>
       </div>
 
       {/* CTA Section */}
-      <MotionDiv delay={1200} className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div
-            className="rounded-3xl p-12 text-white relative overflow-hidden"
-            style={{
-              background: "linear-gradient(to right, #002F67, #001840)",
-            }}
-          >
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(0, 47, 103, 0.1), rgba(0, 24, 64, 0.1))",
-              }}
-            ></div>
-            <div className="relative">
-              <h2 className="text-4xl font-bold mb-6">
-                Transform Your Academic Future Today
-              </h2>
-              <p
-                className="text-xl mb-8 max-w-2xl mx-auto"
-                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+      <motion.section
+        className="py-20 px-6 bg-[#002F67] text-white"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="container mx-auto text-center">
+          <motion.div variants={itemVariants}>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Ready to Excel in Your HSC?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Join our community of high-achieving students and experience the
+              difference that expert guidance and comprehensive support can make
+              in your academic journey.
+            </p>
+            <a href="/contact">
+              <motion.button
+                className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Join thousands of students who have elevated their academic
-                performance through our proven methodology
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  className="group inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                  style={{
-                    color: "#002F67",
-                  }}
-                >
-                  Start Free Trial
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="inline-flex items-center px-8 py-4 bg-transparent text-white font-semibold rounded-xl border-2 border-white/20 hover:border-white/40 hover:bg-white/5 transition-all duration-300">
-                  Schedule Consultation
-                  <ExternalLink className="ml-2 w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
+                Start Your Journey
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </a>
+          </motion.div>
         </div>
-      </MotionDiv>
+      </motion.section>
     </div>
   );
 };
