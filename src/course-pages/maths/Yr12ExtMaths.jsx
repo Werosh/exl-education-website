@@ -1,6 +1,7 @@
 import React from "react";
 import { SquareFunction } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
@@ -64,6 +65,8 @@ const Yr12ExtMaths = () => {
           gradientTo="to-violet-400"
           icon={SquareFunction}
         />
+
+        <ClassTimes subjectName="Mathematics Extension 1" year="Year 12" />
 
         <ComArea />
 

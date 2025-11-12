@@ -1,6 +1,7 @@
 import React from "react";
 import { Omega } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
@@ -104,6 +105,8 @@ const Yr11Phys = () => {
           gradientTo="to-[#B2DBD8]"
           icon={Omega}
         />
+
+        <ClassTimes subjectName="Physics" year="Year 11" />
 
         <ComArea />
 

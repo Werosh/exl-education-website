@@ -1,6 +1,7 @@
 import React from "react";
 import { Biohazard } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
@@ -94,6 +95,8 @@ const Yr12Chem = () => {
           gradientTo="to-[#E683BB]"
           icon={Biohazard}
         />
+
+        <ClassTimes subjectName="Chemistry" year="Year 12" />
 
         <ComArea />
 

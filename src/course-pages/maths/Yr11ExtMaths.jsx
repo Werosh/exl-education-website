@@ -1,6 +1,7 @@
 import React from "react";
 import { SquarePi } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
@@ -63,6 +64,8 @@ const Yr11ExtMaths = () => {
         gradientTo="to-[#83C8E6]"
         icon={SquarePi}
       />
+
+      <ClassTimes subjectName="Mathematics Extension 1" year="Year 11" />
 
       <ComArea />
 
