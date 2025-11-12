@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import learningImage from "../images/others/learning.jpeg";
 
 const SubjectDetails = ({
   subject = "Subject Name",
@@ -9,7 +9,6 @@ const SubjectDetails = ({
   description = "Subject description goes here...",
   gradientFrom = "from-purple-400",
   gradientTo = "to-purple-600",
-  icon: Icon = BookOpen,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -75,9 +74,9 @@ const SubjectDetails = ({
             </span>
           </motion.div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row items-center ">
             <motion.div
-              className="flex-1 space-y-6"
+              className="flex-1 space-y-6 gap-8 max-w-7xl"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
@@ -122,9 +121,9 @@ const SubjectDetails = ({
               </motion.div>
             </motion.div>
 
-            {/* Icon Section */}
+            {/* Image Section */}
             <motion.div
-              className="flex-shrink-0"
+              className="flex-shrink-0 "
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8 }}
@@ -137,8 +136,10 @@ const SubjectDetails = ({
                 <div className="absolute inset-0 bg-white/10 rounded-2xl backdrop-blur-sm animate-pulse"></div>
                 <div className="absolute inset-1 bg-white/5 rounded-xl"></div>
                 <div className="relative">
-                  <Icon
-                    className={`w-20 h-20 md:w-24 md:h-24 text-white transition-all duration-500 ${
+                  <img
+                    src={learningImage}
+                    alt="Learning"
+                    className={`w-48 h-48 md:w-64 md:h-64 object-cover rounded-xl transition-all duration-500 ${
                       isHovered ? "drop-shadow-2xl" : "drop-shadow-lg"
                     }`}
                   />
