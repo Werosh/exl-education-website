@@ -101,12 +101,11 @@ const UnmatchedResources = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                In every lesson, you'll receive a printed booklet created by our
-                subject specialists, designed to comprehensively cover every dot
-                point in the NESA syllabus. Each booklet is structured to
-                complement your teacher's guidance, combining clear explanations
-                with HSC-style practice questions and homework that is checked
-                to give you valuable feedback.
+                In every lesson, you’ll get a printed booklet made by our expert
+                tutors, designed to cover every dot point in the NESA syllabus.
+                Each booklet supports what you’re learning at school, with
+                easy-to-follow notes, HSC-style questions, and homework that’s
+                checked to give you helpful, personalised feedback.
               </motion.p>
             </div>
 
@@ -231,31 +230,30 @@ const UnmatchedResources = () => {
 
               {/* Central Download Icon */}
               <a href="/sample.pdf" target="_blank" rel="noopener noreferrer">
-              <button>
-
-              <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 1 }}
-                animate={{
-                  scale: [1, 1.1, 1],
-                  boxShadow: [
-                    "0 25px 50px rgba(59, 130, 246, 0.3)",
-                    "0 25px 50px rgba(59, 130, 246, 0.5)",
-                    "0 25px 50px rgba(59, 130, 246, 0.3)",
-                  ],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Download className="w-8 h-8 text-white" />
-              </motion.div>
-              </button>
+                <button>
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      boxShadow: [
+                        "0 25px 50px rgba(59, 130, 246, 0.3)",
+                        "0 25px 50px rgba(59, 130, 246, 0.5)",
+                        "0 25px 50px rgba(59, 130, 246, 0.3)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <Download className="w-8 h-8 text-white" />
+                  </motion.div>
+                </button>
               </a>
             </div>
           </motion.div>

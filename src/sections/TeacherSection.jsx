@@ -30,7 +30,7 @@ const TeacherSection = () => {
       degree: "B Actuarial/B Computer Sci @ UNSW",
       results: [
         "93 in Chemistry, 94 in Physics",
-        "94 in Math Ext 1, 95 in Math Ext 2"
+        "94 in Math Ext 1, 95 in Math Ext 2",
       ],
       image: YutangImg,
     },
@@ -41,8 +41,8 @@ const TeacherSection = () => {
       score: "99.35",
       degree: "B. Exercise Sci/ M. Physio @ UNSW",
       results: [
-        "97 in Mathematics Extension 1, 94 in Mathematics Extension 2",
-        "96 in Biology, 95 in Chemistry"
+        "97 in Math Ext 1, 94 in Math Ext 2 ",
+        "96 in Biology, 95 in Chemistry",
       ],
       image: AnnaImg,
     },
@@ -54,7 +54,7 @@ const TeacherSection = () => {
       degree: "Medicine @ UoNewcastle",
       results: [
         "97 in Chemistry, 94 in Physics",
-        "94 in Math Ext 1, 94 in Math Ext 2"
+        "94 in Math Ext 1, 94 in Math Ext 2",
       ],
       image: TishaanImg,
     },
@@ -66,7 +66,7 @@ const TeacherSection = () => {
       degree: "B Commerce/B Laws @ USYD",
       results: [
         "96 in Chemistry, 90 in Physics",
-        "92 in Math Ext 1, 88 in Math Ext 2"
+        "92 in Math Ext 1, 88 in Math Ext 2",
       ],
       image: WillImg,
     },
@@ -78,7 +78,7 @@ const TeacherSection = () => {
       degree: "B Physiotherapy @ USYD",
       results: [
         "94 in Chemistry, 91 in Physics",
-        "97 in Math Ext 1, 95 in Math Ext 2"
+        "97 in Math Ext 1, 95 in Math Ext 2",
       ],
       image: NicholasImg,
     },
@@ -170,8 +170,6 @@ const TeacherSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          
-
           <motion.h2
             className="text-3xl md:text-5xl font-bold text-gray-600 mb-4 md:mb-6 px-4"
             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +183,6 @@ const TeacherSection = () => {
               {" "}
               Teachers{" "}
             </span>
-            
           </motion.h2>
 
           <motion.p
@@ -195,8 +192,17 @@ const TeacherSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
           >
-           We’re <span   className="text-[#b19ab2] font-extrabold span-text">high achievers</span> AND <span   className="text-[#b19ab2] font-extrabold span-text">passionate educators</span>. Our tutors know what it takes to succeed. They don’t just teach - they mentor, motivate, and guide students towards their own academic and personal goals.
-
+            We’re{" "}
+            <span className="text-[#b19ab2] font-extrabold span-text">
+              high achievers
+            </span>{" "}
+            AND{" "}
+            <span className="text-[#b19ab2] font-extrabold span-text">
+              passionate educators
+            </span>
+            . Our tutors know what it takes to succeed. They don’t just teach -
+            they mentor, motivate, and guide students towards their own academic
+            and personal goals.
           </motion.p>
         </motion.div>
 
@@ -361,13 +367,15 @@ const TeacherSection = () => {
                       </div>
                       <div className="ml-6 space-y-1">
                         {teacher.results.map((result, resultIndex) => (
-                          <p key={resultIndex} className="text-xs md:text-sm text-gray-600 leading-tight">
+                          <p
+                            key={resultIndex}
+                            className="text-xs md:text-sm text-gray-600 leading-tight"
+                          >
                             {result}
                           </p>
                         ))}
                       </div>
                     </motion.div>
-
                   </div>
                 </motion.div>
               ))}
