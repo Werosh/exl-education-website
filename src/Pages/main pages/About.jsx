@@ -187,18 +187,18 @@ const About = () => {
 
   const testimonials = [
     {
-      name: "Priya Patel",
-      school: "Knox Elite High School",
+      name: "Priyani P",
+      school: "Killara High School",
       quote:
-        "The personalised approach and expert guidance helped me achieve beyond my expectations. The structured curriculum and supportive environment made all the difference.",
-      subjects: "Mathematics Extension 2, Physics, Chemistry",
+        "William is an amazing tutor—knowledgeable, approachable, and always willing to help. His clear teaching style and guidance really boosted my understanding and confidence.",
+      subjects: "Chemistry",
     },
     {
-      name: "James Liu",
-      school: "Sydney Grammar School",
+      name: "Jessica K",
+      school: "TARA Anglican School for Girls",
       quote:
-        "Exceptional teaching quality and comprehensive resources. The faculty's expertise and dedication to student success is truly remarkable.",
-      subjects: "Economics, Business Studies, Legal Studies",
+        "Nicholas’s clear teaching and structured practice made math and chemistry much easier to master, and my results have improved greatly",
+      subjects: "Math Extension 1, Chemistry",
     },
   ];
 
@@ -238,7 +238,7 @@ const About = () => {
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-          src={AboutBannerImg} // replace with your image path
+            src={AboutBannerImg} // replace with your image path
             alt="Hero background"
             className="w-full h-full object-cover"
           />
@@ -392,11 +392,11 @@ const About = () => {
         <div className="container mx-auto">
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Stories from our Students
+              What our Students Say
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-[#002f67] mx-auto mb-8"></div>
             <p className="text-xl text-gray-600">
-              Real success stories from students who achieved their goals
+              Our students turned their goals into a reality
             </p>
           </motion.div>
 
@@ -410,7 +410,7 @@ const About = () => {
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
                 variants={itemVariants}
               >
-                <Quote className="w-8 h-8 text-blue-600 mb-6" />
+                <Quote className="w-8 h-8 text-[#002f67] mb-6" />
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </p>
@@ -419,7 +419,7 @@ const About = () => {
                     <h4 className="font-bold text-gray-900">
                       {testimonial.name}
                     </h4>
-                    <p className="text-blue-600 text-sm">
+                    <p className="text-[#002f67] text-sm font-bold">
                       {testimonial.school}
                     </p>
                     <p className="text-gray-600 text-sm">
