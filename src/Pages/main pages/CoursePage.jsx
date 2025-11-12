@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 import { Search, ChevronDown } from "lucide-react";
@@ -12,9 +13,9 @@ import {
   ExternalLink,
   ArrowRight,
   Star,
-  TrendingUp,
-  Sparkles,
 } from "lucide-react";
+
+import CourseImg1 from "../../images/course/cimg1.jpg";
 
 const MotionDiv = ({ children, delay = 0, className = "", ...props }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +60,7 @@ const courseRoutes = {
   "8-maths": "/courses/junior-maths",
   "9-maths": "/courses/junior-maths",
   "10-maths": "/courses/junior-maths",
-  "11-maths": "/courses/year-11-adv-maths",
+  "11-adv-maths": "/courses/year-11-adv-maths",
   "11-ext-maths": "/courses/year-11-ext-maths",
   "12-adv-maths": "/courses/year-12-adv-maths",
   "12-ext-maths": "/courses/year-12-ext1-maths",
@@ -388,12 +389,12 @@ const CoursePage = () => {
             {/* Left Side - Content */}
             <motion.div className="space-y-8" variants={itemVariants}>
               <h1 className="text-5xl lg:text-5xl mt-10 font-bold text-white leading-tight">
-                Sydney's best tutoring programs
+                Best Tutoring in Castle Hill
               </h1>
 
               <p className="text-lg text-white/90 leading-relaxed max-w-lg">
-                Boost marks. Build confidence. Get ahead at school with expert
-                tutoring for Year 3-12 English, Maths, Science and UCAT.
+                Find subject experts you can trust. Get ahead of school and
+                create a foundation you can build upon with confidence.
               </p>
 
               <div className="flex gap-4 mb-8">
@@ -421,7 +422,17 @@ const CoursePage = () => {
                     <select
                       className="w-full bg-white rounded-lg px-4 py-3 pr-10 appearance-none cursor-pointer border border-gray-200"
                       value={selectedYear}
-                      onChange={(e) => setSelectedYear(e.target.value)}
+                      onChange={(e) => {
+                        const year = e.target.value;
+                        setSelectedYear(year);
+                        // Auto-fill Mathematics for years 7-10
+                        if (["7", "8", "9", "10"].includes(year)) {
+                          setSelectedSubject("maths");
+                        } else if (["11", "12"].includes(year)) {
+                          // Clear subject when switching to Year 11/12
+                          setSelectedSubject("");
+                        }
+                      }}
                     >
                       <option value="">Year</option>
                       <option value="7">Year 7</option>
@@ -439,16 +450,38 @@ const CoursePage = () => {
                       2
                     </span>
                     <select
-                      className="w-full bg-white rounded-lg px-4 py-3 pr-10 appearance-none cursor-pointer border border-gray-200"
+                      className={`w-full bg-white rounded-lg px-4 py-3 pr-10 appearance-none border border-gray-200 whitespace-nowrap ${
+                        ["7", "8", "9", "10"].includes(selectedYear)
+                          ? "cursor-not-allowed bg-gray-50 text-gray-600"
+                          : "cursor-pointer"
+                      }`}
                       value={selectedSubject}
                       onChange={(e) => setSelectedSubject(e.target.value)}
+                      disabled={["7", "8", "9", "10"].includes(selectedYear)}
                     >
                       <option value="">Subject</option>
-                      <option value="maths">Mathematics</option>
-                      <option value="adv-maths">Adv: Mathematics</option>
-                      <option value="ext-maths">Ext: Mathematics</option>
-                      <option value="chem">Chemistry</option>
-                      <option value="physics">Physics</option>
+                      {["7", "8", "9", "10"].includes(selectedYear) ? (
+                        <option value="maths">Mathematics</option>
+                      ) : ["11", "12"].includes(selectedYear) ? (
+                        <>
+                          <option value="adv-maths">
+                            Mathematics Advanced
+                          </option>
+                          <option value="ext-maths">Mathematics Ext 1</option>
+                          <option value="chem">Chemistry</option>
+                          <option value="physics">Physics</option>
+                        </>
+                      ) : (
+                        <>
+                          <option value="maths">Mathematics</option>
+                          <option value="adv-maths">
+                            Mathematics Advanced
+                          </option>
+                          <option value="ext-maths">Mathematics Ext 1</option>
+                          <option value="chem">Chemistry</option>
+                          <option value="physics">Physics</option>
+                        </>
+                      )}
                     </select>
                     <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
                   </div>
@@ -463,55 +496,14 @@ const CoursePage = () => {
               </div>
             </motion.div>
 
-            {/* Right Side - Student Images */}
+            {/* Right Side - Course Image */}
             <motion.div className="relative" variants={itemVariants}>
-              <div className="relative">
-                {/* Chemistry Student */}
-                <div className="absolute bottom-[-60px] right-0 w-94 h-58 rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop"
-                    alt="Chemistry student"
-                    className="w-full h-full object-cover"
-                  />
-
-                  <div className="absolute top-4 right-4 bg-white/90 rounded-lg px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                        <path
-                          d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                      <span className="text-xs font-medium">
-                        Comprehensive resources
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Online Student */}
-                <div className="absolute top-10 right-52 w-94 h-58 rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=350&fit=crop"
-                    alt="Online learning student"
-                    className="w-full h-full object-cover"
-                  />
-
-                  <div className="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                        <path
-                          d="M8 2V5M16 2V5M3.5 9.5H20.5M4 5.5H20C20.8 5.5 21.5 6.2 21.5 7V19C21.5 19.8 20.8 20.5 20 20.5H4C3.2 20.5 2.5 19.8 2.5 19V7C2.5 6.2 3.2 5.5 4 5.5Z"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                      <span className="text-xs font-medium">
-                        Study anytime with Matrix+ online
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-[500px] ml-[200px] mt-5 h-auto rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={CourseImg1}
+                  alt="Course learning"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
