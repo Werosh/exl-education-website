@@ -287,9 +287,9 @@ const ContactUsPage = () => {
                       Address
                     </h3>
                     <p className="text-gray-600">
-                      Suite 29/10 Old Castle Hill Rd,
+                      Unit 29 10-12 Old Castle Hill Road,
                       <br />
-                      Castle Hill NSW 2154
+                      Castle Hill 2154
                     </p>
                   </div>
                 </div>
