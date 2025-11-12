@@ -16,16 +16,17 @@ import {
   ArrowRight,
   Quote,
 } from "lucide-react";
-import AboutImg from "../../images/others/Teaching.JPG";
 
 import WillImg from "../../images/teachers/will.jpeg";
 import YutangImg from "../../images/teachers/yutang_lin.jpeg";
 import NicholasImg from "../../images/teachers/nicholas_ip.jpeg";
 import AnnaImg from "../../images/teachers/anna.jpeg";
-
 import AboutBannerImg from "../../images/others/aboutBanner.webp";
-
 import TeacherSection from "../../sections/TeacherSection";
+
+import UniIMg1 from "../../images/about-image/img1.jpg";
+import UniIMg2 from "../../images/about-image/img2.jpg";
+import UniIMg3 from "../../images/about-image/img3.jpg";
 
 const About = () => {
   const [visibleStats, setVisibleStats] = useState(false);
@@ -435,7 +436,7 @@ const About = () => {
 
       {/* Map Section */}
       <motion.section
-        className="mt-10"
+        className="mt-10 mb-20"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -449,7 +450,7 @@ const About = () => {
         {/* Google Map */}
         <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4134.692852475424!2d151.0073179!3d-33.731624599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10dd3e88bd5%3A0xde32952464e84d60!2sCastle%20Hill!5e0!3m2!1sen!2slk!4v1757647661772!5m2!1sen!2slk"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.165144136265!2d151.00614757643459!3d-33.73054551191255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10e82f3e8c9%3A0x24510e9a9bc225c!2sSuite%2029%2F10%20Old%20Castle%20Hill%20Rd%2C%20Castle%20Hill%20NSW%202154%2C%20Australia!5e0!3m2!1sen!2slk!4v1762967247723!5m2!1sen!2slk"
             width="100%"
             height="100%"
             allowFullScreen={true}
@@ -472,11 +473,7 @@ const About = () => {
 
         {/* Clinic Pictures */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceE92HXubuPIDyr61ND8hJ0Ly7UJTu3Ur6w&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNjoiGi2XTLaM8UDs_5ZrjjZWVXjfhTqNQg&s",
-            "https://www.hcde-texas.org/cms/lib/TX50000649/Centricity//Domain/110/20230627_AE-building-front.jpg",
-          ].map((img, i) => (
+          {[UniIMg1, UniIMg2, UniIMg3].map((img, i) => (
             <motion.div
               key={i}
               className="rounded-xl overflow-hidden shadow-lg"
@@ -495,7 +492,7 @@ const About = () => {
       </motion.section>
 
       {/* About Section */}
-      <motion.section
+      {/* <motion.section
         className="py-20 px-6"
         variants={containerVariants}
         initial="hidden"
@@ -542,7 +539,7 @@ const About = () => {
             >
               <div className="bg-blue-50 rounded-2xl p-8">
                 <div className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center gap-6">
-                  {/* Image Section */}
+                 
                   <motion.img
                     src={AboutImg}
                     alt="Our Courses"
@@ -551,9 +548,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                   />
-
-                  {/* Text Section */}
-                  <motion.div
+     <motion.div
                     className="text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -591,7 +586,7 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Core Values */}
       {/* <motion.section
