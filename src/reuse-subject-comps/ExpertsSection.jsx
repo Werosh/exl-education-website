@@ -62,7 +62,7 @@ const ExpertsSection = ({
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+            <h2 className="text-3xl md:text-4xl  our-class-bold text-gray-800 leading-tight">
               {heading}
             </h2>
 

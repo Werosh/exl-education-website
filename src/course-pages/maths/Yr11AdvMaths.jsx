@@ -87,9 +87,9 @@ const Yr11AdvMaths = () => {
         subjectType="mathematics"
       />
 
-      <ComArea />
+      {/* <ComArea /> */}
 
-      <LittleDescription />
+      {/* <LittleDescription /> */}
 
       <CTA />
     </div>

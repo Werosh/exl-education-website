@@ -111,9 +111,9 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
           subjectType="chemistry"
         />
 
-        <ComArea />
+        {/* <ComArea /> */}
 
-        <LittleDescription />
+        {/* <LittleDescription /> */}
       </div>
 
       <CTA />

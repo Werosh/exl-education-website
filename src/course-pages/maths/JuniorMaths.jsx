@@ -33,9 +33,9 @@ const JuniorMaths = () => {
 
       <ClassTimes subjectName="Junior Maths" year="Year 7/8/10" />
 
-      <ComArea />
+      {/* <ComArea /> */}
 
-      <LittleDescription />
+      {/* <LittleDescription /> */}
 
       <CTA />
     </div>

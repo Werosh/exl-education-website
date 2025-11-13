@@ -118,9 +118,9 @@ const Yr12Chem = () => {
           subjectType="chemistry"
         />
 
-        <ComArea />
+        {/* <ComArea /> */}
 
-        <LittleDescription />
+        {/* <LittleDescription /> */}
       </div>
 
       <CTA />

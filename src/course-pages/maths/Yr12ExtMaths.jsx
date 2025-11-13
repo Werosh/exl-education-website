@@ -88,10 +88,10 @@ const Yr12ExtMaths = () => {
           subjectType="mathematics"
         />
 
-        <ComArea />
+        {/* <ComArea /> */}
       </div>
 
-      <LittleDescription />
+      {/* <LittleDescription /> */}
 
       <CTA />
     </div>

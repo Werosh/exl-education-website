@@ -133,9 +133,9 @@ const Yr12Phys = () => {
           subjectType="physics"
         />
 
-        <ComArea />
+        {/* <ComArea /> */}
 
-        <LittleDescription />
+        {/* <LittleDescription /> */}
       </div>
 
       <CTA />
