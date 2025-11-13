@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 
 // Import all available images
 import BoyShock from "../images/others/BoyShock.JPG";
 import GirlTeach from "../images/others/GirlTeach.JPG";
 import HandsUp from "../images/others/HandsUp.jpeg";
-import learning from "../images/others/learning.jpeg";
 import Teaching from "../images/others/Teaching.JPG";
 import willTeach from "../images/others/willTeach.JPG";
 import smartBoard from "../images/others/smartBoard.jpeg";
@@ -17,7 +16,6 @@ const allImages = [
   BoyShock,
   GirlTeach,
   HandsUp,
-  learning,
   Teaching,
   willTeach,
   smartBoard,
@@ -115,6 +113,13 @@ const ResourcesSection = ({
             viewport={{ once: true }}
             className="space-y-5 lg:space-y-6 order-2 lg:order-1"
           >
+            {/* Icon */}
+            <div className="flex items-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center shadow-md">
+                <BookOpen className="w-6 h-6 text-white" fill="white" />
+              </div>
+            </div>
+
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl our-class-bold  text-gray-800 leading-tight">
               {heading}
