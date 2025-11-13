@@ -450,7 +450,7 @@ const About = () => {
         {/* Google Map */}
         <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.165144136265!2d151.00614757643459!3d-33.73054551191255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10e82f3e8c9%3A0x24510e9a9bc225c!2sSuite%2029%2F10%20Old%20Castle%20Hill%20Rd%2C%20Castle%20Hill%20NSW%202154%2C%20Australia!5e0!3m2!1sen!2slk!4v1762967247723!5m2!1sen!2slk"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d829.4996030926637!2d151.00406557583494!3d-33.73485717873797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10b4b565e19%3A0x2c0a4403a74cfa97!2s6%2F25%20Terminus%20St%2C%20Castle%20Hill%20NSW%202154%2C%20Australia!5e0!3m2!1sen!2slk!4v1763002743150!5m2!1sen!2slk"
             width="100%"
             height="100%"
             allowFullScreen={true}
