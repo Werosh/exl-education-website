@@ -2,6 +2,7 @@ import React from "react";
 import { Biohazard } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
 import ResourcesSection from "../../reuse-subject-comps/ResourcesSection";
+import ExpertsSection from "../../reuse-subject-comps/ExpertsSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
@@ -101,6 +102,11 @@ const Yr12Chem = () => {
           subjectName="Chemistry"
           heading="Targeted, syllabus-ready resources"
           description="Our Year 12 Chemistry tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Chemistry syllabus. Get ahead with comprehensive content, exam-style workbooks, quizzes, and topic tests for each module."
+        />
+
+        <ExpertsSection
+          heading="Subject matter experts"
+          description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Chemistry."
         />
 
         <ClassTimes subjectName="Chemistry" year="Year 12" />

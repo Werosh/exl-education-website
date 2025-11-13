@@ -2,6 +2,7 @@ import React from "react";
 import { SquarePi } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
 import ResourcesSection from "../../reuse-subject-comps/ResourcesSection";
+import ExpertsSection from "../../reuse-subject-comps/ExpertsSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
@@ -70,6 +71,11 @@ const Yr11ExtMaths = () => {
         subjectName="Mathematics Extension 1"
         heading="Targeted, syllabus-ready resources"
         description="Our Year 11 Maths Extension 1 tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Maths syllabus. Get ahead with 250+ pages of content, 100+ pages exam-style Workbook, quizzes, and a topic test for each module."
+      />
+
+      <ExpertsSection
+        heading="Subject matter experts"
+        description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Maths."
       />
 
       <ClassTimes subjectName="Mathematics Extension 1" year="Year 11" />
