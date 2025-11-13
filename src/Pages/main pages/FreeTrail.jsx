@@ -579,9 +579,7 @@ const BookFreeTrialPage = () => {
                 <div className="flex items-start space-x-3">
                   <MapPinHouse className="w-5 h-5 text-[#002F67] mt-1" />
                   <div>
-                    <p className="text-gray-700">
-                      Unit 29 10-12 Old Castle Hill Road,
-                    </p>
+                    <p className="text-gray-700">25 Terminus St,</p>
                     <p className="text-gray-700">Castle Hill 2154</p>
                   </div>
                 </div>

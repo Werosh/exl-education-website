@@ -11,28 +11,28 @@ const Features = () => {
       icon: BookOpen,
       title: "Tailored Booklets",
       description:
-        "Get started quickly with an easy signup and personalized setup experience.",
+        "Get lesson booklets crafted for your school syllabus, combining clarity, practice, and step-by-step support.",
     },
     {
       number: "2",
       icon: Users,
       title: "Small Class Sizes",
       description:
-        "Engage with peers, mentors, and experts who are ready to help at every step.",
+        "Enjoy focused attention in small groups that encourage discussion, confidence, and deeper understanding.",
     },
     {
       number: "3",
       icon: Award,
       title: "Adadiand",
       description:
-        "Celebrate milestones and achievements with badges, certificates, and more.",
+        "Learn from inspiring tutors who simplify tough concepts, share insights, and help you reach your full potential.",
     },
     {
       number: "4",
       icon: Zap,
       title: "Homework and Support",
       description:
-        "Track growth effortlessly with real-time updates and transparent reporting.",
+        "Track progress easily with marked homework, tutor feedback, and transparent updates every step of the way.",
     },
   ];
 
@@ -180,7 +180,12 @@ const Features = () => {
                 transition={{ delay: 0.3 }}
               >
                 Start your learning journey with no commitment. Experience our
-                premium courses and decide if we're the right fit for you.
+                courses through
+                <span className="span-text">
+                  {" "}
+                  ONE COMPLETELY <br /> FREE LESSON{" "}
+                </span>
+                and decide if we're the right fit for you.
               </motion.p>
 
               <motion.div

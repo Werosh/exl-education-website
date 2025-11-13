@@ -287,7 +287,7 @@ const ContactUsPage = () => {
                       Address
                     </h3>
                     <p className="text-gray-600">
-                      Unit 29 10-12 Old Castle Hill Road,
+                      25 Terminus St,
                       <br />
                       Castle Hill 2154
                     </p>

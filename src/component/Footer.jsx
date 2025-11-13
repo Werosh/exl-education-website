@@ -85,7 +85,7 @@ const Footer = () => {
     },
     {
       icon: MapPinHouse,
-      text: "Unit 29 10-12 Old Castle Hill Road, Castle Hill 2154",
+      text: "25 Terminus St, Castle Hill NSW 2154",
       href: "#",
     },
   ];
