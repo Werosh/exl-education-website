@@ -62,7 +62,7 @@ const SubjectDetails = ({
         </div>
 
         {/* Main content */}
-        <div className="relative px-8 py-12 md:px-12 md:py-16">
+        <div className="relative px-14 py-12 md:px-12 md:py-16 ">
           <motion.div
             className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 transition-all duration-500 hover:bg-white/30"
             initial={{ opacity: 0, y: -20 }}
@@ -139,7 +139,7 @@ const SubjectDetails = ({
                   <img
                     src={learningImage}
                     alt="Learning"
-                    className={`w-48 h-48 md:w-64 md:h-64 object-cover rounded-xl transition-all duration-500 ${
+                    className={`w-48 h-48 md:w-[500px] md:h-[400px] object-cover rounded-xl transition-all duration-500 ${
                       isHovered ? "drop-shadow-2xl" : "drop-shadow-lg"
                     }`}
                   />

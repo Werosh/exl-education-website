@@ -1,6 +1,7 @@
 import React from "react";
 import { SquareFunction } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ResourcesSection from "../../reuse-subject-comps/ResourcesSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
@@ -64,6 +65,12 @@ const Yr12ExtMaths = () => {
           gradientFrom="from-purple-600"
           gradientTo="to-violet-400"
           icon={SquareFunction}
+        />
+
+        <ResourcesSection
+          subjectName="Mathematics Extension 1"
+          heading="Targeted, syllabus-ready resources"
+          description="Our Year 12 Maths Extension 1 tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Maths syllabus. Get ahead with 250+ pages of content, 100+ pages exam-style Workbook, quizzes, and a topic test for each module."
         />
 
         <ClassTimes subjectName="Mathematics Extension 1" year="Year 12" />

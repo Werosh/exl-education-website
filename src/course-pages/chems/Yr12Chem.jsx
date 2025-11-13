@@ -1,6 +1,7 @@
 import React from "react";
 import { Biohazard } from "lucide-react";
 import SubjectDetails from "../../reuse-subject-comps/SubjectDetails";
+import ResourcesSection from "../../reuse-subject-comps/ResourcesSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
@@ -94,6 +95,12 @@ const Yr12Chem = () => {
           gradientFrom="from-[#6E4A6F]"
           gradientTo="to-[#E683BB]"
           icon={Biohazard}
+        />
+
+        <ResourcesSection
+          subjectName="Chemistry"
+          heading="Targeted, syllabus-ready resources"
+          description="Our Year 12 Chemistry tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Chemistry syllabus. Get ahead with comprehensive content, exam-style workbooks, quizzes, and topic tests for each module."
         />
 
         <ClassTimes subjectName="Chemistry" year="Year 12" />

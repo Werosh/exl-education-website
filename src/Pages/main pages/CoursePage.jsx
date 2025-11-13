@@ -237,7 +237,7 @@ const CoursePage = () => {
       </motion.div>
 
       {/* Coming Soon Section */}
-      <div className="max-w-7xl mx-auto px-6 ">
+      <div className="max-w-7xl mx-auto px-6 mb-10 mt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content and Form */}
           <MotionDiv delay={300} className="space-y-8">
@@ -289,7 +289,7 @@ const CoursePage = () => {
 
           {/* Right Side - Image */}
           <MotionDiv delay={500} className="relative">
-            <div className="relative w-[320px] h-auto ml-[100px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-[320px] mb-10 ml-[100px] rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={CourseImg2}
                 alt="Year 11 Biology Course"
