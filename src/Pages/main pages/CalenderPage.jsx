@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { scheduleData } from "../../data/scheduleData";
 
@@ -18,16 +18,52 @@ const dayColors = [
 // helper function to extract year and subject separately
 const extractYearAndSubject = (text) => {
   const yearMatch = text.match(/Year\s\d+/gi);
-  const year = yearMatch ? yearMatch[0] : null;
-  const subject = year ? text.replace(year, "").trim() : text;
-  return { year, subject };
+  if (yearMatch) {
+    // Normalize the year format (capitalize first letter, ensure proper spacing)
+    const year =
+      yearMatch[0].charAt(0).toUpperCase() +
+      yearMatch[0].slice(1).toLowerCase();
+    // Remove the year from the subject text and clean up extra spaces
+    const subject = text
+      .replace(new RegExp(yearMatch[0], "gi"), "")
+      .replace(/\s+/g, " ")
+      .trim();
+    return { year, subject };
+  }
+  return { year: null, subject: text };
 };
 
 const CalendarPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedYear, setSelectedYear] = useState("All");
 
-  const filterByCategory = (item) =>
-    selectedCategory === "All" || item.type === selectedCategory;
+  // Extract all unique years from schedule data
+  const availableYears = useMemo(() => {
+    const yearsSet = new Set();
+    scheduleData.forEach((day) => {
+      day.classes.forEach((cls) => {
+        const { year } = extractYearAndSubject(cls.subject);
+        if (year) {
+          yearsSet.add(year);
+        }
+      });
+    });
+    // Sort years in descending order (Year 12, Year 11, ..., Year 7)
+    return Array.from(yearsSet).sort((a, b) => {
+      const yearNumA = parseInt(a.match(/\d+/)[0]);
+      const yearNumB = parseInt(b.match(/\d+/)[0]);
+      return yearNumB - yearNumA;
+    });
+  }, []);
+
+  // Filter function that checks both category and year
+  const filterByCategoryAndYear = (item) => {
+    const { year } = extractYearAndSubject(item.subject);
+    const categoryMatch =
+      selectedCategory === "All" || item.type === selectedCategory;
+    const yearMatch = selectedYear === "All" || year === selectedYear;
+    return categoryMatch && yearMatch;
+  };
 
   const getCardRoundedClass = (dayName) => {
     if (dayName === "Monday") {
@@ -56,8 +92,8 @@ const CalendarPage = () => {
         Weekly Tutoring Schedule
       </h1>
 
-      {/* Filter Buttons */}
-      <div className="flex justify-center gap-3 mb-10 flex-wrap">
+      {/* Subject Filter Buttons */}
+      <div className="flex justify-center gap-3 mb-6 flex-wrap">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -69,6 +105,33 @@ const CalendarPage = () => {
             }`}
           >
             {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Year Filter Buttons */}
+      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+        <button
+          onClick={() => setSelectedYear("All")}
+          className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+            selectedYear === "All"
+              ? "bg-[#002F67] text-white shadow-lg"
+              : "bg-white text-gray-700 border border-gray-200 hover:border-[#002F67] hover:text-[#002F67]"
+          }`}
+        >
+          All Years
+        </button>
+        {availableYears.map((year) => (
+          <button
+            key={year}
+            onClick={() => setSelectedYear(year)}
+            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              selectedYear === year
+                ? "bg-[#002F67] text-white shadow-lg"
+                : "bg-white text-gray-700 border border-gray-200 hover:border-[#002F67] hover:text-[#002F67]"
+            }`}
+          >
+            {year}
           </button>
         ))}
       </div>
@@ -91,7 +154,7 @@ const CalendarPage = () => {
               {day.day}
             </div>
             <div className="flex-1 space-y-2 p-4">
-              {day.classes.filter(filterByCategory).map((cls, i) => {
+              {day.classes.filter(filterByCategoryAndYear).map((cls, i) => {
                 const { year, subject } = extractYearAndSubject(cls.subject);
                 return (
                   <motion.div
@@ -118,7 +181,7 @@ const CalendarPage = () => {
                   </motion.div>
                 );
               })}
-              {day.classes.filter(filterByCategory).length === 0 && (
+              {day.classes.filter(filterByCategoryAndYear).length === 0 && (
                 <div className="text-center text-gray-400 text-sm py-8">
                   No classes scheduled
                 </div>
