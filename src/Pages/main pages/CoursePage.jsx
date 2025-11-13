@@ -224,7 +224,7 @@ const CoursePage = () => {
 
             {/* Right Side - Course Image */}
             <motion.div className="relative" variants={itemVariants}>
-              <div className="relative w-[500px] ml-[200px] mt-5 h-auto rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-[500px] ml-[200px] mt-[80px] h-auto rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={CourseImg1}
                   alt="Course learning"
