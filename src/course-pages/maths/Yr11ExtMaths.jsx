@@ -7,6 +7,7 @@ import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
+import CTA from "../../sections/CTA";
 
 const mathTerms = [
   {
@@ -80,15 +81,17 @@ const Yr11ExtMaths = () => {
 
       <ClassTimes subjectName="Mathematics Extension 1" year="Year 11" />
 
-      <ComArea />
-
       <TermsTable
         subjectName="Mathematics Extension 1"
         termDetails={mathTerms}
         subjectType="mathematics"
       />
 
+      <ComArea />
+
       <LittleDescription />
+
+      <CTA />
     </div>
   );
 };

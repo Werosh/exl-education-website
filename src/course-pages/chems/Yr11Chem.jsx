@@ -7,6 +7,7 @@ import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
+import CTA from "../../sections/CTA";
 
 const chemTerms = [
   {
@@ -104,15 +105,18 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
 
         <ClassTimes subjectName="Chemistry" year="Year 11" />
 
-        <ComArea />
-
         <TermsTable
           subjectName="Chemistry"
           termDetails={chemTerms}
           subjectType="chemistry"
         />
+
+        <ComArea />
+
         <LittleDescription />
       </div>
+
+      <CTA />
     </div>
   );
 };

@@ -48,7 +48,7 @@ const HSCMilestones = () => {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-12 px-6">
+    <div className="w-full max-w-5xl mx-auto px-6">
       {/* Section Header */}
       <div className="text-center mb-12">
         <div className="inline-block px-4 py-2 bg-black text-white text-xs font-bold tracking-widest mb-4">

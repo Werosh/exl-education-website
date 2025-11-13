@@ -17,7 +17,7 @@ const TermsTable = ({ subjectName, termDetails, subjectType }) => {
 
   return (
     <>
-      <div className="min-h-screen bg-white py-12 px-4">
+      <div className=" bg-white  px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

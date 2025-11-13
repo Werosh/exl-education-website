@@ -6,6 +6,7 @@ import ExpertsSection from "../../reuse-subject-comps/ExpertsSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
+import CTA from "../../sections/CTA";
 
 const JuniorMaths = () => {
   return (
@@ -35,6 +36,8 @@ const JuniorMaths = () => {
       <ComArea />
 
       <LittleDescription />
+
+      <CTA />
     </div>
   );
 };
