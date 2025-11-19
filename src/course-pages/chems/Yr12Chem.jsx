@@ -101,8 +101,6 @@ const Yr12Chem = () => {
 
         <ResourcesSection
           subjectName="Chemistry"
-          heading="Targeted, syllabus-ready resources"
-          description="Our Year 12 Chemistry tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Chemistry syllabus. Get ahead with comprehensive content, exam-style workbooks, quizzes, and topic tests for each module."
         />
 
         <ExpertsSection

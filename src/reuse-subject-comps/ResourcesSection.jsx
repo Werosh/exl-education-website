@@ -29,9 +29,13 @@ const getRandomImages = () => {
 
 const ResourcesSection = ({
   subjectName = "Subject",
-  heading = "Targeted, syllabus-ready resources",
-  description = "Our tutoring resources are designed by subject matter experts and cover all aspects of the new NSW syllabus. Get ahead with 250+ pages of content, 100+ pages exam-style Workbook, quizzes, and a topic test for each module.",
+  heading = "Syllabus-Relevant Resources",
+  description,
 }) => {
+  // Default description with course name
+  const defaultDescription = `Our ${subjectName} resources are designed to keep learning clear and structured. They cover the full NSW syllabus with 250+ pages of lesson content, a 100+ page exam-style workbook, regular quizzes, and a topic test for each module so students can stay ahead with confidence.`;
+
+  const finalDescription = description || defaultDescription;
   const [selectedImages, setSelectedImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -113,21 +117,22 @@ const ResourcesSection = ({
             viewport={{ once: true }}
             className="space-y-5 lg:space-y-6 order-2 lg:order-1"
           >
-            {/* Icon */}
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center shadow-md">
+            {/* Icon and Heading in same line */}
+            <div className="flex items-center gap-4 mb-4">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center shadow-md"
+                style={{ backgroundColor: "#002f67" }}
+              >
                 <BookOpen className="w-6 h-6 text-white" fill="white" />
               </div>
+              <h2 className="text-3xl md:text-4xl  our-class-bold  text-[#002f67] leading-tight">
+                {heading}
+              </h2>
             </div>
-
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl  our-class-bold  text-gray-800 leading-tight">
-              {heading}
-            </h2>
 
             {/* Description */}
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-              {description}
+              {finalDescription}
             </p>
           </motion.div>
 

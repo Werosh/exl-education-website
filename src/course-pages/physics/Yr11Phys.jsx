@@ -111,8 +111,6 @@ const Yr11Phys = () => {
 
         <ResourcesSection
           subjectName="Physics"
-          heading="Targeted, syllabus-ready resources"
-          description="Our Year 11 Physics tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Physics syllabus. Get ahead with comprehensive content, exam-style workbooks, quizzes, and topic tests for each module."
         />
 
         <ExpertsSection

@@ -70,8 +70,6 @@ const Yr11AdvMaths = () => {
 
       <ResourcesSection
         subjectName="Mathematics Advanced"
-        heading="Targeted, syllabus-ready resources"
-        description="Our Year 11 Mathematics Advanced tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Maths syllabus. Get ahead with 250+ pages of content, 100+ pages exam-style Workbook, quizzes, and a topic test for each module."
       />
 
       <ExpertsSection

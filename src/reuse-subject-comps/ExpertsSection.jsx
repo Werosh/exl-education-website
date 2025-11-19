@@ -54,17 +54,15 @@ const ExpertsSection = ({
             viewport={{ once: true }}
             className="space-y-6 order-2 lg:order-1"
           >
-            {/* Icon */}
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center shadow-md">
+            {/* Icon and Heading in same line */}
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#002f67] flex items-center justify-center shadow-md">
                 <Star className="w-6 h-6 text-white" fill="white" />
               </div>
+              <h2 className="text-3xl md:text-4xl  our-class-bold text-[#002f67] leading-tight">
+                {heading}
+              </h2>
             </div>
-
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl  our-class-bold text-gray-800 leading-tight">
-              {heading}
-            </h2>
 
             {/* Description */}
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">

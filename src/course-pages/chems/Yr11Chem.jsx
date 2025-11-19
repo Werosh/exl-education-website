@@ -92,11 +92,7 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
           icon={FlaskConical}
         />
 
-        <ResourcesSection
-          subjectName="Chemistry"
-          heading="Targeted, syllabus-ready resources"
-          description="Our Year 11 Chemistry tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Chemistry syllabus. Get ahead with comprehensive content, exam-style workbooks, quizzes, and topic tests for each module."
-        />
+        <ResourcesSection subjectName="Chemistry" />
 
         <ExpertsSection
           heading="Subject matter experts"

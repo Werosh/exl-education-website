@@ -22,8 +22,6 @@ const JuniorMaths = () => {
 
       <ResourcesSection
         subjectName="Junior Maths"
-        heading="Targeted, syllabus-ready resources"
-        description="Our Year 7–10 Mathematics tutoring resources are designed by subject matter experts and cover all aspects of the NSW Mathematics syllabus. Get ahead with comprehensive content, exam-style workbooks, quizzes, and topic tests for each module."
       />
 
       <ExpertsSection

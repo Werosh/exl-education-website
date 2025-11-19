@@ -67,11 +67,7 @@ const Yr12AdvMaths = () => {
         gradientTo="to-slate-400"
         icon={SquareFunction}
       />
-      <ResourcesSection
-        subjectName="Mathematics Advanced"
-        heading="Targeted, syllabus-ready resources"
-        description="Our Year 12 Mathematics Advanced tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Maths syllabus. Get ahead with 250+ pages of content, 100+ pages exam-style Workbook, quizzes, and a topic test for each module."
-      />
+      <ResourcesSection subjectName="Mathematics Advanced" />
       <ExpertsSection
         heading="Subject matter experts"
         description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Maths."

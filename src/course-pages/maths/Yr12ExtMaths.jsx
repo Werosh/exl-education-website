@@ -71,8 +71,6 @@ const Yr12ExtMaths = () => {
 
         <ResourcesSection
           subjectName="Mathematics Extension 1"
-          heading="Targeted, syllabus-ready resources"
-          description="Our Year 12 Maths Extension 1 tutoring resources are designed by subject matter experts and cover all aspects of the new NSW Maths syllabus. Get ahead with 250+ pages of content, 100+ pages exam-style Workbook, quizzes, and a topic test for each module."
         />
 
         <ExpertsSection
