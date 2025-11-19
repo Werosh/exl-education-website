@@ -36,7 +36,7 @@ const TermsTable = ({ subjectName, termDetails, subjectType }) => {
               <motion.h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide">
                 {subjectName}
               </motion.h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full"></div>
+              <div className="h-1 w-24 bg-gradient-to-r from-[#002f67] to-blue-600 mx-auto rounded-full"></div>
               <p className="text-slate-600 mt-4 font-light text-lg">
                 Course Structure Overview
               </p>
@@ -57,7 +57,7 @@ const TermsTable = ({ subjectName, termDetails, subjectType }) => {
                 viewport={{ once: true }}
                 className="module-card"
               >
-                <div className="bg-gradient-to-br from-blue-400 to-blue-500 p-[1px] rounded-2xl">
+                <div className="bg-gradient-to-br from-[#002f67] to-[#002f67] p-[1px] rounded-2xl">
                   <div className="bg-white rounded-2xl overflow-hidden">
                     {/* Module Header */}
                     <motion.div
@@ -115,7 +115,7 @@ const TermsTable = ({ subjectName, termDetails, subjectType }) => {
                                 >
                                   <div className="flex items-center justify-between">
                                     <div className="flex items-center">
-                                      <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></div>
+                                      <div className="w-2 h-2 bg-[#002f67] rounded-full mr-3 flex-shrink-0"></div>
                                       <span className="text-slate-700 font-light leading-relaxed">
                                         {typeof lesson === "string"
                                           ? lesson
