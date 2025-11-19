@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { Target, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 // Import all available images
 import BoyShock from "../images/others/BoyShock.JPG";
@@ -20,10 +20,8 @@ const getRandomImage = () => {
 };
 
 const ExpertsSection = ({
-  heading = "Subject matter experts",
-  description = "EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Maths.",
-  stepNumber = "Step 5",
-  stepLabel = "Homework",
+  heading = "Teachers who care",
+  description = "Our teachers genuinely care about each student's progress, taking the time to understand their school, strengths, and gaps. In our small classes, they provide clear explanations, targeted feedback, and steady support – whether a student is catching up, aiming for Band 6s, or pushing toward a 99+ ATAR.",
 }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 

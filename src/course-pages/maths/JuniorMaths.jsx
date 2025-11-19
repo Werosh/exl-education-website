@@ -24,10 +24,7 @@ const JuniorMaths = () => {
         subjectName="Junior Maths"
       />
 
-      <ExpertsSection
-        heading="Subject matter experts"
-        description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Maths."
-      />
+      <ExpertsSection />
 
       <ClassTimes subjectName="Junior Maths" year="Year 7/8/10" />
 

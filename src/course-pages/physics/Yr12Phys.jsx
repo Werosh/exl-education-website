@@ -118,10 +118,7 @@ const Yr12Phys = () => {
           subjectName="Physics"
         />
 
-        <ExpertsSection
-          heading="Subject matter experts"
-          description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Physics."
-        />
+        <ExpertsSection />
 
         <ClassTimes subjectName="Physics" year="Year 12" />
 

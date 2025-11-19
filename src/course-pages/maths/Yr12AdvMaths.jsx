@@ -68,10 +68,7 @@ const Yr12AdvMaths = () => {
         icon={SquareFunction}
       />
       <ResourcesSection subjectName="Mathematics Advanced" />
-      <ExpertsSection
-        heading="Subject matter experts"
-        description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Maths."
-      />
+      <ExpertsSection />
       <ClassTimes subjectName="Mathematics Advanced" year="Year 12" />
       <TermsTable
         subjectName="Mathematics Advanced"

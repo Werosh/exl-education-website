@@ -103,10 +103,7 @@ const Yr12Chem = () => {
           subjectName="Chemistry"
         />
 
-        <ExpertsSection
-          heading="Subject matter experts"
-          description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Chemistry."
-        />
+        <ExpertsSection />
 
         <ClassTimes subjectName="Chemistry" year="Year 12" />
 

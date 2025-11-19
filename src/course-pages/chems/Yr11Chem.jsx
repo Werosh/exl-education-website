@@ -94,10 +94,7 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
 
         <ResourcesSection subjectName="Chemistry" />
 
-        <ExpertsSection
-          heading="Subject matter experts"
-          description="EXL teachers are experts in their field with real teaching experience. Develop in-depth knowledge and understanding with our experienced teachers by applying our proven methods for Chemistry."
-        />
+        <ExpertsSection />
 
         <ClassTimes subjectName="Chemistry" year="Year 11" />
 
