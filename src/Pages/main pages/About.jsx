@@ -465,14 +465,14 @@ const About = () => {
             href="https://maps.app.goo.gl/g56cCZZ2bLE68cMU7"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#002F67] text-white font-medium px-6 py-3 rounded-xl shadow-md hover:bg-blue-700 transition"
+            className="bg-[#002F67] text-white font-medium px-6 py-3 mb-5 rounded-xl shadow-md hover:bg-blue-100 hover:text-gray-700 hover:border-1 hover:border-black transition"
           >
             Get Directions
           </a>
         </div>
 
         {/* Clinic Pictures */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-2">
           {[UniIMg1, UniIMg2, UniIMg3].map((img, i) => (
             <motion.div
               key={i}

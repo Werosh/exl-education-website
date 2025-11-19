@@ -2,8 +2,6 @@ import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { scheduleData } from "../../data/scheduleData";
 
-const categories = ["All", "Maths", "Chemistry", "Physics"];
-
 // Color mapping for each day
 const dayColors = [
   "#003466", // Monday
@@ -34,7 +32,6 @@ const extractYearAndSubject = (text) => {
 };
 
 const CalendarPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedYear, setSelectedYear] = useState("All");
 
   // Extract all unique years from schedule data
@@ -56,13 +53,11 @@ const CalendarPage = () => {
     });
   }, []);
 
-  // Filter function that checks both category and year
-  const filterByCategoryAndYear = (item) => {
+  // Filter function that checks year only
+  const filterByYear = (item) => {
     const { year } = extractYearAndSubject(item.subject);
-    const categoryMatch =
-      selectedCategory === "All" || item.type === selectedCategory;
     const yearMatch = selectedYear === "All" || year === selectedYear;
-    return categoryMatch && yearMatch;
+    return yearMatch;
   };
 
   const getCardRoundedClass = (dayName) => {
@@ -92,22 +87,12 @@ const CalendarPage = () => {
         Weekly Tutoring Schedule
       </h1>
 
-      {/* Subject Filter Buttons */}
-      <div className="flex justify-center gap-3 mb-6 flex-wrap">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-              selectedCategory === cat
-                ? "bg-gray-900 text-white"
-                : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+      {/* Descriptive Text */}
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed items-center text-center mb-10">
+        We keep your timetable simple. Just choose your year level to view
+        colour - coded classes for each subject. Class times remain consistent
+        from Year 11 to Year 12, so you can commit to a schedule that fits you.
+      </p>
 
       {/* Year Filter Buttons */}
       <div className="flex justify-center gap-4 mb-10 flex-wrap">
@@ -154,7 +139,7 @@ const CalendarPage = () => {
               {day.day}
             </div>
             <div className="flex-1 space-y-2 p-4">
-              {day.classes.filter(filterByCategoryAndYear).map((cls, i) => {
+              {day.classes.filter(filterByYear).map((cls, i) => {
                 const { year, subject } = extractYearAndSubject(cls.subject);
                 return (
                   <motion.div
@@ -181,7 +166,7 @@ const CalendarPage = () => {
                   </motion.div>
                 );
               })}
-              {day.classes.filter(filterByCategoryAndYear).length === 0 && (
+              {day.classes.filter(filterByYear).length === 0 && (
                 <div className="text-center text-gray-400 text-sm py-8">
                   No classes scheduled
                 </div>

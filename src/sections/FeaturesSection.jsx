@@ -25,7 +25,7 @@ const Features = () => {
       icon: Award,
       title: "Adadiand",
       description:
-        "Learn from inspiring tutors who simplify tough concepts, share insights, and help you reach your full potential.",
+        "Learn from amazing tutors who simplify tough concepts, share insights, and help you reach your full potential.",
     },
     {
       number: "4",
