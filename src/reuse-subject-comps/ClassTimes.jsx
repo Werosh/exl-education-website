@@ -120,6 +120,7 @@ const matchSubjectToSchedule = (subjectName, year) => {
           day: day.day,
           time: cls.time,
           teacher: cls.teacher,
+          subject: cls.subject, // Store original subject to extract year
         });
       }
     });
@@ -135,6 +136,22 @@ const ClassTimes = ({ subjectName, year }) => {
   if (classTimes.length === 0) {
     return null;
   }
+
+  // Extract year from subject name for Junior Maths
+  const extractYear = (subject) => {
+    if (!subject) return null;
+    // Match patterns like "Year 7", "Year 8", "Year 9", "Year 10", or "Mathematics Year 10"
+    const yearMatch = subject.match(/year\s+(\d+)/i);
+    if (yearMatch) {
+      return `Year ${yearMatch[1]}`;
+    }
+    return null;
+  };
+
+  // Check if this is Junior Maths
+  const isJuniorMaths =
+    subjectName.toLowerCase().includes("junior") &&
+    subjectName.toLowerCase().includes("math");
 
   // Format time for display (convert "5:30 PM" to "5:30-7:00pm" style)
   const formatTimeRange = (time) => {
@@ -207,7 +224,11 @@ const ClassTimes = ({ subjectName, year }) => {
                 // Single time - display inline with bullet
                 <div className="text-center md:text-left">
                   <p className="text-lg md:text-xl text-gray-700">
-                    • {classTimes[0].day} {formatTimeRange(classTimes[0].time)}
+                    •{" "}
+                    {isJuniorMaths && extractYear(classTimes[0].subject)
+                      ? `${extractYear(classTimes[0].subject)} `
+                      : ""}
+                    {classTimes[0].day} {formatTimeRange(classTimes[0].time)}
                   </p>
                 </div>
               ) : (
@@ -219,7 +240,11 @@ const ClassTimes = ({ subjectName, year }) => {
                       className="flex items-center justify-center md:justify-start w-full"
                     >
                       <span className="text-lg md:text-xl text-gray-700 text-center md:text-left">
-                        • {classTime.day} {formatTimeRange(classTime.time)}
+                        •{" "}
+                        {isJuniorMaths && extractYear(classTime.subject)
+                          ? `${extractYear(classTime.subject)} `
+                          : ""}
+                        {classTime.day} {formatTimeRange(classTime.time)}
                       </span>
                     </div>
                   ))}

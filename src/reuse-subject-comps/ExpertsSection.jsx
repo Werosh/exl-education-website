@@ -4,14 +4,11 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 // Import all available images
-import BoyShock from "../images/others/BoyShock.JPG";
-import GirlTeach from "../images/others/GirlTeach.JPG";
-import HandsUp from "../images/others/HandsUp.jpeg";
+
 import learning from "../images/others/learning.jpeg";
-import Teaching from "../images/others/Teaching.JPG";
 
 // All available images
-const allImages = [BoyShock, GirlTeach, HandsUp, learning, Teaching];
+const allImages = [learning];
 
 // Function to get one random image
 const getRandomImage = () => {
