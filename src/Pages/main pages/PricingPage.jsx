@@ -154,7 +154,7 @@ const PricingSection = () => {
   };
 
   return (
-    <div className="min-h-screen  py-16 px-4 mt-10">
+    <div className="min-h-screen py-8 md:py-16 px-4 md:px-6 mt-10">
       <motion.div
         className="max-w-6xl mx-auto"
         variants={containerVariants}
@@ -162,13 +162,13 @@ const PricingSection = () => {
         animate="visible"
       >
         {/* Header with gradient background */}
-        <motion.div className="relative mb-16" variants={itemVariants}>
+        <motion.div className="relative mb-8 md:mb-16" variants={itemVariants}>
           {/* Gradient wrapper */}
-          <div className="rounded-2xl py-12 px-4">
-            <h1 className="text-3xl font-bold mb-5 text-center text-[#002F67]">
+          <div className="rounded-2xl py-6 md:py-12 px-4">
+            <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-5 text-center text-[#002F67]">
               EXL Tutoring Pricing
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed items-center text-center">
+            <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed items-center text-center">
               At EXL, we keep pricing simple. Our course fees are calculated
               based on your course and the discounts you qualify for your
               academic journey with expert tutoring and comprehensive support
@@ -178,20 +178,20 @@ const PricingSection = () => {
 
         {/* Money Back Guarantee Section - New Design */}
         <motion.div
-          className="mb-20 bg-white rounded-2xl p-8 shadow-lg"
+          className="mb-12 md:mb-20 bg-white rounded-2xl p-4 md:p-8 shadow-lg"
           variants={itemVariants}
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.3 }}
         >
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Content Section */}
-              <div className="text-left">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="text-left order-2 md:order-1">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
                   Start with confidence, not commitment
                 </h2>
-                <p className="text-gray-600 mb-8 text-md leading-relaxed">
+                <p className="text-gray-600 mb-6 md:mb-8 text-sm md:text-md leading-relaxed">
                   All EXL courses include a First Lesson Money-Back Guarantee.
                   Join a lesson and experience our tutors, booklets, and small
                   classes. If it's not the right fit, we'll return your first
@@ -203,7 +203,7 @@ const PricingSection = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <button className="bg-[#002f67] text-white px-8 py-2 rounded-lg text-md font-semibold hover:bg-white hover:text-[#002f67] hover:border-2 hover:border-[#002f67] transition-all duration-300 shadow-lg">
+                  <button className="bg-[#002f67] text-white px-6 md:px-8 py-2 rounded-lg text-sm md:text-md font-semibold hover:bg-white hover:text-[#002f67] hover:border-2 hover:border-[#002f67] transition-all duration-300 shadow-lg w-full md:w-auto">
                     Book my trial lesson
                   </button>
                 </motion.a>
@@ -211,36 +211,42 @@ const PricingSection = () => {
 
               {/* Badge Section */}
               <motion.div
-                className="flex justify-center"
+                className="flex justify-center order-1 md:order-2"
                 whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="w-80 h-80 rounded-full bg-gray-200 flex items-center justify-center relative">
-                  <div className="w-72 h-72 rounded-full bg-gray-100 flex flex-col items-center justify-center relative">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-200 flex items-center justify-center relative">
+                  <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gray-100 flex flex-col items-center justify-center relative">
                     {/* First lesson text */}
-                    <div className="text-gray-700 text-lg font-medium mb-2">
+                    <div className="text-gray-700 text-base md:text-lg font-medium mb-2">
                       First lesson
                     </div>
                     {/* Money back text */}
-                    <div className="text-gray-700 text-lg font-medium mb-4">
+                    <div className="text-gray-700 text-base md:text-lg font-medium mb-3 md:mb-4">
                       money back
                     </div>
                     {/* Guarantee bar */}
-                    <div className="w-48 h-8 bg-gray-300 rounded-full flex items-center justify-center mb-4">
-                      <span className="text-gray-900 font-bold text-sm">
+                    <div className="w-40 md:w-48 h-7 md:h-8 bg-gray-300 rounded-full flex items-center justify-center mb-3 md:mb-4">
+                      <span className="text-gray-900 font-bold text-xs md:text-sm">
                         GUARANTEE
                       </span>
                     </div>
                     {/* Stars */}
                     <div className="flex space-x-2">
-                      <div className="w-5 h-5 bg-white  rounded-full flex items-center justify-center">
-                        <span className="text-[#002f67] text-xl">★</span>
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-white rounded-full flex items-center justify-center">
+                        <span className="text-[#002f67] text-lg md:text-xl">
+                          ★
+                        </span>
                       </div>
-                      <div className="w-7 h-7 bg-white  rounded-full flex items-center justify-center">
-                        <span className="text-[#002f67] text-3xl">★</span>
+                      <div className="w-6 h-6 md:w-7 md:h-7 bg-white rounded-full flex items-center justify-center">
+                        <span className="text-[#002f67] text-2xl md:text-3xl">
+                          ★
+                        </span>
                       </div>
-                      <div className="w-5 h-5 bg-white  rounded-full flex items-center justify-center">
-                        <span className="text-[#002f67] text-xl">★</span>
+                      <div className="w-4 h-4 md:w-5 md:h-5 bg-white rounded-full flex items-center justify-center">
+                        <span className="text-[#002f67] text-lg md:text-xl">
+                          ★
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -252,14 +258,14 @@ const PricingSection = () => {
 
         {/* Year Selector */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-16 mt-10"
+          className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-16 mt-6 md:mt-10"
           variants={itemVariants}
         >
           {years.map((year) => (
             <motion.button
               key={year}
               onClick={() => setSelectedYear(year)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
                 selectedYear === year
                   ? "bg-[#002F67] text-white shadow-lg"
                   : "bg-white text-gray-700 border border-gray-200 hover:border-[#002F67] hover:text-[#002F67]"
@@ -276,7 +282,7 @@ const PricingSection = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedYear}
-            className="grid lg:grid-cols-2 gap-8 "
+            className="grid lg:grid-cols-2 gap-6 md:gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -289,13 +295,13 @@ const PricingSection = () => {
               whileHover="hover"
             >
               {/* Card Header with gradient */}
-              <div className="bg-[#002f67] p-8 text-gray-100">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-extrabold underline">
+              <div className="bg-[#002f67] p-4 md:p-8 text-gray-100">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 gap-2">
+                  <h2 className="text-xl md:text-2xl font-extrabold underline">
                     {selectedYear} EXL Lesson
                   </h2>
                   <motion.div
-                    className="bg-blue-500/20 px-3 py-1 rounded-full text-xl  text-blue-100 font-700"
+                    className="bg-blue-500/20 px-2 md:px-3 py-1 rounded-full text-sm md:text-xl text-blue-100 font-700"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3 }}
@@ -303,47 +309,49 @@ const PricingSection = () => {
                     Early Bird Pricing
                   </motion.div>
                 </div>
-                <div className="mb-6">
-                  <span className="text-4xl md:text-5xl font-bold text-[#ffffff]">
+                <div className="mb-4 md:mb-6">
+                  <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#ffffff]">
                     ${currentData.price}
                   </span>
-                  <span className="text-gray-400 ml-2">per lesson</span>
+                  <span className="text-gray-400 ml-2 text-sm md:text-base">
+                    per lesson
+                  </span>
                 </div>
               </div>
 
-              <div className="p-8">
-                <div className="mb-8">
-                  <h3 className="font-semibold text-gray-900 mb-4">
+              <div className="p-4 md:p-8">
+                <div className="mb-6 md:mb-8">
+                  <h3 className="font-semibold text-gray-900 mb-3 md:mb-4 text-base md:text-lg">
                     Course Details
                   </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center text-gray-700">
-                      <BookOpen className="w-5 h-5 text-[#002F67] mr-3" />
+                  <div className="space-y-2 md:space-y-3">
+                    <div className="flex items-center text-gray-700 text-sm md:text-base">
+                      <BookOpen className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 flex-shrink-0" />
                       <span>{currentData.subjects.join(", ")}</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <Award className="w-5 h-5 text-[#002F67] mr-3" />
+                    <div className="flex items-center text-gray-700 text-sm md:text-base">
+                      <Award className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 flex-shrink-0" />
                       <span>{currentData.terms}</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <Check className="w-5 h-5 text-[#002F67] mr-3" />
+                    <div className="flex items-start text-gray-700 text-sm md:text-base">
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                       <span>
                         Half-Termly Payment and Alternative Payments Available
                       </span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <Check className="w-5 h-5 text-[#002F67] mr-3" />
+                    <div className="flex items-start text-gray-700 text-sm md:text-base">
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                       <span>
                         Enrollments in the middle of the term are Pro-Rated
                       </span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <Users className="w-5 h-5 text-[#002F67] mr-3" />
+                    <div className="flex items-center text-gray-700 text-sm md:text-base">
+                      <Users className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 flex-shrink-0" />
                       <span>Small Class sizes</span>
                     </div>
                     {currentData.specialFeature && (
-                      <div className="flex items-start text-gray-700">
-                        <Check className="w-5 h-5 text-[#002F67] mr-3 mt-0.5" />
+                      <div className="flex items-start text-gray-700 text-sm md:text-base">
+                        <Check className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                         <span>{currentData.specialFeature}</span>
                       </div>
                     )}
@@ -353,15 +361,15 @@ const PricingSection = () => {
                 {/* Multiple Subject Discount */}
                 {currentData.multiSubjectDiscount && (
                   <motion.div
-                    className="bg-blue-50 rounded-xl p-6 mb-8"
+                    className="bg-blue-50 rounded-xl p-4 md:p-6 mb-6 md:mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <h4 className="font-semibold text-blue-900 mb-2">
+                    <h4 className="font-semibold text-blue-900 mb-2 text-sm md:text-base">
                       Multiple Subject Discount
                     </h4>
-                    <p className="text-blue-900 text-sm">
+                    <p className="text-blue-900 text-xs md:text-sm">
                       EXL's Multiple Subject Discount applies when sitting
                       multiple subjects at the same time. A discount of{" "}
                       <span className="font-bold">5%</span> is applied to all
@@ -372,16 +380,16 @@ const PricingSection = () => {
 
                 {/* Referral Cashback */}
                 <motion.div
-                  className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6"
+                  className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 md:p-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                    <span className="text-2xl mr-2">💰</span>
+                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center text-sm md:text-base">
+                    <span className="text-xl md:text-2xl mr-2">💰</span>
                     $100 Referral Cashback
                   </h4>
-                  <p className="text-gray-700 text-sm">
+                  <p className="text-gray-700 text-xs md:text-sm">
                     Get $100 off your next enrolment or $100 Cashback when you
                     refer a new student to EXL when they enrol.
                   </p>
@@ -390,24 +398,24 @@ const PricingSection = () => {
             </motion.div>
 
             {/* Features and Services */}
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {/* Course Features */}
               <motion.div
-                className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8"
+                className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 md:p-8"
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <h3 className="text-xl course-time text-gray-700 mb-6">
+                <h3 className="text-lg md:text-xl course-time text-gray-700 mb-4 md:mb-6">
                   Course Features
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <motion.div
-                    className="flex items-center text-gray-700"
+                    className="flex items-center text-gray-700 text-sm md:text-base"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 }}
                   >
-                    <Clock className="w-5 h-5 text-[#002F67] mr-3 " />
+                    <Clock className="w-4 h-4 md:w-5 md:h-5 text-[#002F67] mr-2 md:mr-3 flex-shrink-0" />
                     <span className="course-time">
                       {currentData.weeklyHours} weekly lesson
                     </span>
@@ -415,13 +423,15 @@ const PricingSection = () => {
                   {courseFeatures.slice(1).map((feature, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center text-[#002F67]"
+                      className="flex items-center text-[#002F67] text-sm md:text-base"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.7 + index * 0.1 }}
                     >
-                      {feature.icon}
-                      <span className="ml-3 text-gray-700">{feature.text}</span>
+                      <div className="flex-shrink-0">{feature.icon}</div>
+                      <span className="ml-2 md:ml-3 text-gray-700">
+                        {feature.text}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
@@ -429,24 +439,26 @@ const PricingSection = () => {
 
               {/* Additional Services */}
               <motion.div
-                className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8"
+                className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 md:p-8"
                 variants={cardVariants}
                 whileHover="hover"
               >
-                <h3 className="text-xl  course-time text-gray-700 mb-6">
+                <h3 className="text-lg md:text-xl course-time text-gray-700 mb-4 md:mb-6">
                   Additional Services
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   {additionalServices.map((service, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center text-[#002F67]"
+                      className="flex items-center text-[#002F67] text-sm md:text-base"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 1.1 + index * 0.1 }}
                     >
-                      {service.icon}
-                      <span className="ml-3 text-gray-700">{service.text}</span>
+                      <div className="flex-shrink-0">{service.icon}</div>
+                      <span className="ml-2 md:ml-3 text-gray-700">
+                        {service.text}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
@@ -457,7 +469,7 @@ const PricingSection = () => {
 
         {/* CTA Section */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-8 md:mt-16"
           variants={itemVariants}
           initial="hidden"
           animate="visible"
@@ -465,14 +477,14 @@ const PricingSection = () => {
         >
           <a href="tel:+0431498913">
             <motion.button
-              className="bg-[#002F67] text-white px-12 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-[#002F67] text-white px-8 md:px-12 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 w-full md:w-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               Enrol Now for {selectedYear}
             </motion.button>
           </a>
-          <p className="text-gray-600 mt-4 text-sm">
+          <p className="text-gray-600 mt-4 text-xs md:text-sm">
             Start your academic excellence journey today with EXL Tutoring
           </p>
         </motion.div>

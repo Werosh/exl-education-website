@@ -110,37 +110,37 @@ const CoursePage = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <div className="relative  mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center p-20">
+        <div className="relative mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-20">
             {/* Left Side - Content */}
-            <motion.div className="space-y-8" variants={itemVariants}>
-              <h1 className="text-5xl lg:text-5xl mt-10 font-bold text-white leading-tight">
+            <motion.div className="space-y-6 md:space-y-8" variants={itemVariants}>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl mt-4 md:mt-10 font-bold text-white leading-tight">
                 Best Tutoring in Castle Hill
               </h1>
 
-              <p className="text-lg text-white/90 leading-relaxed max-w-lg">
+              <p className="text-base md:text-lg text-white/90 leading-relaxed max-w-lg">
                 Find subject experts you can trust. Get ahead of school and
                 create a foundation you can build upon with confidence.
               </p>
 
-              <div className="flex gap-4 mb-8">
-                <button className="bg-[#064491] border hover:bg-white text-white hover:text-[#002F67] hover:border-black hover:border-2 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+                <button className="bg-[#064491] border hover:bg-white text-white hover:text-[#002F67] hover:border-black hover:border-2 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold transition-all duration-300 w-full sm:w-auto">
                   Enrol now
                 </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:border-black hover:border-2 hover:bg-white hover:text-[#002F67] transition-all duration-300">
+                <button className="border-2 border-white text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold hover:border-black hover:border-2 hover:bg-white hover:text-[#002F67] transition-all duration-300 w-full sm:w-auto">
                   Book your free trial
                 </button>
               </div>
 
               {/* Course Finder */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-white font-semibold">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6">
+                <div className="flex items-center gap-4 mb-3 md:mb-4">
+                  <span className="text-white font-semibold text-sm md:text-base">
                     Find a course
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                   <div className="relative">
                     <span className="absolute -top-2 left-4 bg-[#002F67] text-white text-xs px-2 py-1 rounded">
                       1
@@ -214,16 +214,16 @@ const CoursePage = () => {
 
                   <button
                     onClick={handleFindCourse}
-                    className="bg-white text-[#002F67] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
+                    className="bg-white text-[#002F67] px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
                   >
-                    <Search />
+                    <Search className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                 </div>
               </div>
             </motion.div>
 
             {/* Right Side - Course Image */}
-            <motion.div className="relative" variants={itemVariants}>
+            <motion.div className="relative hidden lg:block" variants={itemVariants}>
               <div className="relative w-[500px] ml-[200px] mt-[80px] h-auto rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={CourseImg1}
@@ -237,22 +237,22 @@ const CoursePage = () => {
       </motion.div>
 
       {/* Coming Soon Section */}
-      <div className="max-w-7xl mx-auto px-6 mb-10 mt-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 mb-10 mt-12 md:mt-20">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Side - Content and Form */}
-          <MotionDiv delay={300} className="space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+          <MotionDiv delay={300} className="space-y-6 md:space-y-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 leading-tight">
               Our Year 11 Biology Course is coming soon
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
               Our subject expert Tishaan is bringing EXL biology to life.
               Lessons will be 2 hours with detailed booklets with theory,
               practice questions and homework. Leave us your name and email and
               we'll let you know when classes begin!
             </p>
 
-            <form onSubmit={handleFormSubmit} className="space-y-4">
+            <form onSubmit={handleFormSubmit} className="space-y-3 md:space-y-4">
               <div>
                 <input
                   type="text"
@@ -260,7 +260,7 @@ const CoursePage = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#002F67] focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#002F67] focus:border-transparent transition-all text-sm md:text-base"
                   required
                 />
               </div>
@@ -272,23 +272,23 @@ const CoursePage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#002F67] focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 md:py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#002F67] focus:border-transparent transition-all text-sm md:text-base"
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-[#002F67] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#001840] transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="w-full flex items-center justify-center gap-2 bg-[#002F67] text-white px-6 md:px-8 py-2 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-[#001840] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <span>Submit</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </button>
             </form>
           </MotionDiv>
 
           {/* Right Side - Image */}
-          <MotionDiv delay={500} className="relative">
+          <MotionDiv delay={500} className="relative hidden lg:block">
             <div className="relative w-[320px] mb-10 ml-[100px] rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={CourseImg2}
@@ -302,7 +302,7 @@ const CoursePage = () => {
 
       {/* CTA Section */}
       <motion.section
-        className="py-20 px-6 bg-[#002F67] text-white"
+        className="py-12 md:py-20 px-4 md:px-6 bg-[#002F67] text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -310,22 +310,22 @@ const CoursePage = () => {
       >
         <div className="container mx-auto text-center">
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">
               Ready to Excel in Your HSC?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto">
               Join our community of high-achieving students and experience the
               difference that expert guidance and comprehensive support can make
               in your academic journey.
             </p>
             <a href="/contact">
               <motion.button
-                className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
+                className="bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Start Your Journey
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </motion.button>
             </a>
           </motion.div>

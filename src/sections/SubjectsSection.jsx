@@ -72,20 +72,20 @@ const UnmatchedResources = () => {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start mt-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-start mt-6 md:mt-10">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-10"
+            className="space-y-6 md:space-y-10"
           >
             {/* Headline & Text */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <motion.h2
-                className="text-5xl lg:text-6xl font-bold text-slate-500 leading-tight"
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-500 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -95,36 +95,37 @@ const UnmatchedResources = () => {
                 Unmatched <span className="text-[#002F67]">Resources</span>
               </motion.h2>
               <motion.p
-                className="text-xl text-slate-600 leading-relaxed max-w-xl"
+                className="text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                In every lesson, you’ll get a printed booklet made by our expert
+                In every lesson, you'll get a printed booklet made by our expert
                 tutors, designed to cover every dot point in the NESA syllabus.
-                Each booklet supports what you’re learning at school, with
-                easy-to-follow notes, HSC-style questions, and homework that’s
+                Each booklet supports what you're learning at school, with
+                easy-to-follow notes, HSC-style questions, and homework that's
                 checked to give you helpful, personalised feedback.
               </motion.p>
             </div>
 
             {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row sm:space-x-4 md:sm:space-x-6 space-y-3 sm:space-y-0">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
+                className="w-full sm:w-auto"
               >
                 <a href="/sample.pdf" target="_blank" rel="noopener noreferrer">
                   <motion.button
-                    className="group flex items-center justify-center sm:justify-between space-x-3 bg-[#002F67] hover:bg-white hover:border-2 hover:border-black hover:text-gray-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                    className="group flex items-center justify-center sm:justify-between space-x-3 bg-[#002F67] hover:bg-white hover:border-2 hover:border-black hover:text-gray-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="text-[15px]">View Sample Notes</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-sm md:text-[15px]">View Sample Notes</span>
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </a>
               </motion.div>
@@ -134,15 +135,16 @@ const UnmatchedResources = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
+                className="w-full sm:w-auto"
               >
                 <a href="/contact" rel="noopener noreferrer">
                   <motion.button
-                    className="group flex items-center justify-center sm:justify-between space-x-3 border-2 text-gray-800 hover:bg-[#002F67] hover:text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                    className="group flex items-center justify-center sm:justify-between space-x-3 border-2 text-gray-800 hover:bg-[#002F67] hover:text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="text-[15px]">Start Your Journey</span>
-                    <FerrisWheel className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-sm md:text-[15px]">Start Your Journey</span>
+                    <FerrisWheel className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                 </a>
               </motion.div>
@@ -151,7 +153,7 @@ const UnmatchedResources = () => {
 
           {/* Right Column (Floating Book Images) */}
           <motion.div
-            className="relative h-[500px] lg:h-[500px]"
+            className="relative h-[400px] md:h-[500px] lg:h-[500px] hidden lg:block"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

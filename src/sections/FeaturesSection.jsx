@@ -97,11 +97,11 @@ const Features = () => {
         <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-[#d89fbf] opacity-60 z-[-1] [mask-image:repeating-linear-gradient(135deg,_#000_0px,_#000_2px,_transparent_2px,_transparent_4px)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 ">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left side - Steps */}
           <motion.div
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -110,35 +110,35 @@ const Features = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={index}
-                className="flex items-start gap-6 group"
+                className="flex items-start gap-4 md:gap-6 group"
                 variants={stepVariants}
               >
                 {/* Step Number */}
                 <motion.div
-                  className="flex-shrink-0 w-12 h-12 bg-white rounded-full border-2 border-blue-100 flex items-center justify-center shadow-sm"
+                  className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full border-2 border-blue-100 flex items-center justify-center shadow-sm"
                   whileHover={{ scale: 1.1, borderColor: "rgb(59, 130, 246)" }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="text-blue-600 font-bold text-lg">
+                  <span className="text-blue-600 font-bold text-base md:text-lg">
                     {step.number}
                   </span>
                 </motion.div>
 
                 {/* Content */}
-                <div className="flex-1 pt-2">
-                  <div className="flex items-center gap-4 mb-3">
+                <div className="flex-1 pt-1 md:pt-2">
+                  <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
                     <motion.div
-                      className="w-10 h-10 bg-[#002F67] rounded-lg flex items-center justify-center"
+                      className="w-8 h-8 md:w-10 md:h-10 bg-[#002F67] rounded-lg flex items-center justify-center"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <step.icon className="w-5 h-5 text-white" />
+                      <step.icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-semibold text-gray-600">
+                    <h3 className="text-base md:text-lg lg:text-xl font-semibold text-gray-600">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -148,18 +148,18 @@ const Features = () => {
 
           {/* Right side - CTA */}
           <motion.div
-            className="bg-white rounded-3xl p-10 shadow-xl border border-gray-100 relative overflow-hidden"
+            className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl border border-gray-100 relative overflow-hidden"
             variants={ctaVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-10 transform translate-x-16 -translate-y-16"></div>
+            <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-10 transform translate-x-12 md:translate-x-16 -translate-y-12 md:-translate-y-16"></div>
 
             <div className="relative z-10">
               <motion.h2
-                className="text-4xl lg:text-5xl font-bold mb-4"
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -173,7 +173,7 @@ const Features = () => {
               </motion.h2>
 
               <motion.p
-                className="text-gray-600 text-lg mb-8 leading-relaxed"
+                className="text-gray-600 text-base md:text-lg mb-6 md:mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -183,13 +183,13 @@ const Features = () => {
                 courses through
                 <span className="span-text">
                   {" "}
-                  ONE COMPLETELY <br /> FREE LESSON{" "}
+                  ONE COMPLETELY <br className="hidden md:block" /> FREE LESSON{" "}
                 </span>
                 and decide if we're the right fit for you.
               </motion.p>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3 md:gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -197,7 +197,7 @@ const Features = () => {
               >
                 <motion.button
                   onClick={() => handleCourseNavigation("/contact")}
-                  className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-blue-300 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="border-2 border-gray-200 text-gray-700 px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:border-blue-300 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
                   whileHover={{
                     scale: 1.05,
                     borderColor: "rgb(147, 197, 253)",
@@ -206,19 +206,19 @@ const Features = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   Contact Us
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                 </motion.button>
               </motion.div>
 
               {/* Trust indicator */}
               <motion.div
-                className="mt-8 pt-6 border-t border-gray-100"
+                className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-100"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
               >
-                <p className="text-sm text-gray-500 text-center">
+                <p className="text-xs md:text-sm text-gray-500 text-center">
                   ✨ No credit card required • Cancel anytime • Trusted by local
                   families
                 </p>

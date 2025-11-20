@@ -10,7 +10,7 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen">
         <Navbar />
-        <main className="p-6">
+        <main className="p-2 md:p-4 lg:p-6">
           <AppRouter />
         </main>
         <Footer />

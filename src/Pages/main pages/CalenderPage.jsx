@@ -81,24 +81,24 @@ const CalendarPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-20 mt-15">
+    <div className="max-w-7xl mx-auto p-4 md:p-8 lg:p-20 mt-15">
       {/* Main Title */}
-      <h1 className="text-3xl font-bold mb-5 text-center text-[#002f67]">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-5 text-center text-[#002f67]">
         Weekly Tutoring Schedule
       </h1>
 
       {/* Descriptive Text */}
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed items-center text-center mb-10">
+      <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed items-center text-center mb-6 md:mb-10 px-4">
         We keep your timetable simple. Just choose your year level to view
         colour - coded classes for each subject. Class times remain consistent
         from Year 11 to Year 12, so you can commit to a schedule that fits you.
       </p>
 
       {/* Year Filter Buttons */}
-      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+      <div className="flex justify-center gap-2 md:gap-4 mb-6 md:mb-10 flex-wrap px-4">
         <button
           onClick={() => setSelectedYear("All")}
-          className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+          className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
             selectedYear === "All"
               ? "bg-[#002F67] text-white shadow-lg"
               : "bg-white text-gray-700 border border-gray-200 hover:border-[#002F67] hover:text-[#002F67]"
@@ -110,7 +110,7 @@ const CalendarPage = () => {
           <button
             key={year}
             onClick={() => setSelectedYear(year)}
-            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+            className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
               selectedYear === year
                 ? "bg-[#002F67] text-white shadow-lg"
                 : "bg-white text-gray-700 border border-gray-200 hover:border-[#002F67] hover:text-[#002F67]"
@@ -122,7 +122,7 @@ const CalendarPage = () => {
       </div>
 
       {/* Schedule Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2 md:gap-4 px-2 md:px-0">
         {scheduleData.map((day, index) => (
           <div
             key={index}
@@ -177,19 +177,19 @@ const CalendarPage = () => {
       </div>
 
       {/* Descriptive Box */}
-      <div className="mt-10 bg-blue-50 border-l-4 border-r-4 border-blue-400 rounded-xl p-6 text-gray-800">
-        <p>
+      <div className="mt-6 md:mt-10 bg-blue-50 border-l-4 border-r-4 border-blue-400 rounded-xl p-4 md:p-6 text-gray-800 mx-2 md:mx-0">
+        <p className="text-sm md:text-base">
           Can't find a class for you or your friend? Contact us and we'll create
           a class for you!
         </p>
       </div>
 
       {/* Summary Statistics */}
-      <div className="mt-8 bg-gray-50 rounded-xl p-6">
-        <h2 className="text-xl font-semibold mb-4 text-center text-[#002F67]">
+      <div className="mt-6 md:mt-8 bg-gray-50 rounded-xl p-4 md:p-6 mx-2 md:mx-0">
+        <h2 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-center text-[#002F67]">
           Weekly Overview
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 text-center">
           <div className="bg-white rounded-lg p-4">
             <div className="text-2xl font-bold text-green-600">
               {scheduleData.reduce(

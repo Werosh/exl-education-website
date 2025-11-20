@@ -59,12 +59,12 @@ const HeroSection = () => {
       </div>
 
       <div className="flex-1 flex items-center justify-center w-full z-10">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto w-full px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
             {/* Left */}
-            <div className="flex flex-col justify-center  Montserrat-font ">
+            <div className="flex flex-col justify-center Montserrat-font">
               <motion.span
-                className="text-sm text-gray-600 font-medium mb-10"
+                className="text-xs md:text-sm text-gray-600 font-medium mb-6 md:mb-10"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -74,7 +74,7 @@ const HeroSection = () => {
                 <span className="text-blue-600 font-bold ">STEM</span>
               </motion.span>
               <motion.h1
-                className="text-3xl text-[#002F67] leading-12 Montserrat-font whitespace-nowrap mb-5"
+                className="text-2xl md:text-3xl lg:text-4xl text-[#002F67] leading-tight md:leading-12 Montserrat-font mb-4 md:mb-5"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -83,12 +83,12 @@ const HeroSection = () => {
                 Science and Maths Tutoring{" "}
                 <span style={{ fontWeight: 900 }}>in Castle Hill</span>
                 <br />
-                <span className="text-2xl text-gray-600 font-medium">
+                <span className="text-lg md:text-2xl text-gray-600 font-medium">
                   Years 7-12
                 </span>
               </motion.h1>
               <motion.p
-                className="text-lg text-gray-600 italic max-w-lg leading-9 mt-5 mb-5"
+                className="text-base md:text-lg text-gray-600 italic max-w-lg leading-relaxed md:leading-9 mt-4 md:mt-5 mb-4 md:mb-5"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -100,7 +100,7 @@ const HeroSection = () => {
               </motion.p>
 
               <motion.div
-                className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4"
+                className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-2 md:pt-4"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
@@ -108,13 +108,13 @@ const HeroSection = () => {
               >
                 <button
                   onClick={NavigateAbout}
-                  className="bg-[#002F67] text-white px-8 py-3 rounded-lg hover:scale-105 active:scale-95 transition"
+                  className="bg-[#002F67] text-white px-6 md:px-8 py-2 md:py-3 rounded-lg text-sm md:text-base hover:scale-105 active:scale-95 transition w-full sm:w-auto"
                 >
                   Learn more about us
                 </button>
                 <button
                   onClick={NavigateNext}
-                  className="text-[#002F67] flex items-center justify-center space-x-2 hover:translate-x-1 transition"
+                  className="text-[#002F67] flex items-center justify-center space-x-2 hover:translate-x-1 transition text-sm md:text-base w-full sm:w-auto"
                 >
                   <span>Our difference</span>
                   <ArrowRight className="w-4 h-4" />
@@ -122,7 +122,7 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <motion.img
                 src={LearningImg}
                 alt="learning image"

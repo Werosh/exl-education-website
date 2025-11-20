@@ -28,7 +28,7 @@ const AboutSection = () => {
   };
 
   return (
-    <div className="py-25  pt-12 px-4 overflow-hidden">
+    <div className="py-12 md:py-25 pt-8 md:pt-12 px-4 md:px-6 overflow-hidden">
       <motion.div
         className="max-w-7xl mx-auto"
         variants={containerVariants}
@@ -36,9 +36,9 @@ const AboutSection = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left Side - Just the Image */}
-          <motion.div className="relative" variants={itemVariants}>
+          <motion.div className="relative order-2 lg:order-1" variants={itemVariants}>
             <motion.img
               src={GirlTeach}
               alt="Learning Illustration"
@@ -55,35 +55,34 @@ const AboutSection = () => {
           </motion.div>
 
           {/* Right Side - Content */}
-          <motion.div className="space-y-8" variants={itemVariants}>
-            <motion.div variants={itemVariants} className="space-y-4">
+          <motion.div className="space-y-6 md:space-y-8 order-1 lg:order-2" variants={itemVariants}>
+            <motion.div variants={itemVariants} className="space-y-3 md:space-y-4">
               <motion.h2
-                className="text-5xl lg:text-5xl font-bold text-blue-900 leading-tight "
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 leading-tight"
                 variants={itemVariants}
                 style={{ fontWeight: 900 }}
               >
                 Small classes.
                 <br />
                 <span
-                  className="text-[#002F67]  "
+                  className="text-[#002F67]"
                   style={{ fontWeight: 900 }}
                 >
-               School based support.
-
+                  School based support.
                 </span>
               </motion.h2>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-6">
+            <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
               <motion.p
-                className="text-lg text-gray-600 leading-relaxed"
+                className="text-base md:text-lg text-gray-600 leading-relaxed"
                 variants={itemVariants}
               >
                 We design classes tailored to each school, aligning with marking expectations and syllabuses. Grouping students from the same school fosters collaboration, healthy competition, and friendships, while ensuring targeted support that complements school learning and boosts assessment confidence
               </motion.p>
 
               <motion.p
-                className="text-lg text-gray-600 leading-relaxed"
+                className="text-base md:text-lg text-gray-600 leading-relaxed"
                 variants={itemVariants}
               >
                 Our small classes let tutors give each student focused attention. With personalised feedback and consistent guidance, every learner receives the support needed to build understanding, confidence, and measurable progress

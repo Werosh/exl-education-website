@@ -248,7 +248,7 @@ const About = () => {
         </div>
 
         {/* Content */}
-        <div className="relative container mx-auto px-6">
+        <div className="relative container mx-auto px-4 md:px-6">
           <motion.div
             className="max-w-4xl"
             variants={containerVariants}
@@ -256,22 +256,22 @@ const About = () => {
             animate="visible"
           >
             <motion.h1
-              className="text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight"
               variants={itemVariants}
             >
               Helping all students unlock their full potential
             </motion.h1>
             <motion.p
-              className="text-xl lg:text-xl mb-8 text-blue-100 leading-relaxed"
+              className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-blue-100 leading-relaxed"
               variants={itemVariants}
             >
               We believe every student can achieve excellence with the right
               guidance. That's why we help students and parents understand NSW's
-              high school journey as a whole from <br /> year 7 foundations to
+              high school journey as a whole from <br className="hidden md:block" /> year 7 foundations to
               year 12 final exams.
             </motion.p>
             <motion.div
-              className="flex flex-wrap gap-6 text-sm text-blue-200"
+              className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm text-blue-200"
               variants={itemVariants}
             >
               <div className="flex items-center gap-2">
@@ -384,46 +384,46 @@ const About = () => {
 
       {/* Testimonials */}
       <motion.section
-        className="py-20 px-6 bg-gray-50"
+        className="py-12 md:py-20 px-4 md:px-6 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="container mx-auto">
-          <motion.div className="text-center mb-16" variants={itemVariants}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <motion.div className="text-center mb-8 md:mb-16" variants={itemVariants}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
               What our Students Say
             </h2>
-            <div className="w-20 h-1 bg-[#002f67] mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600">
+            <div className="w-20 h-1 bg-[#002f67] mx-auto mb-6 md:mb-8"></div>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600">
               Our students turned their goals into a reality
             </p>
           </motion.div>
 
           <motion.div
-            className="grid lg:grid-cols-2 gap-8"
+            className="grid lg:grid-cols-2 gap-6 md:gap-8"
             variants={containerVariants}
           >
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100"
                 variants={itemVariants}
               >
-                <Quote className="w-8 h-8 text-[#002f67] mb-6" />
-                <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                <Quote className="w-6 h-6 md:w-8 md:h-8 text-[#002f67] mb-4 md:mb-6" />
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4 md:mb-6">
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-bold text-gray-900">
+                    <h4 className="font-bold text-gray-900 text-sm md:text-base">
                       {testimonial.name}
                     </h4>
-                    <p className="text-[#002f67] text-sm font-bold">
+                    <p className="text-[#002f67] text-xs md:text-sm font-bold">
                       {testimonial.school}
                     </p>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-xs md:text-sm">
                       {testimonial.subjects}
                     </p>
                   </div>
@@ -436,19 +436,19 @@ const About = () => {
 
       {/* Map Section */}
       <motion.section
-        className="mt-10 mb-20"
+        className="mt-8 md:mt-10 mb-12 md:mb-20 px-4 md:px-6"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         {/* Subtitle */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 text-center mb-4 md:mb-6">
           We are located 4 minutes away from Castle Hill Metro Station
         </h2>
 
         {/* Google Map */}
-        <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg mb-6">
+        <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-lg mb-4 md:mb-6">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d829.4996030926637!2d151.00406557583494!3d-33.73485717873797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a10b4b565e19%3A0x2c0a4403a74cfa97!2s6%2F25%20Terminus%20St%2C%20Castle%20Hill%20NSW%202154%2C%20Australia!5e0!3m2!1sen!2slk!4v1763002743150!5m2!1sen!2slk"
             width="100%"
@@ -460,19 +460,19 @@ const About = () => {
         </div>
 
         {/* Directions Button */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center mb-6 md:mb-10">
           <a
             href="https://maps.app.goo.gl/g56cCZZ2bLE68cMU7"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#002F67] text-white font-medium px-6 py-3 mb-5 rounded-xl shadow-md hover:bg-blue-100 hover:text-gray-700 hover:border-1 hover:border-black transition"
+            className="bg-[#002F67] text-white font-medium px-5 md:px-6 py-2 md:py-3 rounded-xl text-sm md:text-base shadow-md hover:bg-blue-100 hover:text-gray-700 hover:border-1 hover:border-black transition"
           >
             Get Directions
           </a>
         </div>
 
         {/* Clinic Pictures */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-2">
           {[UniIMg1, UniIMg2, UniIMg3].map((img, i) => (
             <motion.div
               key={i}
@@ -753,7 +753,7 @@ const About = () => {
 
       {/* CTA Section */}
       <motion.section
-        className="py-20 px-6 bg-[#002F67] text-white"
+        className="py-12 md:py-20 px-4 md:px-6 bg-[#002F67] text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -761,22 +761,22 @@ const About = () => {
       >
         <div className="container mx-auto text-center">
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">
               Ready to Excel in Your HSC?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto">
               Join our community of high-achieving students and experience the
               difference that expert guidance and comprehensive support can make
               in your academic journey.
             </p>
             <a href="/contact">
               <motion.button
-                className="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
+                className="bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-blue-50 transition-colors duration-300 inline-flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Start Your Journey
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </motion.button>
             </a>
           </motion.div>
