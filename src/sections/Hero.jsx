@@ -42,7 +42,7 @@ const HeroSection = () => {
       variants={pageLoad}
       initial="hidden"
       animate="visible"
-      className="bg-white min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 overflow-hidden relative py-8 mt-10 md:py-0"
+      className="bg-white min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 overflow-hidden relative py-8 mt-10 md:mt-0 md:py-0"
     >
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none z-0">
