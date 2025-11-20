@@ -21,7 +21,7 @@ const PricingSection = () => {
   const pricingData = {
     "Year 7": {
       price: 61,
-      subjects: [ "Math"],
+      subjects: ["Math"],
       terms: "4 EXL Terms in Year 7",
       weeklyHours: "1.5 hour",
       specialFeature: null,
@@ -29,7 +29,7 @@ const PricingSection = () => {
     },
     "Year 8": {
       price: 61,
-      subjects: [ "Math"],
+      subjects: ["Math"],
       terms: "4 EXL Terms in Year 8",
       weeklyHours: "1.5 hour",
       specialFeature: null,
@@ -37,7 +37,7 @@ const PricingSection = () => {
     },
     "Year 9": {
       price: 61,
-      subjects: [ "Math"],
+      subjects: ["Math"],
       terms: "4 EXL Terms in Year 9",
       weeklyHours: "1.5 hour",
       specialFeature: null,
@@ -178,7 +178,7 @@ const PricingSection = () => {
 
         {/* Money Back Guarantee Section - New Design */}
         <motion.div
-          className="mb-16 bg-white rounded-2xl p-8 shadow-lg"
+          className="mb-20 bg-white rounded-2xl p-8 shadow-lg"
           variants={itemVariants}
           initial="hidden"
           animate="visible"
@@ -188,19 +188,14 @@ const PricingSection = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Content Section */}
               <div className="text-left">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  <span className="text-gray-900">Love us</span>{" "}
-                  <span className="text-gray-700">or</span>{" "}
-                  <span className="text-gray-900">walk away</span>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Start with confidence, not commitment
                 </h2>
-                <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                  All EXL courses come with our{" "}
-                  <span className="font-semibold text-gray-900">
-                    First Lesson Money Back Guarantee
-                  </span>
-                  . Not sure if EXL is right for you? You can try EXL for{" "}
-                  <span className="font-bold text-gray-900">FREE</span> with our
-                  free trial!
+                <p className="text-gray-600 mb-8 text-md leading-relaxed">
+                  All EXL courses include a First Lesson Money-Back Guarantee.
+                  Join a lesson and experience our tutors, booklets, and small
+                  classes. If it's not the right fit, we'll return your first
+                  lesson fee.
                 </p>
 
                 <motion.a
@@ -208,8 +203,8 @@ const PricingSection = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <button className="bg-[#002f67] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-all duration-300 shadow-lg">
-                    Try EXL free
+                  <button className="bg-[#002f67] text-white px-8 py-2 rounded-lg text-md font-semibold hover:bg-white hover:text-[#002f67] hover:border-2 hover:border-[#002f67] transition-all duration-300 shadow-lg">
+                    Book my trial lesson
                   </button>
                 </motion.a>
               </div>
@@ -257,7 +252,7 @@ const PricingSection = () => {
 
         {/* Year Selector */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-16 mt-8"
+          className="flex flex-wrap justify-center gap-4 mb-16 mt-10"
           variants={itemVariants}
         >
           {years.map((year) => (
