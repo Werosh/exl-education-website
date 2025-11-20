@@ -80,9 +80,9 @@ const HeroSection = () => {
                 animate="visible"
                 custom={2}
               >
-                Years 7-12{" "} <br />
+                Years 7-12 <br />
                 <span className="text-[#002F67] Montserrat-font text-3xl mb-5">
-                  Science and Maths Specialists
+                  Science and Maths Tutoring
                 </span>{" "}
                 <span style={{ fontWeight: 900 }} className="text-3xl">
                   in Castle Hill
