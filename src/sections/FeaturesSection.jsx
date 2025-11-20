@@ -23,7 +23,7 @@ const Features = () => {
     {
       number: "3",
       icon: Award,
-      title: "Adadiand",
+      title: "Amazing Tutors",
       description:
         "Learn from amazing tutors who simplify tough concepts, share insights, and help you reach your full potential.",
     },
