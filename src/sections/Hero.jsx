@@ -74,22 +74,21 @@ const HeroSection = () => {
                 <span className="text-blue-600 font-bold ">STEM</span>
               </motion.span>
               <motion.h1
-                className="text-5xl text-gray-600 leading-12 Montserrat-font whitespace-nowrap mb-10"
+                className="text-3xl text-[#002F67] leading-12 Montserrat-font whitespace-nowrap mb-5"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
                 custom={2}
               >
-                Years 7-12 <br />
-                <span className="text-[#002F67] Montserrat-font text-3xl mb-5">
-                  Science and Maths Tutoring
-                </span>{" "}
-                <span style={{ fontWeight: 900 }} className="text-3xl">
-                  in Castle Hill
+                Science and Maths Tutoring{" "}
+                <span style={{ fontWeight: 900 }}>in Castle Hill</span>
+                <br />
+                <span className="text-2xl text-gray-600 font-medium">
+                  Years 7-12
                 </span>
               </motion.h1>
               <motion.p
-                className="text-lg text-gray-600 italic max-w-lg leading-9 mt-5 mb-10"
+                className="text-lg text-gray-600 italic max-w-lg leading-9 mt-5 mb-5"
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
