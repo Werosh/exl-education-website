@@ -6,6 +6,7 @@ import ExpertsSection from "../../reuse-subject-comps/ExpertsSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
+import CoursePricing from "../../reuse-subject-comps/CoursePricing";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
 import CTA from "../../sections/CTA";
 
@@ -121,6 +122,8 @@ const Yr12Phys = () => {
         <ExpertsSection />
 
         <ClassTimes subjectName="Physics" year="Year 12" />
+
+        <CoursePricing year="Year 12" />
 
         <TermsTable
           subjectName="Physics"

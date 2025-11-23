@@ -6,6 +6,7 @@ import ExpertsSection from "../../reuse-subject-comps/ExpertsSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
+import CoursePricing from "../../reuse-subject-comps/CoursePricing";
 import CTA from "../../sections/CTA";
 
 const JuniorMaths = () => {
@@ -27,6 +28,8 @@ const JuniorMaths = () => {
       <ExpertsSection />
 
       <ClassTimes subjectName="Junior Maths" year="Year 7/8/10" />
+
+      <CoursePricing year="Year 7" showYear10Note={true} />
 
       {/* <ComArea /> */}
 

@@ -318,8 +318,25 @@ const PricingSection = () => {
                   </span>
                 </div>
               </div>
-
+              {/* Year 7-10 Note for Maths */}
               <div className="p-4 md:p-8">
+                {/* {["Year 7", "Year 8", "Year 9", "Year 10"].includes(
+                  selectedYear
+                ) && (
+                  <motion.div
+                    className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 md:p-6 mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <p className="text-yellow-900 text-xs md:text-sm">
+                      <span className="font-semibold">Note:</span> Year 10 is
+                      $93 per lesson, but we use $61 as the overall price for
+                      Year 7-10 Maths courses.
+                    </p>
+                  </motion.div>
+                )} */}
+
                 <div className="mb-6 md:mb-8">
                   <h3 className="font-semibold text-gray-900 mb-3 md:mb-4 text-base md:text-lg">
                     Course Details

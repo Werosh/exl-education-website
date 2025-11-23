@@ -6,6 +6,7 @@ import ExpertsSection from "../../reuse-subject-comps/ExpertsSection";
 import ClassTimes from "../../reuse-subject-comps/ClassTimes";
 import ComArea from "../../reuse-subject-comps/ComArea";
 import LittleDescription from "../../reuse-subject-comps/littleDescription";
+import CoursePricing from "../../reuse-subject-comps/CoursePricing";
 import TermsTable from "../../reuse-subject-comps/TermsTable";
 import CTA from "../../sections/CTA";
 
@@ -68,13 +69,13 @@ const Yr11AdvMaths = () => {
         icon={DraftingCompass}
       />
 
-      <ResourcesSection
-        subjectName="Mathematics Advanced"
-      />
+      <ResourcesSection subjectName="Mathematics Advanced" />
 
       <ExpertsSection />
 
       <ClassTimes subjectName="Mathematics Advanced" year="Year 11" />
+
+      <CoursePricing year="Year 11" />
 
       <TermsTable
         subjectName="Mathematics Advanced"
