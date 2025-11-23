@@ -21,15 +21,13 @@ const JuniorMaths = () => {
         icon={SquareDivide}
       />
 
-      <ResourcesSection
-        subjectName="Junior Maths"
-      />
+      <ResourcesSection subjectName="Junior Maths" />
 
       <ExpertsSection />
 
       <ClassTimes subjectName="Junior Maths" year="Year 7/8/10" />
 
-      <CoursePricing year="Year 7" showYear10Note={true} />
+      <CoursePricing year="Year Year 7-10" showYear10Note={true} />
 
       {/* <ComArea /> */}
 
