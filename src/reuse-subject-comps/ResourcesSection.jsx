@@ -4,22 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 
 // Import all available images
-import BoyShock from "../images/others/BoyShock.JPG";
-import GirlTeach from "../images/others/GirlTeach.JPG";
-import HandsUp from "../images/others/HandsUp.jpeg";
+
 import Teaching from "../images/others/Teaching.JPG";
-import willTeach from "../images/others/willTeach.JPG";
-import smartBoard from "../images/others/smartBoard.jpeg";
+import Book1 from "../images/others/Book2.png";
+import Book2 from "../images/others/Book1.png";
 
 // All available images
-const allImages = [
-  BoyShock,
-  GirlTeach,
-  HandsUp,
-  Teaching,
-  willTeach,
-  smartBoard,
-];
+const allImages = [Book2, Book1, Teaching];
 
 // Function to get random 3 images
 const getRandomImages = () => {

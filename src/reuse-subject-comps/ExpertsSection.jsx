@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 
 // Import all available images
 
-import learning from "../images/others/learning.jpeg";
+import learning from "../images/others/Three.png";
 
 // All available images
 const allImages = [learning];
