@@ -75,8 +75,6 @@ const Yr11AdvMaths = () => {
 
       <ClassTimes subjectName="Mathematics Advanced" year="Year 11" />
 
-      <CoursePricing year="Year 11" />
-
       <TermsTable
         subjectName="Mathematics Advanced"
         termDetails={mathTerms}
@@ -86,6 +84,8 @@ const Yr11AdvMaths = () => {
       {/* <ComArea /> */}
 
       {/* <LittleDescription /> */}
+
+      <CoursePricing year="Year 11" />
 
       <CTA />
     </div>

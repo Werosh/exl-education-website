@@ -78,8 +78,6 @@ const Yr12ExtMaths = () => {
 
         <ClassTimes subjectName="Mathematics Extension 1" year="Year 12" />
 
-        <CoursePricing year="Year 12" />
-
         <TermsTable
           subjectName="Mathematics Extension 1"
           termDetails={mathTerms}
@@ -90,6 +88,8 @@ const Yr12ExtMaths = () => {
       </div>
 
       {/* <LittleDescription /> */}
+
+      <CoursePricing year="Year 12" />
 
       <CTA />
     </div>

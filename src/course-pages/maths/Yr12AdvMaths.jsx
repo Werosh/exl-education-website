@@ -71,12 +71,13 @@ const Yr12AdvMaths = () => {
       <ResourcesSection subjectName="Mathematics Advanced" />
       <ExpertsSection />
       <ClassTimes subjectName="Mathematics Advanced" year="Year 12" />
-      <CoursePricing year="Year 12" />
       <TermsTable
         subjectName="Mathematics Advanced"
         termDetails={mathTerms}
         subjectType="mathematics"
       />
+
+      <CoursePricing year="Year 12" />
 
       <CTA />
     </div>

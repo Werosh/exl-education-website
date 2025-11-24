@@ -99,8 +99,6 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
 
         <ClassTimes subjectName="Chemistry" year="Year 11" />
 
-        <CoursePricing year="Year 11" />
-
         <TermsTable
           subjectName="Chemistry"
           termDetails={chemTerms}
@@ -111,6 +109,8 @@ Build your foundation for Chemistry in our Year 11 Chemistry course.  You'll dev
 
         {/* <LittleDescription /> */}
       </div>
+
+      <CoursePricing year="Year 11" />
 
       <CTA />
     </div>

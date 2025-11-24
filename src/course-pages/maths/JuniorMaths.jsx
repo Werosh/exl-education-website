@@ -27,11 +27,15 @@ const JuniorMaths = () => {
 
       <ClassTimes subjectName="Junior Maths" year="Year 7/8/10" />
 
-      <CoursePricing year="Year Year 7-10" showYear10Note={true} />
-
       {/* <ComArea /> */}
 
       {/* <LittleDescription /> */}
+
+      <CoursePricing
+        year="Year 7"
+        showYear10Note={true}
+        showYearSelector={true}
+      />
 
       <CTA />
     </div>
