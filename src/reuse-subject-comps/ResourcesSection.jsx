@@ -6,8 +6,8 @@ import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 // Import all available images
 
 import Teaching from "../images/others/Teaching.JPG";
-import Book1 from "../images/others/Book2.png";
-import Book2 from "../images/others/Book1.png";
+import Book1 from "../images/others/book1.png";
+import Book2 from "../images/others/book2.png";
 
 // All available images
 const allImages = [Book2, Book1, Teaching];
