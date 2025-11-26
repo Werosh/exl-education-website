@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -9,6 +10,7 @@ import {
   GraduationCap,
   Calendar,
 } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -36,6 +38,7 @@ const ContactUsPage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const courses = [
     {
@@ -55,8 +58,6 @@ const ContactUsPage = () => {
     { category: "Physics", items: ["Year 11 Physics", "Year 12 Physics"] },
   ];
 
-  const ages = Array.from({ length: 6 }, (_, i) => i + 7);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -68,21 +69,60 @@ const ContactUsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // EmailJS Configuration - Replace with your actual credentials
+    // Get these from https://www.emailjs.com/
+    const EMAILJS_SERVICE_ID =
+      import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID =
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+    const EMAILJS_PUBLIC_KEY =
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
-    setIsSubmitting(false);
-    setShowSuccess(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      age: "",
-      course: "",
-      message: "",
-    });
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone || "Not provided",
+      age: formData.age,
+      course: formData.course,
+      message: formData.message || "No message provided",
+      submission_date: new Date().toLocaleString("en-AU", {
+        dateStyle: "full",
+        timeStyle: "short",
+      }),
+    };
 
-    setTimeout(() => setShowSuccess(false), 5000);
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setIsSubmitting(false);
+      setShowSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        age: "",
+        course: "",
+        message: "",
+      });
+
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setIsSubmitting(false);
+      setErrorMessage(
+        "Failed to send your message. Please try again or contact us directly at admin@exleducation.com.au"
+      );
+      setTimeout(() => setErrorMessage(""), 8000);
+    }
   };
 
   return (
@@ -138,6 +178,16 @@ const ContactUsPage = () => {
                 <p className="text-green-800 font-medium">
                   ✓ Message sent successfully! We'll be in touch soon.
                 </p>
+              </motion.div>
+            )}
+
+            {errorMessage && (
+              <motion.div
+                className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                <p className="text-red-800 font-medium">{errorMessage}</p>
               </motion.div>
             )}
 

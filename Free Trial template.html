@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(135deg, #002f67 0%, #004080 100%);
+        color: white;
+        padding: 35px 20px;
+        text-align: center;
+      }
+      .header h2 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .header p {
+        margin: 10px 0 0 0;
+        font-size: 15px;
+        opacity: 0.95;
+      }
+      .badge {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 13px;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+      .content {
+        padding: 35px;
+      }
+      .intro {
+        margin-bottom: 30px;
+        padding: 15px;
+        background-color: #f0f7ff;
+        border-left: 4px solid #002f67;
+        border-radius: 4px;
+        color: #555;
+        font-size: 15px;
+      }
+      .section {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #fafafa;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+      }
+      .section-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #002f67;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #002f67;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .field {
+        margin-bottom: 18px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e8e8e8;
+      }
+      .field:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .label {
+        font-weight: 600;
+        color: #002f67;
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+      .value {
+        color: #333;
+        font-size: 16px;
+        word-wrap: break-word;
+        padding-left: 5px;
+      }
+      .subjects-list {
+        background-color: white;
+        padding: 15px;
+        border-left: 4px solid #002f67;
+        border-radius: 4px;
+        margin-top: 10px;
+        line-height: 1.8;
+      }
+      .highlight {
+        color: #002f67;
+        font-weight: 700;
+        font-size: 17px;
+      }
+      .footer {
+        margin-top: 35px;
+        padding-top: 25px;
+        border-top: 2px solid #e0e0e0;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+      }
+      .footer p {
+        margin: 6px 0;
+      }
+      .reply-info {
+        background-color: #f0f7ff;
+        padding: 15px;
+        border-radius: 4px;
+        margin-top: 15px;
+        text-align: left;
+      }
+      .reply-info strong {
+        color: #002f67;
+      }
+      .reply-link {
+        color: #002f67;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .reply-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <h2>🎓 New Free Trial Booking Request</h2>
+        <p>EXL Education - Free Trial Registration</p>
+        <span class="badge">Form Type: {{form_type}}</span>
+      </div>
+
+      <div class="content">
+        <div class="intro">
+          A new free trial booking request has been submitted on the EXL
+          Education website. Please review the details below and contact the
+          student/parent to confirm the trial session.
+        </div>
+
+        <!-- Student Details Section -->
+        <div class="section">
+          <div class="section-title">👤 Student Information</div>
+
+          <div class="field">
+            <span class="label">Student Full Name</span>
+            <span class="value highlight"
+              >{{student_first_name}} {{student_last_name}}</span
+            >
+          </div>
+
+          <div class="field">
+            <span class="label">Student Email</span>
+            <span class="value">{{student_email}}</span>
+          </div>
+
+          <div class="field">
+            <span class="label">Student Mobile</span>
+            <span class="value">{{student_mobile}}</span>
+          </div>
+
+          <div class="field">
+            <span class="label">School</span>
+            <span class="value">{{school}}</span>
+          </div>
+
+          <div class="field">
+            <span class="label">Year Level (2025)</span>
+            <span class="value highlight">Year {{year_2025}}</span>
+          </div>
+        </div>
+
+        <!-- Parent/Guardian Details Section -->
+        <div class="section">
+          <div class="section-title">👨‍👩‍👧 Parent/Guardian Information</div>
+
+          <div class="field">
+            <span class="label">Parent Full Name</span>
+            <span class="value"
+              >{{parent_first_name}} {{parent_last_name}}</span
+            >
+          </div>
+
+          <div class="field">
+            <span class="label">Parent Email</span>
+            <span class="value">{{parent_email}}</span>
+          </div>
+
+          <div class="field">
+            <span class="label">Parent Mobile</span>
+            <span class="value">{{parent_mobile}}</span>
+          </div>
+        </div>
+
+        <!-- Subjects Interested Section -->
+        <div class="section">
+          <div class="section-title">📚 Subjects of Interest</div>
+          <div class="subjects-list">
+            <span class="value highlight">{{subjects_interested}}</span>
+          </div>
+        </div>
+
+        <!-- Submission Details -->
+        <div
+          class="section"
+          style="background-color: #fff9e6; border-color: #ffd700"
+        >
+          <div class="section-title">📅 Submission Details</div>
+          <div class="field">
+            <span class="label">Submitted On</span>
+            <span class="value">{{submission_date}}</span>
+          </div>
+          <div class="field">
+            <span class="label">Form Submitted By</span>
+            <span class="value highlight">{{form_type}}</span>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p>
+            <strong
+              >Admin Notification - EXL Education Free Trial Booking</strong
+            >
+          </p>
+          <div class="reply-info">
+            <p style="margin: 0 0 8px 0">
+              <strong>Student Contact:</strong><br />
+              <a href="mailto:{{student_email}}" class="reply-link"
+                >{{student_email}}</a
+              >
+              <br /><span style="font-size: 13px"
+                >Mobile: {{student_mobile}}</span
+              >
+            </p>
+            <p style="margin: 8px 0 0 0">
+              <strong>Parent Contact:</strong><br />
+              <a href="mailto:{{parent_email}}" class="reply-link"
+                >{{parent_email}}</a
+              >
+              <br /><span style="font-size: 13px"
+                >Mobile: {{parent_mobile}}</span
+              >
+            </p>
+            <p style="margin: 10px 0 0 0; font-size: 11px; color: #666">
+              <strong>Note:</strong> Configure the Reply-To field in EmailJS
+              template settings to automatically set the reply address based on
+              form type (Student or Parent).
+            </p>
+          </div>
+          <p style="margin-top: 15px; font-size: 11px; color: #999">
+            This is an automated notification. The {{form_type}} submitted this
+            free trial booking on {{submission_date}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

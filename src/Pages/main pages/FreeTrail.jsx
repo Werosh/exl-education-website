@@ -16,11 +16,13 @@ import {
   X,
 } from "lucide-react";
 
+// eslint-disable-next-line no-unused-vars
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+// eslint-disable-next-line no-unused-vars
 const staggerContainer = {
   hidden: {},
   visible: {
@@ -48,6 +50,7 @@ const BookFreeTrialPage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [showCustomClass, setShowCustomClass] = useState(false);
 
   const subjects = ["Mathematics", "Chemistry", "Physics"];
@@ -98,11 +101,18 @@ const BookFreeTrialPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
 
     // EmailJS Configuration - Replace with your actual credentials
-    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+    // Get these from https://www.emailjs.com/
+    const EMAILJS_SERVICE_ID =
+      import.meta.env.VITE_EMAILJS_SERVICE_ID_TRIAL ||
+      import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+      "YOUR_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID =
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID_TRIAL || "YOUR_TEMPLATE_ID";
+    const EMAILJS_PUBLIC_KEY =
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
     // Prepare template parameters for EmailJS
     const templateParams = {
@@ -118,7 +128,10 @@ const BookFreeTrialPage = () => {
       parent_mobile: formData.parentMobile || "N/A",
       year_2025: formData.year2025,
       subjects_interested: formData.subjectsInterested.join(", "),
-      submission_date: new Date().toLocaleString(),
+      submission_date: new Date().toLocaleString("en-AU", {
+        dateStyle: "full",
+        timeStyle: "short",
+      }),
     };
 
     try {
@@ -153,9 +166,10 @@ const BookFreeTrialPage = () => {
     } catch (error) {
       console.error("EmailJS Error:", error);
       setIsSubmitting(false);
-      alert(
-        "Failed to submit the form. Please try again or contact us directly."
+      setErrorMessage(
+        "Failed to submit your booking. Please try again or contact us directly at admin@exleducation.com.au"
       );
+      setTimeout(() => setErrorMessage(""), 8000);
     }
   };
 
@@ -222,6 +236,12 @@ const BookFreeTrialPage = () => {
                     ✓ Free trial booked successfully! We'll contact you within
                     24 hours to confirm your session.
                   </p>
+                </div>
+              )}
+
+              {errorMessage && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 font-medium">{errorMessage}</p>
                 </div>
               )}
 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .email-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background-color: #002f67;
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .header h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .header p {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+        opacity: 0.9;
+      }
+      .content {
+        padding: 30px;
+      }
+      .field {
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .field:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .label {
+        font-weight: bold;
+        color: #002f67;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .value {
+        color: #333;
+        font-size: 16px;
+        word-wrap: break-word;
+      }
+      .message-box {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-left: 4px solid #002f67;
+        margin-top: 10px;
+        border-radius: 4px;
+        white-space: pre-wrap;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 2px solid #e0e0e0;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+      }
+      .footer p {
+        margin: 5px 0;
+      }
+      .highlight {
+        color: #002f67;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <h2>New Contact Form Submission</h2>
+        <p>You have received a new message from a visitor</p>
+      </div>
+
+      <div class="content">
+        <p
+          style="
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 15px;
+          "
+        >
+          A new contact form submission has been received on the EXL Education
+          website. Please review the details below and respond to the inquiry.
+        </p>
+        <div class="field">
+          <span class="label">Full Name</span>
+          <span class="value">{{from_name}}</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Email Address</span>
+          <span class="value">{{from_email}}</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Phone Number</span>
+          <span class="value">{{phone}}</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Age</span>
+          <span class="value">{{age}}</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Course of Interest</span>
+          <span class="value highlight">{{course}}</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Message</span>
+          <div class="message-box">{{message}}</div>
+        </div>
+
+        <div class="field">
+          <span class="label">Submission Date & Time</span>
+          <span class="value">{{submission_date}}</span>
+        </div>
+
+        <div class="footer">
+          <p>
+            <strong>Admin Notification - EXL Education Contact Form</strong>
+          </p>
+          <p style="margin-top: 10px">
+            <strong>Reply to:</strong>
+            <a
+              href="mailto:{{from_email}}"
+              style="color: #002f67; text-decoration: none"
+              >{{from_email}}</a
+            >
+          </p>
+          <p style="margin-top: 5px; font-size: 11px; color: #999">
+            This is an automated notification. The user submitted this form on
+            {{submission_date}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
